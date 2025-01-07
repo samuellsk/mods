@@ -1,0 +1,30 @@
+"ABYSSUS_RABBIT"
+{
+  baseName = "Labyrinth odyssey"
+  creatureId = { "ABYSSUS_RABBIT_KEEPER" "ABYSSUS_RABBIT_KEEPER_FEMALE" }
+  tribeAlignment = EVIL
+  villainGroups = { EVIL_KEEPER EVIL_COTTAGES }
+  immigrantGroups = { "abyssus_rabbits" }
+  technology = {
+    "alchemy" "advanced alchemy" "alchemical conversion"
+    "iron working" "jewellery"
+    "archery" "sorcery" "advanced sorcery" "magical weapons" "master sorcery"
+  }
+  initialTech = { }
+  zLevelGroups = { "basic" "evil" }
+  buildingGroups = {
+    "abyssus_rabbit_structure" "abyssus_rabbit_stairs" "abyssus_rabbit_floors"
+    "abyssus_rabbit_doors"
+    "abyssus_rabbit_living"
+    "abyssus_rabbit_training"
+    "abyssus_rabbit_library"
+    "abyssus_rabbit_crafting"
+    "abyssus_rabbit_installations"
+    "abyssus_rabbit_storage"
+    "zones" "orders"
+  }
+  prisoners = false
+  requireQuartersForExp = false
+  workshopGroups = { "abyssus rabbit" }
+  description = "Play as Labyrinth of Madness ,Delight and festivals filled with dream-like Joy from labyrinth odyssey"
+}

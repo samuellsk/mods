@@ -1,0 +1,34 @@
+"abyssus rabbit keeper" "vision of madness" SPELL_DAMAGE
+{
+  "healing" 1
+  "abyssus rabbit insanity" 3
+  "abyssus rabbit hypnosis" 5
+}
+
+
+"abyssus rabbit acrobat" "acrobat" DAMAGE
+{
+  "abyssus rabbit art of chakram" 2
+  "abyssus rabbit spin me round" 4
+  "abyssus rabbit unstoppable" 6
+}
+
+"abyssus rabbit clown" "clown" DAMAGE
+{
+  "abyssus rabbit poison dagger" 1
+  "invisibility" 3
+  "abyssus rabbit evasion" 5
+}
+
+"abyssus rabbit minstrel" "minstrel" RANGED_DAMAGE
+{
+  "abyssus rabbit good vibes" 1
+  "abyssus rabbit bad vibes" 4
+  "abyssus rabbit old times" 7
+}
+
+"abyssus rabbit juggler" "juggler" SPELL_DAMAGE
+{
+  "abyssus rabbit firecracker" 2
+  "abyssus rabbit bomb" 6
+}

@@ -1,0 +1,128 @@
+"Abyssus_Items_Rabbit_Guitar"
+  {
+    viewId = { "abyssus_items_rabbit_guitar" }
+    name = "guitar"
+    itemClass = RANGED_WEAPON
+    equipmentSlot = RANGED_WEAPON
+    equipedAbility = { "abyssus rabbit note attack" }
+    weight = 1
+    modifiers = {
+      RANGED_DAMAGE 9
+    }
+    price = 90
+    maxUpgrades = 1
+    storageIds = {"bows" "weapons" "equipment"}
+    equipmentGroup = "artifact equipment"
+  }
+
+"Abyssus_Items_Rabbit_Gloves"
+  {
+    viewId = { "abyssus_items_rabbit_gloves" }
+    name = "pair of festival gloves"
+    plural = "pairs of festival gloves"
+    itemClass = ARMOR
+    equipmentSlot = GLOVES
+    weight = 0.7
+    price = 50
+    craftingCost = "ADA" 16
+    modifiers = {
+      DEFENSE 8
+    }
+    equipedEffect = { ABYSSUS_RABBIT_OVERJOY }
+    genPrefixes = {
+      1 ItemAttrBonus DAMAGE 3
+      1 ItemAttrBonus SPELL_DAMAGE 3
+    }
+    ingredientType = "abyssus_items_rabbit_gloves"
+    maxUpgrades = 2
+    storageIds = {"armor" "equipment"}
+    equipmentGroup = "adamantine equipment"
+  }
+
+"Abyssus_Items_Rabbit_Shield"
+  {
+    viewId = { "abyssus_items_rabbit_shield" }
+    name = "festival shield"
+    itemClass = ARMOR
+    equipmentSlot = SHIELD
+    weight = 1.5
+    price = 100
+    craftingCost = "ADA" 50
+    modifiers = {
+      PARRY 5
+      DEFENSE 11
+    }
+    equipedEffect = { ABYSSUS_RABBIT_OVERJOY }
+    ingredientType = "abyssus_items_rabbit_shield"
+    maxUpgrades = 3
+    storageIds = {"armor" "equipment"}
+    equipmentGroup = "adamantine equipment"
+  }
+
+"Abyssus_Items_Rabbit_Armor"
+  {
+    viewId = { "abyssus_items_rabbit_armor" }
+    name = "festival armor"
+    itemClass = ARMOR
+    equipmentSlot = BODY_ARMOR
+    weight = 13
+    price = 500
+    craftingCost = "ADA" 100
+    modifiers = {
+      DEFENSE 31
+    }
+    genPrefixes = {
+      1 ItemAttrBonus DEFENSE 3
+    }
+    ingredientType = "abyssus_items_rabbit_armor"
+    maxUpgrades = 4
+    equipedEffect = { ABYSSUS_RABBIT_OVERJOY REGENERATION }
+    storageIds = {"armor" "equipment"}
+    equipmentGroup = "adamantine equipment"
+  }
+
+"Abyssus_Items_Rabbit_Helm"
+  {
+    viewId = { "abyssus_items_rabbit_helm" }
+    name = "festival helm"
+    itemClass = ARMOR
+    equipmentSlot = HELMET
+    weight = 3
+    price = 100
+    craftingCost = "ADA" 30
+    modifiers = {
+      DEFENSE 10
+    }
+    genPrefixes = {
+      1 LastingEffect TELEPATHY
+      1 LastingEffect REGENERATION
+    }
+    ingredientType = "abyssus_items_rabbit_helm"
+    equipedEffect = { ABYSSUS_RABBIT_OVERJOY TELEPATHY }
+    maxUpgrades = 3
+    storageIds = {"armor" "equipment"}
+    equipmentGroup = "adamantine equipment"
+  }
+
+"Abyssus_Items_Rabbit_Boots"
+  {
+    viewId = { "abyssus_items_rabbit_boots" }
+    name = "pair of festival boots"
+    plural = "pairs of festival boots"
+    itemClass = ARMOR
+    equipmentSlot = BOOTS
+    weight = 3
+    price = 80
+    craftingCost = "ADA" 40
+    modifiers = {
+      DEFENSE 7
+    }
+    genPrefixes = {
+      1 LastingEffect SPEED
+    }
+    ingredientType = "abyssus_items_rabbit_boots"
+    maxUpgrades = 3
+    equipedEffect = { ABYSSUS_RABBIT_OVERJOY }
+    storageIds = {"armor" "equipment"}
+    equipmentGroup = "adamantine equipment"
+  }

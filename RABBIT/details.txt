@@ -1,0 +1,18 @@
+"Rarasek"
+"A mini keeper based upon the comic / manhwa labyrinth odyssey - the festival of delight , dreamlike joy and madness.
+
+Features
+2 different keepers for male and female.
+2 different workers for male and female.
+Acrobats , clowns , jugglers and minstrels.
+Custom adamantium items and spells.
+
+A mini intro and tooltips to help you understand how mechanics do work.
+
+Core mechanic revolves around killing. The more your minions kill the stronger will they become. Even the newly summoned as these kills
+are collective kills towards the global pool that unlocks stats improving mechanics and buffs.
+
+If you have any suggestion come to the keeperrl discord.
+
+Thank you.
+"

@@ -1,0 +1,10 @@
+"ABYSSUS_FLUFFY" {
+  name = "fluff"
+  hasBrain = true
+  deathDescription = "killed"
+  healthType = FLESH
+  canLoseBodyParts = false
+  canCopulate = true
+  killedByBoulder = true
+  losingHeadsMeansDeath = true
+}

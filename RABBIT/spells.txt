@@ -1,0 +1,258 @@
+"abyssus rabbit introduction"
+{
+  symbol = "I"
+  effect = Name "introduction" Description "Intorduces the corpsesmith" {
+    AI Health 0 1 0 1 {
+      Filter Not Flag "abyssus_rabbit_introduced" {
+        UI "unlock_message" { "message" Label "Rabbit people witnessed the madness of their dungeon being destroyed." "view_id" ViewIdList {{"abyssus_rabbit_guide"}}}
+        UI "unlock_message" { "message" Label "Driven by it, they now gain random attribute after 10 collective kills." "view_id" ViewIdList {{"abyssus_rabbit_guide"}}}
+        UI "unlock_message" { "message" Label "This bonus will continue up to 1000 collective kills." "view_id" ViewIdList {{"abyssus_rabbit_guide"}}}
+        UI "unlock_message" { "message" Label "These attributes will be applied to current and also newly bred minions." "view_id" ViewIdList {{"abyssus_rabbit_guide"}}}
+        UI "unlock_message" { "message" Label "Just remember, rabbits do multiply as they do...." "view_id" ViewIdList {{"abyssus_rabbit_couple"}}}
+        UI "unlock_message" { "message" Label "And for that you need males and females." "view_id" ViewIdList {{"abyssus_rabbit_couple"}}}
+        UI "unlock_message" { "message" Label "Lets built together new , better labyrinth of delight,joy and madness." "view_id" ViewIdList {{"abyssus_rabbit_guide"}}}
+        SetFlag "abyssus_rabbit_introduced" true
+      }
+      RemoveAbility "abyssus rabbit introduction"
+    }
+  }
+  message = "" ""
+  cooldown = 10
+}
+
+"abyssus rabbit mind attack"
+{
+  symbol = "☿"
+  effect = Name "mind attack" Description "Use power of the mind to instantly damage your enemies." {
+    Filter Enemy {
+      Damage SPELL_DAMAGE HIT
+    }
+    Fx {FIREBALL , ColorId SKY_BLUE}
+  }
+  range = 8
+  endOnly = true
+  cooldown = {1 6}
+  sound = "SPELL_BLAST"
+}
+
+"abyssus rabbit insanity"
+{
+  symbol = "?"
+  range = 8
+  effect = Name "insanity" Description "Drive the minion to the point of insanity causing it to attack anyone." {
+    Filter Enemy {
+      Damage SPELL_DAMAGE HIT
+      Lasting 15 INSANITY
+    }
+    Fx {FIREBALL , ColorId SKY_BLUE}
+  }
+  endOnly = true
+  cooldown = {10 40}
+  sound = "SPELL_BLAST"
+}
+
+"abyssus rabbit hypnosis"
+{
+  symbol = "👀"
+  range = 8
+  effect = Name "hypnosis" Description "Hypnosis the target, rendering it unable to move." {
+    Filter Enemy {
+      Damage SPELL_DAMAGE HIT
+      Lasting 15 IMMOBILE
+    }
+    Fx {FIREBALL , ColorId SKY_BLUE}
+  }
+  endOnly = true
+  cooldown = {7 20}
+  sound = "SPELL_BLAST"
+}
+
+"abyssus rabbit worker"
+{
+  symbol = "W"
+  effect = Name "become a worker" Description "minion will become a worker and will start hauling,digging and constructing" {
+    AI Health 0 1 0 1 {
+      AddMinionTrait WORKER
+      AddMinionTrait NO_EQUIPMENT
+      AddMinionTrait NO_AUTO_EQUIPMENT
+      RemoveAbility "abyssus rabbit worker"
+    }
+  }
+  message = "" ""
+  cooldown = 3
+}
+
+"abyssus rabbit onetime summon"
+{
+  symbol = "S"
+  effect = Name "call workers" Description "Onetime spawn of 2 rabbit workers." {
+    AI Health 0 1 0 1 {
+      PlaceFurniture "ABYSSUS_RABBIT_ONETIME_SPAWN_WORKERS"
+      RemoveAbility "abyssus rabbit onetime summon"
+    }
+  }
+  message = "" ""
+  cooldown = 5
+}
+
+"abyssus rabbit evasion"
+{
+  symbol = "E"
+  effect = Name "evasion" Description "Gains permanent buff of evasion that decreases damage taken by 40 percent." {
+    AI Health 0 1 0 1 {
+      Permanent "ABYSSUS_RABBIT_EVASION"
+      RemoveAbility "abyssus rabbit evasion"
+    }
+  }
+  message = "" ""
+  cooldown = 10
+}
+
+"abyssus rabbit poison dagger"
+{
+  symbol = ")"
+  effect = Name "poison dagger" Description "Causes normal attack and poisons the enemy." {
+    Filter Enemy {
+      Filter Not LastingEffect POISON {
+        Damage DAMAGE HIT
+        Lasting 15 POISON
+      }
+    }
+  }
+  range = 1
+  cooldown = {5 10}
+  type = ABILITY
+}
+
+"abyssus rabbit note attack"
+{
+  symbol = "♫"
+  effect = Name "bring some noise" Description "Shoot some notes towards your enemies, damaging them." {
+    Filter Enemy Damage RANGED_DAMAGE SHOOT
+  }
+  projectileViewId = {"abyssus_spells_music_note"}
+  range = 8
+  maxHits = 1
+  cooldown = {2 4}
+  type = ABILITY
+}
+
+"abyssus rabbit good vibes"
+{
+  symbol = "♩♪"
+  effect = Name "good vibes" Description "Increases defense by 15 percent for a time in area of 5 around the caster" {
+    Filter Not LastingEffect "ABYSSUS_RABBIT_GOOD_VIBES" {
+      Area 5 Filter Not Enemy Lasting 35 "ABYSSUS_RABBIT_GOOD_VIBES"
+    }
+  }
+  fx = {CIRCULAR_SPELL ,ColorId BLUE}
+  endOnly = true
+  cooldown = {15 50}
+  sound = "SPELL_HEALING"
+  type = ABILITY
+}
+
+"abyssus rabbit bad vibes"
+{
+  symbol = "♩♬"
+  effect = Name "bad vibes" Description "Turning enemy feet numb , increasing damage it takes by 20 percent." {
+    Filter Enemy {
+      Filter Not LastingEffect "ABYSSUS_RABBIT_BAD_VIBES" {
+        Lasting 10 "ABYSSUS_RABBIT_BAD_VIBES"
+      }
+      Damage RANGED_DAMAGE SHOOT
+    }
+    Fx {CIRCULAR_SPELL ,ColorId RED}
+  }
+  endOnly = true
+  range = 8
+  projectileViewId = {"abyssus_spells_music_note"}
+  cooldown = {2 5}
+  sound = "SPELL_STR_BONUS"
+  type = ABILITY
+}
+
+"abyssus rabbit old times"
+{
+  symbol = "♩❤"
+  effect = Name "old times" Description "Instantly heal for 20 percent, than keep healing 25 percent per turn." {
+    Filter Not Enemy {
+      Heal { FLESH 0.25 }
+      Lasting 5 "ABYSSUS_RABBIT_GOOD_OLD_TIMES"
+    }
+    Fx {CIRCULAR_SPELL ,ColorId GREEN}
+  }
+  endOnly = true
+  range = 8
+  cooldown = {8 20}
+  sound = "SPELL_HEALING"
+  type = ABILITY
+}
+
+"abyssus rabbit spin me round"
+{
+  symbol = "O"
+  effect = Name "spin me round" Description "Use chakram to spin it around the body, damaging enemies around." {
+    Area 1 Filter Enemy Damage DAMAGE HIT
+    Fx {CIRCULAR_BLAST ,ColorId GRAY}
+  }
+  cooldown = {2 6}
+  sound = "SPELL_FIRE_SPHERE_PET"
+  type = ABILITY
+}
+
+"abyssus rabbit firecracker"
+{
+  symbol = "💥"
+  effect = Name "throw firecracker" Description "Throw a small firecracker to damage enemies." {
+    Filter Enemy {
+      Damage SPELL_DAMAGE HIT
+    }
+    Fx {FIREBALL ,ColorId YELLOW}
+  }
+  projectileViewId = {"abyssus_spells_juggler_firecracker"}
+  endOnly = true
+  range = 8
+  cooldown = {2 3}
+  type = ABILITY
+}
+
+"abyssus rabbit bomb"
+{
+  symbol = "💣"
+  effect = Name "throw bomb" Description "Throw a large bomb towards your enemies, causing damage in an area." {
+    Area 1 Filter Enemy {
+      Damage SPELL_DAMAGE HIT
+    }
+    Fx {CIRCULAR_BLAST ,ColorId LIGHT_RED}
+    Fx {FIREBALL ,ColorId YELLOW}
+  }
+  projectileViewId = {"abyssus_spells_juggler_bomb"}
+  range = 8
+  endOnly = true
+  cooldown = {5 10}
+  type = ABILITY
+}
+
+"abyssus rabbit unstoppable"
+{
+  symbol = "🛡"
+  effect = Name "unstoppable" Description "Become invulnerable for a short time" {
+    Lasting 5 INVULNERABLE
+  }
+  cooldown = {15 25}
+  sound = "SPELL_DEX_BONUS"
+}
+
+"abyssus rabbit art of chakram"
+{
+  symbol = "A"
+  effect = Name "art of chakram" Description "Learns how to use chakram for defense. Permanently increases defense by 15" {
+    AI Health 0 1 0 1 {
+      IncreaseAttr "DEFENSE" 15
+      RemoveAbility "abyssus rabbit art of chakram"
+    }
+  }
+  message = "" ""
+  cooldown = 10
+}

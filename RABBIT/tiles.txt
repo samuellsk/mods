@@ -1,0 +1,24 @@
+##### Items
+{ "abyssus_items_rabbit_guitar" "]" ColorId LIGHT_GRAY }
+{ "abyssus_items_rabbit_armor" "]" ColorId PINK }
+{ "abyssus_items_rabbit_boots" "]" ColorId PINK }
+{ "abyssus_items_rabbit_gloves" "]" ColorId PINK }
+{ "abyssus_items_rabbit_helm" "]" ColorId PINK }
+{ "abyssus_items_rabbit_shield" "]" ColorId PINK }
+
+##### Spells
+{ "abyssus_spells_music_note" "♫" ColorId LIGHT_GRAY }
+{ "abyssus_spells_juggler_bomb" "💣" ColorId RED }
+{ "abyssus_spells_juggler_firecracker" "💥" ColorId RED }
+
+##### Rabbit
+{ "abyssus_rabbit_keeper" "@" ColorId PURPLE }
+{ "abyssus_rabbit_keeper_female" "@" ColorId PURPLE }
+{ "abyssus_rabbit_couple" "c" ColorId PINK }
+{ "abyssus_rabbit_worker_male" "W" ColorId YELLOW }
+{ "abyssus_rabbit_worker_female" "W" ColorId YELLOW }
+{ "abyssus_rabbit_acrobat" "w" ColorId PURPLE }
+{ "abyssus_rabbit_clown" "c" ColorId PURPLE }
+{ "abyssus_rabbit_minstrel" "m" ColorId PINK }
+{ "abyssus_rabbit_juggler" "j" ColorId PINK }
+{ "abyssus_rabbit_guide" "G" ColorId WHITE }

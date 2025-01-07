@@ -1,0 +1,1840 @@
+"ABYSSUS_RABBIT_TESTER"
+  {
+    viewId = { "deer" }
+    name = {
+      name = "TESTER"
+      firstNameGen = "ABYSSUS_RABBIT"
+      fullTitle = true
+    }
+    body = {
+      type = Humanoid LARGE
+      material = "ABYSSUS_FLUFFY"
+    }
+    attr = {
+      DAMAGE 10
+      SPELL_DAMAGE 24
+      DEFENSE 25
+      LABORATORY 25
+    }
+    permanentEffects = {
+      ABYSSUS_RABBIT_FESTIVALS_EXCITEMENT 1
+      NIGHT_VISION 1
+    }
+    maxLevelIncrease = {
+      SPELL_DAMAGE 7
+      DAMAGE 3
+    }
+    spellSchools = { "abyssus rabbit keeper" }
+    spells = { "abyssus rabbit mind attack" "abyssus rabbit onetime summon" "abyssus rabbit introduction" }
+    aiType = RANGED
+    inventory = {
+      { "WoodenStaff" }
+      { "Abyssus_Items_Rabbit_Shield" }
+      { "Abyssus_Items_Rabbit_Armor" }
+      { "Abyssus_Items_Rabbit_Helm" }
+      { "Abyssus_Items_Rabbit_Boots" }
+      { "Abyssus_Items_Rabbit_Gloves" }
+    }
+    chatReactionFriendly = "Welcome to my playground! Did you bring me a gift?"
+    chatReactionHostile = "You look deliciously terrified. Let’s play!"
+  }
+
+"ABYSSUS_RABBIT_KEEPER"
+  {
+    viewId = { "abyssus_rabbit_keeper" }
+    name = {
+      name = "keeper"
+      firstNameGen = "ABYSSUS_RABBIT"
+      fullTitle = true
+    }
+    body = {
+      type = Humanoid LARGE
+      material = "ABYSSUS_FLUFFY"
+    }
+    attr = {
+      DAMAGE 10
+      SPELL_DAMAGE 24
+      DEFENSE 25
+      LABORATORY 25
+    }
+    permanentEffects = {
+      ABYSSUS_RABBIT_FESTIVALS_EXCITEMENT 1
+      NIGHT_VISION 1
+    }
+    maxLevelIncrease = {
+      SPELL_DAMAGE 7
+      DAMAGE 3
+    }
+    spellSchools = { "abyssus rabbit keeper" }
+    spells = { "abyssus rabbit mind attack" "abyssus rabbit onetime summon" "abyssus rabbit introduction" }
+    aiType = RANGED
+    inventory = {
+      { "WoodenStaff" }
+    }
+    chatReactionFriendly = "Welcome to my playground! Did you bring me a gift?"
+    chatReactionHostile = "You look deliciously terrified. Let’s play!"
+    afterKilledSomeone = {
+      FirstSuccessful {
+        Filter Flag "abyssus_rabbit_kill_count_10" {
+          SetFlag "abyssus_rabbit_kill_count_10" false
+          SetFlag "abyssus_rabbit_kill_count_1" false
+          FirstSuccessful {
+            Filter Not Flag "abyssus_rabbit_kills_10" { SetFlag "abyssus_rabbit_kills_10" true }
+            Filter Not Flag "abyssus_rabbit_kills_20" { SetFlag "abyssus_rabbit_kills_20" true }
+            Filter Not Flag "abyssus_rabbit_kills_30" { SetFlag "abyssus_rabbit_kills_30" true }
+            Filter Not Flag "abyssus_rabbit_kills_40" { SetFlag "abyssus_rabbit_kills_40" true }
+            Filter Not Flag "abyssus_rabbit_kills_50" { SetFlag "abyssus_rabbit_kills_50" true }
+            Filter Not Flag "abyssus_rabbit_kills_60" { SetFlag "abyssus_rabbit_kills_60" true }
+            Filter Not Flag "abyssus_rabbit_kills_70" { SetFlag "abyssus_rabbit_kills_70" true }
+            Filter Not Flag "abyssus_rabbit_kills_80" { SetFlag "abyssus_rabbit_kills_80" true }
+            Filter Not Flag "abyssus_rabbit_kills_90" { SetFlag "abyssus_rabbit_kills_90" true }
+            Filter Not Flag "abyssus_rabbit_kills_100" { SetFlag "abyssus_rabbit_kills_100" true }
+            Filter Not Flag "abyssus_rabbit_kills_110" { SetFlag "abyssus_rabbit_kills_110" true }
+            Filter Not Flag "abyssus_rabbit_kills_120" { SetFlag "abyssus_rabbit_kills_120" true }
+            Filter Not Flag "abyssus_rabbit_kills_130" { SetFlag "abyssus_rabbit_kills_130" true }
+            Filter Not Flag "abyssus_rabbit_kills_140" { SetFlag "abyssus_rabbit_kills_140" true }
+            Filter Not Flag "abyssus_rabbit_kills_150" { SetFlag "abyssus_rabbit_kills_150" true }
+            Filter Not Flag "abyssus_rabbit_kills_160" { SetFlag "abyssus_rabbit_kills_160" true }
+            Filter Not Flag "abyssus_rabbit_kills_170" { SetFlag "abyssus_rabbit_kills_170" true }
+            Filter Not Flag "abyssus_rabbit_kills_180" { SetFlag "abyssus_rabbit_kills_180" true }
+            Filter Not Flag "abyssus_rabbit_kills_190" { SetFlag "abyssus_rabbit_kills_190" true }
+            Filter Not Flag "abyssus_rabbit_kills_200" { SetFlag "abyssus_rabbit_kills_200" true }
+            Filter Not Flag "abyssus_rabbit_kills_210" { SetFlag "abyssus_rabbit_kills_210" true }
+            Filter Not Flag "abyssus_rabbit_kills_220" { SetFlag "abyssus_rabbit_kills_220" true }
+            Filter Not Flag "abyssus_rabbit_kills_230" { SetFlag "abyssus_rabbit_kills_230" true }
+            Filter Not Flag "abyssus_rabbit_kills_240" { SetFlag "abyssus_rabbit_kills_240" true }
+            Filter Not Flag "abyssus_rabbit_kills_250" { SetFlag "abyssus_rabbit_kills_250" true }
+            Filter Not Flag "abyssus_rabbit_kills_260" { SetFlag "abyssus_rabbit_kills_260" true }
+            Filter Not Flag "abyssus_rabbit_kills_270" { SetFlag "abyssus_rabbit_kills_270" true }
+            Filter Not Flag "abyssus_rabbit_kills_280" { SetFlag "abyssus_rabbit_kills_280" true }
+            Filter Not Flag "abyssus_rabbit_kills_290" { SetFlag "abyssus_rabbit_kills_290" true }
+            Filter Not Flag "abyssus_rabbit_kills_300" { SetFlag "abyssus_rabbit_kills_300" true }
+            Filter Not Flag "abyssus_rabbit_kills_310" { SetFlag "abyssus_rabbit_kills_310" true }
+            Filter Not Flag "abyssus_rabbit_kills_320" { SetFlag "abyssus_rabbit_kills_320" true }
+            Filter Not Flag "abyssus_rabbit_kills_330" { SetFlag "abyssus_rabbit_kills_330" true }
+            Filter Not Flag "abyssus_rabbit_kills_340" { SetFlag "abyssus_rabbit_kills_340" true }
+            Filter Not Flag "abyssus_rabbit_kills_350" { SetFlag "abyssus_rabbit_kills_350" true }
+            Filter Not Flag "abyssus_rabbit_kills_360" { SetFlag "abyssus_rabbit_kills_360" true }
+            Filter Not Flag "abyssus_rabbit_kills_370" { SetFlag "abyssus_rabbit_kills_370" true }
+            Filter Not Flag "abyssus_rabbit_kills_380" { SetFlag "abyssus_rabbit_kills_380" true }
+            Filter Not Flag "abyssus_rabbit_kills_390" { SetFlag "abyssus_rabbit_kills_390" true }
+            Filter Not Flag "abyssus_rabbit_kills_400" { SetFlag "abyssus_rabbit_kills_400" true }
+            Filter Not Flag "abyssus_rabbit_kills_410" { SetFlag "abyssus_rabbit_kills_410" true }
+            Filter Not Flag "abyssus_rabbit_kills_420" { SetFlag "abyssus_rabbit_kills_420" true }
+            Filter Not Flag "abyssus_rabbit_kills_430" { SetFlag "abyssus_rabbit_kills_430" true }
+            Filter Not Flag "abyssus_rabbit_kills_440" { SetFlag "abyssus_rabbit_kills_440" true }
+            Filter Not Flag "abyssus_rabbit_kills_450" { SetFlag "abyssus_rabbit_kills_450" true }
+            Filter Not Flag "abyssus_rabbit_kills_460" { SetFlag "abyssus_rabbit_kills_460" true }
+            Filter Not Flag "abyssus_rabbit_kills_470" { SetFlag "abyssus_rabbit_kills_470" true }
+            Filter Not Flag "abyssus_rabbit_kills_480" { SetFlag "abyssus_rabbit_kills_480" true }
+            Filter Not Flag "abyssus_rabbit_kills_490" { SetFlag "abyssus_rabbit_kills_490" true }
+            Filter Not Flag "abyssus_rabbit_kills_500" { SetFlag "abyssus_rabbit_kills_500" true }
+            Filter Not Flag "abyssus_rabbit_kills_510" { SetFlag "abyssus_rabbit_kills_510" true }
+            Filter Not Flag "abyssus_rabbit_kills_520" { SetFlag "abyssus_rabbit_kills_520" true }
+            Filter Not Flag "abyssus_rabbit_kills_530" { SetFlag "abyssus_rabbit_kills_530" true }
+            Filter Not Flag "abyssus_rabbit_kills_540" { SetFlag "abyssus_rabbit_kills_540" true }
+            Filter Not Flag "abyssus_rabbit_kills_550" { SetFlag "abyssus_rabbit_kills_550" true }
+            Filter Not Flag "abyssus_rabbit_kills_560" { SetFlag "abyssus_rabbit_kills_560" true }
+            Filter Not Flag "abyssus_rabbit_kills_570" { SetFlag "abyssus_rabbit_kills_570" true }
+            Filter Not Flag "abyssus_rabbit_kills_580" { SetFlag "abyssus_rabbit_kills_580" true }
+            Filter Not Flag "abyssus_rabbit_kills_590" { SetFlag "abyssus_rabbit_kills_590" true }
+            Filter Not Flag "abyssus_rabbit_kills_600" { SetFlag "abyssus_rabbit_kills_600" true }
+            Filter Not Flag "abyssus_rabbit_kills_610" { SetFlag "abyssus_rabbit_kills_610" true }
+            Filter Not Flag "abyssus_rabbit_kills_620" { SetFlag "abyssus_rabbit_kills_620" true }
+            Filter Not Flag "abyssus_rabbit_kills_630" { SetFlag "abyssus_rabbit_kills_630" true }
+            Filter Not Flag "abyssus_rabbit_kills_640" { SetFlag "abyssus_rabbit_kills_640" true }
+            Filter Not Flag "abyssus_rabbit_kills_650" { SetFlag "abyssus_rabbit_kills_650" true }
+            Filter Not Flag "abyssus_rabbit_kills_660" { SetFlag "abyssus_rabbit_kills_660" true }
+            Filter Not Flag "abyssus_rabbit_kills_670" { SetFlag "abyssus_rabbit_kills_670" true }
+            Filter Not Flag "abyssus_rabbit_kills_680" { SetFlag "abyssus_rabbit_kills_680" true }
+            Filter Not Flag "abyssus_rabbit_kills_690" { SetFlag "abyssus_rabbit_kills_690" true }
+            Filter Not Flag "abyssus_rabbit_kills_700" { SetFlag "abyssus_rabbit_kills_700" true }
+            Filter Not Flag "abyssus_rabbit_kills_710" { SetFlag "abyssus_rabbit_kills_710" true }
+            Filter Not Flag "abyssus_rabbit_kills_720" { SetFlag "abyssus_rabbit_kills_720" true }
+            Filter Not Flag "abyssus_rabbit_kills_730" { SetFlag "abyssus_rabbit_kills_730" true }
+            Filter Not Flag "abyssus_rabbit_kills_740" { SetFlag "abyssus_rabbit_kills_740" true }
+            Filter Not Flag "abyssus_rabbit_kills_750" { SetFlag "abyssus_rabbit_kills_750" true }
+            Filter Not Flag "abyssus_rabbit_kills_760" { SetFlag "abyssus_rabbit_kills_760" true }
+            Filter Not Flag "abyssus_rabbit_kills_770" { SetFlag "abyssus_rabbit_kills_770" true }
+            Filter Not Flag "abyssus_rabbit_kills_780" { SetFlag "abyssus_rabbit_kills_780" true }
+            Filter Not Flag "abyssus_rabbit_kills_790" { SetFlag "abyssus_rabbit_kills_790" true }
+            Filter Not Flag "abyssus_rabbit_kills_800" { SetFlag "abyssus_rabbit_kills_800" true }
+            Filter Not Flag "abyssus_rabbit_kills_810" { SetFlag "abyssus_rabbit_kills_810" true }
+            Filter Not Flag "abyssus_rabbit_kills_820" { SetFlag "abyssus_rabbit_kills_820" true }
+            Filter Not Flag "abyssus_rabbit_kills_830" { SetFlag "abyssus_rabbit_kills_830" true }
+            Filter Not Flag "abyssus_rabbit_kills_840" { SetFlag "abyssus_rabbit_kills_840" true }
+            Filter Not Flag "abyssus_rabbit_kills_850" { SetFlag "abyssus_rabbit_kills_850" true }
+            Filter Not Flag "abyssus_rabbit_kills_860" { SetFlag "abyssus_rabbit_kills_860" true }
+            Filter Not Flag "abyssus_rabbit_kills_870" { SetFlag "abyssus_rabbit_kills_870" true }
+            Filter Not Flag "abyssus_rabbit_kills_880" { SetFlag "abyssus_rabbit_kills_880" true }
+            Filter Not Flag "abyssus_rabbit_kills_890" { SetFlag "abyssus_rabbit_kills_890" true }
+            Filter Not Flag "abyssus_rabbit_kills_900" { SetFlag "abyssus_rabbit_kills_900" true }
+            Filter Not Flag "abyssus_rabbit_kills_910" { SetFlag "abyssus_rabbit_kills_910" true }
+            Filter Not Flag "abyssus_rabbit_kills_920" { SetFlag "abyssus_rabbit_kills_920" true }
+            Filter Not Flag "abyssus_rabbit_kills_930" { SetFlag "abyssus_rabbit_kills_930" true }
+            Filter Not Flag "abyssus_rabbit_kills_940" { SetFlag "abyssus_rabbit_kills_940" true }
+            Filter Not Flag "abyssus_rabbit_kills_950" { SetFlag "abyssus_rabbit_kills_950" true }
+            Filter Not Flag "abyssus_rabbit_kills_960" { SetFlag "abyssus_rabbit_kills_960" true }
+            Filter Not Flag "abyssus_rabbit_kills_970" { SetFlag "abyssus_rabbit_kills_970" true }
+            Filter Not Flag "abyssus_rabbit_kills_980" { SetFlag "abyssus_rabbit_kills_980" true }
+            Filter Not Flag "abyssus_rabbit_kills_990" { SetFlag "abyssus_rabbit_kills_990" true }
+            Filter Not Flag "abyssus_rabbit_kills_1000" { SetFlag "abyssus_rabbit_kills_1000" true }
+          }
+        }
+        Filter Flag "abyssus_rabbit_kill_count_9" {
+          SetFlag "abyssus_rabbit_kill_count_10" true
+          SetFlag "abyssus_rabbit_kill_count_9" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_8" {
+          SetFlag "abyssus_rabbit_kill_count_9" true
+          SetFlag "abyssus_rabbit_kill_count_8" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_7" {
+          SetFlag "abyssus_rabbit_kill_count_8" true
+          SetFlag "abyssus_rabbit_kill_count_7" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_6" {
+          SetFlag "abyssus_rabbit_kill_count_7" true
+          SetFlag "abyssus_rabbit_kill_count_6" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_5" {
+          SetFlag "abyssus_rabbit_kill_count_6" true
+          SetFlag "abyssus_rabbit_kill_count_5" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_4" {
+          SetFlag "abyssus_rabbit_kill_count_5" true
+          SetFlag "abyssus_rabbit_kill_count_4" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_3" {
+          SetFlag "abyssus_rabbit_kill_count_4" true
+          SetFlag "abyssus_rabbit_kill_count_3" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_2" {
+          SetFlag "abyssus_rabbit_kill_count_3" true
+          SetFlag "abyssus_rabbit_kill_count_2" false
+        }
+        Filter Not Flag "abyssus_rabbit_kill_count_1" {
+          SetFlag "abyssus_rabbit_kill_count_2" true
+          SetFlag "abyssus_rabbit_kill_count_1" false
+        }
+      }
+    }
+  }
+
+"ABYSSUS_RABBIT_KEEPER_FEMALE"
+  {
+    viewId = { "abyssus_rabbit_keeper_female" }
+    name = {
+      name = "keeper"
+      firstNameGen = "ABYSSUS_RABBIT"
+      fullTitle = true
+    }
+    gender = FEMALE
+    body = {
+      type = Humanoid LARGE
+      material = "ABYSSUS_FLUFFY"
+    }
+    attr = {
+      DAMAGE 10
+      SPELL_DAMAGE 24
+      DEFENSE 25
+      LABORATORY 25
+    }
+    permanentEffects = {
+      ABYSSUS_RABBIT_FESTIVALS_EXCITEMENT 1
+      NIGHT_VISION 1
+    }
+    maxLevelIncrease = {
+      SPELL_DAMAGE 7
+      DAMAGE 3
+    }
+    spellSchools = { "abyssus rabbit keeper" }
+    spells = { "abyssus rabbit mind attack" "abyssus rabbit onetime summon" "abyssus rabbit introduction" }
+    aiType = RANGED
+    inventory = {
+      { "WoodenStaff" }
+    }
+    chatReactionFriendly = "Welcome to my playground! Did you bring me a gift?"
+    chatReactionHostile = "You look deliciously terrified. Let’s play!"
+    afterKilledSomeone = {
+      FirstSuccessful {
+        Filter Flag "abyssus_rabbit_kill_count_10" {
+          SetFlag "abyssus_rabbit_kill_count_10" false
+          SetFlag "abyssus_rabbit_kill_count_1" false
+          FirstSuccessful {
+            Filter Not Flag "abyssus_rabbit_kills_10" { SetFlag "abyssus_rabbit_kills_10" true }
+            Filter Not Flag "abyssus_rabbit_kills_20" { SetFlag "abyssus_rabbit_kills_20" true }
+            Filter Not Flag "abyssus_rabbit_kills_30" { SetFlag "abyssus_rabbit_kills_30" true }
+            Filter Not Flag "abyssus_rabbit_kills_40" { SetFlag "abyssus_rabbit_kills_40" true }
+            Filter Not Flag "abyssus_rabbit_kills_50" { SetFlag "abyssus_rabbit_kills_50" true }
+            Filter Not Flag "abyssus_rabbit_kills_60" { SetFlag "abyssus_rabbit_kills_60" true }
+            Filter Not Flag "abyssus_rabbit_kills_70" { SetFlag "abyssus_rabbit_kills_70" true }
+            Filter Not Flag "abyssus_rabbit_kills_80" { SetFlag "abyssus_rabbit_kills_80" true }
+            Filter Not Flag "abyssus_rabbit_kills_90" { SetFlag "abyssus_rabbit_kills_90" true }
+            Filter Not Flag "abyssus_rabbit_kills_100" { SetFlag "abyssus_rabbit_kills_100" true }
+            Filter Not Flag "abyssus_rabbit_kills_110" { SetFlag "abyssus_rabbit_kills_110" true }
+            Filter Not Flag "abyssus_rabbit_kills_120" { SetFlag "abyssus_rabbit_kills_120" true }
+            Filter Not Flag "abyssus_rabbit_kills_130" { SetFlag "abyssus_rabbit_kills_130" true }
+            Filter Not Flag "abyssus_rabbit_kills_140" { SetFlag "abyssus_rabbit_kills_140" true }
+            Filter Not Flag "abyssus_rabbit_kills_150" { SetFlag "abyssus_rabbit_kills_150" true }
+            Filter Not Flag "abyssus_rabbit_kills_160" { SetFlag "abyssus_rabbit_kills_160" true }
+            Filter Not Flag "abyssus_rabbit_kills_170" { SetFlag "abyssus_rabbit_kills_170" true }
+            Filter Not Flag "abyssus_rabbit_kills_180" { SetFlag "abyssus_rabbit_kills_180" true }
+            Filter Not Flag "abyssus_rabbit_kills_190" { SetFlag "abyssus_rabbit_kills_190" true }
+            Filter Not Flag "abyssus_rabbit_kills_200" { SetFlag "abyssus_rabbit_kills_200" true }
+            Filter Not Flag "abyssus_rabbit_kills_210" { SetFlag "abyssus_rabbit_kills_210" true }
+            Filter Not Flag "abyssus_rabbit_kills_220" { SetFlag "abyssus_rabbit_kills_220" true }
+            Filter Not Flag "abyssus_rabbit_kills_230" { SetFlag "abyssus_rabbit_kills_230" true }
+            Filter Not Flag "abyssus_rabbit_kills_240" { SetFlag "abyssus_rabbit_kills_240" true }
+            Filter Not Flag "abyssus_rabbit_kills_250" { SetFlag "abyssus_rabbit_kills_250" true }
+            Filter Not Flag "abyssus_rabbit_kills_260" { SetFlag "abyssus_rabbit_kills_260" true }
+            Filter Not Flag "abyssus_rabbit_kills_270" { SetFlag "abyssus_rabbit_kills_270" true }
+            Filter Not Flag "abyssus_rabbit_kills_280" { SetFlag "abyssus_rabbit_kills_280" true }
+            Filter Not Flag "abyssus_rabbit_kills_290" { SetFlag "abyssus_rabbit_kills_290" true }
+            Filter Not Flag "abyssus_rabbit_kills_300" { SetFlag "abyssus_rabbit_kills_300" true }
+            Filter Not Flag "abyssus_rabbit_kills_310" { SetFlag "abyssus_rabbit_kills_310" true }
+            Filter Not Flag "abyssus_rabbit_kills_320" { SetFlag "abyssus_rabbit_kills_320" true }
+            Filter Not Flag "abyssus_rabbit_kills_330" { SetFlag "abyssus_rabbit_kills_330" true }
+            Filter Not Flag "abyssus_rabbit_kills_340" { SetFlag "abyssus_rabbit_kills_340" true }
+            Filter Not Flag "abyssus_rabbit_kills_350" { SetFlag "abyssus_rabbit_kills_350" true }
+            Filter Not Flag "abyssus_rabbit_kills_360" { SetFlag "abyssus_rabbit_kills_360" true }
+            Filter Not Flag "abyssus_rabbit_kills_370" { SetFlag "abyssus_rabbit_kills_370" true }
+            Filter Not Flag "abyssus_rabbit_kills_380" { SetFlag "abyssus_rabbit_kills_380" true }
+            Filter Not Flag "abyssus_rabbit_kills_390" { SetFlag "abyssus_rabbit_kills_390" true }
+            Filter Not Flag "abyssus_rabbit_kills_400" { SetFlag "abyssus_rabbit_kills_400" true }
+            Filter Not Flag "abyssus_rabbit_kills_410" { SetFlag "abyssus_rabbit_kills_410" true }
+            Filter Not Flag "abyssus_rabbit_kills_420" { SetFlag "abyssus_rabbit_kills_420" true }
+            Filter Not Flag "abyssus_rabbit_kills_430" { SetFlag "abyssus_rabbit_kills_430" true }
+            Filter Not Flag "abyssus_rabbit_kills_440" { SetFlag "abyssus_rabbit_kills_440" true }
+            Filter Not Flag "abyssus_rabbit_kills_450" { SetFlag "abyssus_rabbit_kills_450" true }
+            Filter Not Flag "abyssus_rabbit_kills_460" { SetFlag "abyssus_rabbit_kills_460" true }
+            Filter Not Flag "abyssus_rabbit_kills_470" { SetFlag "abyssus_rabbit_kills_470" true }
+            Filter Not Flag "abyssus_rabbit_kills_480" { SetFlag "abyssus_rabbit_kills_480" true }
+            Filter Not Flag "abyssus_rabbit_kills_490" { SetFlag "abyssus_rabbit_kills_490" true }
+            Filter Not Flag "abyssus_rabbit_kills_500" { SetFlag "abyssus_rabbit_kills_500" true }
+            Filter Not Flag "abyssus_rabbit_kills_510" { SetFlag "abyssus_rabbit_kills_510" true }
+            Filter Not Flag "abyssus_rabbit_kills_520" { SetFlag "abyssus_rabbit_kills_520" true }
+            Filter Not Flag "abyssus_rabbit_kills_530" { SetFlag "abyssus_rabbit_kills_530" true }
+            Filter Not Flag "abyssus_rabbit_kills_540" { SetFlag "abyssus_rabbit_kills_540" true }
+            Filter Not Flag "abyssus_rabbit_kills_550" { SetFlag "abyssus_rabbit_kills_550" true }
+            Filter Not Flag "abyssus_rabbit_kills_560" { SetFlag "abyssus_rabbit_kills_560" true }
+            Filter Not Flag "abyssus_rabbit_kills_570" { SetFlag "abyssus_rabbit_kills_570" true }
+            Filter Not Flag "abyssus_rabbit_kills_580" { SetFlag "abyssus_rabbit_kills_580" true }
+            Filter Not Flag "abyssus_rabbit_kills_590" { SetFlag "abyssus_rabbit_kills_590" true }
+            Filter Not Flag "abyssus_rabbit_kills_600" { SetFlag "abyssus_rabbit_kills_600" true }
+            Filter Not Flag "abyssus_rabbit_kills_610" { SetFlag "abyssus_rabbit_kills_610" true }
+            Filter Not Flag "abyssus_rabbit_kills_620" { SetFlag "abyssus_rabbit_kills_620" true }
+            Filter Not Flag "abyssus_rabbit_kills_630" { SetFlag "abyssus_rabbit_kills_630" true }
+            Filter Not Flag "abyssus_rabbit_kills_640" { SetFlag "abyssus_rabbit_kills_640" true }
+            Filter Not Flag "abyssus_rabbit_kills_650" { SetFlag "abyssus_rabbit_kills_650" true }
+            Filter Not Flag "abyssus_rabbit_kills_660" { SetFlag "abyssus_rabbit_kills_660" true }
+            Filter Not Flag "abyssus_rabbit_kills_670" { SetFlag "abyssus_rabbit_kills_670" true }
+            Filter Not Flag "abyssus_rabbit_kills_680" { SetFlag "abyssus_rabbit_kills_680" true }
+            Filter Not Flag "abyssus_rabbit_kills_690" { SetFlag "abyssus_rabbit_kills_690" true }
+            Filter Not Flag "abyssus_rabbit_kills_700" { SetFlag "abyssus_rabbit_kills_700" true }
+            Filter Not Flag "abyssus_rabbit_kills_710" { SetFlag "abyssus_rabbit_kills_710" true }
+            Filter Not Flag "abyssus_rabbit_kills_720" { SetFlag "abyssus_rabbit_kills_720" true }
+            Filter Not Flag "abyssus_rabbit_kills_730" { SetFlag "abyssus_rabbit_kills_730" true }
+            Filter Not Flag "abyssus_rabbit_kills_740" { SetFlag "abyssus_rabbit_kills_740" true }
+            Filter Not Flag "abyssus_rabbit_kills_750" { SetFlag "abyssus_rabbit_kills_750" true }
+            Filter Not Flag "abyssus_rabbit_kills_760" { SetFlag "abyssus_rabbit_kills_760" true }
+            Filter Not Flag "abyssus_rabbit_kills_770" { SetFlag "abyssus_rabbit_kills_770" true }
+            Filter Not Flag "abyssus_rabbit_kills_780" { SetFlag "abyssus_rabbit_kills_780" true }
+            Filter Not Flag "abyssus_rabbit_kills_790" { SetFlag "abyssus_rabbit_kills_790" true }
+            Filter Not Flag "abyssus_rabbit_kills_800" { SetFlag "abyssus_rabbit_kills_800" true }
+            Filter Not Flag "abyssus_rabbit_kills_810" { SetFlag "abyssus_rabbit_kills_810" true }
+            Filter Not Flag "abyssus_rabbit_kills_820" { SetFlag "abyssus_rabbit_kills_820" true }
+            Filter Not Flag "abyssus_rabbit_kills_830" { SetFlag "abyssus_rabbit_kills_830" true }
+            Filter Not Flag "abyssus_rabbit_kills_840" { SetFlag "abyssus_rabbit_kills_840" true }
+            Filter Not Flag "abyssus_rabbit_kills_850" { SetFlag "abyssus_rabbit_kills_850" true }
+            Filter Not Flag "abyssus_rabbit_kills_860" { SetFlag "abyssus_rabbit_kills_860" true }
+            Filter Not Flag "abyssus_rabbit_kills_870" { SetFlag "abyssus_rabbit_kills_870" true }
+            Filter Not Flag "abyssus_rabbit_kills_880" { SetFlag "abyssus_rabbit_kills_880" true }
+            Filter Not Flag "abyssus_rabbit_kills_890" { SetFlag "abyssus_rabbit_kills_890" true }
+            Filter Not Flag "abyssus_rabbit_kills_900" { SetFlag "abyssus_rabbit_kills_900" true }
+            Filter Not Flag "abyssus_rabbit_kills_910" { SetFlag "abyssus_rabbit_kills_910" true }
+            Filter Not Flag "abyssus_rabbit_kills_920" { SetFlag "abyssus_rabbit_kills_920" true }
+            Filter Not Flag "abyssus_rabbit_kills_930" { SetFlag "abyssus_rabbit_kills_930" true }
+            Filter Not Flag "abyssus_rabbit_kills_940" { SetFlag "abyssus_rabbit_kills_940" true }
+            Filter Not Flag "abyssus_rabbit_kills_950" { SetFlag "abyssus_rabbit_kills_950" true }
+            Filter Not Flag "abyssus_rabbit_kills_960" { SetFlag "abyssus_rabbit_kills_960" true }
+            Filter Not Flag "abyssus_rabbit_kills_970" { SetFlag "abyssus_rabbit_kills_970" true }
+            Filter Not Flag "abyssus_rabbit_kills_980" { SetFlag "abyssus_rabbit_kills_980" true }
+            Filter Not Flag "abyssus_rabbit_kills_990" { SetFlag "abyssus_rabbit_kills_990" true }
+            Filter Not Flag "abyssus_rabbit_kills_1000" { SetFlag "abyssus_rabbit_kills_1000" true }
+          }
+        }
+        Filter Flag "abyssus_rabbit_kill_count_9" {
+          SetFlag "abyssus_rabbit_kill_count_10" true
+          SetFlag "abyssus_rabbit_kill_count_9" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_8" {
+          SetFlag "abyssus_rabbit_kill_count_9" true
+          SetFlag "abyssus_rabbit_kill_count_8" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_7" {
+          SetFlag "abyssus_rabbit_kill_count_8" true
+          SetFlag "abyssus_rabbit_kill_count_7" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_6" {
+          SetFlag "abyssus_rabbit_kill_count_7" true
+          SetFlag "abyssus_rabbit_kill_count_6" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_5" {
+          SetFlag "abyssus_rabbit_kill_count_6" true
+          SetFlag "abyssus_rabbit_kill_count_5" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_4" {
+          SetFlag "abyssus_rabbit_kill_count_5" true
+          SetFlag "abyssus_rabbit_kill_count_4" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_3" {
+          SetFlag "abyssus_rabbit_kill_count_4" true
+          SetFlag "abyssus_rabbit_kill_count_3" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_2" {
+          SetFlag "abyssus_rabbit_kill_count_3" true
+          SetFlag "abyssus_rabbit_kill_count_2" false
+        }
+        Filter Not Flag "abyssus_rabbit_kill_count_1" {
+          SetFlag "abyssus_rabbit_kill_count_2" true
+          SetFlag "abyssus_rabbit_kill_count_1" false
+        }
+      }
+    }
+  }
+
+"ABYSSUS_RABBIT_WORKER_MALE"
+  {
+    viewId = { "abyssus_rabbit_worker_male" }
+    attr = {
+      DAMAGE 12
+      DEFENSE 12
+      DIGGING 25
+    }
+    body = {
+      type = Humanoid MEDIUM
+      material = "ABYSSUS_FLUFFY"
+    }
+    aiType = MELEE
+    noChase = true
+    cantEquip = true
+    permanentEffects = {
+      ABYSSUS_RABBIT_FESTIVALS_EXCITEMENT 1
+      SPEED 1
+      NIGHT_VISION 1
+    }
+    name = {
+      name = "rabbit worker"
+      firstNameGen = "ABYSSUS_RABBIT"
+    }
+    chatReactionFriendly = "Oh, a visitor! I hope you don’t mind...a little chaos."
+    chatReactionHostile = "Ready for a hare-raising end, are we?"
+    maxLevelIncrease = {
+      DAMAGE 3
+    }
+    afterKilledSomeone = {
+      FirstSuccessful {
+        Filter Flag "abyssus_rabbit_kill_count_10" {
+          SetFlag "abyssus_rabbit_kill_count_10" false
+          SetFlag "abyssus_rabbit_kill_count_1" false
+          FirstSuccessful {
+            Filter Not Flag "abyssus_rabbit_kills_10" { SetFlag "abyssus_rabbit_kills_10" true }
+            Filter Not Flag "abyssus_rabbit_kills_20" { SetFlag "abyssus_rabbit_kills_20" true }
+            Filter Not Flag "abyssus_rabbit_kills_30" { SetFlag "abyssus_rabbit_kills_30" true }
+            Filter Not Flag "abyssus_rabbit_kills_40" { SetFlag "abyssus_rabbit_kills_40" true }
+            Filter Not Flag "abyssus_rabbit_kills_50" { SetFlag "abyssus_rabbit_kills_50" true }
+            Filter Not Flag "abyssus_rabbit_kills_60" { SetFlag "abyssus_rabbit_kills_60" true }
+            Filter Not Flag "abyssus_rabbit_kills_70" { SetFlag "abyssus_rabbit_kills_70" true }
+            Filter Not Flag "abyssus_rabbit_kills_80" { SetFlag "abyssus_rabbit_kills_80" true }
+            Filter Not Flag "abyssus_rabbit_kills_90" { SetFlag "abyssus_rabbit_kills_90" true }
+            Filter Not Flag "abyssus_rabbit_kills_100" { SetFlag "abyssus_rabbit_kills_100" true }
+            Filter Not Flag "abyssus_rabbit_kills_110" { SetFlag "abyssus_rabbit_kills_110" true }
+            Filter Not Flag "abyssus_rabbit_kills_120" { SetFlag "abyssus_rabbit_kills_120" true }
+            Filter Not Flag "abyssus_rabbit_kills_130" { SetFlag "abyssus_rabbit_kills_130" true }
+            Filter Not Flag "abyssus_rabbit_kills_140" { SetFlag "abyssus_rabbit_kills_140" true }
+            Filter Not Flag "abyssus_rabbit_kills_150" { SetFlag "abyssus_rabbit_kills_150" true }
+            Filter Not Flag "abyssus_rabbit_kills_160" { SetFlag "abyssus_rabbit_kills_160" true }
+            Filter Not Flag "abyssus_rabbit_kills_170" { SetFlag "abyssus_rabbit_kills_170" true }
+            Filter Not Flag "abyssus_rabbit_kills_180" { SetFlag "abyssus_rabbit_kills_180" true }
+            Filter Not Flag "abyssus_rabbit_kills_190" { SetFlag "abyssus_rabbit_kills_190" true }
+            Filter Not Flag "abyssus_rabbit_kills_200" { SetFlag "abyssus_rabbit_kills_200" true }
+            Filter Not Flag "abyssus_rabbit_kills_210" { SetFlag "abyssus_rabbit_kills_210" true }
+            Filter Not Flag "abyssus_rabbit_kills_220" { SetFlag "abyssus_rabbit_kills_220" true }
+            Filter Not Flag "abyssus_rabbit_kills_230" { SetFlag "abyssus_rabbit_kills_230" true }
+            Filter Not Flag "abyssus_rabbit_kills_240" { SetFlag "abyssus_rabbit_kills_240" true }
+            Filter Not Flag "abyssus_rabbit_kills_250" { SetFlag "abyssus_rabbit_kills_250" true }
+            Filter Not Flag "abyssus_rabbit_kills_260" { SetFlag "abyssus_rabbit_kills_260" true }
+            Filter Not Flag "abyssus_rabbit_kills_270" { SetFlag "abyssus_rabbit_kills_270" true }
+            Filter Not Flag "abyssus_rabbit_kills_280" { SetFlag "abyssus_rabbit_kills_280" true }
+            Filter Not Flag "abyssus_rabbit_kills_290" { SetFlag "abyssus_rabbit_kills_290" true }
+            Filter Not Flag "abyssus_rabbit_kills_300" { SetFlag "abyssus_rabbit_kills_300" true }
+            Filter Not Flag "abyssus_rabbit_kills_310" { SetFlag "abyssus_rabbit_kills_310" true }
+            Filter Not Flag "abyssus_rabbit_kills_320" { SetFlag "abyssus_rabbit_kills_320" true }
+            Filter Not Flag "abyssus_rabbit_kills_330" { SetFlag "abyssus_rabbit_kills_330" true }
+            Filter Not Flag "abyssus_rabbit_kills_340" { SetFlag "abyssus_rabbit_kills_340" true }
+            Filter Not Flag "abyssus_rabbit_kills_350" { SetFlag "abyssus_rabbit_kills_350" true }
+            Filter Not Flag "abyssus_rabbit_kills_360" { SetFlag "abyssus_rabbit_kills_360" true }
+            Filter Not Flag "abyssus_rabbit_kills_370" { SetFlag "abyssus_rabbit_kills_370" true }
+            Filter Not Flag "abyssus_rabbit_kills_380" { SetFlag "abyssus_rabbit_kills_380" true }
+            Filter Not Flag "abyssus_rabbit_kills_390" { SetFlag "abyssus_rabbit_kills_390" true }
+            Filter Not Flag "abyssus_rabbit_kills_400" { SetFlag "abyssus_rabbit_kills_400" true }
+            Filter Not Flag "abyssus_rabbit_kills_410" { SetFlag "abyssus_rabbit_kills_410" true }
+            Filter Not Flag "abyssus_rabbit_kills_420" { SetFlag "abyssus_rabbit_kills_420" true }
+            Filter Not Flag "abyssus_rabbit_kills_430" { SetFlag "abyssus_rabbit_kills_430" true }
+            Filter Not Flag "abyssus_rabbit_kills_440" { SetFlag "abyssus_rabbit_kills_440" true }
+            Filter Not Flag "abyssus_rabbit_kills_450" { SetFlag "abyssus_rabbit_kills_450" true }
+            Filter Not Flag "abyssus_rabbit_kills_460" { SetFlag "abyssus_rabbit_kills_460" true }
+            Filter Not Flag "abyssus_rabbit_kills_470" { SetFlag "abyssus_rabbit_kills_470" true }
+            Filter Not Flag "abyssus_rabbit_kills_480" { SetFlag "abyssus_rabbit_kills_480" true }
+            Filter Not Flag "abyssus_rabbit_kills_490" { SetFlag "abyssus_rabbit_kills_490" true }
+            Filter Not Flag "abyssus_rabbit_kills_500" { SetFlag "abyssus_rabbit_kills_500" true }
+            Filter Not Flag "abyssus_rabbit_kills_510" { SetFlag "abyssus_rabbit_kills_510" true }
+            Filter Not Flag "abyssus_rabbit_kills_520" { SetFlag "abyssus_rabbit_kills_520" true }
+            Filter Not Flag "abyssus_rabbit_kills_530" { SetFlag "abyssus_rabbit_kills_530" true }
+            Filter Not Flag "abyssus_rabbit_kills_540" { SetFlag "abyssus_rabbit_kills_540" true }
+            Filter Not Flag "abyssus_rabbit_kills_550" { SetFlag "abyssus_rabbit_kills_550" true }
+            Filter Not Flag "abyssus_rabbit_kills_560" { SetFlag "abyssus_rabbit_kills_560" true }
+            Filter Not Flag "abyssus_rabbit_kills_570" { SetFlag "abyssus_rabbit_kills_570" true }
+            Filter Not Flag "abyssus_rabbit_kills_580" { SetFlag "abyssus_rabbit_kills_580" true }
+            Filter Not Flag "abyssus_rabbit_kills_590" { SetFlag "abyssus_rabbit_kills_590" true }
+            Filter Not Flag "abyssus_rabbit_kills_600" { SetFlag "abyssus_rabbit_kills_600" true }
+            Filter Not Flag "abyssus_rabbit_kills_610" { SetFlag "abyssus_rabbit_kills_610" true }
+            Filter Not Flag "abyssus_rabbit_kills_620" { SetFlag "abyssus_rabbit_kills_620" true }
+            Filter Not Flag "abyssus_rabbit_kills_630" { SetFlag "abyssus_rabbit_kills_630" true }
+            Filter Not Flag "abyssus_rabbit_kills_640" { SetFlag "abyssus_rabbit_kills_640" true }
+            Filter Not Flag "abyssus_rabbit_kills_650" { SetFlag "abyssus_rabbit_kills_650" true }
+            Filter Not Flag "abyssus_rabbit_kills_660" { SetFlag "abyssus_rabbit_kills_660" true }
+            Filter Not Flag "abyssus_rabbit_kills_670" { SetFlag "abyssus_rabbit_kills_670" true }
+            Filter Not Flag "abyssus_rabbit_kills_680" { SetFlag "abyssus_rabbit_kills_680" true }
+            Filter Not Flag "abyssus_rabbit_kills_690" { SetFlag "abyssus_rabbit_kills_690" true }
+            Filter Not Flag "abyssus_rabbit_kills_700" { SetFlag "abyssus_rabbit_kills_700" true }
+            Filter Not Flag "abyssus_rabbit_kills_710" { SetFlag "abyssus_rabbit_kills_710" true }
+            Filter Not Flag "abyssus_rabbit_kills_720" { SetFlag "abyssus_rabbit_kills_720" true }
+            Filter Not Flag "abyssus_rabbit_kills_730" { SetFlag "abyssus_rabbit_kills_730" true }
+            Filter Not Flag "abyssus_rabbit_kills_740" { SetFlag "abyssus_rabbit_kills_740" true }
+            Filter Not Flag "abyssus_rabbit_kills_750" { SetFlag "abyssus_rabbit_kills_750" true }
+            Filter Not Flag "abyssus_rabbit_kills_760" { SetFlag "abyssus_rabbit_kills_760" true }
+            Filter Not Flag "abyssus_rabbit_kills_770" { SetFlag "abyssus_rabbit_kills_770" true }
+            Filter Not Flag "abyssus_rabbit_kills_780" { SetFlag "abyssus_rabbit_kills_780" true }
+            Filter Not Flag "abyssus_rabbit_kills_790" { SetFlag "abyssus_rabbit_kills_790" true }
+            Filter Not Flag "abyssus_rabbit_kills_800" { SetFlag "abyssus_rabbit_kills_800" true }
+            Filter Not Flag "abyssus_rabbit_kills_810" { SetFlag "abyssus_rabbit_kills_810" true }
+            Filter Not Flag "abyssus_rabbit_kills_820" { SetFlag "abyssus_rabbit_kills_820" true }
+            Filter Not Flag "abyssus_rabbit_kills_830" { SetFlag "abyssus_rabbit_kills_830" true }
+            Filter Not Flag "abyssus_rabbit_kills_840" { SetFlag "abyssus_rabbit_kills_840" true }
+            Filter Not Flag "abyssus_rabbit_kills_850" { SetFlag "abyssus_rabbit_kills_850" true }
+            Filter Not Flag "abyssus_rabbit_kills_860" { SetFlag "abyssus_rabbit_kills_860" true }
+            Filter Not Flag "abyssus_rabbit_kills_870" { SetFlag "abyssus_rabbit_kills_870" true }
+            Filter Not Flag "abyssus_rabbit_kills_880" { SetFlag "abyssus_rabbit_kills_880" true }
+            Filter Not Flag "abyssus_rabbit_kills_890" { SetFlag "abyssus_rabbit_kills_890" true }
+            Filter Not Flag "abyssus_rabbit_kills_900" { SetFlag "abyssus_rabbit_kills_900" true }
+            Filter Not Flag "abyssus_rabbit_kills_910" { SetFlag "abyssus_rabbit_kills_910" true }
+            Filter Not Flag "abyssus_rabbit_kills_920" { SetFlag "abyssus_rabbit_kills_920" true }
+            Filter Not Flag "abyssus_rabbit_kills_930" { SetFlag "abyssus_rabbit_kills_930" true }
+            Filter Not Flag "abyssus_rabbit_kills_940" { SetFlag "abyssus_rabbit_kills_940" true }
+            Filter Not Flag "abyssus_rabbit_kills_950" { SetFlag "abyssus_rabbit_kills_950" true }
+            Filter Not Flag "abyssus_rabbit_kills_960" { SetFlag "abyssus_rabbit_kills_960" true }
+            Filter Not Flag "abyssus_rabbit_kills_970" { SetFlag "abyssus_rabbit_kills_970" true }
+            Filter Not Flag "abyssus_rabbit_kills_980" { SetFlag "abyssus_rabbit_kills_980" true }
+            Filter Not Flag "abyssus_rabbit_kills_990" { SetFlag "abyssus_rabbit_kills_990" true }
+            Filter Not Flag "abyssus_rabbit_kills_1000" { SetFlag "abyssus_rabbit_kills_1000" true }
+          }
+        }
+        Filter Flag "abyssus_rabbit_kill_count_9" {
+          SetFlag "abyssus_rabbit_kill_count_10" true
+          SetFlag "abyssus_rabbit_kill_count_9" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_8" {
+          SetFlag "abyssus_rabbit_kill_count_9" true
+          SetFlag "abyssus_rabbit_kill_count_8" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_7" {
+          SetFlag "abyssus_rabbit_kill_count_8" true
+          SetFlag "abyssus_rabbit_kill_count_7" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_6" {
+          SetFlag "abyssus_rabbit_kill_count_7" true
+          SetFlag "abyssus_rabbit_kill_count_6" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_5" {
+          SetFlag "abyssus_rabbit_kill_count_6" true
+          SetFlag "abyssus_rabbit_kill_count_5" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_4" {
+          SetFlag "abyssus_rabbit_kill_count_5" true
+          SetFlag "abyssus_rabbit_kill_count_4" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_3" {
+          SetFlag "abyssus_rabbit_kill_count_4" true
+          SetFlag "abyssus_rabbit_kill_count_3" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_2" {
+          SetFlag "abyssus_rabbit_kill_count_3" true
+          SetFlag "abyssus_rabbit_kill_count_2" false
+        }
+        Filter Not Flag "abyssus_rabbit_kill_count_1" {
+          SetFlag "abyssus_rabbit_kill_count_2" true
+          SetFlag "abyssus_rabbit_kill_count_1" false
+        }
+      }
+    }
+  }
+
+"ABYSSUS_RABBIT_WORKER_FEMALE"
+  {
+    viewId = { "abyssus_rabbit_worker_female" }
+    attr = {
+      DAMAGE 12
+      DEFENSE 12
+      DIGGING 25
+    }
+    gender = FEMALE
+    body = {
+      type = Humanoid MEDIUM
+      material = "ABYSSUS_FLUFFY"
+    }
+    aiType = MELEE
+    noChase = true
+    cantEquip = true
+    permanentEffects = {
+      ABYSSUS_RABBIT_FESTIVALS_EXCITEMENT 1
+      COPULATION_SKILL 1
+      SPEED 1
+      NIGHT_VISION 1
+    }
+    name = {
+      name = "rabbit worker"
+      firstNameGen = "ABYSSUS_RABBIT"
+    }
+    chatReactionFriendly = "What’s this? A friend... or my next trick?"
+    chatReactionHostile = "You’re just in time... for your final act!"
+    maxLevelIncrease = {
+      DAMAGE 3
+    }
+    afterKilledSomeone = {
+      FirstSuccessful {
+        Filter Flag "abyssus_rabbit_kill_count_10" {
+          SetFlag "abyssus_rabbit_kill_count_10" false
+          SetFlag "abyssus_rabbit_kill_count_1" false
+          FirstSuccessful {
+            Filter Not Flag "abyssus_rabbit_kills_10" { SetFlag "abyssus_rabbit_kills_10" true }
+            Filter Not Flag "abyssus_rabbit_kills_20" { SetFlag "abyssus_rabbit_kills_20" true }
+            Filter Not Flag "abyssus_rabbit_kills_30" { SetFlag "abyssus_rabbit_kills_30" true }
+            Filter Not Flag "abyssus_rabbit_kills_40" { SetFlag "abyssus_rabbit_kills_40" true }
+            Filter Not Flag "abyssus_rabbit_kills_50" { SetFlag "abyssus_rabbit_kills_50" true }
+            Filter Not Flag "abyssus_rabbit_kills_60" { SetFlag "abyssus_rabbit_kills_60" true }
+            Filter Not Flag "abyssus_rabbit_kills_70" { SetFlag "abyssus_rabbit_kills_70" true }
+            Filter Not Flag "abyssus_rabbit_kills_80" { SetFlag "abyssus_rabbit_kills_80" true }
+            Filter Not Flag "abyssus_rabbit_kills_90" { SetFlag "abyssus_rabbit_kills_90" true }
+            Filter Not Flag "abyssus_rabbit_kills_100" { SetFlag "abyssus_rabbit_kills_100" true }
+            Filter Not Flag "abyssus_rabbit_kills_110" { SetFlag "abyssus_rabbit_kills_110" true }
+            Filter Not Flag "abyssus_rabbit_kills_120" { SetFlag "abyssus_rabbit_kills_120" true }
+            Filter Not Flag "abyssus_rabbit_kills_130" { SetFlag "abyssus_rabbit_kills_130" true }
+            Filter Not Flag "abyssus_rabbit_kills_140" { SetFlag "abyssus_rabbit_kills_140" true }
+            Filter Not Flag "abyssus_rabbit_kills_150" { SetFlag "abyssus_rabbit_kills_150" true }
+            Filter Not Flag "abyssus_rabbit_kills_160" { SetFlag "abyssus_rabbit_kills_160" true }
+            Filter Not Flag "abyssus_rabbit_kills_170" { SetFlag "abyssus_rabbit_kills_170" true }
+            Filter Not Flag "abyssus_rabbit_kills_180" { SetFlag "abyssus_rabbit_kills_180" true }
+            Filter Not Flag "abyssus_rabbit_kills_190" { SetFlag "abyssus_rabbit_kills_190" true }
+            Filter Not Flag "abyssus_rabbit_kills_200" { SetFlag "abyssus_rabbit_kills_200" true }
+            Filter Not Flag "abyssus_rabbit_kills_210" { SetFlag "abyssus_rabbit_kills_210" true }
+            Filter Not Flag "abyssus_rabbit_kills_220" { SetFlag "abyssus_rabbit_kills_220" true }
+            Filter Not Flag "abyssus_rabbit_kills_230" { SetFlag "abyssus_rabbit_kills_230" true }
+            Filter Not Flag "abyssus_rabbit_kills_240" { SetFlag "abyssus_rabbit_kills_240" true }
+            Filter Not Flag "abyssus_rabbit_kills_250" { SetFlag "abyssus_rabbit_kills_250" true }
+            Filter Not Flag "abyssus_rabbit_kills_260" { SetFlag "abyssus_rabbit_kills_260" true }
+            Filter Not Flag "abyssus_rabbit_kills_270" { SetFlag "abyssus_rabbit_kills_270" true }
+            Filter Not Flag "abyssus_rabbit_kills_280" { SetFlag "abyssus_rabbit_kills_280" true }
+            Filter Not Flag "abyssus_rabbit_kills_290" { SetFlag "abyssus_rabbit_kills_290" true }
+            Filter Not Flag "abyssus_rabbit_kills_300" { SetFlag "abyssus_rabbit_kills_300" true }
+            Filter Not Flag "abyssus_rabbit_kills_310" { SetFlag "abyssus_rabbit_kills_310" true }
+            Filter Not Flag "abyssus_rabbit_kills_320" { SetFlag "abyssus_rabbit_kills_320" true }
+            Filter Not Flag "abyssus_rabbit_kills_330" { SetFlag "abyssus_rabbit_kills_330" true }
+            Filter Not Flag "abyssus_rabbit_kills_340" { SetFlag "abyssus_rabbit_kills_340" true }
+            Filter Not Flag "abyssus_rabbit_kills_350" { SetFlag "abyssus_rabbit_kills_350" true }
+            Filter Not Flag "abyssus_rabbit_kills_360" { SetFlag "abyssus_rabbit_kills_360" true }
+            Filter Not Flag "abyssus_rabbit_kills_370" { SetFlag "abyssus_rabbit_kills_370" true }
+            Filter Not Flag "abyssus_rabbit_kills_380" { SetFlag "abyssus_rabbit_kills_380" true }
+            Filter Not Flag "abyssus_rabbit_kills_390" { SetFlag "abyssus_rabbit_kills_390" true }
+            Filter Not Flag "abyssus_rabbit_kills_400" { SetFlag "abyssus_rabbit_kills_400" true }
+            Filter Not Flag "abyssus_rabbit_kills_410" { SetFlag "abyssus_rabbit_kills_410" true }
+            Filter Not Flag "abyssus_rabbit_kills_420" { SetFlag "abyssus_rabbit_kills_420" true }
+            Filter Not Flag "abyssus_rabbit_kills_430" { SetFlag "abyssus_rabbit_kills_430" true }
+            Filter Not Flag "abyssus_rabbit_kills_440" { SetFlag "abyssus_rabbit_kills_440" true }
+            Filter Not Flag "abyssus_rabbit_kills_450" { SetFlag "abyssus_rabbit_kills_450" true }
+            Filter Not Flag "abyssus_rabbit_kills_460" { SetFlag "abyssus_rabbit_kills_460" true }
+            Filter Not Flag "abyssus_rabbit_kills_470" { SetFlag "abyssus_rabbit_kills_470" true }
+            Filter Not Flag "abyssus_rabbit_kills_480" { SetFlag "abyssus_rabbit_kills_480" true }
+            Filter Not Flag "abyssus_rabbit_kills_490" { SetFlag "abyssus_rabbit_kills_490" true }
+            Filter Not Flag "abyssus_rabbit_kills_500" { SetFlag "abyssus_rabbit_kills_500" true }
+            Filter Not Flag "abyssus_rabbit_kills_510" { SetFlag "abyssus_rabbit_kills_510" true }
+            Filter Not Flag "abyssus_rabbit_kills_520" { SetFlag "abyssus_rabbit_kills_520" true }
+            Filter Not Flag "abyssus_rabbit_kills_530" { SetFlag "abyssus_rabbit_kills_530" true }
+            Filter Not Flag "abyssus_rabbit_kills_540" { SetFlag "abyssus_rabbit_kills_540" true }
+            Filter Not Flag "abyssus_rabbit_kills_550" { SetFlag "abyssus_rabbit_kills_550" true }
+            Filter Not Flag "abyssus_rabbit_kills_560" { SetFlag "abyssus_rabbit_kills_560" true }
+            Filter Not Flag "abyssus_rabbit_kills_570" { SetFlag "abyssus_rabbit_kills_570" true }
+            Filter Not Flag "abyssus_rabbit_kills_580" { SetFlag "abyssus_rabbit_kills_580" true }
+            Filter Not Flag "abyssus_rabbit_kills_590" { SetFlag "abyssus_rabbit_kills_590" true }
+            Filter Not Flag "abyssus_rabbit_kills_600" { SetFlag "abyssus_rabbit_kills_600" true }
+            Filter Not Flag "abyssus_rabbit_kills_610" { SetFlag "abyssus_rabbit_kills_610" true }
+            Filter Not Flag "abyssus_rabbit_kills_620" { SetFlag "abyssus_rabbit_kills_620" true }
+            Filter Not Flag "abyssus_rabbit_kills_630" { SetFlag "abyssus_rabbit_kills_630" true }
+            Filter Not Flag "abyssus_rabbit_kills_640" { SetFlag "abyssus_rabbit_kills_640" true }
+            Filter Not Flag "abyssus_rabbit_kills_650" { SetFlag "abyssus_rabbit_kills_650" true }
+            Filter Not Flag "abyssus_rabbit_kills_660" { SetFlag "abyssus_rabbit_kills_660" true }
+            Filter Not Flag "abyssus_rabbit_kills_670" { SetFlag "abyssus_rabbit_kills_670" true }
+            Filter Not Flag "abyssus_rabbit_kills_680" { SetFlag "abyssus_rabbit_kills_680" true }
+            Filter Not Flag "abyssus_rabbit_kills_690" { SetFlag "abyssus_rabbit_kills_690" true }
+            Filter Not Flag "abyssus_rabbit_kills_700" { SetFlag "abyssus_rabbit_kills_700" true }
+            Filter Not Flag "abyssus_rabbit_kills_710" { SetFlag "abyssus_rabbit_kills_710" true }
+            Filter Not Flag "abyssus_rabbit_kills_720" { SetFlag "abyssus_rabbit_kills_720" true }
+            Filter Not Flag "abyssus_rabbit_kills_730" { SetFlag "abyssus_rabbit_kills_730" true }
+            Filter Not Flag "abyssus_rabbit_kills_740" { SetFlag "abyssus_rabbit_kills_740" true }
+            Filter Not Flag "abyssus_rabbit_kills_750" { SetFlag "abyssus_rabbit_kills_750" true }
+            Filter Not Flag "abyssus_rabbit_kills_760" { SetFlag "abyssus_rabbit_kills_760" true }
+            Filter Not Flag "abyssus_rabbit_kills_770" { SetFlag "abyssus_rabbit_kills_770" true }
+            Filter Not Flag "abyssus_rabbit_kills_780" { SetFlag "abyssus_rabbit_kills_780" true }
+            Filter Not Flag "abyssus_rabbit_kills_790" { SetFlag "abyssus_rabbit_kills_790" true }
+            Filter Not Flag "abyssus_rabbit_kills_800" { SetFlag "abyssus_rabbit_kills_800" true }
+            Filter Not Flag "abyssus_rabbit_kills_810" { SetFlag "abyssus_rabbit_kills_810" true }
+            Filter Not Flag "abyssus_rabbit_kills_820" { SetFlag "abyssus_rabbit_kills_820" true }
+            Filter Not Flag "abyssus_rabbit_kills_830" { SetFlag "abyssus_rabbit_kills_830" true }
+            Filter Not Flag "abyssus_rabbit_kills_840" { SetFlag "abyssus_rabbit_kills_840" true }
+            Filter Not Flag "abyssus_rabbit_kills_850" { SetFlag "abyssus_rabbit_kills_850" true }
+            Filter Not Flag "abyssus_rabbit_kills_860" { SetFlag "abyssus_rabbit_kills_860" true }
+            Filter Not Flag "abyssus_rabbit_kills_870" { SetFlag "abyssus_rabbit_kills_870" true }
+            Filter Not Flag "abyssus_rabbit_kills_880" { SetFlag "abyssus_rabbit_kills_880" true }
+            Filter Not Flag "abyssus_rabbit_kills_890" { SetFlag "abyssus_rabbit_kills_890" true }
+            Filter Not Flag "abyssus_rabbit_kills_900" { SetFlag "abyssus_rabbit_kills_900" true }
+            Filter Not Flag "abyssus_rabbit_kills_910" { SetFlag "abyssus_rabbit_kills_910" true }
+            Filter Not Flag "abyssus_rabbit_kills_920" { SetFlag "abyssus_rabbit_kills_920" true }
+            Filter Not Flag "abyssus_rabbit_kills_930" { SetFlag "abyssus_rabbit_kills_930" true }
+            Filter Not Flag "abyssus_rabbit_kills_940" { SetFlag "abyssus_rabbit_kills_940" true }
+            Filter Not Flag "abyssus_rabbit_kills_950" { SetFlag "abyssus_rabbit_kills_950" true }
+            Filter Not Flag "abyssus_rabbit_kills_960" { SetFlag "abyssus_rabbit_kills_960" true }
+            Filter Not Flag "abyssus_rabbit_kills_970" { SetFlag "abyssus_rabbit_kills_970" true }
+            Filter Not Flag "abyssus_rabbit_kills_980" { SetFlag "abyssus_rabbit_kills_980" true }
+            Filter Not Flag "abyssus_rabbit_kills_990" { SetFlag "abyssus_rabbit_kills_990" true }
+            Filter Not Flag "abyssus_rabbit_kills_1000" { SetFlag "abyssus_rabbit_kills_1000" true }
+          }
+        }
+        Filter Flag "abyssus_rabbit_kill_count_9" {
+          SetFlag "abyssus_rabbit_kill_count_10" true
+          SetFlag "abyssus_rabbit_kill_count_9" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_8" {
+          SetFlag "abyssus_rabbit_kill_count_9" true
+          SetFlag "abyssus_rabbit_kill_count_8" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_7" {
+          SetFlag "abyssus_rabbit_kill_count_8" true
+          SetFlag "abyssus_rabbit_kill_count_7" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_6" {
+          SetFlag "abyssus_rabbit_kill_count_7" true
+          SetFlag "abyssus_rabbit_kill_count_6" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_5" {
+          SetFlag "abyssus_rabbit_kill_count_6" true
+          SetFlag "abyssus_rabbit_kill_count_5" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_4" {
+          SetFlag "abyssus_rabbit_kill_count_5" true
+          SetFlag "abyssus_rabbit_kill_count_4" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_3" {
+          SetFlag "abyssus_rabbit_kill_count_4" true
+          SetFlag "abyssus_rabbit_kill_count_3" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_2" {
+          SetFlag "abyssus_rabbit_kill_count_3" true
+          SetFlag "abyssus_rabbit_kill_count_2" false
+        }
+        Filter Not Flag "abyssus_rabbit_kill_count_1" {
+          SetFlag "abyssus_rabbit_kill_count_2" true
+          SetFlag "abyssus_rabbit_kill_count_1" false
+        }
+      }
+    }
+  }
+
+"ABYSSUS_RABBIT_WORKER_MALE_PERM"
+  {
+    viewId = { "abyssus_rabbit_worker_male" }
+    attr = {
+      DAMAGE 12
+      DEFENSE 12
+      DIGGING 25
+    }
+    body = {
+      type = Humanoid MEDIUM
+      material = "ABYSSUS_FLUFFY"
+    }
+    aiType = MELEE
+    noChase = true
+    cantEquip = true
+    permanentEffects = {
+      ABYSSUS_RABBIT_FESTIVALS_EXCITEMENT 1
+      SPEED 1
+      NIGHT_VISION 1
+    }
+    name = {
+      name = "rabbit worker"
+      firstNameGen = "ABYSSUS_RABBIT"
+    }
+    spells = { "abyssus rabbit worker" }
+    chatReactionFriendly = "Oh, a visitor! I hope you don’t mind...a little chaos."
+    chatReactionHostile = "Ready for a hare-raising end, are we?"
+    maxLevelIncrease = {
+      DAMAGE 3
+    }
+    afterKilledSomeone = {
+      FirstSuccessful {
+        Filter Flag "abyssus_rabbit_kill_count_10" {
+          SetFlag "abyssus_rabbit_kill_count_10" false
+          SetFlag "abyssus_rabbit_kill_count_1" false
+          FirstSuccessful {
+            Filter Not Flag "abyssus_rabbit_kills_10" { SetFlag "abyssus_rabbit_kills_10" true }
+            Filter Not Flag "abyssus_rabbit_kills_20" { SetFlag "abyssus_rabbit_kills_20" true }
+            Filter Not Flag "abyssus_rabbit_kills_30" { SetFlag "abyssus_rabbit_kills_30" true }
+            Filter Not Flag "abyssus_rabbit_kills_40" { SetFlag "abyssus_rabbit_kills_40" true }
+            Filter Not Flag "abyssus_rabbit_kills_50" { SetFlag "abyssus_rabbit_kills_50" true }
+            Filter Not Flag "abyssus_rabbit_kills_60" { SetFlag "abyssus_rabbit_kills_60" true }
+            Filter Not Flag "abyssus_rabbit_kills_70" { SetFlag "abyssus_rabbit_kills_70" true }
+            Filter Not Flag "abyssus_rabbit_kills_80" { SetFlag "abyssus_rabbit_kills_80" true }
+            Filter Not Flag "abyssus_rabbit_kills_90" { SetFlag "abyssus_rabbit_kills_90" true }
+            Filter Not Flag "abyssus_rabbit_kills_100" { SetFlag "abyssus_rabbit_kills_100" true }
+            Filter Not Flag "abyssus_rabbit_kills_110" { SetFlag "abyssus_rabbit_kills_110" true }
+            Filter Not Flag "abyssus_rabbit_kills_120" { SetFlag "abyssus_rabbit_kills_120" true }
+            Filter Not Flag "abyssus_rabbit_kills_130" { SetFlag "abyssus_rabbit_kills_130" true }
+            Filter Not Flag "abyssus_rabbit_kills_140" { SetFlag "abyssus_rabbit_kills_140" true }
+            Filter Not Flag "abyssus_rabbit_kills_150" { SetFlag "abyssus_rabbit_kills_150" true }
+            Filter Not Flag "abyssus_rabbit_kills_160" { SetFlag "abyssus_rabbit_kills_160" true }
+            Filter Not Flag "abyssus_rabbit_kills_170" { SetFlag "abyssus_rabbit_kills_170" true }
+            Filter Not Flag "abyssus_rabbit_kills_180" { SetFlag "abyssus_rabbit_kills_180" true }
+            Filter Not Flag "abyssus_rabbit_kills_190" { SetFlag "abyssus_rabbit_kills_190" true }
+            Filter Not Flag "abyssus_rabbit_kills_200" { SetFlag "abyssus_rabbit_kills_200" true }
+            Filter Not Flag "abyssus_rabbit_kills_210" { SetFlag "abyssus_rabbit_kills_210" true }
+            Filter Not Flag "abyssus_rabbit_kills_220" { SetFlag "abyssus_rabbit_kills_220" true }
+            Filter Not Flag "abyssus_rabbit_kills_230" { SetFlag "abyssus_rabbit_kills_230" true }
+            Filter Not Flag "abyssus_rabbit_kills_240" { SetFlag "abyssus_rabbit_kills_240" true }
+            Filter Not Flag "abyssus_rabbit_kills_250" { SetFlag "abyssus_rabbit_kills_250" true }
+            Filter Not Flag "abyssus_rabbit_kills_260" { SetFlag "abyssus_rabbit_kills_260" true }
+            Filter Not Flag "abyssus_rabbit_kills_270" { SetFlag "abyssus_rabbit_kills_270" true }
+            Filter Not Flag "abyssus_rabbit_kills_280" { SetFlag "abyssus_rabbit_kills_280" true }
+            Filter Not Flag "abyssus_rabbit_kills_290" { SetFlag "abyssus_rabbit_kills_290" true }
+            Filter Not Flag "abyssus_rabbit_kills_300" { SetFlag "abyssus_rabbit_kills_300" true }
+            Filter Not Flag "abyssus_rabbit_kills_310" { SetFlag "abyssus_rabbit_kills_310" true }
+            Filter Not Flag "abyssus_rabbit_kills_320" { SetFlag "abyssus_rabbit_kills_320" true }
+            Filter Not Flag "abyssus_rabbit_kills_330" { SetFlag "abyssus_rabbit_kills_330" true }
+            Filter Not Flag "abyssus_rabbit_kills_340" { SetFlag "abyssus_rabbit_kills_340" true }
+            Filter Not Flag "abyssus_rabbit_kills_350" { SetFlag "abyssus_rabbit_kills_350" true }
+            Filter Not Flag "abyssus_rabbit_kills_360" { SetFlag "abyssus_rabbit_kills_360" true }
+            Filter Not Flag "abyssus_rabbit_kills_370" { SetFlag "abyssus_rabbit_kills_370" true }
+            Filter Not Flag "abyssus_rabbit_kills_380" { SetFlag "abyssus_rabbit_kills_380" true }
+            Filter Not Flag "abyssus_rabbit_kills_390" { SetFlag "abyssus_rabbit_kills_390" true }
+            Filter Not Flag "abyssus_rabbit_kills_400" { SetFlag "abyssus_rabbit_kills_400" true }
+            Filter Not Flag "abyssus_rabbit_kills_410" { SetFlag "abyssus_rabbit_kills_410" true }
+            Filter Not Flag "abyssus_rabbit_kills_420" { SetFlag "abyssus_rabbit_kills_420" true }
+            Filter Not Flag "abyssus_rabbit_kills_430" { SetFlag "abyssus_rabbit_kills_430" true }
+            Filter Not Flag "abyssus_rabbit_kills_440" { SetFlag "abyssus_rabbit_kills_440" true }
+            Filter Not Flag "abyssus_rabbit_kills_450" { SetFlag "abyssus_rabbit_kills_450" true }
+            Filter Not Flag "abyssus_rabbit_kills_460" { SetFlag "abyssus_rabbit_kills_460" true }
+            Filter Not Flag "abyssus_rabbit_kills_470" { SetFlag "abyssus_rabbit_kills_470" true }
+            Filter Not Flag "abyssus_rabbit_kills_480" { SetFlag "abyssus_rabbit_kills_480" true }
+            Filter Not Flag "abyssus_rabbit_kills_490" { SetFlag "abyssus_rabbit_kills_490" true }
+            Filter Not Flag "abyssus_rabbit_kills_500" { SetFlag "abyssus_rabbit_kills_500" true }
+            Filter Not Flag "abyssus_rabbit_kills_510" { SetFlag "abyssus_rabbit_kills_510" true }
+            Filter Not Flag "abyssus_rabbit_kills_520" { SetFlag "abyssus_rabbit_kills_520" true }
+            Filter Not Flag "abyssus_rabbit_kills_530" { SetFlag "abyssus_rabbit_kills_530" true }
+            Filter Not Flag "abyssus_rabbit_kills_540" { SetFlag "abyssus_rabbit_kills_540" true }
+            Filter Not Flag "abyssus_rabbit_kills_550" { SetFlag "abyssus_rabbit_kills_550" true }
+            Filter Not Flag "abyssus_rabbit_kills_560" { SetFlag "abyssus_rabbit_kills_560" true }
+            Filter Not Flag "abyssus_rabbit_kills_570" { SetFlag "abyssus_rabbit_kills_570" true }
+            Filter Not Flag "abyssus_rabbit_kills_580" { SetFlag "abyssus_rabbit_kills_580" true }
+            Filter Not Flag "abyssus_rabbit_kills_590" { SetFlag "abyssus_rabbit_kills_590" true }
+            Filter Not Flag "abyssus_rabbit_kills_600" { SetFlag "abyssus_rabbit_kills_600" true }
+            Filter Not Flag "abyssus_rabbit_kills_610" { SetFlag "abyssus_rabbit_kills_610" true }
+            Filter Not Flag "abyssus_rabbit_kills_620" { SetFlag "abyssus_rabbit_kills_620" true }
+            Filter Not Flag "abyssus_rabbit_kills_630" { SetFlag "abyssus_rabbit_kills_630" true }
+            Filter Not Flag "abyssus_rabbit_kills_640" { SetFlag "abyssus_rabbit_kills_640" true }
+            Filter Not Flag "abyssus_rabbit_kills_650" { SetFlag "abyssus_rabbit_kills_650" true }
+            Filter Not Flag "abyssus_rabbit_kills_660" { SetFlag "abyssus_rabbit_kills_660" true }
+            Filter Not Flag "abyssus_rabbit_kills_670" { SetFlag "abyssus_rabbit_kills_670" true }
+            Filter Not Flag "abyssus_rabbit_kills_680" { SetFlag "abyssus_rabbit_kills_680" true }
+            Filter Not Flag "abyssus_rabbit_kills_690" { SetFlag "abyssus_rabbit_kills_690" true }
+            Filter Not Flag "abyssus_rabbit_kills_700" { SetFlag "abyssus_rabbit_kills_700" true }
+            Filter Not Flag "abyssus_rabbit_kills_710" { SetFlag "abyssus_rabbit_kills_710" true }
+            Filter Not Flag "abyssus_rabbit_kills_720" { SetFlag "abyssus_rabbit_kills_720" true }
+            Filter Not Flag "abyssus_rabbit_kills_730" { SetFlag "abyssus_rabbit_kills_730" true }
+            Filter Not Flag "abyssus_rabbit_kills_740" { SetFlag "abyssus_rabbit_kills_740" true }
+            Filter Not Flag "abyssus_rabbit_kills_750" { SetFlag "abyssus_rabbit_kills_750" true }
+            Filter Not Flag "abyssus_rabbit_kills_760" { SetFlag "abyssus_rabbit_kills_760" true }
+            Filter Not Flag "abyssus_rabbit_kills_770" { SetFlag "abyssus_rabbit_kills_770" true }
+            Filter Not Flag "abyssus_rabbit_kills_780" { SetFlag "abyssus_rabbit_kills_780" true }
+            Filter Not Flag "abyssus_rabbit_kills_790" { SetFlag "abyssus_rabbit_kills_790" true }
+            Filter Not Flag "abyssus_rabbit_kills_800" { SetFlag "abyssus_rabbit_kills_800" true }
+            Filter Not Flag "abyssus_rabbit_kills_810" { SetFlag "abyssus_rabbit_kills_810" true }
+            Filter Not Flag "abyssus_rabbit_kills_820" { SetFlag "abyssus_rabbit_kills_820" true }
+            Filter Not Flag "abyssus_rabbit_kills_830" { SetFlag "abyssus_rabbit_kills_830" true }
+            Filter Not Flag "abyssus_rabbit_kills_840" { SetFlag "abyssus_rabbit_kills_840" true }
+            Filter Not Flag "abyssus_rabbit_kills_850" { SetFlag "abyssus_rabbit_kills_850" true }
+            Filter Not Flag "abyssus_rabbit_kills_860" { SetFlag "abyssus_rabbit_kills_860" true }
+            Filter Not Flag "abyssus_rabbit_kills_870" { SetFlag "abyssus_rabbit_kills_870" true }
+            Filter Not Flag "abyssus_rabbit_kills_880" { SetFlag "abyssus_rabbit_kills_880" true }
+            Filter Not Flag "abyssus_rabbit_kills_890" { SetFlag "abyssus_rabbit_kills_890" true }
+            Filter Not Flag "abyssus_rabbit_kills_900" { SetFlag "abyssus_rabbit_kills_900" true }
+            Filter Not Flag "abyssus_rabbit_kills_910" { SetFlag "abyssus_rabbit_kills_910" true }
+            Filter Not Flag "abyssus_rabbit_kills_920" { SetFlag "abyssus_rabbit_kills_920" true }
+            Filter Not Flag "abyssus_rabbit_kills_930" { SetFlag "abyssus_rabbit_kills_930" true }
+            Filter Not Flag "abyssus_rabbit_kills_940" { SetFlag "abyssus_rabbit_kills_940" true }
+            Filter Not Flag "abyssus_rabbit_kills_950" { SetFlag "abyssus_rabbit_kills_950" true }
+            Filter Not Flag "abyssus_rabbit_kills_960" { SetFlag "abyssus_rabbit_kills_960" true }
+            Filter Not Flag "abyssus_rabbit_kills_970" { SetFlag "abyssus_rabbit_kills_970" true }
+            Filter Not Flag "abyssus_rabbit_kills_980" { SetFlag "abyssus_rabbit_kills_980" true }
+            Filter Not Flag "abyssus_rabbit_kills_990" { SetFlag "abyssus_rabbit_kills_990" true }
+            Filter Not Flag "abyssus_rabbit_kills_1000" { SetFlag "abyssus_rabbit_kills_1000" true }
+          }
+        }
+        Filter Flag "abyssus_rabbit_kill_count_9" {
+          SetFlag "abyssus_rabbit_kill_count_10" true
+          SetFlag "abyssus_rabbit_kill_count_9" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_8" {
+          SetFlag "abyssus_rabbit_kill_count_9" true
+          SetFlag "abyssus_rabbit_kill_count_8" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_7" {
+          SetFlag "abyssus_rabbit_kill_count_8" true
+          SetFlag "abyssus_rabbit_kill_count_7" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_6" {
+          SetFlag "abyssus_rabbit_kill_count_7" true
+          SetFlag "abyssus_rabbit_kill_count_6" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_5" {
+          SetFlag "abyssus_rabbit_kill_count_6" true
+          SetFlag "abyssus_rabbit_kill_count_5" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_4" {
+          SetFlag "abyssus_rabbit_kill_count_5" true
+          SetFlag "abyssus_rabbit_kill_count_4" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_3" {
+          SetFlag "abyssus_rabbit_kill_count_4" true
+          SetFlag "abyssus_rabbit_kill_count_3" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_2" {
+          SetFlag "abyssus_rabbit_kill_count_3" true
+          SetFlag "abyssus_rabbit_kill_count_2" false
+        }
+        Filter Not Flag "abyssus_rabbit_kill_count_1" {
+          SetFlag "abyssus_rabbit_kill_count_2" true
+          SetFlag "abyssus_rabbit_kill_count_1" false
+        }
+      }
+    }
+  }
+
+"ABYSSUS_RABBIT_WORKER_FEMALE_PERM"
+  {
+    viewId = { "abyssus_rabbit_worker_female" }
+    attr = {
+      DAMAGE 12
+      DEFENSE 12
+      DIGGING 25
+    }
+    gender = FEMALE
+    body = {
+      type = Humanoid MEDIUM
+      material = "ABYSSUS_FLUFFY"
+    }
+    aiType = MELEE
+    noChase = true
+    cantEquip = true
+    permanentEffects = {
+      ABYSSUS_RABBIT_FESTIVALS_EXCITEMENT 1
+      COPULATION_SKILL 1
+      SPEED 1
+      NIGHT_VISION 1
+    }
+    name = {
+      name = "rabbit worker"
+      firstNameGen = "ABYSSUS_RABBIT"
+    }
+    spells = { "abyssus rabbit worker" }
+    chatReactionFriendly = "What’s this? A friend... or my next trick?"
+    chatReactionHostile = "You’re just in time... for your final act!"
+    maxLevelIncrease = {
+      DAMAGE 3
+    }
+    afterKilledSomeone = {
+      FirstSuccessful {
+        Filter Flag "abyssus_rabbit_kill_count_10" {
+          SetFlag "abyssus_rabbit_kill_count_10" false
+          SetFlag "abyssus_rabbit_kill_count_1" false
+          FirstSuccessful {
+            Filter Not Flag "abyssus_rabbit_kills_10" { SetFlag "abyssus_rabbit_kills_10" true }
+            Filter Not Flag "abyssus_rabbit_kills_20" { SetFlag "abyssus_rabbit_kills_20" true }
+            Filter Not Flag "abyssus_rabbit_kills_30" { SetFlag "abyssus_rabbit_kills_30" true }
+            Filter Not Flag "abyssus_rabbit_kills_40" { SetFlag "abyssus_rabbit_kills_40" true }
+            Filter Not Flag "abyssus_rabbit_kills_50" { SetFlag "abyssus_rabbit_kills_50" true }
+            Filter Not Flag "abyssus_rabbit_kills_60" { SetFlag "abyssus_rabbit_kills_60" true }
+            Filter Not Flag "abyssus_rabbit_kills_70" { SetFlag "abyssus_rabbit_kills_70" true }
+            Filter Not Flag "abyssus_rabbit_kills_80" { SetFlag "abyssus_rabbit_kills_80" true }
+            Filter Not Flag "abyssus_rabbit_kills_90" { SetFlag "abyssus_rabbit_kills_90" true }
+            Filter Not Flag "abyssus_rabbit_kills_100" { SetFlag "abyssus_rabbit_kills_100" true }
+            Filter Not Flag "abyssus_rabbit_kills_110" { SetFlag "abyssus_rabbit_kills_110" true }
+            Filter Not Flag "abyssus_rabbit_kills_120" { SetFlag "abyssus_rabbit_kills_120" true }
+            Filter Not Flag "abyssus_rabbit_kills_130" { SetFlag "abyssus_rabbit_kills_130" true }
+            Filter Not Flag "abyssus_rabbit_kills_140" { SetFlag "abyssus_rabbit_kills_140" true }
+            Filter Not Flag "abyssus_rabbit_kills_150" { SetFlag "abyssus_rabbit_kills_150" true }
+            Filter Not Flag "abyssus_rabbit_kills_160" { SetFlag "abyssus_rabbit_kills_160" true }
+            Filter Not Flag "abyssus_rabbit_kills_170" { SetFlag "abyssus_rabbit_kills_170" true }
+            Filter Not Flag "abyssus_rabbit_kills_180" { SetFlag "abyssus_rabbit_kills_180" true }
+            Filter Not Flag "abyssus_rabbit_kills_190" { SetFlag "abyssus_rabbit_kills_190" true }
+            Filter Not Flag "abyssus_rabbit_kills_200" { SetFlag "abyssus_rabbit_kills_200" true }
+            Filter Not Flag "abyssus_rabbit_kills_210" { SetFlag "abyssus_rabbit_kills_210" true }
+            Filter Not Flag "abyssus_rabbit_kills_220" { SetFlag "abyssus_rabbit_kills_220" true }
+            Filter Not Flag "abyssus_rabbit_kills_230" { SetFlag "abyssus_rabbit_kills_230" true }
+            Filter Not Flag "abyssus_rabbit_kills_240" { SetFlag "abyssus_rabbit_kills_240" true }
+            Filter Not Flag "abyssus_rabbit_kills_250" { SetFlag "abyssus_rabbit_kills_250" true }
+            Filter Not Flag "abyssus_rabbit_kills_260" { SetFlag "abyssus_rabbit_kills_260" true }
+            Filter Not Flag "abyssus_rabbit_kills_270" { SetFlag "abyssus_rabbit_kills_270" true }
+            Filter Not Flag "abyssus_rabbit_kills_280" { SetFlag "abyssus_rabbit_kills_280" true }
+            Filter Not Flag "abyssus_rabbit_kills_290" { SetFlag "abyssus_rabbit_kills_290" true }
+            Filter Not Flag "abyssus_rabbit_kills_300" { SetFlag "abyssus_rabbit_kills_300" true }
+            Filter Not Flag "abyssus_rabbit_kills_310" { SetFlag "abyssus_rabbit_kills_310" true }
+            Filter Not Flag "abyssus_rabbit_kills_320" { SetFlag "abyssus_rabbit_kills_320" true }
+            Filter Not Flag "abyssus_rabbit_kills_330" { SetFlag "abyssus_rabbit_kills_330" true }
+            Filter Not Flag "abyssus_rabbit_kills_340" { SetFlag "abyssus_rabbit_kills_340" true }
+            Filter Not Flag "abyssus_rabbit_kills_350" { SetFlag "abyssus_rabbit_kills_350" true }
+            Filter Not Flag "abyssus_rabbit_kills_360" { SetFlag "abyssus_rabbit_kills_360" true }
+            Filter Not Flag "abyssus_rabbit_kills_370" { SetFlag "abyssus_rabbit_kills_370" true }
+            Filter Not Flag "abyssus_rabbit_kills_380" { SetFlag "abyssus_rabbit_kills_380" true }
+            Filter Not Flag "abyssus_rabbit_kills_390" { SetFlag "abyssus_rabbit_kills_390" true }
+            Filter Not Flag "abyssus_rabbit_kills_400" { SetFlag "abyssus_rabbit_kills_400" true }
+            Filter Not Flag "abyssus_rabbit_kills_410" { SetFlag "abyssus_rabbit_kills_410" true }
+            Filter Not Flag "abyssus_rabbit_kills_420" { SetFlag "abyssus_rabbit_kills_420" true }
+            Filter Not Flag "abyssus_rabbit_kills_430" { SetFlag "abyssus_rabbit_kills_430" true }
+            Filter Not Flag "abyssus_rabbit_kills_440" { SetFlag "abyssus_rabbit_kills_440" true }
+            Filter Not Flag "abyssus_rabbit_kills_450" { SetFlag "abyssus_rabbit_kills_450" true }
+            Filter Not Flag "abyssus_rabbit_kills_460" { SetFlag "abyssus_rabbit_kills_460" true }
+            Filter Not Flag "abyssus_rabbit_kills_470" { SetFlag "abyssus_rabbit_kills_470" true }
+            Filter Not Flag "abyssus_rabbit_kills_480" { SetFlag "abyssus_rabbit_kills_480" true }
+            Filter Not Flag "abyssus_rabbit_kills_490" { SetFlag "abyssus_rabbit_kills_490" true }
+            Filter Not Flag "abyssus_rabbit_kills_500" { SetFlag "abyssus_rabbit_kills_500" true }
+            Filter Not Flag "abyssus_rabbit_kills_510" { SetFlag "abyssus_rabbit_kills_510" true }
+            Filter Not Flag "abyssus_rabbit_kills_520" { SetFlag "abyssus_rabbit_kills_520" true }
+            Filter Not Flag "abyssus_rabbit_kills_530" { SetFlag "abyssus_rabbit_kills_530" true }
+            Filter Not Flag "abyssus_rabbit_kills_540" { SetFlag "abyssus_rabbit_kills_540" true }
+            Filter Not Flag "abyssus_rabbit_kills_550" { SetFlag "abyssus_rabbit_kills_550" true }
+            Filter Not Flag "abyssus_rabbit_kills_560" { SetFlag "abyssus_rabbit_kills_560" true }
+            Filter Not Flag "abyssus_rabbit_kills_570" { SetFlag "abyssus_rabbit_kills_570" true }
+            Filter Not Flag "abyssus_rabbit_kills_580" { SetFlag "abyssus_rabbit_kills_580" true }
+            Filter Not Flag "abyssus_rabbit_kills_590" { SetFlag "abyssus_rabbit_kills_590" true }
+            Filter Not Flag "abyssus_rabbit_kills_600" { SetFlag "abyssus_rabbit_kills_600" true }
+            Filter Not Flag "abyssus_rabbit_kills_610" { SetFlag "abyssus_rabbit_kills_610" true }
+            Filter Not Flag "abyssus_rabbit_kills_620" { SetFlag "abyssus_rabbit_kills_620" true }
+            Filter Not Flag "abyssus_rabbit_kills_630" { SetFlag "abyssus_rabbit_kills_630" true }
+            Filter Not Flag "abyssus_rabbit_kills_640" { SetFlag "abyssus_rabbit_kills_640" true }
+            Filter Not Flag "abyssus_rabbit_kills_650" { SetFlag "abyssus_rabbit_kills_650" true }
+            Filter Not Flag "abyssus_rabbit_kills_660" { SetFlag "abyssus_rabbit_kills_660" true }
+            Filter Not Flag "abyssus_rabbit_kills_670" { SetFlag "abyssus_rabbit_kills_670" true }
+            Filter Not Flag "abyssus_rabbit_kills_680" { SetFlag "abyssus_rabbit_kills_680" true }
+            Filter Not Flag "abyssus_rabbit_kills_690" { SetFlag "abyssus_rabbit_kills_690" true }
+            Filter Not Flag "abyssus_rabbit_kills_700" { SetFlag "abyssus_rabbit_kills_700" true }
+            Filter Not Flag "abyssus_rabbit_kills_710" { SetFlag "abyssus_rabbit_kills_710" true }
+            Filter Not Flag "abyssus_rabbit_kills_720" { SetFlag "abyssus_rabbit_kills_720" true }
+            Filter Not Flag "abyssus_rabbit_kills_730" { SetFlag "abyssus_rabbit_kills_730" true }
+            Filter Not Flag "abyssus_rabbit_kills_740" { SetFlag "abyssus_rabbit_kills_740" true }
+            Filter Not Flag "abyssus_rabbit_kills_750" { SetFlag "abyssus_rabbit_kills_750" true }
+            Filter Not Flag "abyssus_rabbit_kills_760" { SetFlag "abyssus_rabbit_kills_760" true }
+            Filter Not Flag "abyssus_rabbit_kills_770" { SetFlag "abyssus_rabbit_kills_770" true }
+            Filter Not Flag "abyssus_rabbit_kills_780" { SetFlag "abyssus_rabbit_kills_780" true }
+            Filter Not Flag "abyssus_rabbit_kills_790" { SetFlag "abyssus_rabbit_kills_790" true }
+            Filter Not Flag "abyssus_rabbit_kills_800" { SetFlag "abyssus_rabbit_kills_800" true }
+            Filter Not Flag "abyssus_rabbit_kills_810" { SetFlag "abyssus_rabbit_kills_810" true }
+            Filter Not Flag "abyssus_rabbit_kills_820" { SetFlag "abyssus_rabbit_kills_820" true }
+            Filter Not Flag "abyssus_rabbit_kills_830" { SetFlag "abyssus_rabbit_kills_830" true }
+            Filter Not Flag "abyssus_rabbit_kills_840" { SetFlag "abyssus_rabbit_kills_840" true }
+            Filter Not Flag "abyssus_rabbit_kills_850" { SetFlag "abyssus_rabbit_kills_850" true }
+            Filter Not Flag "abyssus_rabbit_kills_860" { SetFlag "abyssus_rabbit_kills_860" true }
+            Filter Not Flag "abyssus_rabbit_kills_870" { SetFlag "abyssus_rabbit_kills_870" true }
+            Filter Not Flag "abyssus_rabbit_kills_880" { SetFlag "abyssus_rabbit_kills_880" true }
+            Filter Not Flag "abyssus_rabbit_kills_890" { SetFlag "abyssus_rabbit_kills_890" true }
+            Filter Not Flag "abyssus_rabbit_kills_900" { SetFlag "abyssus_rabbit_kills_900" true }
+            Filter Not Flag "abyssus_rabbit_kills_910" { SetFlag "abyssus_rabbit_kills_910" true }
+            Filter Not Flag "abyssus_rabbit_kills_920" { SetFlag "abyssus_rabbit_kills_920" true }
+            Filter Not Flag "abyssus_rabbit_kills_930" { SetFlag "abyssus_rabbit_kills_930" true }
+            Filter Not Flag "abyssus_rabbit_kills_940" { SetFlag "abyssus_rabbit_kills_940" true }
+            Filter Not Flag "abyssus_rabbit_kills_950" { SetFlag "abyssus_rabbit_kills_950" true }
+            Filter Not Flag "abyssus_rabbit_kills_960" { SetFlag "abyssus_rabbit_kills_960" true }
+            Filter Not Flag "abyssus_rabbit_kills_970" { SetFlag "abyssus_rabbit_kills_970" true }
+            Filter Not Flag "abyssus_rabbit_kills_980" { SetFlag "abyssus_rabbit_kills_980" true }
+            Filter Not Flag "abyssus_rabbit_kills_990" { SetFlag "abyssus_rabbit_kills_990" true }
+            Filter Not Flag "abyssus_rabbit_kills_1000" { SetFlag "abyssus_rabbit_kills_1000" true }
+          }
+        }
+        Filter Flag "abyssus_rabbit_kill_count_9" {
+          SetFlag "abyssus_rabbit_kill_count_10" true
+          SetFlag "abyssus_rabbit_kill_count_9" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_8" {
+          SetFlag "abyssus_rabbit_kill_count_9" true
+          SetFlag "abyssus_rabbit_kill_count_8" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_7" {
+          SetFlag "abyssus_rabbit_kill_count_8" true
+          SetFlag "abyssus_rabbit_kill_count_7" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_6" {
+          SetFlag "abyssus_rabbit_kill_count_7" true
+          SetFlag "abyssus_rabbit_kill_count_6" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_5" {
+          SetFlag "abyssus_rabbit_kill_count_6" true
+          SetFlag "abyssus_rabbit_kill_count_5" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_4" {
+          SetFlag "abyssus_rabbit_kill_count_5" true
+          SetFlag "abyssus_rabbit_kill_count_4" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_3" {
+          SetFlag "abyssus_rabbit_kill_count_4" true
+          SetFlag "abyssus_rabbit_kill_count_3" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_2" {
+          SetFlag "abyssus_rabbit_kill_count_3" true
+          SetFlag "abyssus_rabbit_kill_count_2" false
+        }
+        Filter Not Flag "abyssus_rabbit_kill_count_1" {
+          SetFlag "abyssus_rabbit_kill_count_2" true
+          SetFlag "abyssus_rabbit_kill_count_1" false
+        }
+      }
+    }
+  }
+
+"ABYSSUS_RABBIT_ACROBAT"
+  {
+    viewId = { "abyssus_rabbit_acrobat" }
+    attr = {
+      DAMAGE 22
+      DEFENSE 20
+      FORGE 10
+      FURNACE 10
+    }
+    body = {
+      type = Humanoid MEDIUM
+      material = "ABYSSUS_FLUFFY"
+      intrinsicAttacks = {
+        ARM  {{ itemType = { Intrinsic { "claws_attack" } "sickle" 8 { attackType = CUT attackMsg = SWING }} isExtraAttack = true }}
+      }
+    }
+    aiType = MELEE
+    permanentEffects = {
+      ABYSSUS_RABBIT_FESTIVALS_EXCITEMENT 1
+      SPEED 1
+      NIGHT_VISION 1
+    }
+    name = {
+      name = "rabbit acrobat"
+      firstNameGen = "ABYSSUS_RABBIT"
+    }
+    chatReactionFriendly = "Oh-ho! I sense fear... delightful!"
+    chatReactionHostile = "The more you squirm, the more fun we have!"
+    maxLevelIncrease = {
+      DAMAGE 7
+    }
+    spellSchools = { "abyssus rabbit acrobat" }
+    afterKilledSomeone = {
+      FirstSuccessful {
+        Filter Flag "abyssus_rabbit_kill_count_10" {
+          SetFlag "abyssus_rabbit_kill_count_10" false
+          SetFlag "abyssus_rabbit_kill_count_1" false
+          FirstSuccessful {
+            Filter Not Flag "abyssus_rabbit_kills_10" { SetFlag "abyssus_rabbit_kills_10" true }
+            Filter Not Flag "abyssus_rabbit_kills_20" { SetFlag "abyssus_rabbit_kills_20" true }
+            Filter Not Flag "abyssus_rabbit_kills_30" { SetFlag "abyssus_rabbit_kills_30" true }
+            Filter Not Flag "abyssus_rabbit_kills_40" { SetFlag "abyssus_rabbit_kills_40" true }
+            Filter Not Flag "abyssus_rabbit_kills_50" { SetFlag "abyssus_rabbit_kills_50" true }
+            Filter Not Flag "abyssus_rabbit_kills_60" { SetFlag "abyssus_rabbit_kills_60" true }
+            Filter Not Flag "abyssus_rabbit_kills_70" { SetFlag "abyssus_rabbit_kills_70" true }
+            Filter Not Flag "abyssus_rabbit_kills_80" { SetFlag "abyssus_rabbit_kills_80" true }
+            Filter Not Flag "abyssus_rabbit_kills_90" { SetFlag "abyssus_rabbit_kills_90" true }
+            Filter Not Flag "abyssus_rabbit_kills_100" { SetFlag "abyssus_rabbit_kills_100" true }
+            Filter Not Flag "abyssus_rabbit_kills_110" { SetFlag "abyssus_rabbit_kills_110" true }
+            Filter Not Flag "abyssus_rabbit_kills_120" { SetFlag "abyssus_rabbit_kills_120" true }
+            Filter Not Flag "abyssus_rabbit_kills_130" { SetFlag "abyssus_rabbit_kills_130" true }
+            Filter Not Flag "abyssus_rabbit_kills_140" { SetFlag "abyssus_rabbit_kills_140" true }
+            Filter Not Flag "abyssus_rabbit_kills_150" { SetFlag "abyssus_rabbit_kills_150" true }
+            Filter Not Flag "abyssus_rabbit_kills_160" { SetFlag "abyssus_rabbit_kills_160" true }
+            Filter Not Flag "abyssus_rabbit_kills_170" { SetFlag "abyssus_rabbit_kills_170" true }
+            Filter Not Flag "abyssus_rabbit_kills_180" { SetFlag "abyssus_rabbit_kills_180" true }
+            Filter Not Flag "abyssus_rabbit_kills_190" { SetFlag "abyssus_rabbit_kills_190" true }
+            Filter Not Flag "abyssus_rabbit_kills_200" { SetFlag "abyssus_rabbit_kills_200" true }
+            Filter Not Flag "abyssus_rabbit_kills_210" { SetFlag "abyssus_rabbit_kills_210" true }
+            Filter Not Flag "abyssus_rabbit_kills_220" { SetFlag "abyssus_rabbit_kills_220" true }
+            Filter Not Flag "abyssus_rabbit_kills_230" { SetFlag "abyssus_rabbit_kills_230" true }
+            Filter Not Flag "abyssus_rabbit_kills_240" { SetFlag "abyssus_rabbit_kills_240" true }
+            Filter Not Flag "abyssus_rabbit_kills_250" { SetFlag "abyssus_rabbit_kills_250" true }
+            Filter Not Flag "abyssus_rabbit_kills_260" { SetFlag "abyssus_rabbit_kills_260" true }
+            Filter Not Flag "abyssus_rabbit_kills_270" { SetFlag "abyssus_rabbit_kills_270" true }
+            Filter Not Flag "abyssus_rabbit_kills_280" { SetFlag "abyssus_rabbit_kills_280" true }
+            Filter Not Flag "abyssus_rabbit_kills_290" { SetFlag "abyssus_rabbit_kills_290" true }
+            Filter Not Flag "abyssus_rabbit_kills_300" { SetFlag "abyssus_rabbit_kills_300" true }
+            Filter Not Flag "abyssus_rabbit_kills_310" { SetFlag "abyssus_rabbit_kills_310" true }
+            Filter Not Flag "abyssus_rabbit_kills_320" { SetFlag "abyssus_rabbit_kills_320" true }
+            Filter Not Flag "abyssus_rabbit_kills_330" { SetFlag "abyssus_rabbit_kills_330" true }
+            Filter Not Flag "abyssus_rabbit_kills_340" { SetFlag "abyssus_rabbit_kills_340" true }
+            Filter Not Flag "abyssus_rabbit_kills_350" { SetFlag "abyssus_rabbit_kills_350" true }
+            Filter Not Flag "abyssus_rabbit_kills_360" { SetFlag "abyssus_rabbit_kills_360" true }
+            Filter Not Flag "abyssus_rabbit_kills_370" { SetFlag "abyssus_rabbit_kills_370" true }
+            Filter Not Flag "abyssus_rabbit_kills_380" { SetFlag "abyssus_rabbit_kills_380" true }
+            Filter Not Flag "abyssus_rabbit_kills_390" { SetFlag "abyssus_rabbit_kills_390" true }
+            Filter Not Flag "abyssus_rabbit_kills_400" { SetFlag "abyssus_rabbit_kills_400" true }
+            Filter Not Flag "abyssus_rabbit_kills_410" { SetFlag "abyssus_rabbit_kills_410" true }
+            Filter Not Flag "abyssus_rabbit_kills_420" { SetFlag "abyssus_rabbit_kills_420" true }
+            Filter Not Flag "abyssus_rabbit_kills_430" { SetFlag "abyssus_rabbit_kills_430" true }
+            Filter Not Flag "abyssus_rabbit_kills_440" { SetFlag "abyssus_rabbit_kills_440" true }
+            Filter Not Flag "abyssus_rabbit_kills_450" { SetFlag "abyssus_rabbit_kills_450" true }
+            Filter Not Flag "abyssus_rabbit_kills_460" { SetFlag "abyssus_rabbit_kills_460" true }
+            Filter Not Flag "abyssus_rabbit_kills_470" { SetFlag "abyssus_rabbit_kills_470" true }
+            Filter Not Flag "abyssus_rabbit_kills_480" { SetFlag "abyssus_rabbit_kills_480" true }
+            Filter Not Flag "abyssus_rabbit_kills_490" { SetFlag "abyssus_rabbit_kills_490" true }
+            Filter Not Flag "abyssus_rabbit_kills_500" { SetFlag "abyssus_rabbit_kills_500" true }
+            Filter Not Flag "abyssus_rabbit_kills_510" { SetFlag "abyssus_rabbit_kills_510" true }
+            Filter Not Flag "abyssus_rabbit_kills_520" { SetFlag "abyssus_rabbit_kills_520" true }
+            Filter Not Flag "abyssus_rabbit_kills_530" { SetFlag "abyssus_rabbit_kills_530" true }
+            Filter Not Flag "abyssus_rabbit_kills_540" { SetFlag "abyssus_rabbit_kills_540" true }
+            Filter Not Flag "abyssus_rabbit_kills_550" { SetFlag "abyssus_rabbit_kills_550" true }
+            Filter Not Flag "abyssus_rabbit_kills_560" { SetFlag "abyssus_rabbit_kills_560" true }
+            Filter Not Flag "abyssus_rabbit_kills_570" { SetFlag "abyssus_rabbit_kills_570" true }
+            Filter Not Flag "abyssus_rabbit_kills_580" { SetFlag "abyssus_rabbit_kills_580" true }
+            Filter Not Flag "abyssus_rabbit_kills_590" { SetFlag "abyssus_rabbit_kills_590" true }
+            Filter Not Flag "abyssus_rabbit_kills_600" { SetFlag "abyssus_rabbit_kills_600" true }
+            Filter Not Flag "abyssus_rabbit_kills_610" { SetFlag "abyssus_rabbit_kills_610" true }
+            Filter Not Flag "abyssus_rabbit_kills_620" { SetFlag "abyssus_rabbit_kills_620" true }
+            Filter Not Flag "abyssus_rabbit_kills_630" { SetFlag "abyssus_rabbit_kills_630" true }
+            Filter Not Flag "abyssus_rabbit_kills_640" { SetFlag "abyssus_rabbit_kills_640" true }
+            Filter Not Flag "abyssus_rabbit_kills_650" { SetFlag "abyssus_rabbit_kills_650" true }
+            Filter Not Flag "abyssus_rabbit_kills_660" { SetFlag "abyssus_rabbit_kills_660" true }
+            Filter Not Flag "abyssus_rabbit_kills_670" { SetFlag "abyssus_rabbit_kills_670" true }
+            Filter Not Flag "abyssus_rabbit_kills_680" { SetFlag "abyssus_rabbit_kills_680" true }
+            Filter Not Flag "abyssus_rabbit_kills_690" { SetFlag "abyssus_rabbit_kills_690" true }
+            Filter Not Flag "abyssus_rabbit_kills_700" { SetFlag "abyssus_rabbit_kills_700" true }
+            Filter Not Flag "abyssus_rabbit_kills_710" { SetFlag "abyssus_rabbit_kills_710" true }
+            Filter Not Flag "abyssus_rabbit_kills_720" { SetFlag "abyssus_rabbit_kills_720" true }
+            Filter Not Flag "abyssus_rabbit_kills_730" { SetFlag "abyssus_rabbit_kills_730" true }
+            Filter Not Flag "abyssus_rabbit_kills_740" { SetFlag "abyssus_rabbit_kills_740" true }
+            Filter Not Flag "abyssus_rabbit_kills_750" { SetFlag "abyssus_rabbit_kills_750" true }
+            Filter Not Flag "abyssus_rabbit_kills_760" { SetFlag "abyssus_rabbit_kills_760" true }
+            Filter Not Flag "abyssus_rabbit_kills_770" { SetFlag "abyssus_rabbit_kills_770" true }
+            Filter Not Flag "abyssus_rabbit_kills_780" { SetFlag "abyssus_rabbit_kills_780" true }
+            Filter Not Flag "abyssus_rabbit_kills_790" { SetFlag "abyssus_rabbit_kills_790" true }
+            Filter Not Flag "abyssus_rabbit_kills_800" { SetFlag "abyssus_rabbit_kills_800" true }
+            Filter Not Flag "abyssus_rabbit_kills_810" { SetFlag "abyssus_rabbit_kills_810" true }
+            Filter Not Flag "abyssus_rabbit_kills_820" { SetFlag "abyssus_rabbit_kills_820" true }
+            Filter Not Flag "abyssus_rabbit_kills_830" { SetFlag "abyssus_rabbit_kills_830" true }
+            Filter Not Flag "abyssus_rabbit_kills_840" { SetFlag "abyssus_rabbit_kills_840" true }
+            Filter Not Flag "abyssus_rabbit_kills_850" { SetFlag "abyssus_rabbit_kills_850" true }
+            Filter Not Flag "abyssus_rabbit_kills_860" { SetFlag "abyssus_rabbit_kills_860" true }
+            Filter Not Flag "abyssus_rabbit_kills_870" { SetFlag "abyssus_rabbit_kills_870" true }
+            Filter Not Flag "abyssus_rabbit_kills_880" { SetFlag "abyssus_rabbit_kills_880" true }
+            Filter Not Flag "abyssus_rabbit_kills_890" { SetFlag "abyssus_rabbit_kills_890" true }
+            Filter Not Flag "abyssus_rabbit_kills_900" { SetFlag "abyssus_rabbit_kills_900" true }
+            Filter Not Flag "abyssus_rabbit_kills_910" { SetFlag "abyssus_rabbit_kills_910" true }
+            Filter Not Flag "abyssus_rabbit_kills_920" { SetFlag "abyssus_rabbit_kills_920" true }
+            Filter Not Flag "abyssus_rabbit_kills_930" { SetFlag "abyssus_rabbit_kills_930" true }
+            Filter Not Flag "abyssus_rabbit_kills_940" { SetFlag "abyssus_rabbit_kills_940" true }
+            Filter Not Flag "abyssus_rabbit_kills_950" { SetFlag "abyssus_rabbit_kills_950" true }
+            Filter Not Flag "abyssus_rabbit_kills_960" { SetFlag "abyssus_rabbit_kills_960" true }
+            Filter Not Flag "abyssus_rabbit_kills_970" { SetFlag "abyssus_rabbit_kills_970" true }
+            Filter Not Flag "abyssus_rabbit_kills_980" { SetFlag "abyssus_rabbit_kills_980" true }
+            Filter Not Flag "abyssus_rabbit_kills_990" { SetFlag "abyssus_rabbit_kills_990" true }
+            Filter Not Flag "abyssus_rabbit_kills_1000" { SetFlag "abyssus_rabbit_kills_1000" true }
+          }
+        }
+        Filter Flag "abyssus_rabbit_kill_count_9" {
+          SetFlag "abyssus_rabbit_kill_count_10" true
+          SetFlag "abyssus_rabbit_kill_count_9" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_8" {
+          SetFlag "abyssus_rabbit_kill_count_9" true
+          SetFlag "abyssus_rabbit_kill_count_8" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_7" {
+          SetFlag "abyssus_rabbit_kill_count_8" true
+          SetFlag "abyssus_rabbit_kill_count_7" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_6" {
+          SetFlag "abyssus_rabbit_kill_count_7" true
+          SetFlag "abyssus_rabbit_kill_count_6" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_5" {
+          SetFlag "abyssus_rabbit_kill_count_6" true
+          SetFlag "abyssus_rabbit_kill_count_5" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_4" {
+          SetFlag "abyssus_rabbit_kill_count_5" true
+          SetFlag "abyssus_rabbit_kill_count_4" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_3" {
+          SetFlag "abyssus_rabbit_kill_count_4" true
+          SetFlag "abyssus_rabbit_kill_count_3" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_2" {
+          SetFlag "abyssus_rabbit_kill_count_3" true
+          SetFlag "abyssus_rabbit_kill_count_2" false
+        }
+        Filter Not Flag "abyssus_rabbit_kill_count_1" {
+          SetFlag "abyssus_rabbit_kill_count_2" true
+          SetFlag "abyssus_rabbit_kill_count_1" false
+        }
+      }
+    }
+  }
+
+"ABYSSUS_RABBIT_CLOWN"
+  {
+    viewId = { "abyssus_rabbit_clown" }
+    attr = {
+      DAMAGE 27
+      DEFENSE 15
+      MULTI_WEAPON 20
+      WORKSHOP 15
+    }
+    gender = FEMALE
+    body = {
+      type = Humanoid MEDIUM
+      material = "ABYSSUS_FLUFFY"
+      intrinsicAttacks = {
+        ARM  {{ itemType = { Intrinsic { "claws_attack" } "dagger" 8 { attackType = CUT attackMsg = SWING }} isExtraAttack = true }}
+      }
+    }
+    aiType = MELEE
+    permanentEffects = {
+      ABYSSUS_RABBIT_FESTIVALS_EXCITEMENT 1
+      COPULATION_SKILL 1
+      SPEED 1
+      NIGHT_VISION 1
+    }
+    name = {
+      name = "rabbit clown"
+      firstNameGen = "ABYSSUS_RABBIT"
+    }
+    spellSchools = { "abyssus rabbit clown" }
+    chatReactionFriendly = "Welcome to my show! Careful where you step, friend."
+    chatReactionHostile = "Your fate’s sealed, little one. Shall we dance?"
+    maxLevelIncrease = {
+      DAMAGE 7
+    }
+    afterKilledSomeone = {
+      FirstSuccessful {
+        Filter Flag "abyssus_rabbit_kill_count_10" {
+          SetFlag "abyssus_rabbit_kill_count_10" false
+          SetFlag "abyssus_rabbit_kill_count_1" false
+          FirstSuccessful {
+            Filter Not Flag "abyssus_rabbit_kills_10" { SetFlag "abyssus_rabbit_kills_10" true }
+            Filter Not Flag "abyssus_rabbit_kills_20" { SetFlag "abyssus_rabbit_kills_20" true }
+            Filter Not Flag "abyssus_rabbit_kills_30" { SetFlag "abyssus_rabbit_kills_30" true }
+            Filter Not Flag "abyssus_rabbit_kills_40" { SetFlag "abyssus_rabbit_kills_40" true }
+            Filter Not Flag "abyssus_rabbit_kills_50" { SetFlag "abyssus_rabbit_kills_50" true }
+            Filter Not Flag "abyssus_rabbit_kills_60" { SetFlag "abyssus_rabbit_kills_60" true }
+            Filter Not Flag "abyssus_rabbit_kills_70" { SetFlag "abyssus_rabbit_kills_70" true }
+            Filter Not Flag "abyssus_rabbit_kills_80" { SetFlag "abyssus_rabbit_kills_80" true }
+            Filter Not Flag "abyssus_rabbit_kills_90" { SetFlag "abyssus_rabbit_kills_90" true }
+            Filter Not Flag "abyssus_rabbit_kills_100" { SetFlag "abyssus_rabbit_kills_100" true }
+            Filter Not Flag "abyssus_rabbit_kills_110" { SetFlag "abyssus_rabbit_kills_110" true }
+            Filter Not Flag "abyssus_rabbit_kills_120" { SetFlag "abyssus_rabbit_kills_120" true }
+            Filter Not Flag "abyssus_rabbit_kills_130" { SetFlag "abyssus_rabbit_kills_130" true }
+            Filter Not Flag "abyssus_rabbit_kills_140" { SetFlag "abyssus_rabbit_kills_140" true }
+            Filter Not Flag "abyssus_rabbit_kills_150" { SetFlag "abyssus_rabbit_kills_150" true }
+            Filter Not Flag "abyssus_rabbit_kills_160" { SetFlag "abyssus_rabbit_kills_160" true }
+            Filter Not Flag "abyssus_rabbit_kills_170" { SetFlag "abyssus_rabbit_kills_170" true }
+            Filter Not Flag "abyssus_rabbit_kills_180" { SetFlag "abyssus_rabbit_kills_180" true }
+            Filter Not Flag "abyssus_rabbit_kills_190" { SetFlag "abyssus_rabbit_kills_190" true }
+            Filter Not Flag "abyssus_rabbit_kills_200" { SetFlag "abyssus_rabbit_kills_200" true }
+            Filter Not Flag "abyssus_rabbit_kills_210" { SetFlag "abyssus_rabbit_kills_210" true }
+            Filter Not Flag "abyssus_rabbit_kills_220" { SetFlag "abyssus_rabbit_kills_220" true }
+            Filter Not Flag "abyssus_rabbit_kills_230" { SetFlag "abyssus_rabbit_kills_230" true }
+            Filter Not Flag "abyssus_rabbit_kills_240" { SetFlag "abyssus_rabbit_kills_240" true }
+            Filter Not Flag "abyssus_rabbit_kills_250" { SetFlag "abyssus_rabbit_kills_250" true }
+            Filter Not Flag "abyssus_rabbit_kills_260" { SetFlag "abyssus_rabbit_kills_260" true }
+            Filter Not Flag "abyssus_rabbit_kills_270" { SetFlag "abyssus_rabbit_kills_270" true }
+            Filter Not Flag "abyssus_rabbit_kills_280" { SetFlag "abyssus_rabbit_kills_280" true }
+            Filter Not Flag "abyssus_rabbit_kills_290" { SetFlag "abyssus_rabbit_kills_290" true }
+            Filter Not Flag "abyssus_rabbit_kills_300" { SetFlag "abyssus_rabbit_kills_300" true }
+            Filter Not Flag "abyssus_rabbit_kills_310" { SetFlag "abyssus_rabbit_kills_310" true }
+            Filter Not Flag "abyssus_rabbit_kills_320" { SetFlag "abyssus_rabbit_kills_320" true }
+            Filter Not Flag "abyssus_rabbit_kills_330" { SetFlag "abyssus_rabbit_kills_330" true }
+            Filter Not Flag "abyssus_rabbit_kills_340" { SetFlag "abyssus_rabbit_kills_340" true }
+            Filter Not Flag "abyssus_rabbit_kills_350" { SetFlag "abyssus_rabbit_kills_350" true }
+            Filter Not Flag "abyssus_rabbit_kills_360" { SetFlag "abyssus_rabbit_kills_360" true }
+            Filter Not Flag "abyssus_rabbit_kills_370" { SetFlag "abyssus_rabbit_kills_370" true }
+            Filter Not Flag "abyssus_rabbit_kills_380" { SetFlag "abyssus_rabbit_kills_380" true }
+            Filter Not Flag "abyssus_rabbit_kills_390" { SetFlag "abyssus_rabbit_kills_390" true }
+            Filter Not Flag "abyssus_rabbit_kills_400" { SetFlag "abyssus_rabbit_kills_400" true }
+            Filter Not Flag "abyssus_rabbit_kills_410" { SetFlag "abyssus_rabbit_kills_410" true }
+            Filter Not Flag "abyssus_rabbit_kills_420" { SetFlag "abyssus_rabbit_kills_420" true }
+            Filter Not Flag "abyssus_rabbit_kills_430" { SetFlag "abyssus_rabbit_kills_430" true }
+            Filter Not Flag "abyssus_rabbit_kills_440" { SetFlag "abyssus_rabbit_kills_440" true }
+            Filter Not Flag "abyssus_rabbit_kills_450" { SetFlag "abyssus_rabbit_kills_450" true }
+            Filter Not Flag "abyssus_rabbit_kills_460" { SetFlag "abyssus_rabbit_kills_460" true }
+            Filter Not Flag "abyssus_rabbit_kills_470" { SetFlag "abyssus_rabbit_kills_470" true }
+            Filter Not Flag "abyssus_rabbit_kills_480" { SetFlag "abyssus_rabbit_kills_480" true }
+            Filter Not Flag "abyssus_rabbit_kills_490" { SetFlag "abyssus_rabbit_kills_490" true }
+            Filter Not Flag "abyssus_rabbit_kills_500" { SetFlag "abyssus_rabbit_kills_500" true }
+            Filter Not Flag "abyssus_rabbit_kills_510" { SetFlag "abyssus_rabbit_kills_510" true }
+            Filter Not Flag "abyssus_rabbit_kills_520" { SetFlag "abyssus_rabbit_kills_520" true }
+            Filter Not Flag "abyssus_rabbit_kills_530" { SetFlag "abyssus_rabbit_kills_530" true }
+            Filter Not Flag "abyssus_rabbit_kills_540" { SetFlag "abyssus_rabbit_kills_540" true }
+            Filter Not Flag "abyssus_rabbit_kills_550" { SetFlag "abyssus_rabbit_kills_550" true }
+            Filter Not Flag "abyssus_rabbit_kills_560" { SetFlag "abyssus_rabbit_kills_560" true }
+            Filter Not Flag "abyssus_rabbit_kills_570" { SetFlag "abyssus_rabbit_kills_570" true }
+            Filter Not Flag "abyssus_rabbit_kills_580" { SetFlag "abyssus_rabbit_kills_580" true }
+            Filter Not Flag "abyssus_rabbit_kills_590" { SetFlag "abyssus_rabbit_kills_590" true }
+            Filter Not Flag "abyssus_rabbit_kills_600" { SetFlag "abyssus_rabbit_kills_600" true }
+            Filter Not Flag "abyssus_rabbit_kills_610" { SetFlag "abyssus_rabbit_kills_610" true }
+            Filter Not Flag "abyssus_rabbit_kills_620" { SetFlag "abyssus_rabbit_kills_620" true }
+            Filter Not Flag "abyssus_rabbit_kills_630" { SetFlag "abyssus_rabbit_kills_630" true }
+            Filter Not Flag "abyssus_rabbit_kills_640" { SetFlag "abyssus_rabbit_kills_640" true }
+            Filter Not Flag "abyssus_rabbit_kills_650" { SetFlag "abyssus_rabbit_kills_650" true }
+            Filter Not Flag "abyssus_rabbit_kills_660" { SetFlag "abyssus_rabbit_kills_660" true }
+            Filter Not Flag "abyssus_rabbit_kills_670" { SetFlag "abyssus_rabbit_kills_670" true }
+            Filter Not Flag "abyssus_rabbit_kills_680" { SetFlag "abyssus_rabbit_kills_680" true }
+            Filter Not Flag "abyssus_rabbit_kills_690" { SetFlag "abyssus_rabbit_kills_690" true }
+            Filter Not Flag "abyssus_rabbit_kills_700" { SetFlag "abyssus_rabbit_kills_700" true }
+            Filter Not Flag "abyssus_rabbit_kills_710" { SetFlag "abyssus_rabbit_kills_710" true }
+            Filter Not Flag "abyssus_rabbit_kills_720" { SetFlag "abyssus_rabbit_kills_720" true }
+            Filter Not Flag "abyssus_rabbit_kills_730" { SetFlag "abyssus_rabbit_kills_730" true }
+            Filter Not Flag "abyssus_rabbit_kills_740" { SetFlag "abyssus_rabbit_kills_740" true }
+            Filter Not Flag "abyssus_rabbit_kills_750" { SetFlag "abyssus_rabbit_kills_750" true }
+            Filter Not Flag "abyssus_rabbit_kills_760" { SetFlag "abyssus_rabbit_kills_760" true }
+            Filter Not Flag "abyssus_rabbit_kills_770" { SetFlag "abyssus_rabbit_kills_770" true }
+            Filter Not Flag "abyssus_rabbit_kills_780" { SetFlag "abyssus_rabbit_kills_780" true }
+            Filter Not Flag "abyssus_rabbit_kills_790" { SetFlag "abyssus_rabbit_kills_790" true }
+            Filter Not Flag "abyssus_rabbit_kills_800" { SetFlag "abyssus_rabbit_kills_800" true }
+            Filter Not Flag "abyssus_rabbit_kills_810" { SetFlag "abyssus_rabbit_kills_810" true }
+            Filter Not Flag "abyssus_rabbit_kills_820" { SetFlag "abyssus_rabbit_kills_820" true }
+            Filter Not Flag "abyssus_rabbit_kills_830" { SetFlag "abyssus_rabbit_kills_830" true }
+            Filter Not Flag "abyssus_rabbit_kills_840" { SetFlag "abyssus_rabbit_kills_840" true }
+            Filter Not Flag "abyssus_rabbit_kills_850" { SetFlag "abyssus_rabbit_kills_850" true }
+            Filter Not Flag "abyssus_rabbit_kills_860" { SetFlag "abyssus_rabbit_kills_860" true }
+            Filter Not Flag "abyssus_rabbit_kills_870" { SetFlag "abyssus_rabbit_kills_870" true }
+            Filter Not Flag "abyssus_rabbit_kills_880" { SetFlag "abyssus_rabbit_kills_880" true }
+            Filter Not Flag "abyssus_rabbit_kills_890" { SetFlag "abyssus_rabbit_kills_890" true }
+            Filter Not Flag "abyssus_rabbit_kills_900" { SetFlag "abyssus_rabbit_kills_900" true }
+            Filter Not Flag "abyssus_rabbit_kills_910" { SetFlag "abyssus_rabbit_kills_910" true }
+            Filter Not Flag "abyssus_rabbit_kills_920" { SetFlag "abyssus_rabbit_kills_920" true }
+            Filter Not Flag "abyssus_rabbit_kills_930" { SetFlag "abyssus_rabbit_kills_930" true }
+            Filter Not Flag "abyssus_rabbit_kills_940" { SetFlag "abyssus_rabbit_kills_940" true }
+            Filter Not Flag "abyssus_rabbit_kills_950" { SetFlag "abyssus_rabbit_kills_950" true }
+            Filter Not Flag "abyssus_rabbit_kills_960" { SetFlag "abyssus_rabbit_kills_960" true }
+            Filter Not Flag "abyssus_rabbit_kills_970" { SetFlag "abyssus_rabbit_kills_970" true }
+            Filter Not Flag "abyssus_rabbit_kills_980" { SetFlag "abyssus_rabbit_kills_980" true }
+            Filter Not Flag "abyssus_rabbit_kills_990" { SetFlag "abyssus_rabbit_kills_990" true }
+            Filter Not Flag "abyssus_rabbit_kills_1000" { SetFlag "abyssus_rabbit_kills_1000" true }
+          }
+        }
+        Filter Flag "abyssus_rabbit_kill_count_9" {
+          SetFlag "abyssus_rabbit_kill_count_10" true
+          SetFlag "abyssus_rabbit_kill_count_9" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_8" {
+          SetFlag "abyssus_rabbit_kill_count_9" true
+          SetFlag "abyssus_rabbit_kill_count_8" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_7" {
+          SetFlag "abyssus_rabbit_kill_count_8" true
+          SetFlag "abyssus_rabbit_kill_count_7" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_6" {
+          SetFlag "abyssus_rabbit_kill_count_7" true
+          SetFlag "abyssus_rabbit_kill_count_6" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_5" {
+          SetFlag "abyssus_rabbit_kill_count_6" true
+          SetFlag "abyssus_rabbit_kill_count_5" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_4" {
+          SetFlag "abyssus_rabbit_kill_count_5" true
+          SetFlag "abyssus_rabbit_kill_count_4" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_3" {
+          SetFlag "abyssus_rabbit_kill_count_4" true
+          SetFlag "abyssus_rabbit_kill_count_3" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_2" {
+          SetFlag "abyssus_rabbit_kill_count_3" true
+          SetFlag "abyssus_rabbit_kill_count_2" false
+        }
+        Filter Not Flag "abyssus_rabbit_kill_count_1" {
+          SetFlag "abyssus_rabbit_kill_count_2" true
+          SetFlag "abyssus_rabbit_kill_count_1" false
+        }
+      }
+    }
+  }
+
+"ABYSSUS_RABBIT_MINSTREL"
+  {
+    viewId = { "abyssus_rabbit_minstrel" }
+    attr = {
+      DAMAGE 5
+      RANGED_DAMAGE 20
+      DEFENSE 10
+      JEWELER 15
+    }
+    gender = FEMALE
+    body = {
+      type = Humanoid MEDIUM
+      material = "ABYSSUS_FLUFFY"
+    }
+    aiType = RANGED
+    permanentEffects = {
+      ABYSSUS_RABBIT_FESTIVALS_EXCITEMENT 1
+      COPULATION_SKILL 1
+      SPEED 1
+      NIGHT_VISION 1
+    }
+    name = {
+      name = "rabbit minstrel"
+      firstNameGen = "ABYSSUS_RABBIT"
+    }
+    inventory = {
+      { "Abyssus_Items_Rabbit_Guitar" }
+    }
+    spellSchools = { "abyssus rabbit minstrel" }
+    chatReactionFriendly = "Come closer... I’ve got a trick you'll never forget!"
+    chatReactionHostile = "Hehehe, scream louder! It’s music to my ears!"
+    maxLevelIncrease = {
+      RANGED_DAMAGE 9
+    }
+    afterKilledSomeone = {
+      FirstSuccessful {
+        Filter Flag "abyssus_rabbit_kill_count_10" {
+          SetFlag "abyssus_rabbit_kill_count_10" false
+          SetFlag "abyssus_rabbit_kill_count_1" false
+          FirstSuccessful {
+            Filter Not Flag "abyssus_rabbit_kills_10" { SetFlag "abyssus_rabbit_kills_10" true }
+            Filter Not Flag "abyssus_rabbit_kills_20" { SetFlag "abyssus_rabbit_kills_20" true }
+            Filter Not Flag "abyssus_rabbit_kills_30" { SetFlag "abyssus_rabbit_kills_30" true }
+            Filter Not Flag "abyssus_rabbit_kills_40" { SetFlag "abyssus_rabbit_kills_40" true }
+            Filter Not Flag "abyssus_rabbit_kills_50" { SetFlag "abyssus_rabbit_kills_50" true }
+            Filter Not Flag "abyssus_rabbit_kills_60" { SetFlag "abyssus_rabbit_kills_60" true }
+            Filter Not Flag "abyssus_rabbit_kills_70" { SetFlag "abyssus_rabbit_kills_70" true }
+            Filter Not Flag "abyssus_rabbit_kills_80" { SetFlag "abyssus_rabbit_kills_80" true }
+            Filter Not Flag "abyssus_rabbit_kills_90" { SetFlag "abyssus_rabbit_kills_90" true }
+            Filter Not Flag "abyssus_rabbit_kills_100" { SetFlag "abyssus_rabbit_kills_100" true }
+            Filter Not Flag "abyssus_rabbit_kills_110" { SetFlag "abyssus_rabbit_kills_110" true }
+            Filter Not Flag "abyssus_rabbit_kills_120" { SetFlag "abyssus_rabbit_kills_120" true }
+            Filter Not Flag "abyssus_rabbit_kills_130" { SetFlag "abyssus_rabbit_kills_130" true }
+            Filter Not Flag "abyssus_rabbit_kills_140" { SetFlag "abyssus_rabbit_kills_140" true }
+            Filter Not Flag "abyssus_rabbit_kills_150" { SetFlag "abyssus_rabbit_kills_150" true }
+            Filter Not Flag "abyssus_rabbit_kills_160" { SetFlag "abyssus_rabbit_kills_160" true }
+            Filter Not Flag "abyssus_rabbit_kills_170" { SetFlag "abyssus_rabbit_kills_170" true }
+            Filter Not Flag "abyssus_rabbit_kills_180" { SetFlag "abyssus_rabbit_kills_180" true }
+            Filter Not Flag "abyssus_rabbit_kills_190" { SetFlag "abyssus_rabbit_kills_190" true }
+            Filter Not Flag "abyssus_rabbit_kills_200" { SetFlag "abyssus_rabbit_kills_200" true }
+            Filter Not Flag "abyssus_rabbit_kills_210" { SetFlag "abyssus_rabbit_kills_210" true }
+            Filter Not Flag "abyssus_rabbit_kills_220" { SetFlag "abyssus_rabbit_kills_220" true }
+            Filter Not Flag "abyssus_rabbit_kills_230" { SetFlag "abyssus_rabbit_kills_230" true }
+            Filter Not Flag "abyssus_rabbit_kills_240" { SetFlag "abyssus_rabbit_kills_240" true }
+            Filter Not Flag "abyssus_rabbit_kills_250" { SetFlag "abyssus_rabbit_kills_250" true }
+            Filter Not Flag "abyssus_rabbit_kills_260" { SetFlag "abyssus_rabbit_kills_260" true }
+            Filter Not Flag "abyssus_rabbit_kills_270" { SetFlag "abyssus_rabbit_kills_270" true }
+            Filter Not Flag "abyssus_rabbit_kills_280" { SetFlag "abyssus_rabbit_kills_280" true }
+            Filter Not Flag "abyssus_rabbit_kills_290" { SetFlag "abyssus_rabbit_kills_290" true }
+            Filter Not Flag "abyssus_rabbit_kills_300" { SetFlag "abyssus_rabbit_kills_300" true }
+            Filter Not Flag "abyssus_rabbit_kills_310" { SetFlag "abyssus_rabbit_kills_310" true }
+            Filter Not Flag "abyssus_rabbit_kills_320" { SetFlag "abyssus_rabbit_kills_320" true }
+            Filter Not Flag "abyssus_rabbit_kills_330" { SetFlag "abyssus_rabbit_kills_330" true }
+            Filter Not Flag "abyssus_rabbit_kills_340" { SetFlag "abyssus_rabbit_kills_340" true }
+            Filter Not Flag "abyssus_rabbit_kills_350" { SetFlag "abyssus_rabbit_kills_350" true }
+            Filter Not Flag "abyssus_rabbit_kills_360" { SetFlag "abyssus_rabbit_kills_360" true }
+            Filter Not Flag "abyssus_rabbit_kills_370" { SetFlag "abyssus_rabbit_kills_370" true }
+            Filter Not Flag "abyssus_rabbit_kills_380" { SetFlag "abyssus_rabbit_kills_380" true }
+            Filter Not Flag "abyssus_rabbit_kills_390" { SetFlag "abyssus_rabbit_kills_390" true }
+            Filter Not Flag "abyssus_rabbit_kills_400" { SetFlag "abyssus_rabbit_kills_400" true }
+            Filter Not Flag "abyssus_rabbit_kills_410" { SetFlag "abyssus_rabbit_kills_410" true }
+            Filter Not Flag "abyssus_rabbit_kills_420" { SetFlag "abyssus_rabbit_kills_420" true }
+            Filter Not Flag "abyssus_rabbit_kills_430" { SetFlag "abyssus_rabbit_kills_430" true }
+            Filter Not Flag "abyssus_rabbit_kills_440" { SetFlag "abyssus_rabbit_kills_440" true }
+            Filter Not Flag "abyssus_rabbit_kills_450" { SetFlag "abyssus_rabbit_kills_450" true }
+            Filter Not Flag "abyssus_rabbit_kills_460" { SetFlag "abyssus_rabbit_kills_460" true }
+            Filter Not Flag "abyssus_rabbit_kills_470" { SetFlag "abyssus_rabbit_kills_470" true }
+            Filter Not Flag "abyssus_rabbit_kills_480" { SetFlag "abyssus_rabbit_kills_480" true }
+            Filter Not Flag "abyssus_rabbit_kills_490" { SetFlag "abyssus_rabbit_kills_490" true }
+            Filter Not Flag "abyssus_rabbit_kills_500" { SetFlag "abyssus_rabbit_kills_500" true }
+            Filter Not Flag "abyssus_rabbit_kills_510" { SetFlag "abyssus_rabbit_kills_510" true }
+            Filter Not Flag "abyssus_rabbit_kills_520" { SetFlag "abyssus_rabbit_kills_520" true }
+            Filter Not Flag "abyssus_rabbit_kills_530" { SetFlag "abyssus_rabbit_kills_530" true }
+            Filter Not Flag "abyssus_rabbit_kills_540" { SetFlag "abyssus_rabbit_kills_540" true }
+            Filter Not Flag "abyssus_rabbit_kills_550" { SetFlag "abyssus_rabbit_kills_550" true }
+            Filter Not Flag "abyssus_rabbit_kills_560" { SetFlag "abyssus_rabbit_kills_560" true }
+            Filter Not Flag "abyssus_rabbit_kills_570" { SetFlag "abyssus_rabbit_kills_570" true }
+            Filter Not Flag "abyssus_rabbit_kills_580" { SetFlag "abyssus_rabbit_kills_580" true }
+            Filter Not Flag "abyssus_rabbit_kills_590" { SetFlag "abyssus_rabbit_kills_590" true }
+            Filter Not Flag "abyssus_rabbit_kills_600" { SetFlag "abyssus_rabbit_kills_600" true }
+            Filter Not Flag "abyssus_rabbit_kills_610" { SetFlag "abyssus_rabbit_kills_610" true }
+            Filter Not Flag "abyssus_rabbit_kills_620" { SetFlag "abyssus_rabbit_kills_620" true }
+            Filter Not Flag "abyssus_rabbit_kills_630" { SetFlag "abyssus_rabbit_kills_630" true }
+            Filter Not Flag "abyssus_rabbit_kills_640" { SetFlag "abyssus_rabbit_kills_640" true }
+            Filter Not Flag "abyssus_rabbit_kills_650" { SetFlag "abyssus_rabbit_kills_650" true }
+            Filter Not Flag "abyssus_rabbit_kills_660" { SetFlag "abyssus_rabbit_kills_660" true }
+            Filter Not Flag "abyssus_rabbit_kills_670" { SetFlag "abyssus_rabbit_kills_670" true }
+            Filter Not Flag "abyssus_rabbit_kills_680" { SetFlag "abyssus_rabbit_kills_680" true }
+            Filter Not Flag "abyssus_rabbit_kills_690" { SetFlag "abyssus_rabbit_kills_690" true }
+            Filter Not Flag "abyssus_rabbit_kills_700" { SetFlag "abyssus_rabbit_kills_700" true }
+            Filter Not Flag "abyssus_rabbit_kills_710" { SetFlag "abyssus_rabbit_kills_710" true }
+            Filter Not Flag "abyssus_rabbit_kills_720" { SetFlag "abyssus_rabbit_kills_720" true }
+            Filter Not Flag "abyssus_rabbit_kills_730" { SetFlag "abyssus_rabbit_kills_730" true }
+            Filter Not Flag "abyssus_rabbit_kills_740" { SetFlag "abyssus_rabbit_kills_740" true }
+            Filter Not Flag "abyssus_rabbit_kills_750" { SetFlag "abyssus_rabbit_kills_750" true }
+            Filter Not Flag "abyssus_rabbit_kills_760" { SetFlag "abyssus_rabbit_kills_760" true }
+            Filter Not Flag "abyssus_rabbit_kills_770" { SetFlag "abyssus_rabbit_kills_770" true }
+            Filter Not Flag "abyssus_rabbit_kills_780" { SetFlag "abyssus_rabbit_kills_780" true }
+            Filter Not Flag "abyssus_rabbit_kills_790" { SetFlag "abyssus_rabbit_kills_790" true }
+            Filter Not Flag "abyssus_rabbit_kills_800" { SetFlag "abyssus_rabbit_kills_800" true }
+            Filter Not Flag "abyssus_rabbit_kills_810" { SetFlag "abyssus_rabbit_kills_810" true }
+            Filter Not Flag "abyssus_rabbit_kills_820" { SetFlag "abyssus_rabbit_kills_820" true }
+            Filter Not Flag "abyssus_rabbit_kills_830" { SetFlag "abyssus_rabbit_kills_830" true }
+            Filter Not Flag "abyssus_rabbit_kills_840" { SetFlag "abyssus_rabbit_kills_840" true }
+            Filter Not Flag "abyssus_rabbit_kills_850" { SetFlag "abyssus_rabbit_kills_850" true }
+            Filter Not Flag "abyssus_rabbit_kills_860" { SetFlag "abyssus_rabbit_kills_860" true }
+            Filter Not Flag "abyssus_rabbit_kills_870" { SetFlag "abyssus_rabbit_kills_870" true }
+            Filter Not Flag "abyssus_rabbit_kills_880" { SetFlag "abyssus_rabbit_kills_880" true }
+            Filter Not Flag "abyssus_rabbit_kills_890" { SetFlag "abyssus_rabbit_kills_890" true }
+            Filter Not Flag "abyssus_rabbit_kills_900" { SetFlag "abyssus_rabbit_kills_900" true }
+            Filter Not Flag "abyssus_rabbit_kills_910" { SetFlag "abyssus_rabbit_kills_910" true }
+            Filter Not Flag "abyssus_rabbit_kills_920" { SetFlag "abyssus_rabbit_kills_920" true }
+            Filter Not Flag "abyssus_rabbit_kills_930" { SetFlag "abyssus_rabbit_kills_930" true }
+            Filter Not Flag "abyssus_rabbit_kills_940" { SetFlag "abyssus_rabbit_kills_940" true }
+            Filter Not Flag "abyssus_rabbit_kills_950" { SetFlag "abyssus_rabbit_kills_950" true }
+            Filter Not Flag "abyssus_rabbit_kills_960" { SetFlag "abyssus_rabbit_kills_960" true }
+            Filter Not Flag "abyssus_rabbit_kills_970" { SetFlag "abyssus_rabbit_kills_970" true }
+            Filter Not Flag "abyssus_rabbit_kills_980" { SetFlag "abyssus_rabbit_kills_980" true }
+            Filter Not Flag "abyssus_rabbit_kills_990" { SetFlag "abyssus_rabbit_kills_990" true }
+            Filter Not Flag "abyssus_rabbit_kills_1000" { SetFlag "abyssus_rabbit_kills_1000" true }
+          }
+        }
+        Filter Flag "abyssus_rabbit_kill_count_9" {
+          SetFlag "abyssus_rabbit_kill_count_10" true
+          SetFlag "abyssus_rabbit_kill_count_9" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_8" {
+          SetFlag "abyssus_rabbit_kill_count_9" true
+          SetFlag "abyssus_rabbit_kill_count_8" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_7" {
+          SetFlag "abyssus_rabbit_kill_count_8" true
+          SetFlag "abyssus_rabbit_kill_count_7" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_6" {
+          SetFlag "abyssus_rabbit_kill_count_7" true
+          SetFlag "abyssus_rabbit_kill_count_6" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_5" {
+          SetFlag "abyssus_rabbit_kill_count_6" true
+          SetFlag "abyssus_rabbit_kill_count_5" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_4" {
+          SetFlag "abyssus_rabbit_kill_count_5" true
+          SetFlag "abyssus_rabbit_kill_count_4" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_3" {
+          SetFlag "abyssus_rabbit_kill_count_4" true
+          SetFlag "abyssus_rabbit_kill_count_3" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_2" {
+          SetFlag "abyssus_rabbit_kill_count_3" true
+          SetFlag "abyssus_rabbit_kill_count_2" false
+        }
+        Filter Not Flag "abyssus_rabbit_kill_count_1" {
+          SetFlag "abyssus_rabbit_kill_count_2" true
+          SetFlag "abyssus_rabbit_kill_count_1" false
+        }
+      }
+    }
+  }
+
+"ABYSSUS_RABBIT_JUGGLER"
+  {
+    viewId = { "abyssus_rabbit_juggler" }
+    attr = {
+      DAMAGE 5
+      SPELL_DAMAGE 15
+      DEFENSE 15
+    }
+    gender = MALE
+    body = {
+      type = Humanoid MEDIUM
+      material = "ABYSSUS_FLUFFY"
+    }
+    aiType = RANGED
+    permanentEffects = {
+      ABYSSUS_RABBIT_FESTIVALS_EXCITEMENT 1
+      SPEED 1
+      NIGHT_VISION 1
+    }
+    name = {
+      name = "rabbit juggler"
+      firstNameGen = "ABYSSUS_RABBIT"
+    }
+    spellSchools = { "abyssus rabbit juggler" }
+    chatReactionFriendly = "Did you bring me a toy? Or are you the toy? Hee-hee!"
+    chatReactionHostile = "I'll make you laugh... until you scream!"
+    maxLevelIncrease = {
+      SPELL_DAMAGE 7
+    }
+    afterKilledSomeone = {
+      FirstSuccessful {
+        Filter Flag "abyssus_rabbit_kill_count_10" {
+          SetFlag "abyssus_rabbit_kill_count_10" false
+          SetFlag "abyssus_rabbit_kill_count_1" false
+          FirstSuccessful {
+            Filter Not Flag "abyssus_rabbit_kills_10" { SetFlag "abyssus_rabbit_kills_10" true }
+            Filter Not Flag "abyssus_rabbit_kills_20" { SetFlag "abyssus_rabbit_kills_20" true }
+            Filter Not Flag "abyssus_rabbit_kills_30" { SetFlag "abyssus_rabbit_kills_30" true }
+            Filter Not Flag "abyssus_rabbit_kills_40" { SetFlag "abyssus_rabbit_kills_40" true }
+            Filter Not Flag "abyssus_rabbit_kills_50" { SetFlag "abyssus_rabbit_kills_50" true }
+            Filter Not Flag "abyssus_rabbit_kills_60" { SetFlag "abyssus_rabbit_kills_60" true }
+            Filter Not Flag "abyssus_rabbit_kills_70" { SetFlag "abyssus_rabbit_kills_70" true }
+            Filter Not Flag "abyssus_rabbit_kills_80" { SetFlag "abyssus_rabbit_kills_80" true }
+            Filter Not Flag "abyssus_rabbit_kills_90" { SetFlag "abyssus_rabbit_kills_90" true }
+            Filter Not Flag "abyssus_rabbit_kills_100" { SetFlag "abyssus_rabbit_kills_100" true }
+            Filter Not Flag "abyssus_rabbit_kills_110" { SetFlag "abyssus_rabbit_kills_110" true }
+            Filter Not Flag "abyssus_rabbit_kills_120" { SetFlag "abyssus_rabbit_kills_120" true }
+            Filter Not Flag "abyssus_rabbit_kills_130" { SetFlag "abyssus_rabbit_kills_130" true }
+            Filter Not Flag "abyssus_rabbit_kills_140" { SetFlag "abyssus_rabbit_kills_140" true }
+            Filter Not Flag "abyssus_rabbit_kills_150" { SetFlag "abyssus_rabbit_kills_150" true }
+            Filter Not Flag "abyssus_rabbit_kills_160" { SetFlag "abyssus_rabbit_kills_160" true }
+            Filter Not Flag "abyssus_rabbit_kills_170" { SetFlag "abyssus_rabbit_kills_170" true }
+            Filter Not Flag "abyssus_rabbit_kills_180" { SetFlag "abyssus_rabbit_kills_180" true }
+            Filter Not Flag "abyssus_rabbit_kills_190" { SetFlag "abyssus_rabbit_kills_190" true }
+            Filter Not Flag "abyssus_rabbit_kills_200" { SetFlag "abyssus_rabbit_kills_200" true }
+            Filter Not Flag "abyssus_rabbit_kills_210" { SetFlag "abyssus_rabbit_kills_210" true }
+            Filter Not Flag "abyssus_rabbit_kills_220" { SetFlag "abyssus_rabbit_kills_220" true }
+            Filter Not Flag "abyssus_rabbit_kills_230" { SetFlag "abyssus_rabbit_kills_230" true }
+            Filter Not Flag "abyssus_rabbit_kills_240" { SetFlag "abyssus_rabbit_kills_240" true }
+            Filter Not Flag "abyssus_rabbit_kills_250" { SetFlag "abyssus_rabbit_kills_250" true }
+            Filter Not Flag "abyssus_rabbit_kills_260" { SetFlag "abyssus_rabbit_kills_260" true }
+            Filter Not Flag "abyssus_rabbit_kills_270" { SetFlag "abyssus_rabbit_kills_270" true }
+            Filter Not Flag "abyssus_rabbit_kills_280" { SetFlag "abyssus_rabbit_kills_280" true }
+            Filter Not Flag "abyssus_rabbit_kills_290" { SetFlag "abyssus_rabbit_kills_290" true }
+            Filter Not Flag "abyssus_rabbit_kills_300" { SetFlag "abyssus_rabbit_kills_300" true }
+            Filter Not Flag "abyssus_rabbit_kills_310" { SetFlag "abyssus_rabbit_kills_310" true }
+            Filter Not Flag "abyssus_rabbit_kills_320" { SetFlag "abyssus_rabbit_kills_320" true }
+            Filter Not Flag "abyssus_rabbit_kills_330" { SetFlag "abyssus_rabbit_kills_330" true }
+            Filter Not Flag "abyssus_rabbit_kills_340" { SetFlag "abyssus_rabbit_kills_340" true }
+            Filter Not Flag "abyssus_rabbit_kills_350" { SetFlag "abyssus_rabbit_kills_350" true }
+            Filter Not Flag "abyssus_rabbit_kills_360" { SetFlag "abyssus_rabbit_kills_360" true }
+            Filter Not Flag "abyssus_rabbit_kills_370" { SetFlag "abyssus_rabbit_kills_370" true }
+            Filter Not Flag "abyssus_rabbit_kills_380" { SetFlag "abyssus_rabbit_kills_380" true }
+            Filter Not Flag "abyssus_rabbit_kills_390" { SetFlag "abyssus_rabbit_kills_390" true }
+            Filter Not Flag "abyssus_rabbit_kills_400" { SetFlag "abyssus_rabbit_kills_400" true }
+            Filter Not Flag "abyssus_rabbit_kills_410" { SetFlag "abyssus_rabbit_kills_410" true }
+            Filter Not Flag "abyssus_rabbit_kills_420" { SetFlag "abyssus_rabbit_kills_420" true }
+            Filter Not Flag "abyssus_rabbit_kills_430" { SetFlag "abyssus_rabbit_kills_430" true }
+            Filter Not Flag "abyssus_rabbit_kills_440" { SetFlag "abyssus_rabbit_kills_440" true }
+            Filter Not Flag "abyssus_rabbit_kills_450" { SetFlag "abyssus_rabbit_kills_450" true }
+            Filter Not Flag "abyssus_rabbit_kills_460" { SetFlag "abyssus_rabbit_kills_460" true }
+            Filter Not Flag "abyssus_rabbit_kills_470" { SetFlag "abyssus_rabbit_kills_470" true }
+            Filter Not Flag "abyssus_rabbit_kills_480" { SetFlag "abyssus_rabbit_kills_480" true }
+            Filter Not Flag "abyssus_rabbit_kills_490" { SetFlag "abyssus_rabbit_kills_490" true }
+            Filter Not Flag "abyssus_rabbit_kills_500" { SetFlag "abyssus_rabbit_kills_500" true }
+            Filter Not Flag "abyssus_rabbit_kills_510" { SetFlag "abyssus_rabbit_kills_510" true }
+            Filter Not Flag "abyssus_rabbit_kills_520" { SetFlag "abyssus_rabbit_kills_520" true }
+            Filter Not Flag "abyssus_rabbit_kills_530" { SetFlag "abyssus_rabbit_kills_530" true }
+            Filter Not Flag "abyssus_rabbit_kills_540" { SetFlag "abyssus_rabbit_kills_540" true }
+            Filter Not Flag "abyssus_rabbit_kills_550" { SetFlag "abyssus_rabbit_kills_550" true }
+            Filter Not Flag "abyssus_rabbit_kills_560" { SetFlag "abyssus_rabbit_kills_560" true }
+            Filter Not Flag "abyssus_rabbit_kills_570" { SetFlag "abyssus_rabbit_kills_570" true }
+            Filter Not Flag "abyssus_rabbit_kills_580" { SetFlag "abyssus_rabbit_kills_580" true }
+            Filter Not Flag "abyssus_rabbit_kills_590" { SetFlag "abyssus_rabbit_kills_590" true }
+            Filter Not Flag "abyssus_rabbit_kills_600" { SetFlag "abyssus_rabbit_kills_600" true }
+            Filter Not Flag "abyssus_rabbit_kills_610" { SetFlag "abyssus_rabbit_kills_610" true }
+            Filter Not Flag "abyssus_rabbit_kills_620" { SetFlag "abyssus_rabbit_kills_620" true }
+            Filter Not Flag "abyssus_rabbit_kills_630" { SetFlag "abyssus_rabbit_kills_630" true }
+            Filter Not Flag "abyssus_rabbit_kills_640" { SetFlag "abyssus_rabbit_kills_640" true }
+            Filter Not Flag "abyssus_rabbit_kills_650" { SetFlag "abyssus_rabbit_kills_650" true }
+            Filter Not Flag "abyssus_rabbit_kills_660" { SetFlag "abyssus_rabbit_kills_660" true }
+            Filter Not Flag "abyssus_rabbit_kills_670" { SetFlag "abyssus_rabbit_kills_670" true }
+            Filter Not Flag "abyssus_rabbit_kills_680" { SetFlag "abyssus_rabbit_kills_680" true }
+            Filter Not Flag "abyssus_rabbit_kills_690" { SetFlag "abyssus_rabbit_kills_690" true }
+            Filter Not Flag "abyssus_rabbit_kills_700" { SetFlag "abyssus_rabbit_kills_700" true }
+            Filter Not Flag "abyssus_rabbit_kills_710" { SetFlag "abyssus_rabbit_kills_710" true }
+            Filter Not Flag "abyssus_rabbit_kills_720" { SetFlag "abyssus_rabbit_kills_720" true }
+            Filter Not Flag "abyssus_rabbit_kills_730" { SetFlag "abyssus_rabbit_kills_730" true }
+            Filter Not Flag "abyssus_rabbit_kills_740" { SetFlag "abyssus_rabbit_kills_740" true }
+            Filter Not Flag "abyssus_rabbit_kills_750" { SetFlag "abyssus_rabbit_kills_750" true }
+            Filter Not Flag "abyssus_rabbit_kills_760" { SetFlag "abyssus_rabbit_kills_760" true }
+            Filter Not Flag "abyssus_rabbit_kills_770" { SetFlag "abyssus_rabbit_kills_770" true }
+            Filter Not Flag "abyssus_rabbit_kills_780" { SetFlag "abyssus_rabbit_kills_780" true }
+            Filter Not Flag "abyssus_rabbit_kills_790" { SetFlag "abyssus_rabbit_kills_790" true }
+            Filter Not Flag "abyssus_rabbit_kills_800" { SetFlag "abyssus_rabbit_kills_800" true }
+            Filter Not Flag "abyssus_rabbit_kills_810" { SetFlag "abyssus_rabbit_kills_810" true }
+            Filter Not Flag "abyssus_rabbit_kills_820" { SetFlag "abyssus_rabbit_kills_820" true }
+            Filter Not Flag "abyssus_rabbit_kills_830" { SetFlag "abyssus_rabbit_kills_830" true }
+            Filter Not Flag "abyssus_rabbit_kills_840" { SetFlag "abyssus_rabbit_kills_840" true }
+            Filter Not Flag "abyssus_rabbit_kills_850" { SetFlag "abyssus_rabbit_kills_850" true }
+            Filter Not Flag "abyssus_rabbit_kills_860" { SetFlag "abyssus_rabbit_kills_860" true }
+            Filter Not Flag "abyssus_rabbit_kills_870" { SetFlag "abyssus_rabbit_kills_870" true }
+            Filter Not Flag "abyssus_rabbit_kills_880" { SetFlag "abyssus_rabbit_kills_880" true }
+            Filter Not Flag "abyssus_rabbit_kills_890" { SetFlag "abyssus_rabbit_kills_890" true }
+            Filter Not Flag "abyssus_rabbit_kills_900" { SetFlag "abyssus_rabbit_kills_900" true }
+            Filter Not Flag "abyssus_rabbit_kills_910" { SetFlag "abyssus_rabbit_kills_910" true }
+            Filter Not Flag "abyssus_rabbit_kills_920" { SetFlag "abyssus_rabbit_kills_920" true }
+            Filter Not Flag "abyssus_rabbit_kills_930" { SetFlag "abyssus_rabbit_kills_930" true }
+            Filter Not Flag "abyssus_rabbit_kills_940" { SetFlag "abyssus_rabbit_kills_940" true }
+            Filter Not Flag "abyssus_rabbit_kills_950" { SetFlag "abyssus_rabbit_kills_950" true }
+            Filter Not Flag "abyssus_rabbit_kills_960" { SetFlag "abyssus_rabbit_kills_960" true }
+            Filter Not Flag "abyssus_rabbit_kills_970" { SetFlag "abyssus_rabbit_kills_970" true }
+            Filter Not Flag "abyssus_rabbit_kills_980" { SetFlag "abyssus_rabbit_kills_980" true }
+            Filter Not Flag "abyssus_rabbit_kills_990" { SetFlag "abyssus_rabbit_kills_990" true }
+            Filter Not Flag "abyssus_rabbit_kills_1000" { SetFlag "abyssus_rabbit_kills_1000" true }
+          }
+        }
+        Filter Flag "abyssus_rabbit_kill_count_9" {
+          SetFlag "abyssus_rabbit_kill_count_10" true
+          SetFlag "abyssus_rabbit_kill_count_9" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_8" {
+          SetFlag "abyssus_rabbit_kill_count_9" true
+          SetFlag "abyssus_rabbit_kill_count_8" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_7" {
+          SetFlag "abyssus_rabbit_kill_count_8" true
+          SetFlag "abyssus_rabbit_kill_count_7" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_6" {
+          SetFlag "abyssus_rabbit_kill_count_7" true
+          SetFlag "abyssus_rabbit_kill_count_6" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_5" {
+          SetFlag "abyssus_rabbit_kill_count_6" true
+          SetFlag "abyssus_rabbit_kill_count_5" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_4" {
+          SetFlag "abyssus_rabbit_kill_count_5" true
+          SetFlag "abyssus_rabbit_kill_count_4" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_3" {
+          SetFlag "abyssus_rabbit_kill_count_4" true
+          SetFlag "abyssus_rabbit_kill_count_3" false
+        }
+        Filter Flag "abyssus_rabbit_kill_count_2" {
+          SetFlag "abyssus_rabbit_kill_count_3" true
+          SetFlag "abyssus_rabbit_kill_count_2" false
+        }
+        Filter Not Flag "abyssus_rabbit_kill_count_1" {
+          SetFlag "abyssus_rabbit_kill_count_2" true
+          SetFlag "abyssus_rabbit_kill_count_1" false
+        }
+      }
+    }
+  }

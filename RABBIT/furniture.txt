@@ -1,0 +1,11 @@
+"ABYSSUS_RABBIT_ONETIME_SPAWN_WORKERS"
+{
+  name = "workers spawn"
+  canHideHere = true
+  layer = CEILING
+  tickType = Effect {
+    Summon "ABYSSUS_RABBIT_WORKER_MALE_PERM" {1} none
+    Summon "ABYSSUS_RABBIT_WORKER_FEMALE_PERM" {1} none
+    RemoveFurniture "ABYSSUS_RABBIT_ONETIME_SPAWN_WORKERS"
+  }
+}

@@ -1,0 +1,66 @@
+"abyssus_rabbits"
+{
+  {
+    ids = { "ABYSSUS_RABBIT_WORKER_MALE" }
+    traits = { WORKER NO_LIMIT NO_EQUIPMENT NO_LEISURE_ZONE FIGHTER }
+    spawnLocation = Pregnancy
+    keybinding = CREATE_IMP
+    sound = {"CREATE_IMP" 2}
+    noAuto = true
+    requirements = {
+      { 0.0 Pregnancy }
+    }
+  }
+
+  {
+    ids = { "ABYSSUS_RABBIT_WORKER_FEMALE" }
+    traits = { WORKER NO_LIMIT NO_EQUIPMENT NO_LEISURE_ZONE FIGHTER }
+    spawnLocation = Pregnancy
+    keybinding = CREATE_IMP
+    sound = {"CREATE_IMP" 2}
+    noAuto = true
+    requirements = {
+      { 0.0 Pregnancy }
+    }
+  }
+
+  {
+    ids = { "ABYSSUS_RABBIT_ACROBAT" }
+    traits = { FIGHTER }
+    spawnLocation = Pregnancy
+    requirements = {
+      { 0.0 Pregnancy }
+    }
+    frequency = 1
+  }
+
+  {
+    ids = { "ABYSSUS_RABBIT_CLOWN" }
+    traits = { FIGHTER }
+    spawnLocation = Pregnancy
+    requirements = {
+      { 0.0 Pregnancy }
+    }
+    frequency = 1
+  }
+
+  {
+    ids = { "ABYSSUS_RABBIT_MINSTREL" }
+    traits = { FIGHTER }
+    spawnLocation = Pregnancy
+    requirements = {
+      { 0.0 Pregnancy }
+    }
+    frequency = 1
+  }
+
+  {
+    ids = { "ABYSSUS_RABBIT_JUGGLER" }
+    traits = { FIGHTER }
+    spawnLocation = Pregnancy
+    requirements = {
+      { 0.0 Pregnancy }
+    }
+    frequency = 1
+  }
+}
