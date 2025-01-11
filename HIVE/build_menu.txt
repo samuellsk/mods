@@ -1,0 +1,70 @@
+"abyssus_dev_tools"
+  {
+    { PlaceMinion "Place minion" "Dev Tools" "Places a minion"}
+    { PlaceItem "Place item" "Dev Tools" "Places an item" }
+    { ImmediateDig "Destroy walls" "Dev Tools" "Destroy walls" }
+  }
+
+"abyssus_hive_keeper_structure"
+  {
+    { { Dig CutTree } "Dig or cut tree" "Structure" "" "DIG" {} true DIG_OR_CUT_TREES}
+    { Furniture {{ "MOUNTAIN" } "STONE" 5 } "Soft rock" "Structure" }
+    { Furniture {{ "MOUNTAIN2" } "STONE" 10 } "Hard rock" "Structure" }
+    { Furniture {{ "PIT" } "STONE" 0 } "Dig a pit" "Structure" "Dig a pit in the ground. Building next to water or lava will cause it to fill up." }
+    { Furniture {{ "FILL_UP_WATER_FLOOR" } "STONE" 20 } "Fill lava or water""Structure" "" }
+    { Furniture {{ "FLOOR" }} "Building interior" "Structure" "" none {} false none true}
+    { Furniture {{ "STONE_BRIDGE" } "STONE" 5 } "Stone bridge" "Structure" "Build to pass over water or lava." }
+    { Furniture {{ "ABYSSUS_HIVE_WALL" } "ABYSSUS_HIVE_BIOMASS" 5 } "Hive Walls" "Structure" "Old dungeon walls." }
+  }
+
+"abyssus_hive_keeper_stairs"
+  {
+    { Furniture {{ "ABYSSUS_HIVE_STAIRS_UP" }} "Breach the ceiling to upper floor" "Stairs" "Build to reach higher z-levels." none { TechId "breaching" }}
+    { Furniture {{ "ABYSSUS_HIVE_STAIRS_DOWN" }} "Dig a hole to down floor" "Stairs" "Build to reach deeper z-levels." none { TechId "breaching" }}
+  }
+
+"abyssus_hive_keeper_floors"
+  {
+    { Furniture {{ "ABYSSUS_HIVE_RANDOM_FLOOR" } "ABYSSUS_HIVE_BIOMASS" 5 } "Hive Floor" "Floors" ""}
+    { DestroyLayers {FLOOR} "Remove floor" "Floors" }
+  }
+
+"abyssus_hive_keeper_living"
+  {
+    { Furniture {{ "ABYSSUS_HIVE_LEFTOVERS_RANDOM" } "ABYSSUS_HIVE_BIOMASS" 10 } "Leftovers" "Living quaters" "Minions eat here." }
+    { Furniture {{ "ABYSSUS_HIVE_BROOD_CHAMBER" } "ABYSSUS_HIVE_BIOMASS" 25 } "Brood Chamber" "Living quaters" "Minions sleep here." }
+  }
+
+"abyssus_hive_keeper_spawning"
+  {
+    { Furniture {{ "ABYSSUS_HIVE_EGGS_SPAWN_VENOMSTRIKER_RANDOM" } "ABYSSUS_HIVE_BIOMASS" 25 } "Spawn Venomstriker" "Spawning" "After some time will spawn Venomstriker" }
+    { Furniture {{ "ABYSSUS_HIVE_EGGS_SPAWN_VILEWHIP_RANDOM" } "ABYSSUS_HIVE_BIOMASS" 25 } "Spawn Vilewhip" "Spawning" "After some time will spawn Vilewhip" }
+    { Furniture {{ "ABYSSUS_HIVE_EGGS_SPAWN_SOULPIERCER_RANDOM" } "ABYSSUS_HIVE_BIOMASS" 50 } "Spawn Soulpiercer" "Spawning" "After some time will spawn Soulpiercer" none { TechId "spawn soulpiercer" }}
+    { Furniture {{ "ABYSSUS_HIVE_EGGS_SPAWN_BLOODTORN_RANDOM" } "ABYSSUS_HIVE_BIOMASS" 50 } "Spawn Bloodtorn" "Spawning" "After some time will spawn Bloodtorn" none { TechId "spawn bloodtorn" }}
+    { Furniture {{ "ABYSSUS_HIVE_EGGS_SPAWN_SILKFIEND_RANDOM" } "ABYSSUS_HIVE_BIOMASS" 100 } "Spawn Silkfiend" "Spawning" "After some time will spawn Silkfiend" none { TechId "spawn silkfiend" }}
+    { Furniture {{ "ABYSSUS_HIVE_EGGS_SPAWN_EMBERCALLER_RANDOM" } "ABYSSUS_HIVE_BIOMASS" 100 } "Spawn Embercaller" "Spawning" "After some time will spawn Embercaller" none { TechId "spawn embercaller" }}
+    { Furniture {{ "ABYSSUS_HIVE_EGGS_SPAWN_TWINSCOURGE_RANDOM" } "ABYSSUS_HIVE_BIOMASS" 200 } "Spawn Twinscourge" "Spawning" "After some time will spawn Twinscourge" none { TechId "spawn twinscourge" }}
+    { Furniture {{ "ABYSSUS_HIVE_EGGS_SPAWN_EMBERHOG_RANDOM" } "ABYSSUS_HIVE_BIOMASS" 200 } "Spawn Emberhog" "Spawning" "After some time will spawn Emberhog" none { TechId "spawn emberhog" }}
+    { Furniture {{ "ABYSSUS_HIVE_EGGS_SPAWN_LURKER_RANDOM" } "ABYSSUS_HIVE_BIOMASS" 300 } "Spawn Lurker" "Spawning" "After some time will spawn Lurker" none { TechId "spawn lurker" }}
+    { Furniture {{ "ABYSSUS_HIVE_EGGS_SPAWN_MAWREAVER_RANDOM" } "ABYSSUS_HIVE_BIOMASS" 2000 } "Spawn Mawreaver" "Spawning" "After some time will spawn Mawreaver" }
+  }
+
+"abyssus_hive_keeper_training"
+  {
+    { Furniture {{ "ABYSSUS_HIVE_TRAINING" } "ABYSSUS_HIVE_BIOMASS" 15 } "Flesh Totem to smash" "Training" "Minions training here will improve their physical damage."}
+    { Furniture {{ "ABYSSUS_HIVE_STUDYING" } "ABYSSUS_HIVE_BIOMASS" 15 } "Flesh Totem to study" "Training" "Minions studying here will improve their magical damage."}
+  }
+
+"abyssus_hive_keeper_crafting"
+  {
+#    { Furniture {{ "ABYSSUS_HIVE_DISSOLVER_POOL" } "ABYSSUS_HIVE_BIOMASS" 10 } "Dissovling pool" "Crafting" "Allows dissolve items into materials they were created from." none { TechId "dissolving" }}
+    { Furniture {{ "FURNACE" } "ABYSSUS_HIVE_BIOMASS" 10 } "Dissolver Pool TEMPORARY" "Crafting" "Allows dissolve items into materials they were created from." none { TechId "dissolving" }}
+    { Furniture {{ "ABYSSUS_HIVE_LIVEFORGE_POOL_RANDOM" } "ABYSSUS_HIVE_BIOMASS" 10 } "Liveforge pool" "Crafting" "Allows transformation of basic materials into the biomass."}
+  }
+
+"abyssus_hive_keeper_storage"
+  {
+    { Furniture {{ "ABYSSUS_HIVE_BIOMASS_STORAGE" } "WOOD" 20 } "Biomass Container" "Storage" "Produced biomass is stored here."}
+    { Furniture {{ "ABYSSUS_HIVE_ITEMS_STORAGE" } "WOOD" 0 } "pile of items" "Storage" "Found items , gold or corpses is hauled here."}
+    { Furniture {{ "ABYSSUS_HIVE_RESOURCES_STORAGE" } "WOOD" 0 } "pile of resources" "Storage" "Found and mined resources is hauled here."}
+  }

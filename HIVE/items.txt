@@ -1,0 +1,271 @@
+"Abyssus_Hive_Biomass"
+  {
+    viewId = { "abyssus_hive_biomass" }
+    name = "biomass"
+    itemClass = OTHER
+    price = 0
+    resourceId = "ABYSSUS_HIVE_BIOMASS"
+    weight = 0.1
+    storageIds = {"biomass"}
+  }
+
+"Abyssus_Hive_Biomass_Enriched"
+  {
+    viewId = { "abyssus_hive_biomass_enriched" }
+    name = "enriched biomass"
+    plural = "blob of enriched biomass"
+    applyMsgFirstPerson = "consume the enriched biomass"
+    applyMsgThirdPerson = "consumes the enriched biomass"
+    weight = 0.1
+    description = "An enriched biomass that will increase damage and defense of desecrator"
+    uses = 1
+    price = 10000
+    effect = Filter CreatureStatus LEADER {
+      IncreaseAttr DAMAGE 5
+      IncreaseAttr DEFENSE 5
+    }
+    effectDescription = false
+    storageIds = {"biomass"}
+  }
+
+"Abyssus_Hive_Biomass_Zombie_Brain"
+  {
+    viewId = { "abyssus_hive_biomass_enriched_2" }
+    name = "biomass overgrown zombie brain"
+    plural = "biomass overgrown zombie brains"
+    applyMsgFirstPerson = "consume the biomass overgrown zombie brain"
+    applyMsgThirdPerson = "consumes the biomass overgrown zombie brain"
+    weight = 0.1
+    description = "Increases one random attribute if minion have it."
+    uses = 1
+    price = 10000
+    effect = ChooseRandomUntilSuccessful {
+      Filter AttributeAtLeast "DAMAGE" 10 {IncreaseAttr DAMAGE 1}
+      Filter AttributeAtLeast "SPELL_DAMAGE" 10 {IncreaseAttr SPELL_DAMAGE 1}
+      Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+    }
+    effectDescription = false
+    storageIds = {"biomass"}
+  }
+
+"Abyssus_Hive_Magic_Infused_Biomass"
+  {
+    viewId = { "abyssus_hive_biomass_enriched_3" }
+    name = "magic infused biomass"
+    plural = "magic infused biomasses"
+    applyMsgFirstPerson = "consume the magic infused biomasses"
+    applyMsgThirdPerson = "consumes the magic infused biomasses"
+    weight = 0.1
+    description = "Increases attributes by one of all minions even for future ones during next reinforcement."
+    uses = 1
+    price = 10000
+    effect = FirstSuccessful {
+      Filter Flag "abyssus_hive_attrib_inc_50_global" {
+        UI "unlock_message" { "message" Label "You have reached maximum of 50/50 for the eligible attributes." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+        UI "unlock_message" { "message" Label "Item will be recycled to 100 biomass." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+        DropItems {"Abyssus_Hive_Biomass"} {100}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_1_global" {
+        SetFlag "abyssus_hive_attrib_inc_1_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +1." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_2_global" {
+        SetFlag "abyssus_hive_attrib_inc_2_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +2." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_3_global" {
+        SetFlag "abyssus_hive_attrib_inc_3_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +3." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_4_global" {
+        SetFlag "abyssus_hive_attrib_inc_4_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +4." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_5_global" {
+        SetFlag "abyssus_hive_attrib_inc_5_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +5." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_6_global" {
+        SetFlag "abyssus_hive_attrib_inc_6_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +6." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_7_global" {
+        SetFlag "abyssus_hive_attrib_inc_7_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +7." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_8_global" {
+        SetFlag "abyssus_hive_attrib_inc_8_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +8." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_9_global" {
+        SetFlag "abyssus_hive_attrib_inc_9_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +9." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_10_global" {
+        SetFlag "abyssus_hive_attrib_inc_10_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +10." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_11_global" {
+        SetFlag "abyssus_hive_attrib_inc_11_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +11." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_12_global" {
+        SetFlag "abyssus_hive_attrib_inc_12_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +12." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_13_global" {
+        SetFlag "abyssus_hive_attrib_inc_13_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +13." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_14_global" {
+        SetFlag "abyssus_hive_attrib_inc_14_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +14." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_15_global" {
+        SetFlag "abyssus_hive_attrib_inc_15_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +15." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_16_global" {
+        SetFlag "abyssus_hive_attrib_inc_16_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +16." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_17_global" {
+        SetFlag "abyssus_hive_attrib_inc_17_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +17." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_18_global" {
+        SetFlag "abyssus_hive_attrib_inc_18_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +18." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_19_global" {
+        SetFlag "abyssus_hive_attrib_inc_19_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +19." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_20_global" {
+        SetFlag "abyssus_hive_attrib_inc_20_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +20." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_21_global" {
+        SetFlag "abyssus_hive_attrib_inc_21_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +21." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_22_global" {
+        SetFlag "abyssus_hive_attrib_inc_22_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +22." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_23_global" {
+        SetFlag "abyssus_hive_attrib_inc_23_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +23." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_24_global" {
+        SetFlag "abyssus_hive_attrib_inc_24_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +24." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_25_global" {
+        SetFlag "abyssus_hive_attrib_inc_25_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +25." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_26_global" {
+        SetFlag "abyssus_hive_attrib_inc_26_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +26." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_27_global" {
+        SetFlag "abyssus_hive_attrib_inc_27_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +27." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_28_global" {
+        SetFlag "abyssus_hive_attrib_inc_28_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +28." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_29_global" {
+        SetFlag "abyssus_hive_attrib_inc_29_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +29." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_30_global" {
+        SetFlag "abyssus_hive_attrib_inc_30_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +30." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_31_global" {
+        SetFlag "abyssus_hive_attrib_inc_31_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +31." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_32_global" {
+        SetFlag "abyssus_hive_attrib_inc_32_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +32." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_33_global" {
+        SetFlag "abyssus_hive_attrib_inc_33_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +33." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_34_global" {
+        SetFlag "abyssus_hive_attrib_inc_34_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +34." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_35_global" {
+        SetFlag "abyssus_hive_attrib_inc_35_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +35." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_36_global" {
+        SetFlag "abyssus_hive_attrib_inc_36_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +36." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_37_global" {
+        SetFlag "abyssus_hive_attrib_inc_37_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +37." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_38_global" {
+        SetFlag "abyssus_hive_attrib_inc_38_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +38." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_39_global" {
+        SetFlag "abyssus_hive_attrib_inc_39_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +39." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_40_global" {
+        SetFlag "abyssus_hive_attrib_inc_40_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +40." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_41_global" {
+        SetFlag "abyssus_hive_attrib_inc_41_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +41." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_42_global" {
+        SetFlag "abyssus_hive_attrib_inc_42_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +42." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_43_global" {
+        SetFlag "abyssus_hive_attrib_inc_43_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +43." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_44_global" {
+        SetFlag "abyssus_hive_attrib_inc_44_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +44." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_45_global" {
+        SetFlag "abyssus_hive_attrib_inc_45_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +45." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_46_global" {
+        SetFlag "abyssus_hive_attrib_inc_46_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +46." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_47_global" {
+        SetFlag "abyssus_hive_attrib_inc_47_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +47." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_48_global" {
+        SetFlag "abyssus_hive_attrib_inc_48_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +48." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_49_global" {
+        SetFlag "abyssus_hive_attrib_inc_49_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +49." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+      Filter Not Flag "abyssus_hive_attrib_inc_50_global" {
+        SetFlag "abyssus_hive_attrib_inc_50_global" true
+        UI "unlock_message" { "message" Label "Eligible attributes will be increased in total by +50." "view_id" ViewIdList {{"abyssus_hive_biomass_enriched_2"}}}
+      }
+    }
+    effectDescription = false
+    storageIds = {"biomass"}
+  }

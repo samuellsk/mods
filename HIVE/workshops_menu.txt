@@ -1,0 +1,28 @@
+
+"abyssus_hive_liveforge_pool" {
+  "ABYSSUS_HIVE_LIVEFORGE"
+  {
+    {{"Abyssus_Hive_Biomass"}                5        "WOOD" 5 }
+    {{"Abyssus_Hive_Biomass"}                6        "STONE" 4 }
+    {{"Abyssus_Hive_Biomass"}                7        "IRON" 3 }
+    {{"Abyssus_Hive_Biomass"}                8        "GOLD" 2 }
+    {{"Abyssus_Hive_Biomass"}                8        "ADA"  2 }
+    {{"Abyssus_Hive_Biomass"}                9        "ADOXIUM" 1 }
+    {{"Abyssus_Hive_Biomass"}                9        "INFERNITE" 1 }
+    {{"Abyssus_Hive_Biomass"}                10        "CORPSE" 1 }
+    {{"Abyssus_Hive_Biomass_Enriched"}       100        "ABYSSUS_HIVE_BIOMASS" 100 }
+    {item = {"Abyssus_Hive_Biomass_Zombie_Brain"} work = 30 requireIngredient = "zombie_brain" }
+    {item = {"Abyssus_Hive_Magic_Infused_Biomass"} work = 100 requireIngredient = "cyclops_brain" }
+    {item = {"Abyssus_Hive_Magic_Infused_Biomass"} work = 100 requireIngredient = "hydra_tongue" }
+    {item = {"Abyssus_Hive_Magic_Infused_Biomass"} work = 100 requireIngredient = "prophet_remains" }
+    {item = {"Abyssus_Hive_Magic_Infused_Biomass"} work = 100 requireIngredient = "devil_horns" }
+    {item = {"Abyssus_Hive_Magic_Infused_Biomass"} work = 100 requireIngredient = "archwood" }
+    {item = {"Abyssus_Hive_Magic_Infused_Biomass"} work = 100 requireIngredient = "red_scales" }
+    {item = {"Abyssus_Hive_Magic_Infused_Biomass"} work = 100 requireIngredient = "black_scales" }
+    {item = {"Abyssus_Hive_Magic_Infused_Biomass"} work = 100 requireIngredient = "white_scales" }
+    {item = {"Abyssus_Hive_Magic_Infused_Biomass"} work = 100 requireIngredient = "green_scales" }
+    {item = {"Abyssus_Hive_Magic_Infused_Biomass"} work = 100 requireIngredient = "yellow_scales" }
+    {item = {"Abyssus_Hive_Magic_Infused_Biomass"} work = 100 requireIngredient = "devil_hooves" }
+    {item = {"Abyssus_Hive_Magic_Infused_Biomass"} work = 100 requireIngredient = "cyclops_testes" }
+  }
+}

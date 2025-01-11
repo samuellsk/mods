@@ -1,0 +1,1106 @@
+"abyssus hive mawspawn worker"
+{
+  symbol = "W"
+  effect = Name "become a worker" Description "minion will become a worker and will start hauling,digging and constructing" {
+    AI Health 0 1 0 1 {
+      MakeHumanoid
+      AddMinionTrait WORKER
+      AddMinionTrait NO_EQUIPMENT
+      AddMinionTrait NO_AUTO_EQUIPMENT
+      RemoveAbility "abyssus hive mawspawn worker"
+    }
+  }
+  message = "" ""
+  cooldown = 3
+}
+
+"abyssus hive minion traits"
+{
+  symbol = "T"
+  effect = Name "minion traits" Description "minion will gain more traits" {
+    AI Health 0 1 0 1 {
+      MakeHumanoid
+      AddMinionTrait NO_EQUIPMENT
+      AddMinionTrait NO_AUTO_EQUIPMENT
+      RemoveAbility "abyssus hive minion traits"
+    }
+  }
+  message = "" ""
+  cooldown = 3
+}
+
+"abyssus hive mawreaver summon spawns"
+{
+  symbol = "S"
+  effect = Name "spawn mawspawn" Description "Automatically spawns 1 mawspawn permanently until 10 is reached. More can be spawned manually." {
+    AI Or {Not Flag "abyssus_hive_mawspawn_1" Not Flag "abyssus_hive_mawspawn_2" Not Flag "abyssus_hive_mawspawn_3" Not Flag "abyssus_hive_mawspawn_4" Not Flag "abyssus_hive_mawspawn_5" Not Flag "abyssus_hive_mawspawn_6" Not Flag "abyssus_hive_mawspawn_7" Not Flag "abyssus_hive_mawspawn_8" Not Flag "abyssus_hive_mawspawn_9" Not Flag "abyssus_hive_mawspawn_10"} 0 1 {
+      SetFlag "abyssus_hive_mawspawn_1" false
+      SetFlag "abyssus_hive_mawspawn_2" false
+      SetFlag "abyssus_hive_mawspawn_3" false
+      SetFlag "abyssus_hive_mawspawn_4" false
+      SetFlag "abyssus_hive_mawspawn_5" false
+      SetFlag "abyssus_hive_mawspawn_6" false
+      SetFlag "abyssus_hive_mawspawn_7" false
+      SetFlag "abyssus_hive_mawspawn_8" false
+      SetFlag "abyssus_hive_mawspawn_9" false
+      SetFlag "abyssus_hive_mawspawn_10" false
+      AllCreatures Filter CreatureId "ABYSSUS_HIVE_MAWSPAWN_PERM" {
+        Filter CreatureFlag "abyssus_hive_mawspawn_1" {SetFlag "abyssus_hive_mawspawn_1" true}
+        Filter CreatureFlag "abyssus_hive_mawspawn_2" {SetFlag "abyssus_hive_mawspawn_2" true}
+        Filter CreatureFlag "abyssus_hive_mawspawn_3" {SetFlag "abyssus_hive_mawspawn_3" true}
+        Filter CreatureFlag "abyssus_hive_mawspawn_4" {SetFlag "abyssus_hive_mawspawn_4" true}
+        Filter CreatureFlag "abyssus_hive_mawspawn_5" {SetFlag "abyssus_hive_mawspawn_5" true}
+        Filter CreatureFlag "abyssus_hive_mawspawn_6" {SetFlag "abyssus_hive_mawspawn_6" true}
+        Filter CreatureFlag "abyssus_hive_mawspawn_7" {SetFlag "abyssus_hive_mawspawn_7" true}
+        Filter CreatureFlag "abyssus_hive_mawspawn_8" {SetFlag "abyssus_hive_mawspawn_8" true}
+        Filter CreatureFlag "abyssus_hive_mawspawn_9" {SetFlag "abyssus_hive_mawspawn_9" true}
+        Filter CreatureFlag "abyssus_hive_mawspawn_10" {SetFlag "abyssus_hive_mawspawn_10" true}
+      }
+      FirstSuccessful {
+        Filter Not Flag "abyssus_hive_mawspawn_1" {PlaceFurniture "ABYSSUS_HIVE_MAW_SPAWN"}
+        Filter Not Flag "abyssus_hive_mawspawn_2" {PlaceFurniture "ABYSSUS_HIVE_MAW_SPAWN"}
+        Filter Not Flag "abyssus_hive_mawspawn_3" {PlaceFurniture "ABYSSUS_HIVE_MAW_SPAWN"}
+        Filter Not Flag "abyssus_hive_mawspawn_4" {PlaceFurniture "ABYSSUS_HIVE_MAW_SPAWN"}
+        Filter Not Flag "abyssus_hive_mawspawn_5" {PlaceFurniture "ABYSSUS_HIVE_MAW_SPAWN"}
+        Filter Not Flag "abyssus_hive_mawspawn_6" {PlaceFurniture "ABYSSUS_HIVE_MAW_SPAWN"}
+        Filter Not Flag "abyssus_hive_mawspawn_7" {PlaceFurniture "ABYSSUS_HIVE_MAW_SPAWN"}
+        Filter Not Flag "abyssus_hive_mawspawn_8" {PlaceFurniture "ABYSSUS_HIVE_MAW_SPAWN"}
+        Filter Not Flag "abyssus_hive_mawspawn_9" {PlaceFurniture "ABYSSUS_HIVE_MAW_SPAWN"}
+        Filter Not Flag "abyssus_hive_mawspawn_10" {PlaceFurniture "ABYSSUS_HIVE_MAW_SPAWN"}
+        PlaceFurniture "ABYSSUS_HIVE_MAW_SPAWN"
+      }
+    }
+  }
+  message = "" ""
+  cooldown = 1500
+}
+
+"abyssus hive mawspawn digging skill"
+{
+  symbol = "W"
+  effect = Name "increase digging skill" Description "Increases digging skill by 20" {
+    AI Health 0 1 0 1 {
+      IncreaseAttr "DIGGING" 35
+      RemoveAbility "abyssus hive mawspawn digging skill"
+    }
+  }
+  message = "" ""
+  cooldown = 10
+}
+
+"abyssus hive mawreaver summon combat spawns"
+{
+  symbol = "S"
+  effect = Name "spawn combat mawspawn" Description "Spawns temporarily 4 combat oriented mawspawns." {
+    Summon "ABYSSUS_HIVE_MAWSPAWN_TEMP" 4 15
+  }
+  message = "" ""
+  cooldown = 50
+}
+
+"abyssus hive poison bolt"
+{
+  symbol = "⥇"
+  effect = Name "poison bolt" Description "Shoots poison bolt at your enemies and poisons them." {
+    Filter Enemy {
+      Filter Not LastingEffect POISON {
+        Damage DAMAGE HIT
+        Lasting POISON
+      }
+    }
+  }
+  fx = {MAGIC_MISSILE}
+  range = 2
+  endOnly = true
+  cooldown = {3 7}
+  type = ABILITY
+  sound = "SPELL_BLAST"
+}
+
+"abyssus hive poison sting"
+{
+  symbol = "<-"
+  effect = Name "poison sting" Description "Stings your enemies and poisons them." {
+    Filter Enemy {
+      Filter Not LastingEffect POISON {
+        Damage DAMAGE HIT
+        Lasting POISON
+      }
+    }
+  }
+  range = 1
+  endOnly = true
+  type = ABILITY
+  cooldown = {3 7}
+}
+
+"abyssus hive speed"
+{
+  symbol = "S"
+  effect = Name "gain speed" Description "Adds speed to the minion" {
+    AI Health 0 1 0 1 {
+      Permanent SPEED
+      Filter LastingEffect SPEED {
+        RemoveAbility "abyssus hive speed"
+      }
+    }
+  }
+  message = "" ""
+  cooldown = 10
+}
+
+"abyssus hive vilewhip carapace armor"
+{
+  symbol = "C"
+  effect = Name "gain carapace armor" Description "Adds carapace armor to decrease incoming damage" {
+    AI Health 0 1 0 1 {
+      Permanent "ABYSSUS_HIVE_VILEWHIP_CARAPACE"
+      Filter LastingEffect "ABYSSUS_HIVE_VILEWHIP_CARAPACE" {
+        RemoveAbility "abyssus hive vilewhip carapace armor"
+      }
+    }
+  }
+  message = "" ""
+  cooldown = 10
+}
+
+"abyssus hive magic shot"
+{
+  symbol = "->"
+  effect = Name "magic shot" Description "Simple magic shot to damage your enemies." {
+    Filter Enemy {
+      Damage SPELL_DAMAGE HIT
+    }
+  }
+  range = 8
+  projectileViewId = { "abyssus_spells_magic_missile_blue_projectile" }
+  endOnly = true
+  cooldown = {3 6}
+  sound = "SPELL_BLAST"
+}
+
+"abyssus hive soulpiercer soulrend"
+{
+  symbol = "👾"
+  effect = Name "soulrend" Description "Rend a soul , damaging it over time" {
+    Filter Enemy {
+      Filter Not LastingEffect "ABYSSUS_HIVE_SOULREND" {
+        Damage SPELL_DAMAGE HIT
+        Lasting 7 "ABYSSUS_HIVE_SOULREND" 
+      }
+    }
+  }
+  range = 9
+  projectileViewId = { "abyssus_spells_magic_missile_blue_projectile" }
+  endOnly = true
+  cooldown = {3 10}
+  sound = "SPELL_BLAST"
+}
+
+"abyssus hive necrosis range"
+{
+  symbol = "☻"
+  effect = Name "necrosis" Description "Spread necrosis to the enemy , increasing damage he takes by 35 percent." {
+    Filter Enemy {
+      Filter Not LastingEffect "ABYSSUS_HIVE_NECROSIS" {
+        Lasting 10 "ABYSSUS_HIVE_NECROSIS"
+      }
+    }
+  }
+  range = 8
+  fx = {CIRCULAR_SPELL ,ColorId PURPLE}
+  endOnly = true
+  cooldown = {5 15}
+  type = ABILITY
+  sound = "SPELL_STR_BONUS"
+}
+
+"abyssus hive necrosis melee"
+{
+  symbol = "☻"
+  effect = Name "necrosis" Description "Spread necrosis to the enemy , increasing damage he takes by 35 percent." {
+    Filter Enemy {
+      Filter Not LastingEffect "ABYSSUS_HIVE_NECROSIS" {
+        Lasting 10 "ABYSSUS_HIVE_NECROSIS"
+      }
+    }
+  }
+  fx = {CIRCULAR_SPELL ,ColorId PURPLE}
+  endOnly = true
+  range = 1
+  cooldown = {5 15}
+  type = ABILITY
+  sound = "SPELL_STR_BONUS"
+}
+
+"abyssus hive fire shot"
+{
+  symbol = "🔥"
+  effect = Name "firebolt" Description "Simple firebolt to damage your enemies." {
+    Filter Enemy {
+      Damage SPELL_DAMAGE HIT
+    }
+  }
+  range = 8
+  projectileViewId = { "abyssus_spells_firebolt_projectile" }
+  endOnly = true
+  cooldown = {2 4}
+  sound = "SPELL_BLAST"
+}
+
+"abyssus hive fireball"
+{
+  symbol = "🔥🔥"
+  effect = Name "fireball" Description "Shoot fireball to damage your enemies for double the damage." {
+    Filter Enemy {
+      Damage SPELL_DAMAGE HIT
+      Damage SPELL_DAMAGE HIT
+    }
+  }
+  range = 8
+  projectileViewId = { "abyssus_spells_fireball_projectile" }
+  endOnly = true
+  cooldown = {4 7}
+  sound = "SPELL_BLAST"
+}
+
+"abyssus hive flamestrike"
+{
+  symbol = "🔥☻"
+  effect = Name "flamestrike" Description "Instantly damage enemy for 10 percent and cause a debuff." {
+    Filter Enemy {
+      Filter Not LastingEffect "ABYSSUS_HIVE_BURNING" {
+        Lasting 10 "ABYSSUS_HIVE_BURNING"
+        Filter Not HasAnyHealth Chance 0.05 {
+          CreatureMessage {"lose a limb" "loses a limb"}
+          ChooseRandom {
+            InjureBodyPart LEG
+            InjureBodyPart ARM
+            InjureBodyPart HEAD
+          }
+        }
+        Bleed 0.1 "is burnt"
+      }
+    }
+  }
+  range = 8
+  endOnly = true
+  cooldown = {5 15}
+  sound = "SPELL_FIRE_SPHERE_PET"
+}
+
+"abyssus hive acidspill"
+{
+  symbol = "#"
+  effect = Name "acidspill" Description "Spit the acid ball that will damage and leave a spill on the ground." {
+    AI Enemy 0 1 AI Not Enemy 1 0 {
+      PlaceFurniture "ABYSSUS_HIVE_ACID_SPILL"
+      Filter Not HasAnyHealth Chance 0.05 {
+        CreatureMessage {"lose a limb" "loses a limb"}
+        ChooseRandom {
+          InjureBodyPart LEG
+          InjureBodyPart ARM
+          InjureBodyPart HEAD
+        }
+      }
+      Bleed 0.1 "is burnt by acid"
+      Damage SPELL_DAMAGE HIT
+    }
+  }
+  cooldown = {5 15}
+  range = 7
+  endOnly = true
+  projectileViewId = { "abyssus_spells_acidspill_projectile" }
+  type = ABILITY
+  sound = "SPELL_BLAST"
+}
+
+"abyssus hive webspit"
+{
+  symbol = "🕸"
+  effect = Name "webspit" Description "Spit the ball of web to capture enemies at place." {
+    Filter Enemy {
+      Filter Not LastingEffect ENTANGLED {
+        Lasting 10 ENTANGLED
+        Damage SPELL_DAMAGE HIT
+      }
+    }
+  }
+  cooldown = {5 15}
+  range = 7
+  endOnly = true
+  projectileViewId = { "abyssus_spells_webspit_projectile" }
+  type = ABILITY
+  sound = "SPELL_BLAST"
+}
+
+"abyssus hive rebirth"
+{
+  symbol = "♻️"
+  effect = Name "rebirth" Description "Grants rebirth upon death, provided there are more than 100 turns between each demise." AI Not LastingEffect LIFE_SAVED 0 1 {
+    Permanent LIFE_SAVED
+  }
+  cooldown = 100
+  targetSelf = true
+  type = ABILITY
+  sound = "SPELL_HEALING"
+}
+
+"abyssus hive reinforced necrohide"
+{
+  symbol = "R"
+  effect = Name "gain reinforced necrohide" Description "Adds reinforced necrohide to the minion" {
+    AI Health 0 1 0 1 {
+      Permanent "ABYSSUS_HIVE_REINFORCED_NECROHIDE"
+      Filter LastingEffect "ABYSSUS_HIVE_REINFORCED_NECROHIDE" {
+        RemoveAbility "abyssus hive reinforced necrohide"
+      }
+    }
+  }
+  message = "" ""
+  cooldown = 10
+}
+
+"abyssus hive rapid regeneration"
+{
+  symbol = "☘️"
+  effect = Name "rapid regeneration" Description "Recovers 25 percent of health every turn for 6 turns." {
+    Lasting 6 "ABYSSUS_HIVE_RAPID_REGENERATION"
+  }
+  cooldown = {10 16}
+  targetSelf = true
+  type = ABILITY
+  sound = "SPELL_HEALING"
+}
+
+"abyssus hive desecrator strengthen minions"
+{
+  symbol = "R"
+  effect = Name "reinforce minions" Description "Increases damage of your minions for every 50 damage of the desecrator by 15 but not his own damage." {
+    AI Health 0 1 0 1 {
+      Caster {
+        Filter AttributeAtLeast "LABORATORY" 15 {
+          SetFlag "abyssus_hive_desecrator_15_lab" true
+          Filter Not Flag "abyssus_hive_desecrator_15_lab_first_time" {
+            UI "unlock_message" { "message" Label "You have found a hidden attribute reinforcment path." "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            UI "unlock_message" { "message" Label "Desecrator reached laboratory skill of 15. He will buff all of our minions laboratory skill by 2." "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            UI "unlock_message" { "message" Label "Desecrators own laboratory skill will not be increased." "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            UI "unlock_message" { "message" Label "Even if you summon new minions they will receive this buff too after a while." "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            SetFlag "abyssus_hive_desecrator_15_lab_first_time" true
+          }
+        }
+        Filter AttributeAtLeast "DEFENSE" 90 {
+          SetFlag "abyssus_hive_desecrator_90_defense" true
+          Filter Not Flag "abyssus_hive_desecrator_90_defense_first_time" {
+            UI "unlock_message" { "message" Label "Desecrator reached defense of 90. All of your minions will gain buff - Children of the Hive" "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            UI "unlock_message" { "message" Label "Children of the Hive - Restores 5 percent of health every turn. Stacks with other restorations." "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            UI "unlock_message" { "message" Label "Even if you summon new minions they will receive this buff too after a while." "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            SetFlag "abyssus_hive_desecrator_90_defense_first_time" true
+          }
+        }
+        Filter AttributeAtLeast "DAMAGE" 50 {
+          SetFlag "abyssus_hive_desecrator_50_damage" true
+          Filter Not Flag "abyssus_hive_desecrator_50_damage_first_time" {
+            UI "unlock_message" { "message" Label "Desecrator reached damage of 50. He will buff all of our minions attributes like defense , damage and spell damage." "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            UI "unlock_message" { "message" Label "The attribute is increased by 15 if they reached the threshold of 10 in that attribute." "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            UI "unlock_message" { "message" Label "Desecrators own attributes will not be increased." "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            UI "unlock_message" { "message" Label "Even if you summon new minions they will receive this buff too after a while." "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            SetFlag "abyssus_hive_desecrator_50_damage_first_time" true
+          }
+        }
+        Filter AttributeAtLeast "DAMAGE" 75 {
+          SetFlag "abyssus_hive_desecrator_75_damage" true
+          Filter Not Flag "abyssus_hive_desecrator_75_damage_first_time" {
+            UI "unlock_message" { "message" Label "Desecrator reached damage of 75. He will buff all of our minions attributes like defense , damage and spell damage." "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            UI "unlock_message" { "message" Label "Even if you summon new minions they will receive this buff too after a while." "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            SetFlag "abyssus_hive_desecrator_75_damage_first_time" true
+          }
+        }
+        Filter AttributeAtLeast "DAMAGE" 100 {
+          SetFlag "abyssus_hive_desecrator_100_damage" true
+          Filter Not Flag "abyssus_hive_desecrator_100_damage_first_time" {
+            UI "unlock_message" { "message" Label "Desecrator reached damage of 100. He will buff all of our minions attributes like defense , damage and spell damage." "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            UI "unlock_message" { "message" Label "Even if you summon new minions they will receive this buff too after a while." "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            SetFlag "abyssus_hive_desecrator_100_damage_first_time" true
+          }
+        }
+        Filter AttributeAtLeast "DAMAGE" 125 {
+          SetFlag "abyssus_hive_desecrator_125_damage" true
+          Filter Not Flag "abyssus_hive_desecrator_125_damage_first_time" {
+            UI "unlock_message" { "message" Label "Desecrator reached damage of 125. He will buff all of our minions attributes like defense , damage and spell damage." "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            UI "unlock_message" { "message" Label "Even if you summon new minions they will receive this buff too after a while." "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            SetFlag "abyssus_hive_desecrator_125_damage_first_time" true
+          }
+        }
+        Filter AttributeAtLeast "DAMAGE" 150 {
+          SetFlag "abyssus_hive_desecrator_150_damage" true
+          Filter Not Flag "abyssus_hive_desecrator_150_damage_first_time" {
+            UI "unlock_message" { "message" Label "Desecrator reached damage of 150. He will buff all of our minions attributes like defense , damage and spell damage." "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            UI "unlock_message" { "message" Label "This is the last stage where your minions will receive additional buff - Power in Numbers" "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            UI "unlock_message" { "message" Label "Power in Numbers is decreasing any damage taken by 50 percent." "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            UI "unlock_message" { "message" Label "Even if you summon new minions they will receive this buff too after a while." "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            SetFlag "abyssus_hive_desecrator_150_damage_first_time" true
+          }
+        }
+      }
+      AllCreatures Filter Not Enemy {
+        Filter Flag "abyssus_hive_desecrator_15_lab" {
+          Filter Not CreatureFlag "abyssus_hive_desecrator_2_lab" {
+            Filter And {AttributeAtLeast "LABORATORY" 5 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} {
+              IncreaseAttr LABORATORY 2
+              SetCreatureFlag "abyssus_hive_desecrator_2_lab" true
+            }
+          }
+        }
+        Filter Flag "abyssus_hive_desecrator_90_defense" {
+          Filter Not LastingEffect "ABYSSUS_HIVE_CHILDREN_OF_THE_HIVE" {
+            Permanent "ABYSSUS_HIVE_CHILDREN_OF_THE_HIVE"
+          }
+        }
+        Filter Flag "abyssus_hive_desecrator_50_damage" {
+          Filter Not CreatureFlag "abyssus_hive_desecrator_15_damage" {
+            Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} {
+              IncreaseAttr DAMAGE 15
+              SetCreatureFlag "abyssus_hive_desecrator_15_damage" true
+            }
+          }
+          Filter Not CreatureFlag "abyssus_hive_desecrator_15_spell_damage" {
+            Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} {
+              IncreaseAttr SPELL_DAMAGE 15
+              SetCreatureFlag "abyssus_hive_desecrator_15_spell_damage" true
+            }
+          }
+          Filter Not CreatureFlag "abyssus_hive_desecrator_15_defense" {
+            Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} {
+              IncreaseAttr DEFENSE 15
+              SetCreatureFlag "abyssus_hive_desecrator_15_defense" true
+            }
+          }
+        }
+        Filter Flag "abyssus_hive_desecrator_75_damage" {
+          Filter Not CreatureFlag "abyssus_hive_desecrator_30_damage" {
+            Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} {
+              IncreaseAttr DAMAGE 15
+              SetCreatureFlag "abyssus_hive_desecrator_30_damage" true
+            }
+          }
+          Filter Not CreatureFlag "abyssus_hive_desecrator_30_spell_damage" {
+            Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} {
+              IncreaseAttr SPELL_DAMAGE 15
+              SetCreatureFlag "abyssus_hive_desecrator_30_spell_damage" true
+            }
+          }
+          Filter Not CreatureFlag "abyssus_hive_desecrator_30_defense" {
+            Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} {
+              IncreaseAttr DEFENSE 15
+              SetCreatureFlag "abyssus_hive_desecrator_30_defense" true
+            }
+          }
+        }
+        Filter Flag "abyssus_hive_desecrator_100_damage" {
+          Filter Not CreatureFlag "abyssus_hive_desecrator_45_damage" {
+            Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} {
+              IncreaseAttr DAMAGE 15
+              SetCreatureFlag "abyssus_hive_desecrator_45_damage" true
+            }
+          }
+          Filter Not CreatureFlag "abyssus_hive_desecrator_45_spell_damage" {
+            Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} {
+              IncreaseAttr SPELL_DAMAGE 15
+              SetCreatureFlag "abyssus_hive_desecrator_45_spell_damage" true
+            }
+          }
+          Filter Not CreatureFlag "abyssus_hive_desecrator_45_defense" {
+            Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} {
+              IncreaseAttr DEFENSE 15
+              SetCreatureFlag "abyssus_hive_desecrator_45_defense" true
+            }
+          }
+        }
+        Filter Flag "abyssus_hive_desecrator_125_damage" {
+          Filter Not CreatureFlag "abyssus_hive_desecrator_60_damage" {
+            Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} {
+              IncreaseAttr DAMAGE 15
+              SetCreatureFlag "abyssus_hive_desecrator_60_damage" true
+            }
+          }
+          Filter Not CreatureFlag "abyssus_hive_desecrator_60_spell_damage" {
+            Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} {
+              IncreaseAttr SPELL_DAMAGE 15
+              SetCreatureFlag "abyssus_hive_desecrator_60_spell_damage" true
+            }
+          }
+          Filter Not CreatureFlag "abyssus_hive_desecrator_60_defense" {
+            Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} {
+              IncreaseAttr DEFENSE 15
+              SetCreatureFlag "abyssus_hive_desecrator_60_defense" true
+            }
+          }
+        }
+        Filter Flag "abyssus_hive_desecrator_150_damage" {
+          Filter Not CreatureFlag "abyssus_hive_desecrator_75_damage" {
+            Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} {
+              IncreaseAttr DAMAGE 15
+              SetCreatureFlag "abyssus_hive_desecrator_75_damage" true
+            }
+          }
+          Filter Not CreatureFlag "abyssus_hive_desecrator_75_spell_damage" {
+            Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} {
+              IncreaseAttr SPELL_DAMAGE 15
+              SetCreatureFlag "abyssus_hive_desecrator_75_spell_damage" true
+            }
+          }
+          Filter Not CreatureFlag "abyssus_hive_desecrator_75_defense" {
+            Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} {
+              IncreaseAttr DEFENSE 15
+              SetCreatureFlag "abyssus_hive_desecrator_75_defense" true
+            }
+          }
+          Filter Not LastingEffect "ABYSSUS_HIVE_POWER_IN_NUMBERS" {
+            Permanent "ABYSSUS_HIVE_POWER_IN_NUMBERS"
+          }
+        }
+        Filter Not CreatureFlag "abyssus_hive_attrib_inc_tier_1" {
+          Filter Flag "abyssus_hive_attrib_inc_1_global" {
+            Filter Not CreatureFlag "abyssus_hive_attrib_inc_1" {
+              Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+              Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+              Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+              SetCreatureFlag "abyssus_hive_attrib_inc_1" true
+            }
+            Filter Flag "abyssus_hive_attrib_inc_2_global" {
+              Filter Not CreatureFlag "abyssus_hive_attrib_inc_2" {
+                Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                SetCreatureFlag "abyssus_hive_attrib_inc_2" true
+              }
+              Filter Flag "abyssus_hive_attrib_inc_3_global" {
+                Filter Not CreatureFlag "abyssus_hive_attrib_inc_3" {
+                  Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                  Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                  Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                  SetCreatureFlag "abyssus_hive_attrib_inc_3" true
+                }
+                Filter Flag "abyssus_hive_attrib_inc_4_global" {
+                  Filter Not CreatureFlag "abyssus_hive_attrib_inc_4" {
+                    Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                    Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                    Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                    SetCreatureFlag "abyssus_hive_attrib_inc_4" true
+                  }
+                  Filter Flag "abyssus_hive_attrib_inc_5_global" {
+                    Filter Not CreatureFlag "abyssus_hive_attrib_inc_5" {
+                      Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                      Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                      Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                      SetCreatureFlag "abyssus_hive_attrib_inc_5" true
+                    }
+                    Filter Flag "abyssus_hive_attrib_inc_6_global" {
+                      Filter Not CreatureFlag "abyssus_hive_attrib_inc_6" {
+                        Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                        Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                        Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                        SetCreatureFlag "abyssus_hive_attrib_inc_6" true
+                      }
+                      Filter Flag "abyssus_hive_attrib_inc_7_global" {
+                        Filter Not CreatureFlag "abyssus_hive_attrib_inc_7" {
+                          Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                          Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                          Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                          SetCreatureFlag "abyssus_hive_attrib_inc_7" true
+                        }
+                        Filter Flag "abyssus_hive_attrib_inc_8_global" {
+                          Filter Not CreatureFlag "abyssus_hive_attrib_inc_8" {
+                            Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                            Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                            Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                            SetCreatureFlag "abyssus_hive_attrib_inc_8" true
+                          }
+                          Filter Flag "abyssus_hive_attrib_inc_9_global" {
+                            Filter Not CreatureFlag "abyssus_hive_attrib_inc_9" {
+                              Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                              Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                              Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                              SetCreatureFlag "abyssus_hive_attrib_inc_9" true
+                            }
+                            Filter Flag "abyssus_hive_attrib_inc_10_global" {
+                              Filter Not CreatureFlag "abyssus_hive_attrib_inc_10" {
+                                Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                                Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                                Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                                SetCreatureFlag "abyssus_hive_attrib_inc_10" true
+                                SetCreatureFlag "abyssus_hive_attrib_inc_tier_1" true
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_hive_attrib_inc_tier_2" {
+          Filter Flag "abyssus_hive_attrib_inc_11_global" {
+            Filter Not CreatureFlag "abyssus_hive_attrib_inc_11" {
+              Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+              Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+              Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+              SetCreatureFlag "abyssus_hive_attrib_inc_11" true
+            }
+            Filter Flag "abyssus_hive_attrib_inc_12_global" {
+              Filter Not CreatureFlag "abyssus_hive_attrib_inc_12" {
+                Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                SetCreatureFlag "abyssus_hive_attrib_inc_12" true
+              }
+              Filter Flag "abyssus_hive_attrib_inc_13_global" {
+                Filter Not CreatureFlag "abyssus_hive_attrib_inc_13" {
+                  Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                  Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                  Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                  SetCreatureFlag "abyssus_hive_attrib_inc_13" true
+                }
+                Filter Flag "abyssus_hive_attrib_inc_14_global" {
+                  Filter Not CreatureFlag "abyssus_hive_attrib_inc_14" {
+                    Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                    Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                    Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                    SetCreatureFlag "abyssus_hive_attrib_inc_14" true
+                  }
+                  Filter Flag "abyssus_hive_attrib_inc_15_global" {
+                    Filter Not CreatureFlag "abyssus_hive_attrib_inc_15" {
+                      Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                      Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                      Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                      SetCreatureFlag "abyssus_hive_attrib_inc_15" true
+                    }
+                    Filter Flag "abyssus_hive_attrib_inc_16_global" {
+                      Filter Not CreatureFlag "abyssus_hive_attrib_inc_16" {
+                        Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                        Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                        Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                        SetCreatureFlag "abyssus_hive_attrib_inc_16" true
+                      }
+                      Filter Flag "abyssus_hive_attrib_inc_17_global" {
+                        Filter Not CreatureFlag "abyssus_hive_attrib_inc_17" {
+                          Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                          Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                          Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                          SetCreatureFlag "abyssus_hive_attrib_inc_17" true
+                        }
+                        Filter Flag "abyssus_hive_attrib_inc_18_global" {
+                          Filter Not CreatureFlag "abyssus_hive_attrib_inc_18" {
+                            Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                            Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                            Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                            SetCreatureFlag "abyssus_hive_attrib_inc_18" true
+                          }
+                          Filter Flag "abyssus_hive_attrib_inc_19_global" {
+                            Filter Not CreatureFlag "abyssus_hive_attrib_inc_19" {
+                              Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                              Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                              Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                              SetCreatureFlag "abyssus_hive_attrib_inc_19" true
+                            }
+                            Filter Flag "abyssus_hive_attrib_inc_20_global" {
+                              Filter Not CreatureFlag "abyssus_hive_attrib_inc_20" {
+                                Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                                Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                                Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                                SetCreatureFlag "abyssus_hive_attrib_inc_20" true
+                                SetCreatureFlag "abyssus_hive_attrib_inc_tier_2" true
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_hive_attrib_inc_tier_3" {
+          Filter Flag "abyssus_hive_attrib_inc_21_global" {
+            Filter Not CreatureFlag "abyssus_hive_attrib_inc_21" {
+              Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+              Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+              Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+              SetCreatureFlag "abyssus_hive_attrib_inc_21" true
+            }
+            Filter Flag "abyssus_hive_attrib_inc_22_global" {
+              Filter Not CreatureFlag "abyssus_hive_attrib_inc_22" {
+                Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                SetCreatureFlag "abyssus_hive_attrib_inc_22" true
+              }
+              Filter Flag "abyssus_hive_attrib_inc_23_global" {
+                Filter Not CreatureFlag "abyssus_hive_attrib_inc_23" {
+                  Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                  Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                  Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                  SetCreatureFlag "abyssus_hive_attrib_inc_23" true
+                }
+                Filter Flag "abyssus_hive_attrib_inc_24_global" {
+                  Filter Not CreatureFlag "abyssus_hive_attrib_inc_24" {
+                    Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                    Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                    Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                    SetCreatureFlag "abyssus_hive_attrib_inc_24" true
+                  }
+                  Filter Flag "abyssus_hive_attrib_inc_25_global" {
+                    Filter Not CreatureFlag "abyssus_hive_attrib_inc_25" {
+                      Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                      Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                      Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                      SetCreatureFlag "abyssus_hive_attrib_inc_25" true
+                    }
+                    Filter Flag "abyssus_hive_attrib_inc_26_global" {
+                      Filter Not CreatureFlag "abyssus_hive_attrib_inc_26" {
+                        Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                        Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                        Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                        SetCreatureFlag "abyssus_hive_attrib_inc_26" true
+                      }
+                      Filter Flag "abyssus_hive_attrib_inc_27_global" {
+                        Filter Not CreatureFlag "abyssus_hive_attrib_inc_27" {
+                          Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                          Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                          Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                          SetCreatureFlag "abyssus_hive_attrib_inc_27" true
+                        }
+                        Filter Flag "abyssus_hive_attrib_inc_28_global" {
+                          Filter Not CreatureFlag "abyssus_hive_attrib_inc_28" {
+                            Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                            Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                            Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                            SetCreatureFlag "abyssus_hive_attrib_inc_28" true
+                          }
+                          Filter Flag "abyssus_hive_attrib_inc_29_global" {
+                            Filter Not CreatureFlag "abyssus_hive_attrib_inc_29" {
+                              Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                              Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                              Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                              SetCreatureFlag "abyssus_hive_attrib_inc_29" true
+                            }
+                            Filter Flag "abyssus_hive_attrib_inc_30_global" {
+                              Filter Not CreatureFlag "abyssus_hive_attrib_inc_30" {
+                                Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                                Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                                Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                                SetCreatureFlag "abyssus_hive_attrib_inc_30" true
+                                SetCreatureFlag "abyssus_hive_attrib_inc_tier_3" true
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_hive_attrib_inc_tier_4" {
+          Filter Flag "abyssus_hive_attrib_inc_31_global" {
+            Filter Not CreatureFlag "abyssus_hive_attrib_inc_31" {
+              Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+              Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+              Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+              SetCreatureFlag "abyssus_hive_attrib_inc_31" true
+            }
+            Filter Flag "abyssus_hive_attrib_inc_32_global" {
+              Filter Not CreatureFlag "abyssus_hive_attrib_inc_32" {
+                Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                SetCreatureFlag "abyssus_hive_attrib_inc_32" true
+              }
+              Filter Flag "abyssus_hive_attrib_inc_33_global" {
+                Filter Not CreatureFlag "abyssus_hive_attrib_inc_33" {
+                  Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                  Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                  Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                  SetCreatureFlag "abyssus_hive_attrib_inc_33" true
+                }
+                Filter Flag "abyssus_hive_attrib_inc_34_global" {
+                  Filter Not CreatureFlag "abyssus_hive_attrib_inc_34" {
+                    Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                    Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                    Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                    SetCreatureFlag "abyssus_hive_attrib_inc_34" true
+                  }
+                  Filter Flag "abyssus_hive_attrib_inc_35_global" {
+                    Filter Not CreatureFlag "abyssus_hive_attrib_inc_35" {
+                      Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                      Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                      Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                      SetCreatureFlag "abyssus_hive_attrib_inc_35" true
+                    }
+                    Filter Flag "abyssus_hive_attrib_inc_36_global" {
+                      Filter Not CreatureFlag "abyssus_hive_attrib_inc_36" {
+                        Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                        Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                        Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                        SetCreatureFlag "abyssus_hive_attrib_inc_36" true
+                      }
+                      Filter Flag "abyssus_hive_attrib_inc_37_global" {
+                        Filter Not CreatureFlag "abyssus_hive_attrib_inc_37" {
+                          Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                          Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                          Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                          SetCreatureFlag "abyssus_hive_attrib_inc_37" true
+                        }
+                        Filter Flag "abyssus_hive_attrib_inc_38_global" {
+                          Filter Not CreatureFlag "abyssus_hive_attrib_inc_38" {
+                            Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                            Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                            Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                            SetCreatureFlag "abyssus_hive_attrib_inc_38" true
+                          }
+                          Filter Flag "abyssus_hive_attrib_inc_39_global" {
+                            Filter Not CreatureFlag "abyssus_hive_attrib_inc_39" {
+                              Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                              Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                              Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                              SetCreatureFlag "abyssus_hive_attrib_inc_39" true
+                            }
+                            Filter Flag "abyssus_hive_attrib_inc_40_global" {
+                              Filter Not CreatureFlag "abyssus_hive_attrib_inc_40" {
+                                Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                                Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                                Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                                SetCreatureFlag "abyssus_hive_attrib_inc_40" true
+                                SetCreatureFlag "abyssus_hive_attrib_inc_tier_4" true
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_hive_attrib_inc_tier_5" {
+          Filter Flag "abyssus_hive_attrib_inc_41_global" {
+            Filter Not CreatureFlag "abyssus_hive_attrib_inc_41" {
+              Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+              Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+              Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+              SetCreatureFlag "abyssus_hive_attrib_inc_41" true
+            }
+            Filter Flag "abyssus_hive_attrib_inc_42_global" {
+              Filter Not CreatureFlag "abyssus_hive_attrib_inc_42" {
+                Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                SetCreatureFlag "abyssus_hive_attrib_inc_42" true
+              }
+              Filter Flag "abyssus_hive_attrib_inc_43_global" {
+                Filter Not CreatureFlag "abyssus_hive_attrib_inc_43" {
+                  Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                  Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                  Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                  SetCreatureFlag "abyssus_hive_attrib_inc_43" true
+                }
+                Filter Flag "abyssus_hive_attrib_inc_44_global" {
+                  Filter Not CreatureFlag "abyssus_hive_attrib_inc_44" {
+                    Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                    Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                    Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                    SetCreatureFlag "abyssus_hive_attrib_inc_44" true
+                  }
+                  Filter Flag "abyssus_hive_attrib_inc_45_global" {
+                    Filter Not CreatureFlag "abyssus_hive_attrib_inc_45" {
+                      Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                      Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                      Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                      SetCreatureFlag "abyssus_hive_attrib_inc_45" true
+                    }
+                    Filter Flag "abyssus_hive_attrib_inc_46_global" {
+                      Filter Not CreatureFlag "abyssus_hive_attrib_inc_46" {
+                        Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                        Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                        Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                        SetCreatureFlag "abyssus_hive_attrib_inc_46" true
+                      }
+                      Filter Flag "abyssus_hive_attrib_inc_47_global" {
+                        Filter Not CreatureFlag "abyssus_hive_attrib_inc_47" {
+                          Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                          Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                          Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                          SetCreatureFlag "abyssus_hive_attrib_inc_47" true
+                        }
+                        Filter Flag "abyssus_hive_attrib_inc_48_global" {
+                          Filter Not CreatureFlag "abyssus_hive_attrib_inc_48" {
+                            Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                            Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                            Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                            SetCreatureFlag "abyssus_hive_attrib_inc_48" true
+                          }
+                          Filter Flag "abyssus_hive_attrib_inc_49_global" {
+                            Filter Not CreatureFlag "abyssus_hive_attrib_inc_49" {
+                              Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                              Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                              Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                              SetCreatureFlag "abyssus_hive_attrib_inc_49" true
+                            }
+                            Filter Flag "abyssus_hive_attrib_inc_50_global" {
+                              Filter Not CreatureFlag "abyssus_hive_attrib_inc_50" {
+                                Filter And {AttributeAtLeast "DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DAMAGE 1 }
+                                Filter And {AttributeAtLeast "SPELL_DAMAGE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr SPELL_DAMAGE 1 }
+                                Filter And {AttributeAtLeast "DEFENSE" 10 Not CreatureId "ABYSSUS_HIVE_DESECRATOR"} { IncreaseAttr DEFENSE 1 }
+                                SetCreatureFlag "abyssus_hive_attrib_inc_50" true
+                                SetCreatureFlag "abyssus_hive_attrib_inc_tier_5" true
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  message = "" ""
+  cooldown = 200
+}
+
+"abyssus hive desecrator introduction"
+{
+  symbol = "I"
+  effect = Name "introduction" Description "Intorduces the desecrator" {
+    AI Health 0 1 0 1 {
+      SetFlag "abyssus_hive_stairs_summon" true
+      RemoveAbility "abyssus hive desecrator introduction"
+    }
+  }
+  message = "" ""
+  cooldown = 10
+}
+
+"abyssus hive desecrator maw"
+{
+  symbol = "I"
+  effect = Name "mawreaver" Description "Calls mawreaver" {
+    AI And {Flag "abyssus_hive_stairs_message" Frequency 10} 0 1 {
+      PlaceFurniture "ABYSSUS_HIVE_MAWREAVER_SPAWN"
+      RemoveAbility "abyssus hive desecrator maw"
+    }
+  }
+  message = "" ""
+  cooldown = 4
+}
+
+"abyssus hive lurker tentacle 1"
+{
+  symbol = "?"
+  effect = Name "summon tentacle" Description "Summons the tentacle at location to attack your enemies" {
+    AI Enemy 0 1 AI Not Enemy 1 0 {
+      Summon "ABYSSUS_HIVE_LURKER_TENTACLE_1" 1 10
+    }
+  }
+  cooldown = 7
+  endOnly = true
+  range = 8
+  type = ABILITY
+  sound = "SPELL_FIRE_SPHERE_PET"
+}
+
+"abyssus hive lurker tentacle 2"
+{
+  symbol = "?"
+  effect = Name "summon tentacle" Description "Summons the tentacle at location to attack your enemies" {
+    AI Enemy 0 1 AI Not Enemy 1 0 {
+      Summon "ABYSSUS_HIVE_LURKER_TENTACLE_2" 1 10
+    }
+  }
+  cooldown = 7
+  endOnly = true
+  range = 8
+  type = ABILITY
+  sound = "SPELL_FIRE_SPHERE_PET"
+}
+
+"abyssus hive tendril attack"
+{
+  symbol = "a"
+  effect = Name "tentacle attack" Description "Use tentacle to attack" {
+    AI Enemy 0 1 AI Not Enemy 1 0 {
+      Filter Not HasAnyHealth Chance 0.15 {
+        CreatureMessage {"lose a limb" "loses a limb"}
+        ChooseRandom {
+          InjureBodyPart LEG
+          InjureBodyPart ARM
+          InjureBodyPart HEAD
+        }
+      }
+      Bleed 0.15 "crushed by tentacle"
+      Damage DAMAGE HIT
+    }
+  }
+  range = 1
+  endOnly = true
+  cooldown = 2
+  type = ABILITY
+  sound = "SPELL_DEX_BONUS"
+}
+
+"abyssus hive forced regeneration"
+{
+  symbol = "🌿"
+  effect = Name "forced regeneration" Description "Recovers 15 percent of health every turn for 6 turns." {
+    Lasting 6 "ABYSSUS_HIVE_FORCED_REGENERATION"
+  }
+  cooldown = {10 16}
+  range = 7
+  endOnly = true
+  type = ABILITY
+  sound = "SPELL_HEALING"
+}
+
+"abyssus hive reinforced body"
+{
+  symbol = "R"
+  effect = Name "gain reinforced body" Description "Adds reinforced body buff to the minion" {
+    AI Health 0 1 0 1 {
+      Permanent "ABYSSUS_HIVE_REINFORCED_BODY"
+      Filter LastingEffect "ABYSSUS_HIVE_REINFORCED_BODY" {
+        RemoveAbility "abyssus hive reinforced body"
+      }
+    }
+  }
+  message = "" ""
+  cooldown = 10
+}
+
+"abyssus hive enhanced regeneration"
+{
+  symbol = "E"
+  effect = Name "gain enhanced regeneration" Description "Adds enhanced regeneration buff to the minion" {
+    AI Health 0 1 0 1 {
+      Permanent "ABYSSUS_HIVE_ENHANCED_REGENERATION"
+      Filter LastingEffect "ABYSSUS_HIVE_ENHANCED_REGENERATION" {
+        RemoveAbility "abyssus hive enhanced regeneration"
+      }
+    }
+  }
+  message = "" ""
+  cooldown = 10
+}

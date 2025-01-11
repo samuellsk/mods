@@ -1,0 +1,400 @@
+"ABYSSUS_HIVE_MAWSPAWN" {
+  name = "mawspawn"
+  adjective = "mawspawn"
+  description = "Spawned by the mawreaver"
+  addedMessage = "is a mawspawn" "seems to be a mawspawn" ""
+  removedMessage = "is no longer a mawspawn" "seems to be no longer a mawspawn" ""  
+  tickEffect = {
+    FirstSuccessful {
+      Filter Not CreatureFlag "abyssus_hive_mawspawn_summon" {
+        Filter Not Flag "abyssus_hive_mawspawn_1" {
+          SetCreatureFlag "abyssus_hive_mawspawn_1" true
+          SetCreatureFlag "abyssus_hive_mawspawn_summon" true
+          SetFlag "abyssus_hive_mawspawn_1" true
+        }
+      }
+      Filter Not CreatureFlag "abyssus_hive_mawspawn_summon" {
+        Filter Not Flag "abyssus_hive_mawspawn_2" {
+          SetCreatureFlag "abyssus_hive_mawspawn_2" true
+          SetCreatureFlag "abyssus_hive_mawspawn_summon" true
+          SetFlag "abyssus_hive_mawspawn_2" true
+        }
+      }
+      Filter Not CreatureFlag "abyssus_hive_mawspawn_summon" {
+        Filter Not Flag "abyssus_hive_mawspawn_3" {
+          SetCreatureFlag "abyssus_hive_mawspawn_3" true
+          SetCreatureFlag "abyssus_hive_mawspawn_summon" true
+          SetFlag "abyssus_hive_mawspawn_3" true
+        }
+      }
+      Filter Not CreatureFlag "abyssus_hive_mawspawn_summon" {
+        Filter Not Flag "abyssus_hive_mawspawn_4" {
+          SetCreatureFlag "abyssus_hive_mawspawn_4" true
+          SetCreatureFlag "abyssus_hive_mawspawn_summon" true
+          SetFlag "abyssus_hive_mawspawn_4" true
+        }
+      }
+      Filter Not CreatureFlag "abyssus_hive_mawspawn_summon" {
+        Filter Not Flag "abyssus_hive_mawspawn_5" {
+          SetCreatureFlag "abyssus_hive_mawspawn_5" true
+          SetCreatureFlag "abyssus_hive_mawspawn_summon" true
+          SetFlag "abyssus_hive_mawspawn_5" true
+        }
+      }
+      Filter Not CreatureFlag "abyssus_hive_mawspawn_summon" {
+        Filter Not Flag "abyssus_hive_mawspawn_6" {
+          SetCreatureFlag "abyssus_hive_mawspawn_6" true
+          SetCreatureFlag "abyssus_hive_mawspawn_summon" true
+          SetFlag "abyssus_hive_mawspawn_6" true
+        }
+      }
+      Filter Not CreatureFlag "abyssus_hive_mawspawn_summon" {
+        Filter Not Flag "abyssus_hive_mawspawn_7" {
+          SetCreatureFlag "abyssus_hive_mawspawn_7" true
+          SetCreatureFlag "abyssus_hive_mawspawn_summon" true
+          SetFlag "abyssus_hive_mawspawn_7" true
+        }
+      }
+      Filter Not CreatureFlag "abyssus_hive_mawspawn_summon" {
+        Filter Not Flag "abyssus_hive_mawspawn_8" {
+          SetCreatureFlag "abyssus_hive_mawspawn_8" true
+          SetCreatureFlag "abyssus_hive_mawspawn_summon" true
+          SetFlag "abyssus_hive_mawspawn_8" true
+        }
+      }
+      Filter Not CreatureFlag "abyssus_hive_mawspawn_summon" {
+        Filter Not Flag "abyssus_hive_mawspawn_9" {
+          SetCreatureFlag "abyssus_hive_mawspawn_9" true
+          SetCreatureFlag "abyssus_hive_mawspawn_summon" true
+          SetFlag "abyssus_hive_mawspawn_9" true
+        }
+      }
+      Filter Not CreatureFlag "abyssus_hive_mawspawn_summon" {
+        Filter Not Flag "abyssus_hive_mawspawn_10" {
+          SetCreatureFlag "abyssus_hive_mawspawn_10" true
+          SetCreatureFlag "abyssus_hive_mawspawn_summon" true
+          SetFlag "abyssus_hive_mawspawn_10" true
+        }
+      }
+      Filter Not Flag "abyssus_hive_mawspawn_unique" {
+        Filter Flag "abyssus_hive_mawspawn_10" {
+          Polymorph "ABYSSUS_HIVE_MAWSPAWN_UNIQUE" none
+          IncreaseAttr DAMAGE 15
+          IncreaseAttr DEFENSE 15
+          SetCreatureFlag "abyssus_hive_mawspawn_10" false
+          SetCreatureFlag "abyssus_hive_mawspawn_summon" false
+          SetFlag "abyssus_hive_mawspawn_10" false
+          SetFlag "abyssus_hive_mawspawn_unique" true
+          Filter Not Flag "abyssus_hive_mawspawn_unique_message" {
+            UI "unlock_message" { "message" Label "One of the mawspawns evolved into the unique form." "view_id" ViewIdList {{"abyssus_hive_mawspawn_unique"}}}
+            UI "unlock_message" { "message" Label "This mawspawn will be much stronger than other mawspawns." "view_id" ViewIdList {{"abyssus_hive_mawspawn_unique"}}}
+            SetFlag "abyssus_hive_mawspawn_unique_message" true
+          }
+        }
+      }
+    }
+    MakeHumanoid
+    AddMinionTrait WORKER
+    AddMinionTrait NO_EQUIPMENT
+    AddMinionTrait NO_AUTO_EQUIPMENT
+  }
+  color = ColorId RED
+  canWishFor = false
+}
+
+"ABYSSUS_HIVE_PREDATOR" {
+  name = "predator"
+  adjective = "predator"
+  description = "Will gain stats every 10 kills."
+  addedMessage = "gains strength after some kills" "seems to grow stronger after some kills" ""
+  removedMessage = "is no longer gaining strength from kills" "seems to have stopped growing stronger" ""
+  startEffect = {}
+  endEffect = {}
+  color = ColorId RED
+  canWishFor = false
+}
+
+"ABYSSUS_HIVE_DESECRATOR" {
+  name = "hive lord"
+  adjective = "hive lord"
+  description = "Rules over the hive"
+  addedMessage = "" "" ""
+  removedMessage = "" "" ""  
+  tickEffect = {
+    Filter Not FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR" {
+      Filter Not InTerritory {
+        Filter Not LastingEffect "ABYSSUS_HIVE_DESECRATOR_DEBUFF_COUNTER" {
+          Lasting 500 "ABYSSUS_HIVE_DESECRATOR_DEBUFF_COUNTER"
+        }
+      }
+    }
+    Filter FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR" {
+      Filter LastingEffect "ABYSSUS_HIVE_DESECRATOR_DEBUFF_COUNTER" {
+        RemoveLasting "ABYSSUS_HIVE_DESECRATOR_DEBUFF_COUNTER"
+      }
+      Filter LastingEffect "ABYSSUS_HIVE_DESECRATOR_DEBUFF" {
+        RemovePermanent "ABYSSUS_HIVE_DESECRATOR_DEBUFF"
+      }
+    }
+  }
+  color = ColorId RED
+  canWishFor = false
+}
+
+"ABYSSUS_HIVE_DESECRATOR_DEBUFF_COUNTER" {
+  name = "severed connection"
+  adjective = "severed connection"
+  description = "Needs to return to hive before he suffers."
+  addedMessage = "" "" ""
+  removedMessage = "" "" ""  
+  startEffect = {}
+  endEffect = {
+    Permanent "ABYSSUS_HIVE_DESECRATOR_DEBUFF"
+  }
+  color = ColorId RED
+  canWishFor = false
+  consideredBad = true
+}
+
+"ABYSSUS_HIVE_DESECRATOR_DEBUFF" {
+  name = "dying"
+  adjective = "dying"
+  description = "Minion will die soon."
+  addedMessage = "is dying" "seems to be dying" ""
+  removedMessage = "is no longer dying" "seems to be no longer dying" ""  
+  tickEffect = {
+    Bleed 0.17 "is dying"
+  }
+  color = ColorId RED
+  canWishFor = false
+  consideredBad = true
+}
+
+"ABYSSUS_HIVE_BLIGHT" {
+  name = "blight"
+  adjective = "blight"
+  description = "Is affected by blight, taking periodic damage."
+  addedMessage = "is being infected by blight" "seems to infected by blight" ""
+  removedMessage = "is no longer infected by blight" "seems to be no longer infected by blight" ""  
+  tickEffect = {
+    Filter Not HasAnyHealth Chance 0.04 {
+      CreatureMessage {"lose a limb" "loses a limb"}
+      ChooseRandom {
+        InjureBodyPart LEG
+        InjureBodyPart ARM
+        InjureBodyPart HEAD
+      }
+    }
+    Filter HasAnyHealth {
+      Bleed 0.04 "is blighted"
+    }
+  }
+  color = ColorId RED
+  canWishFor = false
+  consideredBad = true
+}
+
+"ABYSSUS_HIVE_LESSER_RESTORATION" {
+  name = "lesser restoration"
+  adjective = "lesser restoration"
+  description = "Healing over time"
+  addedMessage = "is being slowly restored" "seems to be slowly restoring" ""
+  removedMessage = "is no longer slowly restored" "seems to be no longer slowly restoring" ""  
+  tickEffect = {
+    Heal { FLESH 0.02 }
+  }
+  combatConsumable = true
+  color = ColorId GREEN
+  canWishFor = true
+}
+
+"ABYSSUS_HIVE_RESTORATION" {
+  name = "restoration"
+  adjective = "restoration"
+  description = "Healing over time"
+  addedMessage = "is being slowly restored" "seems to be slowly restoring" ""
+  removedMessage = "is no longer slowly restored" "seems to be no longer slowly restoring" ""  
+  tickEffect = {
+    Heal { FLESH 0.04 }
+  }
+  combatConsumable = true
+  color = ColorId GREEN
+  canWishFor = true
+}
+
+"ABYSSUS_HIVE_VILEWHIP_CARAPACE" {
+  name = "carapace armor"
+  adjective = "carapace armor"
+  description = "Creature's defense is increased. Any attack against it is decreased by 30%."
+  addedMessage = "its defense is increased" "" ""
+  removedMessage = "its defense is no longer increased" "" ""
+  color = ColorId SKY_BLUE
+  fx = BUFF_SKY_BLUE
+  defenseMultiplier = 1.30
+  combatConsumable = true
+}
+
+"ABYSSUS_HIVE_SOULREND" {
+  name = "soulrend"
+  adjective = "soulrend"
+  description = "Soul is rended, taking periodic damage"
+  addedMessage = "is having its soul torn apart" "seems to be unraveling" ""
+  removedMessage = "is no longer being torn apart" "seems to have regained its soul" ""
+  tickEffect = {
+    Filter Not HasAnyHealth Chance 0.08 {
+      CreatureMessage {"lose a limb" "loses a limb"}
+      ChooseRandom {
+        InjureBodyPart LEG
+        InjureBodyPart ARM
+        InjureBodyPart HEAD
+      }
+    }
+    Filter HasAnyHealth {
+      Bleed 0.1 "feels their soul unravel"
+    }
+  }
+  color = ColorId RED
+  canWishFor = false
+  consideredBad = true
+}
+
+"ABYSSUS_HIVE_NECROSIS" {
+  name = "necrosis"
+  adjective = "necrosis"
+  description = "Slowly turning into a lifeless husk. Defense against all attacks is decreased by 35%."
+  addedMessage = "is vulnerable to all types of damage" "" ""
+  removedMessage = "is no longer vulnerable to all types of damage" "" ""
+  color = ColorId BROWN
+  fx = DEBUFF_BROWN
+  defenseMultiplier = 0.65
+  consideredBad = true
+}
+
+"ABYSSUS_HIVE_BLOODTORN_CORPOREAL_FORM" {
+  name = "corporeal form"
+  adjective = "corporeal form"
+  description = "Creature's defense against all attacks is increased by 80%."
+  addedMessage = "is resistant to all types of damage" "" ""
+  removedMessage = "is no longer resistant to all types of damage" "" ""
+  color = ColorId SKY_BLUE
+  fx = BUFF_SKY_BLUE
+  defenseMultiplier = 1.80
+  combatConsumable = true
+}
+
+"ABYSSUS_HIVE_REINFORCED_NECROHIDE" {
+  name = "reinforced necrohide"
+  adjective = "reinforced necrohide"
+  description = "Creature's defense is increased. Any attack against it is decreased by 25%."
+  addedMessage = "its defense is increased" "" ""
+  removedMessage = "its defense is no longer increased" "" ""
+  color = ColorId SKY_BLUE
+  fx = BUFF_SKY_BLUE
+  defenseMultiplier = 1.25
+  combatConsumable = true
+}
+
+"ABYSSUS_HIVE_BURNING" {
+  name = "burning"
+  adjective = "burning"
+  description = "Is set a blaze, taking periodic damage."
+  addedMessage = "is being burned" "seems to be burning" ""
+  removedMessage = "is no longer burning" "seems to be no longer burning" ""
+  tickEffect = {
+    Fx {FIREBALL}
+    Filter Not HasAnyHealth Chance 0.05 {
+      CreatureMessage {"lose a limb" "loses a limb"}
+      ChooseRandom {
+        InjureBodyPart LEG
+        InjureBodyPart ARM
+        InjureBodyPart HEAD
+      }
+    }
+    Filter HasAnyHealth {
+      Bleed 0.05 "is burnt"
+    }
+  }
+  color = ColorId RED
+  canWishFor = false
+  consideredBad = true
+}
+
+"ABYSSUS_HIVE_RAPID_REGENERATION" {
+  name = "rapid regeneration"
+  adjective = "rapidly regenerating"
+  description = "Healing over time"
+  addedMessage = "is being rapidly regenerated" "seems to be rapidly regenerating" ""
+  removedMessage = "is no longer rapidly regenerating" "seems to be no longer rapidly regenerating" ""  
+  tickEffect = {
+    Heal { FLESH 0.25 }
+  }
+  combatConsumable = true
+  color = ColorId RED
+  canWishFor = true
+}
+
+"ABYSSUS_HIVE_POWER_IN_NUMBERS" {
+  name = "power in numbers"
+  adjective = "power in numbers"
+  description = "Creature's defense is increased. Any attack against it is decreased by 50%."
+  addedMessage = "its defense is increased" "" ""
+  removedMessage = "its defense is no longerincreased" "" ""
+  color = ColorId SKY_BLUE
+  fx = BUFF_SKY_BLUE
+  defenseMultiplier = 1.50
+  combatConsumable = true
+}
+
+"ABYSSUS_HIVE_CHILDREN_OF_THE_HIVE" {
+  name = "children of the hive"
+  adjective = "children of the hive"
+  description = "Healing over time"
+  addedMessage = "is being slowly restored" "seems to be slowly restoring" ""
+  removedMessage = "is no longer slowly restored" "seems to be no longer slowly restoring" ""  
+  tickEffect = {
+    Heal { FLESH 0.05 }
+  }
+  combatConsumable = true
+  color = ColorId GREEN
+  canWishFor = true
+}
+
+"ABYSSUS_HIVE_FORCED_REGENERATION" {
+  name = "forced regeneration"
+  adjective = "forcibly regenerating"
+  description = "Healing over time"
+  addedMessage = "is being forcefully regenerated" "seems to be forcefully regenerating" ""
+  removedMessage = "is no longer forcefully regenerating" "seems to be no longer forcefully regenerating" ""
+  tickEffect = {
+    Heal { FLESH 0.15 }
+  }
+  combatConsumable = true
+  color = ColorId RED
+  canWishFor = true
+}
+
+"ABYSSUS_HIVE_REINFORCED_BODY" {
+  name = "reinforced body"
+  adjective = "reinforcing body"
+  description = "Creature's defense is increased. Any attack against it is decreased by 20%."
+  addedMessage = "its defense is increased" "" ""
+  removedMessage = "its defense is no longer increased" "" ""
+  color = ColorId SKY_BLUE
+  fx = BUFF_SKY_BLUE
+  defenseMultiplier = 1.20
+  combatConsumable = true
+}
+
+"ABYSSUS_HIVE_ENHANCED_REGENERATION" {
+  name = "enhanced regeneration"
+  adjective = "enhanced regenerating"
+  description = "Healing over time"
+ addedMessage = "is being enhanced regenerated" "seems to be enhanced regenerating" ""
+  removedMessage = "is no longer enhanced regenerating" "seems to be no longer enhanced regenerating" ""
+  tickEffect = {
+    Heal { FLESH 0.10 }
+  }
+  combatConsumable = true
+  color = ColorId RED
+  canWishFor = true
+}

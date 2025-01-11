@@ -1,0 +1,1 @@
+"ABYSSUS_HIVE_BIOMASS"         {  "biomass"{ "abyssus_hive_biomass" } }

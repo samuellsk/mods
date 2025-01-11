@@ -1,0 +1,4 @@
+"default" modify append {
+  "abyssus_hive_random_floor" { ClearFurniture Place "FLOOR" Place "ABYSSUS_HIVE_RANDOM_FLOOR"  Flag EMPTY_ROOM }
+  "abyssus_hive_controller" Place "ABYSSUS_HIVE_SURFACE_CONTROLLER"
+}

@@ -1,0 +1,13 @@
+"ABYSSUS_HIVE_DISSOLVER" {
+  furniture = "ABYSSUS_HIVE_DISSOLVER_POOL"
+  name = "dissolving"
+  verb = "dissolvess"
+  attr = "FURNACE"
+}
+
+"ABYSSUS_HIVE_LIVEFORGE" {
+  furniture = "ABYSSUS_HIVE_LIVEFORGE_POOL_RANDOM"
+  name = "biomorphing"
+  verb = "biomorphs"
+  attr = "LABORATORY"
+}

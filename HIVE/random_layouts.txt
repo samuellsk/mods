@@ -1,0 +1,8 @@
+"abyssus_hive_keeper_entry" {
+  Position (MIDDLE, {1 1}, Position(LEFT_CENTER, {2 1},Position(RIGHT_CENTER, {1 1},Position(BOTTOM_CENTER, {1 3},Position(TOP_CENTER, {1 1},Position(MIDDLE, {2 1} , {Reset("abyssus_hive_random_floor") Set("abyssus_hive_random_floor")}))))))
+  Position (MIDDLE, {1 1}, Position(LEFT_CENTER, {2 1},Position(RIGHT_CENTER, {1 1},Position(BOTTOM_CENTER, {1 2},Position(TOP_CENTER, {1 1},Position(MIDDLE, {4 1} , {Reset("abyssus_hive_random_floor") Set("abyssus_hive_random_floor")}))))))
+  Position (MIDDLE, {1 1}, Position(LEFT_CENTER, {1 1},Position(RIGHT_CENTER, {1 1},Position(BOTTOM_CENTER, {1 1},Position(TOP_CENTER, {1 1},Position(MIDDLE, {5 1} , {Reset("abyssus_hive_random_floor") Set("abyssus_hive_random_floor")}))))))
+  Position (MIDDLE, {1 1}, Position(LEFT_CENTER, {1 1},Position(RIGHT_CENTER, {1 1},Position(BOTTOM_CENTER, {1 0},Position(TOP_CENTER, {1 1},Position(MIDDLE, {5 1} , {Reset("abyssus_hive_random_floor") Set("abyssus_hive_random_floor")}))))))
+  Position (MIDDLE, {1 1}, Position(LEFT_CENTER, {1 1},Position(RIGHT_CENTER, {1 1},Position(BOTTOM_CENTER, {1 -1},Position(TOP_CENTER, {1 1},Position(MIDDLE, {3 1} , {Reset("abyssus_hive_random_floor") Set("abyssus_hive_random_floor")}))))))
+  Position (MIDDLE, {1 1}, {Set("abyssus_hive_controller")})
+}

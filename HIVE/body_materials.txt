@@ -1,0 +1,12 @@
+"ABYSSUS_NECROHIDE" {
+  name = "necrohide"
+  hasBrain = true
+  deathDescription = "killed"
+  healthType = FLESH
+  canLoseBodyParts = false
+  canCopulate = true
+  intrinsicallyAffected = { ACID_IMMUNITY }
+  killedByBoulder = true
+  losingHeadsMeansDeath = true
+  immuneTo = { POISON PLAGUE }
+}

@@ -1,0 +1,11 @@
+"abyssus_hive_initial_maw_reaver"
+{
+    {
+      ids = { "ABYSSUS_HIVE_MAWREAVER" }
+      traits = { NO_EQUIPMENT FIGHTER }
+      invisible = true
+      noAuto = true
+      initialRecruitment = 1
+      spawnLocation = NearLeader
+    }
+}

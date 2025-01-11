@@ -1,0 +1,1741 @@
+"ABYSSUS_HIVE_RANDOM_FLOOR"
+{
+  name = "floor"
+  viewId = { "abyssus_hive_floor_1" }
+  luxury = 0.5
+  layer = FLOOR
+  canBuildOutsideOfTerritory = true
+  tickType = Effect {
+    ChooseRandom {
+      ModifyFurniture "ABYSSUS_HIVE_FLOOR_1"
+      ModifyFurniture "ABYSSUS_HIVE_FLOOR_2"
+      ModifyFurniture "ABYSSUS_HIVE_FLOOR_3"
+      ModifyFurniture "ABYSSUS_HIVE_FLOOR_4"
+      ClaimTile
+    }
+  }
+}
+
+"ABYSSUS_HIVE_RANDOM_FLOOR_CANCER"
+{
+  name = "floor"
+  viewId = { "abyssus_hive_floor_1" }
+  luxury = 0.5
+  layer = FLOOR
+  canBuildOutsideOfTerritory = true
+  tickType = Effect {
+    ChooseRandom {
+      ModifyFurniture "ABYSSUS_HIVE_FLOOR_CANCER_TEST"
+      ClaimTile
+    }
+  }
+}
+
+"ABYSSUS_HIVE_FLOOR_CANCER_TEST"
+{
+  name = "floor"
+  viewId = { "abyssus_hive_floor_1" }
+  luxury = 0.5
+  layer = FLOOR
+  canBuildOutsideOfTerritory = true
+  tickType = Effect {
+    Chance 0.30 {
+      Area 1 Filter FurnitureType "FLOOR" {
+        Filter Not Area 1 FurnitureType "ABYSSUS_HIVE_FLOOR_CANCER_TEST" {
+          Filter Not FurnitureType "MOUNTAIN" {
+            Filter Not FurnitureType "MOUNTAIN2" {
+              Filter Not FurnitureType "GLACIER" {
+                Filter Not FurnitureType "SANDSTONE" {
+                  Filter Not FurnitureType "HELL_MOUNTAIN" {
+                    Filter Not FurnitureType "ABYSSUS_HIVE_FLOOR_CANCER_TEST" {
+                      Filter Not FurnitureType "ABYSSUS_HIVE_WALL" {
+                        Chance 0.10 PlaceFurniture "ABYSSUS_HIVE_FLOOR_CANCER_TEST"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          Filter FurnitureType "MOUNTAIN" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "MOUNTAIN2" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "SANDSTONE" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "GLACIER" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "HELL_MOUNTAIN" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+        }
+      }
+    }
+  }
+}
+
+"ABYSSUS_HIVE_FLOOR_CANCER_TEST_BACKUP_SORTOF"
+{
+  name = "floor"
+  viewId = { "abyssus_hive_floor_1" }
+  luxury = 0.5
+  layer = FLOOR
+  canBuildOutsideOfTerritory = true
+  tickType = Effect {
+    Chance 0.30 {
+      Area 1 Filter And { FurnitureType "FLOOR" Not FurnitureType "MOUNTAIN"} {
+        Filter Not FurnitureType "ABYSSUS_HIVE_FLOOR_CANCER_TEST" {
+          Filter Not FurnitureType "ABYSSUS_HIVE_WALL" {
+            Chance 0.10 PlaceFurniture "ABYSSUS_HIVE_FLOOR_CANCER_TEST"
+          }
+        }
+      }
+      Area 1 Filter And { FurnitureType "FLOOR" FurnitureType "MOUNTAIN"} {
+        Filter Not FurnitureType "ABYSSUS_HIVE_WALL" {
+          Chance 0.10 {
+            PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+        }
+      }
+    }
+  }
+}
+
+"ABYSSUS_HIVE_FLOOR_CANCER_TEST_2_RANDOM"
+{
+  name = "floor"
+  viewId = { "abyssus_hive_floor_1" }
+  luxury = 0.5
+  layer = FLOOR
+  canBuildOutsideOfTerritory = true
+  tickType = Effect {
+    ChooseRandom {
+      ModifyFurniture "ABYSSUS_HIVE_FLOOR_CANCER_TEST_2"
+      ClaimTile
+    }
+  }
+}
+
+"ABYSSUS_HIVE_FLOOR_CANCER_TEST_2"
+{
+  name = "floor"
+  viewId = { "abyssus_hive_floor_1" }
+  luxury = 0.5
+  layer = FLOOR
+  canBuildOutsideOfTerritory = true
+  tickType = Effect {
+          FirstSuccessful {
+    Filter Or {FurnitureType "MOUNTAIN" FurnitureType "MOUNTAIN2" FurnitureType "SANDSTONE" FurnitureType "GLACIER" FurnitureType "HELL_MOUNTAIN"} {
+      PlaceFurniture "ABYSSUS_HIVE_WALL"
+    }
+    Filter Not FurnitureType "ABYSSUS_HIVE_FLOOR_CANCER_TEST_2_RANDOM" {
+      Filter FurnitureType "FLOOR" {
+        Filter Or {Not FurnitureType "MOUNTAIN" Not FurnitureType "MOUNTAIN2" Not FurnitureType "SANDSTONE" Not FurnitureType "GLACIER" Not FurnitureType "HELL_MOUNTAIN"} {
+          Filter Not FurnitureType "ABYSSUS_HIVE_WALL" {
+            PlaceFurniture "ABYSSUS_HIVE_FLOOR_CANCER_TEST_2_RANDOM"
+          }
+        }
+      }
+    }
+    Chance 0.30 {
+      Area 1 Filter Not FurnitureType "ABYSSUS_HIVE_FLOOR_CANCER_TEST_2_RANDOM" {
+        Filter FurnitureType "FLOOR" {
+          Filter Or {Not FurnitureType "MOUNTAIN" Not FurnitureType "MOUNTAIN2" Not FurnitureType "SANDSTONE" Not FurnitureType "GLACIER" Not FurnitureType "HELL_MOUNTAIN"} {
+            Filter Not FurnitureType "ABYSSUS_HIVE_WALL" {
+              PlaceFurniture "ABYSSUS_HIVE_FLOOR_CANCER_TEST_2_RANDOM"
+            }}
+          }
+        }
+      }
+    }
+  }
+}
+
+
+"ABYSSUS_HIVE_FLOOR_CANCER_TEST_BACKUP"
+{
+  name = "floor"
+  viewId = { "abyssus_hive_floor_1" }
+  luxury = 0.5
+  layer = FLOOR
+  canBuildOutsideOfTerritory = true
+  tickType = Effect {
+    Chance 0.03 {
+      FirstSuccessful {
+        Filter Or {FurnitureType "MOUNTAIN" FurnitureType "MOUNTAIN2" FurnitureType "SANDSTONE" FurnitureType "GLACIER" FurnitureType "HELL_MOUNTAIN"} {
+          PlaceFurniture "ABYSSUS_HIVE_WALL"
+        }
+        Filter Not FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR" {
+          Filter FurnitureType "FLOOR" {
+            Filter Or {Not FurnitureType "MOUNTAIN" Not FurnitureType "MOUNTAIN2" Not FurnitureType "SANDSTONE" Not FurnitureType "GLACIER" Not FurnitureType "HELL_MOUNTAIN"} {
+              Filter Not FurnitureType "ABYSSUS_HIVE_WALL" {
+                PlaceFurniture "ABYSSUS_HIVE_RANDOM_FLOOR"
+              }
+            }
+          }
+        }
+        Filter And {Translate {1 0} Not FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"} {
+          Filter FurnitureType "FLOOR" {
+            Filter Or {Not FurnitureType "MOUNTAIN" Not FurnitureType "MOUNTAIN2" Not FurnitureType "SANDSTONE" Not FurnitureType "GLACIER" Not FurnitureType "HELL_MOUNTAIN"} {
+              Filter Not FurnitureType "ABYSSUS_HIVE_WALL" {
+                CustomArea PlaceFurniture "ABYSSUS_HIVE_RANDOM_FLOOR"{ {1 0} }
+              }
+            }
+          }
+        }
+        Filter And {Translate {1 1} Not FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"} {
+          Filter FurnitureType "FLOOR" {
+            Filter Or {Not FurnitureType "MOUNTAIN" Not FurnitureType "MOUNTAIN2" Not FurnitureType "SANDSTONE" Not FurnitureType "GLACIER" Not FurnitureType "HELL_MOUNTAIN"} {
+              Filter Not FurnitureType "ABYSSUS_HIVE_WALL" {
+                CustomArea PlaceFurniture "ABYSSUS_HIVE_RANDOM_FLOOR"{ {1 1} }
+              }
+            }
+          }
+        }
+        Filter And {Translate {1 -1} Not FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"} {
+          Filter FurnitureType "FLOOR" {
+            Filter Or {Not FurnitureType "MOUNTAIN" Not FurnitureType "MOUNTAIN2" Not FurnitureType "SANDSTONE" Not FurnitureType "GLACIER" Not FurnitureType "HELL_MOUNTAIN"} {
+              Filter Not FurnitureType "ABYSSUS_HIVE_WALL" {
+                CustomArea PlaceFurniture "ABYSSUS_HIVE_RANDOM_FLOOR"{ {1 -1} }
+              }
+            }
+          }
+        }
+        Filter And {Translate {-1 0} Not FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"} {
+          Filter FurnitureType "FLOOR" {
+            Filter Or {Not FurnitureType "MOUNTAIN" Not FurnitureType "MOUNTAIN2" Not FurnitureType "SANDSTONE" Not FurnitureType "GLACIER" Not FurnitureType "HELL_MOUNTAIN"} {
+              Filter Not FurnitureType "ABYSSUS_HIVE_WALL" {
+                CustomArea PlaceFurniture "ABYSSUS_HIVE_RANDOM_FLOOR"{ {-1 0} }
+              }
+            }
+          }
+        }
+        Filter And {Translate {-1 1} Not FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"} {
+          Filter FurnitureType "FLOOR" {
+            Filter Or {Not FurnitureType "MOUNTAIN" Not FurnitureType "MOUNTAIN2" Not FurnitureType "SANDSTONE" Not FurnitureType "GLACIER" Not FurnitureType "HELL_MOUNTAIN"} {
+              Filter Not FurnitureType "ABYSSUS_HIVE_WALL" {
+                CustomArea PlaceFurniture "ABYSSUS_HIVE_RANDOM_FLOOR"{ {-1 1} }
+              }
+            }
+          }
+        }
+        Filter And {Translate {-1 -1} Not FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"} {
+          Filter FurnitureType "FLOOR" {
+            Filter Or {Not FurnitureType "MOUNTAIN" Not FurnitureType "MOUNTAIN2" Not FurnitureType "SANDSTONE" Not FurnitureType "GLACIER" Not FurnitureType "HELL_MOUNTAIN"} {
+              Filter Not FurnitureType "ABYSSUS_HIVE_WALL" {
+                CustomArea PlaceFurniture "ABYSSUS_HIVE_RANDOM_FLOOR"{ {-1 -1} }
+              }
+            }
+          }
+        }
+        Filter And {Translate {0 1} Not FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"} {
+          Filter FurnitureType "FLOOR" {
+            Filter Or {Not FurnitureType "MOUNTAIN" Not FurnitureType "MOUNTAIN2" Not FurnitureType "SANDSTONE" Not FurnitureType "GLACIER" Not FurnitureType "HELL_MOUNTAIN"} {
+              Filter Not FurnitureType "ABYSSUS_HIVE_WALL" {
+                CustomArea PlaceFurniture "ABYSSUS_HIVE_RANDOM_FLOOR"{ {0 1} }
+              }
+            }
+          }
+        }
+        Filter And {Translate {0 -1} Not FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"} {
+          Filter FurnitureType "FLOOR" {
+            Filter Or {Not FurnitureType "MOUNTAIN" Not FurnitureType "MOUNTAIN2" Not FurnitureType "SANDSTONE" Not FurnitureType "GLACIER" Not FurnitureType "HELL_MOUNTAIN"} {
+              Filter Not FurnitureType "ABYSSUS_HIVE_WALL" {
+                CustomArea PlaceFurniture "ABYSSUS_HIVE_RANDOM_FLOOR"{ {0 -1} }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+"ABYSSUS_HIVE_FLOOR_1"
+{
+  name = "floor"
+  viewId = { "abyssus_hive_floor_1" }
+  luxury = 0.5
+  layer = FLOOR
+  canBuildOutsideOfTerritory = true
+  tickType = Effect {
+    Chance 0.30 {
+      Area 1 Filter FurnitureType "FLOOR" {
+        Filter Not Area 1 FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR" {
+          Filter Not FurnitureType "MOUNTAIN" {
+            Filter Not FurnitureType "MOUNTAIN2" {
+              Filter Not FurnitureType "GLACIER" {
+                Filter Not FurnitureType "SANDSTONE" {
+                  Filter Not FurnitureType "HELL_MOUNTAIN" {
+                    Filter Not FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR" {
+                      Filter Not FurnitureType "ABYSSUS_HIVE_WALL" {
+                        Chance 0.10 PlaceFurniture "ABYSSUS_HIVE_RANDOM_FLOOR"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          Filter FurnitureType "MOUNTAIN" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "MOUNTAIN2" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "SANDSTONE" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "GLACIER" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "HELL_MOUNTAIN" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+        }
+      }
+    }
+  }
+}
+
+"ABYSSUS_HIVE_FLOOR_2"
+{
+  name = "floor"
+  viewId = { "abyssus_hive_floor_2" }
+  luxury = 0.5
+  layer = FLOOR
+  canBuildOutsideOfTerritory = true
+  tickType = Effect {
+    Chance 0.30 {
+      Area 1 Filter FurnitureType "FLOOR" {
+        Filter Not Area 1 FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR" {
+          Filter Not FurnitureType "MOUNTAIN" {
+            Filter Not FurnitureType "MOUNTAIN2" {
+              Filter Not FurnitureType "GLACIER" {
+                Filter Not FurnitureType "SANDSTONE" {
+                  Filter Not FurnitureType "HELL_MOUNTAIN" {
+                    Filter Not FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR" {
+                      Filter Not FurnitureType "ABYSSUS_HIVE_WALL" {
+                        Chance 0.10 PlaceFurniture "ABYSSUS_HIVE_RANDOM_FLOOR"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          Filter FurnitureType "MOUNTAIN" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "MOUNTAIN2" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "SANDSTONE" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "GLACIER" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "HELL_MOUNTAIN" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+        }
+      }
+    }
+  }
+}
+
+"ABYSSUS_HIVE_FLOOR_3"
+{
+  name = "floor"
+  viewId = { "abyssus_hive_floor_3" }
+  luxury = 0.5
+  layer = FLOOR
+  canBuildOutsideOfTerritory = true
+  tickType = Effect {
+    Chance 0.30 {
+      Area 1 Filter FurnitureType "FLOOR" {
+        Filter Not Area 1 FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR" {
+          Filter Not FurnitureType "MOUNTAIN" {
+            Filter Not FurnitureType "MOUNTAIN2" {
+              Filter Not FurnitureType "GLACIER" {
+                Filter Not FurnitureType "SANDSTONE" {
+                  Filter Not FurnitureType "HELL_MOUNTAIN" {
+                    Filter Not FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR" {
+                      Filter Not FurnitureType "ABYSSUS_HIVE_WALL" {
+                        Chance 0.10 PlaceFurniture "ABYSSUS_HIVE_RANDOM_FLOOR"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          Filter FurnitureType "MOUNTAIN" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "MOUNTAIN2" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "SANDSTONE" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "GLACIER" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "HELL_MOUNTAIN" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+        }
+      }
+    }
+  }
+}
+
+"ABYSSUS_HIVE_FLOOR_4"
+{
+  name = "floor"
+  viewId = { "abyssus_hive_floor_4" }
+  luxury = 0.5
+  layer = FLOOR
+  canBuildOutsideOfTerritory = true
+  tickType = Effect {
+    Chance 0.30 {
+      Area 1 Filter FurnitureType "FLOOR" {
+        Filter Not Area 1 FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR" {
+          Filter Not FurnitureType "MOUNTAIN" {
+            Filter Not FurnitureType "MOUNTAIN2" {
+              Filter Not FurnitureType "GLACIER" {
+                Filter Not FurnitureType "SANDSTONE" {
+                  Filter Not FurnitureType "HELL_MOUNTAIN" {
+                    Filter Not FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR" {
+                      Filter Not FurnitureType "ABYSSUS_HIVE_WALL" {
+                        Chance 0.10 PlaceFurniture "ABYSSUS_HIVE_RANDOM_FLOOR"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          Filter FurnitureType "MOUNTAIN" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "MOUNTAIN2" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "SANDSTONE" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "GLACIER" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "HELL_MOUNTAIN" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+        }
+      }
+    }
+  }
+}
+
+"ABYSSUS_HIVE_STAIRS_DOWN"
+{
+  name = "hole"
+  viewId = { "abyssus_hive_stairs_down" }
+  canHideHere = true
+#  xForgetAfterBuilding = true
+  canBuildOutsideOfTerritory = true
+  usageType = UsageEffect "crawl through the hole" Stairs
+  onBuilt = DOWN_STAIRS
+  otherStairs = "ABYSSUS_HIVE_STAIRS_UP"
+  usagePredicate = FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"
+  tickType = Effect {
+    Chance 0.30 {
+      Area 1 Filter FurnitureType "FLOOR" {
+        Filter Not Area 1 FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR" {
+          Filter Not FurnitureType "MOUNTAIN" {
+            Filter Not FurnitureType "MOUNTAIN2" {
+              Filter Not FurnitureType "GLACIER" {
+                Filter Not FurnitureType "SANDSTONE" {
+                  Filter Not FurnitureType "HELL_MOUNTAIN" {
+                    Filter Not FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR" {
+                      Filter Not FurnitureType "ABYSSUS_HIVE_WALL" {
+                        Chance 0.10 PlaceFurniture "ABYSSUS_HIVE_RANDOM_FLOOR"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          Filter FurnitureType "MOUNTAIN" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "MOUNTAIN2" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "SANDSTONE" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "GLACIER" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "HELL_MOUNTAIN" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+        }
+      }
+    }
+  }
+}
+
+"ABYSSUS_HIVE_STAIRS_UP"
+{
+  name = "ceiling breach"
+  viewId = { "abyssus_hive_stairs_up" }
+  canHideHere = true
+# xForgetAfterBuilding = true
+  usageType = UsageEffect "crawl through the hole" Stairs
+  onBuilt = UP_STAIRS
+  otherStairs = "ABYSSUS_HIVE_STAIRS_DOWN"
+  usagePredicate = FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"
+  tickType = Effect {
+    Chance 0.30 {
+      Area 1 Filter FurnitureType "FLOOR" {
+        Filter Not Area 1 FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR" {
+          Filter Not FurnitureType "MOUNTAIN" {
+            Filter Not FurnitureType "MOUNTAIN2" {
+              Filter Not FurnitureType "GLACIER" {
+                Filter Not FurnitureType "SANDSTONE" {
+                  Filter Not FurnitureType "HELL_MOUNTAIN" {
+                    Filter Not FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR" {
+                      Filter Not FurnitureType "ABYSSUS_HIVE_WALL" {
+                        Chance 0.10 PlaceFurniture "ABYSSUS_HIVE_RANDOM_FLOOR"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          Filter FurnitureType "MOUNTAIN" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "MOUNTAIN2" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "SANDSTONE" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "GLACIER" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+          Filter FurnitureType "HELL_MOUNTAIN" {
+            Chance 0.15 PlaceFurniture "ABYSSUS_HIVE_WALL"
+          }
+        }
+      }
+    }
+  }
+}
+
+"ABYSSUS_HIVE_WALL"
+{
+  name = "wall"
+  viewId = { "abyssus_hive_wall" }
+  blockMovement = true
+  blockAllVision = true
+  constructMessage = FILL_UP
+  viewLayer = FLOOR_BACKGROUND
+  wall = true
+  xForgetAfterBuilding = true
+  usagePredicate = FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"
+  strength2 = {
+    900 BOULDER
+    100 DIG
+    6000 HOSTILE_DIG
+  }
+  canBuildOutsideOfTerritory = true
+}
+
+"ABYSSUS_HIVE_LEFTOVERS_RANDOM"
+{
+  viewId = { "abyssus_hive_leftovers_1" }
+  name = "leftovers"
+  blockMovement = true
+  usageTime = 5
+  canHideHere = true
+  strength = 100
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  diningFurniture = DINING_TABLE
+  canBuildOutsideOfTerritory = true
+  usagePredicate = FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"
+  usageType = UsageEffect "eat some leftovers" {
+    CreatureMessage { "eat some leftovers" "eats some leftovers" }
+    Lasting SATIATED
+  }
+  tickType = Effect {
+    ChooseRandom {
+      ModifyFurniture "ABYSSUS_HIVE_LEFTOVERS_1"
+      ModifyFurniture "ABYSSUS_HIVE_LEFTOVERS_2"
+      ModifyFurniture "ABYSSUS_HIVE_LEFTOVERS_3"
+      ModifyFurniture "ABYSSUS_HIVE_LEFTOVERS_4"
+      ModifyFurniture "ABYSSUS_HIVE_LEFTOVERS_5"
+      ModifyFurniture "ABYSSUS_HIVE_LEFTOVERS_6"
+    }
+  }
+}
+
+"ABYSSUS_HIVE_LEFTOVERS_1"
+{
+  viewId = { "abyssus_hive_leftovers_1" }
+  name = "leftovers"
+  blockMovement = true
+  usageTime = 5
+  canHideHere = true
+  strength = 100
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  diningFurniture = DINING_TABLE
+  usageType = UsageEffect "eat some leftovers" {
+    CreatureMessage { "eat some leftovers" "eats some leftovers" }
+    Lasting SATIATED
+  }
+}
+
+"ABYSSUS_HIVE_LEFTOVERS_2"
+{
+  viewId = { "abyssus_hive_leftovers_2" }
+  name = "leftovers"
+  blockMovement = true
+  usageTime = 5
+  canHideHere = true
+  strength = 100
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  diningFurniture = DINING_TABLE
+  usageType = UsageEffect "eat some leftovers" {
+    CreatureMessage { "eat some leftovers" "eats some leftovers" }
+    Lasting SATIATED
+  }
+}
+
+"ABYSSUS_HIVE_LEFTOVERS_3"
+{
+  viewId = { "abyssus_hive_leftovers_3" }
+  name = "leftovers"
+  blockMovement = true
+  usageTime = 5
+  canHideHere = true
+  strength = 100
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  diningFurniture = DINING_TABLE
+  usageType = UsageEffect "eat some leftovers" {
+    CreatureMessage { "eat some leftovers" "eats some leftovers" }
+    Lasting SATIATED
+  }
+}
+
+"ABYSSUS_HIVE_LEFTOVERS_4"
+{
+  viewId = { "abyssus_hive_leftovers_4" }
+  name = "leftovers"
+  blockMovement = true
+  usageTime = 5
+  canHideHere = true
+  strength = 100
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  diningFurniture = DINING_TABLE
+  usageType = UsageEffect "eat some leftovers" {
+    CreatureMessage { "eat some leftovers" "eats some leftovers" }
+    Lasting SATIATED
+  }
+}
+
+"ABYSSUS_HIVE_LEFTOVERS_5"
+{
+  viewId = { "abyssus_hive_leftovers_5" }
+  name = "leftovers"
+  blockMovement = true
+  usageTime = 5
+  canHideHere = true
+  strength = 100
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  diningFurniture = DINING_TABLE
+  usageType = UsageEffect "eat some leftovers" {
+    CreatureMessage { "eat some leftovers" "eats some leftovers" }
+    Lasting SATIATED
+  }
+}
+
+"ABYSSUS_HIVE_LEFTOVERS_6"
+{
+  viewId = { "abyssus_hive_leftovers_6" }
+  name = "leftovers"
+  blockMovement = true
+  usageTime = 5
+  canHideHere = true
+  strength = 100
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  diningFurniture = DINING_TABLE
+  usageType = UsageEffect "eat some leftovers" {
+    CreatureMessage { "eat some leftovers" "eats some leftovers" }
+    Lasting SATIATED
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_VENOMSTRIKER_RANDOM"
+{
+  viewId = { "abyssus_hive_eggs_1" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  usagePredicate = FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"
+  tickType = Effect {
+    ChooseRandom {
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_VENOMSTRIKER_1"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_VENOMSTRIKER_2"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_VENOMSTRIKER_3"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_VENOMSTRIKER_4"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_VENOMSTRIKER_5"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_VENOMSTRIKER_6"
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_VENOMSTRIKER_1"
+{
+  viewId = { "abyssus_hive_eggs_1" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_VENOMSTRIKER" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_VENOMSTRIKER_2"
+{
+  viewId = { "abyssus_hive_eggs_2" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_VENOMSTRIKER" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_VENOMSTRIKER_3"
+{
+  viewId = { "abyssus_hive_eggs_3" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_VENOMSTRIKER" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_VENOMSTRIKER_4"
+{
+  viewId = { "abyssus_hive_eggs_4" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_VENOMSTRIKER" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_VENOMSTRIKER_5"
+{
+  viewId = { "abyssus_hive_eggs_5" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_VENOMSTRIKER" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_VENOMSTRIKER_6"
+{
+  viewId = { "abyssus_hive_eggs_6" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_VENOMSTRIKER" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_VILEWHIP_RANDOM"
+{
+  viewId = { "abyssus_hive_eggs_1" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  usagePredicate = FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"
+  tickType = Effect {
+    ChooseRandom {
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_VILEWHIP_1"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_VILEWHIP_2"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_VILEWHIP_3"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_VILEWHIP_4"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_VILEWHIP_5"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_VILEWHIP_6"
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_VILEWHIP_1"
+{
+  viewId = { "abyssus_hive_eggs_1" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_VILEWHIP" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_VILEWHIP_2"
+{
+  viewId = { "abyssus_hive_eggs_2" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_VILEWHIP" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_VILEWHIP_3"
+{
+  viewId = { "abyssus_hive_eggs_3" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_VILEWHIP" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_VILEWHIP_4"
+{
+  viewId = { "abyssus_hive_eggs_4" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_VILEWHIP" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_VILEWHIP_5"
+{
+  viewId = { "abyssus_hive_eggs_5" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_VILEWHIP" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_VILEWHIP_6"
+{
+  viewId = { "abyssus_hive_eggs_6" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_VILEWHIP" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_SOULPIERCER_RANDOM"
+{
+  viewId = { "abyssus_hive_eggs_1" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  usagePredicate = FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"
+  tickType = Effect {
+    ChooseRandom {
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_SOULPIERCER_1"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_SOULPIERCER_2"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_SOULPIERCER_3"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_SOULPIERCER_4"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_SOULPIERCER_5"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_SOULPIERCER_6"
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_SOULPIERCER_1"
+{
+  viewId = { "abyssus_hive_eggs_1" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_SOULPIERCER" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_SOULPIERCER_2"
+{
+  viewId = { "abyssus_hive_eggs_2" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_SOULPIERCER" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_SOULPIERCER_3"
+{
+  viewId = { "abyssus_hive_eggs_3" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_SOULPIERCER" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_SOULPIERCER_4"
+{
+  viewId = { "abyssus_hive_eggs_4" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_SOULPIERCER" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_SOULPIERCER_5"
+{
+  viewId = { "abyssus_hive_eggs_5" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_SOULPIERCER" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_SOULPIERCER_6"
+{
+  viewId = { "abyssus_hive_eggs_6" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_SOULPIERCER" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_EMBERCALLER_RANDOM"
+{
+  viewId = { "abyssus_hive_eggs_1" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  usagePredicate = FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"
+  tickType = Effect {
+    ChooseRandom {
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_EMBERCALLER_1"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_EMBERCALLER_2"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_EMBERCALLER_3"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_EMBERCALLER_4"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_EMBERCALLER_5"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_EMBERCALLER_6"
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_EMBERCALLER_1"
+{
+  viewId = { "abyssus_hive_eggs_1" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_EMBERCALLER" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_EMBERCALLER_2"
+{
+  viewId = { "abyssus_hive_eggs_2" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_EMBERCALLER" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_EMBERCALLER_3"
+{
+  viewId = { "abyssus_hive_eggs_3" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_EMBERCALLER" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_EMBERCALLER_4"
+{
+  viewId = { "abyssus_hive_eggs_4" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_EMBERCALLER" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_EMBERCALLER_5"
+{
+  viewId = { "abyssus_hive_eggs_5" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_EMBERCALLER" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_EMBERCALLER_6"
+{
+  viewId = { "abyssus_hive_eggs_6" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_EMBERCALLER" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_BLOODTORN_RANDOM"
+{
+  viewId = { "abyssus_hive_eggs_1" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  usagePredicate = FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"
+  tickType = Effect {
+    ChooseRandom {
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_BLOODTORN_1"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_BLOODTORN_2"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_BLOODTORN_3"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_BLOODTORN_4"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_BLOODTORN_5"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_BLOODTORN_6"
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_BLOODTORN_1"
+{
+  viewId = { "abyssus_hive_eggs_1" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_BLOODTORN" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_BLOODTORN_2"
+{
+  viewId = { "abyssus_hive_eggs_2" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_BLOODTORN" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_BLOODTORN_3"
+{
+  viewId = { "abyssus_hive_eggs_3" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_BLOODTORN" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_BLOODTORN_4"
+{
+  viewId = { "abyssus_hive_eggs_4" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_BLOODTORN" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_BLOODTORN_5"
+{
+  viewId = { "abyssus_hive_eggs_5" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_BLOODTORN" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_BLOODTORN_6"
+{
+  viewId = { "abyssus_hive_eggs_6" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_BLOODTORN" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_SILKFIEND_RANDOM"
+{
+  viewId = { "abyssus_hive_eggs_1" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  usagePredicate = FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"
+  tickType = Effect {
+    ChooseRandom {
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_SILKFIEND_1"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_SILKFIEND_2"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_SILKFIEND_3"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_SILKFIEND_4"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_SILKFIEND_5"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_SILKFIEND_6"
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_SILKFIEND_1"
+{
+  viewId = { "abyssus_hive_eggs_1" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_SILKFIEND" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_SILKFIEND_2"
+{
+  viewId = { "abyssus_hive_eggs_2" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_SILKFIEND" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_SILKFIEND_3"
+{
+  viewId = { "abyssus_hive_eggs_3" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_SILKFIEND" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_SILKFIEND_4"
+{
+  viewId = { "abyssus_hive_eggs_4" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_SILKFIEND" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_SILKFIEND_5"
+{
+  viewId = { "abyssus_hive_eggs_5" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_SILKFIEND" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_SILKFIEND_6"
+{
+  viewId = { "abyssus_hive_eggs_6" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_SILKFIEND" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_EMBERHOG_RANDOM"
+{
+  viewId = { "abyssus_hive_eggs_1" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  usagePredicate = FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"
+  tickType = Effect {
+    ChooseRandom {
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_EMBERHOG_1"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_EMBERHOG_2"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_EMBERHOG_3"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_EMBERHOG_4"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_EMBERHOG_5"
+      ModifyFurniture "ABYSSUS_HIVE_EGGS_SPAWN_EMBERHOG_6"
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_EMBERHOG_1"
+{
+  viewId = { "abyssus_hive_eggs_1" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_EMBERHOG" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_EMBERHOG_2"
+{
+  viewId = { "abyssus_hive_eggs_2" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_EMBERHOG" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_EMBERHOG_3"
+{
+  viewId = { "abyssus_hive_eggs_3" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_EMBERHOG" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_EMBERHOG_4"
+{
+  viewId = { "abyssus_hive_eggs_4" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_EMBERHOG" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_EMBERHOG_5"
+{
+  viewId = { "abyssus_hive_eggs_5" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_EMBERHOG" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_EGGS_SPAWN_EMBERHOG_6"
+{
+  viewId = { "abyssus_hive_eggs_6" }
+  name = "egg"
+  blockMovement = true
+  canHideHere = true
+  strength = 300
+  destroyFX = { DESTROY_FURNITURE Rgb 200 200 0 255 }
+  tickType = Effect {
+    Chance 0.01 {
+      Summon "ABYSSUS_HIVE_EMBERHOG" {1} none
+    }
+  }
+}
+
+"ABYSSUS_HIVE_DISSOLVER_POOL"
+{
+  name = "dissolving pool"
+  type = "FURNACE"
+  viewId = { "abyssus_hive_dissolver" }
+  blockMovement = true
+  usageTime = 5
+  canHideHere = true
+  lightEmission = 6.5
+  usageSound = {"LABORATORY_USAGE" 0.2}
+  usagePredicate = FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"
+}
+
+"ABYSSUS_HIVE_LIVEFORGE_POOL_RANDOM"
+{
+  name = "liveforge pool"
+  viewId = { "abyssus_hive_liveforge_pool_1" }
+  blockMovement = true
+  usageTime = 5
+  canHideHere = true
+  lightEmission = 6.5
+  usageSound = {"LABORATORY_USAGE" 0.2}
+  usagePredicate = FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"
+  tickType = Effect {
+    ChooseRandom {
+      ModifyFurniture "ABYSSUS_HIVE_LIVEFORGE_POOL_1"
+      ModifyFurniture "ABYSSUS_HIVE_LIVEFORGE_POOL_2"
+      ModifyFurniture "ABYSSUS_HIVE_LIVEFORGE_POOL_3"
+      ModifyFurniture "ABYSSUS_HIVE_LIVEFORGE_POOL_4"
+      ModifyFurniture "ABYSSUS_HIVE_LIVEFORGE_POOL_5"
+      ModifyFurniture "ABYSSUS_HIVE_LIVEFORGE_POOL_6"
+    }
+  }
+}
+
+"ABYSSUS_HIVE_LIVEFORGE_POOL_1"
+{
+  name = "liveforge pool"
+  viewId = { "abyssus_hive_liveforge_pool_1" }
+  blockMovement = true
+  usageTime = 5
+  canHideHere = true
+  lightEmission = 6.5
+  usageSound = {"LABORATORY_USAGE" 0.2}
+}
+
+"ABYSSUS_HIVE_LIVEFORGE_POOL_2"
+{
+  name = "liveforge pool"
+  viewId = { "abyssus_hive_liveforge_pool_2" }
+  blockMovement = true
+  usageTime = 5
+  canHideHere = true
+  lightEmission = 6.5
+  usageSound = {"LABORATORY_USAGE" 0.2}
+}
+
+"ABYSSUS_HIVE_LIVEFORGE_POOL_3"
+{
+  name = "liveforge pool"
+  viewId = { "abyssus_hive_liveforge_pool_3" }
+  blockMovement = true
+  usageTime = 5
+  canHideHere = true
+  lightEmission = 6.5
+  usageSound = {"LABORATORY_USAGE" 0.2}
+}
+
+"ABYSSUS_HIVE_LIVEFORGE_POOL_4"
+{
+  name = "liveforge pool"
+  viewId = { "abyssus_hive_liveforge_pool_4" }
+  blockMovement = true
+  usageTime = 5
+  canHideHere = true
+  lightEmission = 6.5
+  usageSound = {"LABORATORY_USAGE" 0.2}
+}
+
+"ABYSSUS_HIVE_LIVEFORGE_POOL_5"
+{
+  name = "liveforge pool"
+  viewId = { "abyssus_hive_liveforge_pool_5" }
+  blockMovement = true
+  usageTime = 5
+  canHideHere = true
+  lightEmission = 6.5
+  usageSound = {"LABORATORY_USAGE" 0.2}
+}
+
+"ABYSSUS_HIVE_LIVEFORGE_POOL_6"
+{
+  name = "liveforge pool"
+  viewId = { "abyssus_hive_liveforge_pool_6" }
+  blockMovement = true
+  usageTime = 5
+  canHideHere = true
+  lightEmission = 6.5
+  usageSound = {"LABORATORY_USAGE" 0.2}
+}
+
+"ABYSSUS_HIVE_TRAINING"
+{
+  name = "flesh totem"
+  viewId = { "abyssus_hive_flesh_totem" }
+  canHideHere = true
+  blockMovement = true
+  usageType = BuiltinUsageId TRAIN
+  usageTime = 5
+  maxTraining = { DAMAGE 99 }
+  strength = 200
+  luxury = 0.5
+  destroyFX = { DESTROY_FURNITURE Rgb 120 120 120 255 }
+  usagePredicate = FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"
+}
+
+"ABYSSUS_HIVE_STUDYING"
+{
+  name = "flesh totem"
+  viewId = { "abyssus_hive_flesh_totem" }
+  canHideHere = true
+  blockMovement = true
+  usageType = BuiltinUsageId STUDY
+  usageTime = 5
+  maxTraining = { SPELL_DAMAGE 99 }
+  strength = 200
+  luxury = 0.5
+  destroyFX = { DESTROY_FURNITURE Rgb 120 120 120 255 }
+  usagePredicate = FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"
+}
+
+"ABYSSUS_HIVE_BROOD_CHAMBER"
+{
+  name = "brood chamber"
+  viewId = { "abyssus_hive_brood_chamber" }
+  usageType = UsageEffect "sleep in brood chamber" Lasting SLEEP
+  tickType = Effect BedHeal()
+  canHideHere = true
+  luxury = 0.4
+  bedType = CAGE
+  destroyFX = { DESTROY_FURNITURE Rgb 120 87 46 255 }
+  usagePredicate = FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"
+}
+
+"ABYSSUS_HIVE_ACID_SPILL"
+{
+  name = "acid spill"
+  viewId = { "abyssus_hive_acid_spill" }
+  canHideHere = true
+  layer = CEILING
+  tickType = Effect {
+    Filter Enemy {
+      Bleed 0.10 "burned by acid"
+      Filter Not HasAnyHealth {
+        Chance 0.1 {
+          CreatureMessage {"lose a limb" "loses a limb"}
+          ChooseRandom {
+            InjureBodyPart LEG
+            InjureBodyPart ARM
+            InjureBodyPart HEAD
+          }
+        }
+      }
+    }
+    Chance 0.10 { RemoveFurniture "ABYSSUS_HIVE_ACID_SPILL" }
+  }
+}
+
+"ABYSSUS_HIVE_MAW_SPAWN"
+{
+  name = "maw spawner"
+  canHideHere = true
+  layer = CEILING
+  tickType = Effect {
+    Summon "ABYSSUS_HIVE_MAWSPAWN_PERM" {1} none
+    RemoveFurniture "ABYSSUS_HIVE_MAW_SPAWN"
+  }
+}
+
+"ABYSSUS_HIVE_MAW_SPAWN_TEMP"
+{
+  name = "maw spawner"
+  canHideHere = true
+  layer = CEILING
+  tickType = Effect {
+    Summon "ABYSSUS_HIVE_MAWSPAWN_TEMP" {4} 100
+    RemoveFurniture "ABYSSUS_HIVE_MAW_SPAWN_TEMP"
+  }
+}
+
+"ABYSSUS_HIVE_BIOMASS_STORAGE"
+{
+  name = "biomass container"
+  viewId = { "abyssus_hive_biomass_storage_full" }
+  emptyViewId = { "abyssus_hive_biomass_storage_empty" }
+  canHideHere = true
+  destroyFX = { DESTROY_FURNITURE Rgb 120 87 46 255 }
+  storageIds = {"biomass"}
+  hidesItems = true
+  usagePredicate = FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"
+}
+
+"ABYSSUS_HIVE_ITEMS_STORAGE"
+{
+  name = "pile of items"
+  viewId = { "abyssus_hive_items_storage_full" }
+  emptyViewId = { "abyssus_hive_items_storage_empty" }
+  canHideHere = true
+  destroyFX = { DESTROY_FURNITURE Rgb 120 87 46 255 }
+  storageIds = {"equipment" "gold" "corpses"}
+  hidesItems = true
+  usagePredicate = FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"
+}
+
+"ABYSSUS_HIVE_RESOURCES_STORAGE"
+{
+  name = "pile of resources"
+  viewId = { "abyssus_hive_resources_storage_full" }
+  emptyViewId = { "abyssus_hive_resources_storage_empty" }
+  canHideHere = true
+  destroyFX = { DESTROY_FURNITURE Rgb 120 87 46 255 }
+  storageIds = {"resources"}
+  hidesItems = true
+  usagePredicate = FurnitureType "ABYSSUS_HIVE_RANDOM_FLOOR"
+}
+
+"ABYSSUS_HIVE_SURFACE_CONTROLLER"
+{
+  name = "hive surface controller"
+  canBuildOutsideOfTerritory = true
+  canHideHere = true
+  layer = CEILING
+  eyeball = true
+  tickType = Effect {
+    Filter Flag "abyssus_hive_stairs_summon" {
+      Filter Frequency 3 {
+        Filter Area 1 Not FurnitureType "ABYSSUS_HIVE_STAIRS_DOWN" {
+          PlaceFurniture "ABYSSUS_HIVE_STAIRS_DOWN"
+          Filter Not Flag "abyssus_hive_stairs_message" {
+#            UI "unlock_message" { "message" Label "Quickly through the portal. There lays the oven!" "view_id" ViewIdList {{"abyssus_hive_desecrator"}}}
+            SetFlag "abyssus_hive_stairs_message" true
+            SetFlag "abyssus_hive_stairs_summon" false
+          }
+        }
+      }
+    }
+  }
+}
+
+"ABYSSUS_HIVE_UP_STAIRS_DUMMY"
+{
+  name = "stairs"
+#  viewId = { "up_staircase" }
+  canHideHere = true
+  xForgetAfterBuilding = true
+#  usageType = UsageEffect "use stairs" Stairs
+  tickType = Effect {
+    RemoveFurniture "ABYSSUS_HIVE_UP_STAIRS_DUMMY"
+  }
+#  onBuilt = UP_STAIRS
+#  otherStairs = "ABYSSUS_HIVE_DOWN_STAIRS_TEMP"
+}
+
+"ABYSSUS_HIVE_DOWN_STAIRS_TEMP"
+{
+  name = "stairs"
+  viewId = { "down_staircase" }
+  canHideHere = true
+  xForgetAfterBuilding = true
+  usageType = UsageEffect "use stairs" Stairs
+  onBuilt = DOWN_STAIRS
+  otherStairs = "ABYSSUS_HIVE_UP_STAIRS_DUMMY"
+}

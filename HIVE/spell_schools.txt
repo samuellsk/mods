@@ -1,0 +1,154 @@
+"abyssus hive desecrator" "desecrator" DAMAGE
+{
+  "abyssus hive reinforced necrohide" 1
+  "abyssus hive desecrator strengthen minions" 7
+  "abyssus hive necrosis melee" 10
+  "abyssus hive rapid regeneration" 15
+  "abyssus hive rebirth" 20
+}
+
+"abyssus hive mawreaver" "mawreaver" DAMAGE
+{
+  "abyssus hive minion traits" 1
+  "abyssus hive necrosis melee" 1
+  "abyssus hive reinforced necrohide" 5
+  "abyssus hive rapid regeneration" 7
+  "abyssus hive mawreaver summon combat spawns" 11
+  "abyssus hive rebirth" 12
+}
+
+"abyssus hive mawspawn" "mawspawn" DAMAGE
+{
+#  "abyssus hive mawspawn worker" 1
+  "abyssus hive mawspawn digging skill" 8
+}
+
+"abyssus hive mawspawn unique" "mawspawn" DAMAGE
+{
+  "abyssus hive mawspawn worker" 1
+  "abyssus hive reinforced body" 4
+  "abyssus hive enhanced regeneration" 6
+  "abyssus hive mawspawn digging skill" 8
+}
+
+"abyssus hive venomstriker" "venomstriker" DAMAGE
+{
+  "abyssus hive necrosis melee" 1
+  "abyssus hive poison sting" 2
+  "abyssus hive rebirth" 3
+  "abyssus hive speed" 4
+}
+
+"abyssus hive venomstriker unique" "venomstriker" DAMAGE
+{
+  "abyssus hive necrosis melee" 1
+  "abyssus hive poison sting" 2
+  "abyssus hive rebirth" 3
+  "abyssus hive reinforced body" 4
+  "abyssus hive enhanced regeneration" 6
+  "abyssus hive speed" 8
+}
+
+"abyssus hive vilewhip" "vilewhip" DAMAGE
+{
+  "abyssus hive poison bolt" 2
+  "abyssus hive poison sting" 3
+  "abyssus hive rebirth" 4
+  "abyssus hive vilewhip carapace armor" 5
+}
+
+"abyssus hive vilewhip unique" "vilewhip" DAMAGE
+{
+  "abyssus hive poison bolt" 2
+  "abyssus hive poison sting" 3
+  "abyssus hive rebirth" 4
+  "abyssus hive reinforced body" 5
+  "abyssus hive enhanced regeneration" 7
+  "abyssus hive vilewhip carapace armor" 9
+}
+
+"abyssus hive soulpiercer" "soulpiercer" SPELL_DAMAGE
+{
+  "abyssus hive magic shot" 2
+  "abyssus hive forced regeneration" 4
+  "abyssus hive soulpiercer soulrend" 5
+}
+
+"abyssus hive soulpiercer unique" "soulpiercer" SPELL_DAMAGE
+{
+  "abyssus hive magic shot" 2
+  "abyssus hive forced regeneration" 4
+  "abyssus hive reinforced body" 5
+  "abyssus hive enhanced regeneration" 7
+  "abyssus hive soulpiercer soulrend" 10
+}
+
+"abyssus hive bloodtorn unique" "bloodtorn" DAMAGE
+{
+  "abyssus hive reinforced body" 3
+  "abyssus hive enhanced regeneration" 7
+}
+
+"abyssus hive embercaller" "embercaller" SPELL_DAMAGE
+{
+  "abyssus hive fire shot" 1
+  "abyssus hive fireball" 5
+  "abyssus hive flamestrike" 7
+}
+
+"abyssus hive embercaller unique" "embercaller" SPELL_DAMAGE
+{
+  "abyssus hive fire shot" 1
+  "abyssus hive reinforced body" 3
+  "abyssus hive fireball" 5
+  "abyssus hive enhanced regeneration" 7
+  "abyssus hive flamestrike" 10
+}
+
+"abyssus hive twinscourge unique" "twinscourge" DAMAGE
+{
+  "abyssus hive reinforced body" 5
+  "abyssus hive enhanced regeneration" 10
+}
+
+"abyssus hive silkfiend" "silkfiend" SPELL_DAMAGE
+{
+  "abyssus hive necrosis melee" 1
+  "abyssus hive necrosis range" 3
+  "abyssus hive webspit" 4
+  "abyssus hive acidspill" 7
+}
+
+"abyssus hive silkfiend unique" "silkfiend" SPELL_DAMAGE
+{
+  "abyssus hive necrosis melee" 1
+  "abyssus hive necrosis range" 3
+  "abyssus hive webspit" 4
+  "abyssus hive reinforced body" 5
+  "abyssus hive acidspill" 7
+  "abyssus hive enhanced regeneration" 10
+}
+
+"abyssus hive emberhog" "emberhog" DAMAGE
+{
+  "abyssus hive necrosis melee" 1
+  "abyssus hive reinforced necrohide" 5
+  "abyssus hive rapid regeneration" 7
+}
+
+"abyssus hive emberhog unique" "emberhog" DAMAGE
+{
+  "abyssus hive necrosis melee" 1
+  "abyssus hive reinforced body" 3
+  "abyssus hive reinforced necrohide" 5
+  "abyssus hive rapid regeneration" 7
+  "abyssus hive enhanced regeneration" 10
+}
+
+"abyssus hive lurker" "lurker" DAMAGE
+{
+  "abyssus hive lurker tentacle 1" 1
+  "abyssus hive lurker tentacle 2" 4
+  "abyssus hive forced regeneration" 7
+  "abyssus hive reinforced necrohide" 8
+}

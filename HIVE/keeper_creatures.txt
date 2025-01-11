@@ -1,0 +1,32 @@
+"ABYSSUS_HIVE"
+{
+  baseName = "Swarm"
+  creatureId = { "ABYSSUS_HIVE_DESECRATOR" }
+  tribeAlignment = EVIL
+  villainGroups = { EVIL_KEEPER EVIL_COTTAGES }
+  immigrantGroups = { "abyssus_hive_initial_maw_reaver" }
+  technology = {
+    "breaching" "dissolving"
+    "spawn soulpiercer" "spawn silkfiend" "spawn embercaller"
+    "spawn bloodtorn" "spawn twinscourge" "spawn emberhog" "spawn lurker"
+  }
+  initialTech = { }
+  zLevelGroups = { "basic" "evil" }
+  buildingGroups = {
+    "abyssus_dev_tools"
+    "abyssus_hive_keeper_structure" "abyssus_hive_keeper_stairs" "abyssus_hive_keeper_floors"
+    "abyssus_hive_keeper_spawning"
+    "abyssus_hive_keeper_living"
+    "abyssus_hive_keeper_training"
+    "abyssus_hive_keeper_crafting"
+    "abyssus_hive_keeper_storage"
+    "zones" "orders"
+  }
+  startingBase = {9 9} "abyssus_hive_keeper_entry"
+  minionTraits = {LEADER WORKER}
+  credit = { "ABYSSUS_HIVE_BIOMASS" 150 }
+  prisoners = false
+  requireQuartersForExp = false
+  workshopGroups = { "basic" "bows" "abyssus_hive_liveforge_pool" }
+  description = "A work in progress so that you can play as defiler from diablo 1"
+}

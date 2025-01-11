@@ -1,0 +1,9 @@
+"breaching"               { "Allows you to breach floors up and down" }
+"dissolving"               { "Allows you to dissolve equipment into their basic resources" }
+"spawn soulpiercer"               { "Allows you to lay eggs that will spawn soulpiercer after some time" }
+"spawn bloodtorn"               { "Allows you to lay eggs that will spawn bloodtorn after some time" }
+"spawn twinscourge"               { "Allows you to lay eggs that will spawn twinscourge after some time" { "spawn bloodtorn" } }
+"spawn emberhog"               { "Allows you to lay eggs that will spawn emberhog after some time" { "spawn twinscourge"  } }
+"spawn lurker"               { "Allows you to lay eggs that will spawn lurker after some time" { "spawn emberhog"   } }
+"spawn silkfiend"               { "Allows you to lay eggs that will spawn silkfiend after some time" { "spawn soulpiercer" } }
+"spawn embercaller"               { "Allows you to lay eggs that will spawn embercaller after some time" { "spawn silkfiend" } }

@@ -1,0 +1,82 @@
+##### Spells
+
+
+{ viewId = "abyssus_spells_acidspill_projectile" symbol = "o" color = ColorId LIGHT_GREEN animated = true }
+{ viewId = "abyssus_spells_acidbolt_projectile" symbol = "o" color = ColorId GREEN animated = true }
+{ "abyssus_spells_arrows_double_shoot" ">" ColorId RED }
+{ "abyssus_spells_arrows_triple_shoot" ">" ColorId RED }
+{ viewId = "abyssus_spells_firebolt_projectile" symbol = "o" color = ColorId ORANGE animated = true }
+{ viewId = "abyssus_spells_fireball_projectile" symbol = "O" color = ColorId ORANGE animated = true }
+{ viewId = "abyssus_spells_lightningball_projectile" symbol = "o" color = ColorId BLUE animated = true }
+{ viewId = "abyssus_spells_magmabolt_projectile" symbol = "o" color = ColorId RED animated = true }
+{ viewId = "abyssus_spells_magicflare_red_projectile" symbol = "*" color = ColorId RED animated = true }
+{ viewId = "abyssus_spells_magicflare_blue_projectile" symbol = "*" color = ColorId BLUE animated = true }
+{ viewId = "abyssus_spells_magicflare_white_projectile" symbol = "*" color = ColorId WHITE animated = true }
+{ viewId = "abyssus_spells_magicflare_red_white_projectile" symbol = "*" color = ColorId LIGHT_RED animated = true }
+{ viewId = "abyssus_spells_magic_missile_blue_projectile" symbol = "*" color = ColorId BLUE animated = true }
+{ "abyssus_spells_webspit_projectile" ">" ColorId WHITE }
+
+##### Hive
+{ viewId = "abyssus_hive_acid_spill" symbol = "O" color = ColorId DARK_GREEN animated = true }
+{ "abyssus_hive_biomass" "%" ColorId RED }
+{ "abyssus_hive_biomass_enriched" "%" ColorId GREEN }
+{ "abyssus_hive_biomass_enriched_2" "%" ColorId RED }
+{ "abyssus_hive_biomass_enriched_3" "%" ColorId PINK }
+{ "abyssus_hive_biomass_enriched_4" "%" ColorId BLUE }
+{ viewId = "abyssus_hive_biomass_storage_full" symbol = "o" color = ColorId ORANGE roundShadow = true }
+{ viewId = "abyssus_hive_biomass_storage_empty" symbol = "o" color = ColorId DARK_GRAY roundShadow = true }
+{ "abyssus_hive_bloodtorn" "b" ColorId YELLOW }
+{ "abyssus_hive_bloodtorn_unique" "b" ColorId PURPLE }
+{ "abyssus_hive_brood_chamber"  "=" ColorId BROWN }
+{ "abyssus_hive_desecrator" "@" ColorId PURPLE }
+{ viewId = "abyssus_hive_dissolver" symbol = "~" color = ColorId GREEN mountainSides = "abyssus_hive_dissolver" }
+{ "abyssus_hive_eggs_1" "o" ColorId LIGHT_GREEN }
+{ "abyssus_hive_eggs_2" "o" ColorId LIGHT_GREEN }
+{ "abyssus_hive_eggs_3" "o" ColorId LIGHT_GREEN }
+{ "abyssus_hive_eggs_4" "o" ColorId LIGHT_GREEN }
+{ "abyssus_hive_eggs_5" "o" ColorId LIGHT_GREEN }
+{ "abyssus_hive_eggs_6" "o" ColorId LIGHT_GREEN }
+{ "abyssus_hive_embercaller" "e" ColorId ORANGE }
+{ "abyssus_hive_embercaller_unique" "e" ColorId PURPLE }
+{ "abyssus_hive_emberhog" "E" ColorId ORANGE }
+{ "abyssus_hive_emberhog_unique" "E" ColorId PURPLE }
+{ "abyssus_hive_flesh_totem" "‡" ColorId PINK }
+{ viewId = "abyssus_hive_floor_1" symbol = "." color = ColorId LIGHT_BROWN extraBorders = { "mud" "water" "dirt" "floor" "keeper_floor" "roof" "magma" "grass" "hill" "sand" "snow" "swampgrass" } }
+{ viewId = "abyssus_hive_floor_2" symbol = "." color = ColorId BROWN extraBorders = { "mud" "water" "dirt" "floor" "keeper_floor" "roof" "magma" "grass" "hill" "sand" "snow" "swampgrass" } }
+{ viewId = "abyssus_hive_floor_3" symbol = "," color = ColorId LIGHT_BROWN extraBorders = { "mud" "water" "dirt" "floor" "keeper_floor" "roof" "magma" "grass" "hill" "sand" "snow" "swampgrass" } }
+{ viewId = "abyssus_hive_floor_4" symbol = "," color = ColorId BROWN extraBorders = { "mud" "water" "dirt" "floor" "keeper_floor" "roof" "magma" "grass" "hill" "sand" "snow" "swampgrass" } }
+{ viewId = "abyssus_hive_items_storage_full" symbol = "=" color = ColorId DARK_BROWN roundShadow = true }
+{ viewId = "abyssus_hive_items_storage_empty" symbol = "=" color = ColorId DARK_GRAY roundShadow = true }
+{ "abyssus_hive_leftovers_1" "=" ColorId LIGHT_RED }
+{ "abyssus_hive_leftovers_2" "=" ColorId LIGHT_RED }
+{ "abyssus_hive_leftovers_3" "=" ColorId LIGHT_RED }
+{ "abyssus_hive_leftovers_4" "=" ColorId LIGHT_RED }
+{ "abyssus_hive_leftovers_5" "=" ColorId LIGHT_RED }
+{ "abyssus_hive_leftovers_6" "=" ColorId LIGHT_RED }
+{ viewId = "abyssus_hive_liveforge_pool_1" symbol = "~" color = ColorId ORANGE animated = true mountainSides = "abyssus_hive_dissolver" }
+{ viewId = "abyssus_hive_liveforge_pool_2" symbol = "~" color = ColorId ORANGE animated = true mountainSides = "abyssus_hive_dissolver" }
+{ viewId = "abyssus_hive_liveforge_pool_3" symbol = "~" color = ColorId ORANGE animated = true mountainSides = "abyssus_hive_dissolver" }
+{ viewId = "abyssus_hive_liveforge_pool_4" symbol = "~" color = ColorId ORANGE animated = true mountainSides = "abyssus_hive_dissolver" }
+{ viewId = "abyssus_hive_liveforge_pool_5" symbol = "~" color = ColorId ORANGE animated = true mountainSides = "abyssus_hive_dissolver" }
+{ viewId = "abyssus_hive_liveforge_pool_6" symbol = "~" color = ColorId ORANGE animated = true mountainSides = "abyssus_hive_dissolver" }
+{ "abyssus_hive_lurker" "L" ColorId PINK }
+{ "abyssus_hive_lurker_tentacle_1" "t" ColorId PINK }
+{ "abyssus_hive_lurker_tentacle_2" "T" ColorId PINK }
+{ "abyssus_hive_mawreaver" "M" ColorId PURPLE }
+{ "abyssus_hive_mawspawn" "m" ColorId LIGHT_BROWN }
+{ "abyssus_hive_mawspawn_unique" "m" ColorId PURPLE }
+{ viewId = "abyssus_hive_resources_storage_full" symbol = "=" color = ColorId ORANGE roundShadow = true }
+{ viewId = "abyssus_hive_resources_storage_empty" symbol = "=" color = ColorId DARK_GRAY roundShadow = true }
+{ "abyssus_hive_silkfiend" "S" ColorId YELLOW }
+{ "abyssus_hive_silkfiend_unique" "S" ColorId PURPLE }
+{ "abyssus_hive_soulpiercer" "s" ColorId YELLOW }
+{ "abyssus_hive_soulpiercer_unique" "s" ColorId PURPLE }
+{ "abyssus_hive_stairs_down" ">" ColorId WHITE }
+{ "abyssus_hive_stairs_up" "<" ColorId WHITE }
+{ "abyssus_hive_twinscourge" "T" ColorId GRAY }
+{ "abyssus_hive_twinscourge_unique" "T" ColorId PURPLE }
+{ "abyssus_hive_venomstriker" "v" ColorId YELLOW }
+{ "abyssus_hive_venomstriker_unique" "V" ColorId PURPLE }
+{ "abyssus_hive_vilewhip" "v" ColorId GREEN }
+{ "abyssus_hive_vilewhip_unique" "V" ColorId PINK }
+{ viewId = "abyssus_hive_wall" symbol = "#" color = ColorId LIGHT_GREEN wallShadow = true wallConnections = true }

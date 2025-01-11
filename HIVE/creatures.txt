@@ -1,0 +1,1046 @@
+"ABYSSUS_HIVE_DESECRATOR"
+  {
+    viewId = { "abyssus_hive_desecrator" }
+    name = {
+      name = "desecrator"
+      firstNameGen = "ABYSSUS_HIVE"
+      fullTitle = true
+    }
+    body = {
+      type = NonHumanoid HUGE
+      addBodyPart = {
+        HEAD 1
+        BACK 1
+        TORSO 1
+        ARM 6
+        LEG 2
+      }
+      material = ABYSSUS_NECROHIDE
+      intrinsicAttacks = {
+        ARM  {{ itemType = { Intrinsic { "claws_attack" } "claw" 8 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        LEG  {{ itemType = { Intrinsic { "claws_attack" } "claw" 8 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        HEAD  {{ itemType = { Intrinsic { "claws_attack" } "claw" 8 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        BACK  {{ itemType = { Intrinsic { "claws_attack" } "claw" 8 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        TORSO  {{ itemType = { Intrinsic { "claws_attack" } "claw" 8 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+      }
+    }
+    cantEquip = true
+    attr = {
+      FURNACE 8
+      LABORATORY 8
+      DAMAGE 32
+      DEFENSE 32
+      DIGGING 50
+    }
+    permanentEffects = {
+      NIGHT_VISION 1
+      ABYSSUS_HIVE_DESECRATOR 1
+      ABYSSUS_HIVE_LESSER_RESTORATION 1
+      ABYSSUS_HIVE_PREDATOR 1
+    }
+    maxLevelIncrease = {
+      DAMAGE 20
+    }
+    spellSchools = { "abyssus hive desecrator" }
+    spells = { "abyssus hive minion traits" "abyssus hive desecrator introduction" }
+    aiType = MELEE
+    chatReactionFriendly = "What brings you to my lair? Snacks, perhaps?"
+    chatReactionHostile = "Prepare to be cleaved, little pest!"
+    afterKilledSomeone = {
+      FirstSuccessful {
+        Filter CreatureFlag "abyssus_hive_desecrator_kill_count_10" {
+          SetCreatureFlag "abyssus_hive_desecrator_kill_count_10" false
+          SetCreatureFlag "abyssus_hive_desecrator_kill_count_1" false
+          IncreaseAttr DAMAGE 1
+          IncreaseAttr DEFENSE 1
+        }
+        Filter CreatureFlag "abyssus_hive_desecrator_kill_count_9" {
+          SetCreatureFlag "abyssus_hive_desecrator_kill_count_10" true
+          SetCreatureFlag "abyssus_hive_desecrator_kill_count_9" false
+        }
+        Filter CreatureFlag "abyssus_hive_desecrator_kill_count_8" {
+          SetCreatureFlag "abyssus_hive_desecrator_kill_count_9" true
+          SetCreatureFlag "abyssus_hive_desecrator_kill_count_8" false
+        }
+        Filter CreatureFlag "abyssus_hive_desecrator_kill_count_7" {
+          SetCreatureFlag "abyssus_hive_desecrator_kill_count_8" true
+          SetCreatureFlag "abyssus_hive_desecrator_kill_count_7" false
+        }
+        Filter CreatureFlag "abyssus_hive_desecrator_kill_count_6" {
+          SetCreatureFlag "abyssus_hive_desecrator_kill_count_7" true
+          SetCreatureFlag "abyssus_hive_desecrator_kill_count_6" false
+        }
+        Filter CreatureFlag "abyssus_hive_desecrator_kill_count_5" {
+          SetCreatureFlag "abyssus_hive_desecrator_kill_count_6" true
+          SetCreatureFlag "abyssus_hive_desecrator_kill_count_5" false
+        }
+        Filter CreatureFlag "abyssus_hive_desecrator_kill_count_4" {
+          SetCreatureFlag "abyssus_hive_desecrator_kill_count_5" true
+          SetCreatureFlag "abyssus_hive_desecrator_kill_count_4" false
+        }
+        Filter CreatureFlag "abyssus_hive_desecrator_kill_count_3" {
+          SetCreatureFlag "abyssus_hive_desecrator_kill_count_4" true
+          SetCreatureFlag "abyssus_hive_desecrator_kill_count_3" false
+        }
+        Filter CreatureFlag "abyssus_hive_desecrator_kill_count_2" {
+          SetCreatureFlag "abyssus_hive_desecrator_kill_count_3" true
+          SetCreatureFlag "abyssus_hive_desecrator_kill_count_2" false
+        }
+        Filter Not CreatureFlag "abyssus_hive_desecrator_kill_count_1" {
+          SetCreatureFlag "abyssus_hive_desecrator_kill_count_2" true
+          SetCreatureFlag "abyssus_hive_desecrator_kill_count_1" false
+        }
+      }
+    }
+  }
+
+"ABYSSUS_HIVE_MAWREAVER"
+  {
+    viewId = { "abyssus_hive_mawreaver" }
+    name = {
+      name = "mawreaver"
+      firstNameGen = "ABYSSUS_HIVE_MAWREAVER"
+      fullTitle = true
+    }
+    body = {
+      type = NonHumanoid HUGE
+      addBodyPart = {
+        HEAD 1
+        ARM 2
+        LEG 2
+        BACK 1
+        TORSO 1
+      }
+      material = ABYSSUS_NECROHIDE
+      intrinsicAttacks = {
+        ARM  {{ itemType = { Intrinsic { "claws_attack" } "claw" 8 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        LEG  {{ itemType = { Intrinsic { "claws_attack" } "claw" 8 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+      }
+    }
+    cantEquip = true
+    attr = {
+      FURNACE 10
+      LABORATORY 10
+      DAMAGE 32
+      DEFENSE 32
+    }
+    permanentEffects = {
+      NIGHT_VISION 1
+      ABYSSUS_HIVE_LESSER_RESTORATION 1
+      ABYSSUS_HIVE_PREDATOR 1
+    }
+    spells = { "abyssus hive mawreaver summon spawns" }
+    spellSchools = { "abyssus hive mawreaver" }
+    maxLevelIncrease = {
+      DAMAGE 12
+    }
+    aiType = MELEE
+    chatReactionFriendly = "Are you here to play? I love games!"
+    chatReactionHostile = "I'll feast on your remains!"
+    afterKilledSomeone = {
+      FirstSuccessful {
+        Filter CreatureFlag "abyssus_hive_mawreaver_kill_count_10" {
+          SetCreatureFlag "abyssus_hive_mawreaver_kill_count_10" false
+          SetCreatureFlag "abyssus_hive_mawreaver_kill_count_1" false
+          IncreaseAttr DAMAGE 1
+          IncreaseAttr DEFENSE 1
+        }
+        Filter CreatureFlag "abyssus_hive_mawreaver_kill_count_9" {
+          SetCreatureFlag "abyssus_hive_mawreaver_kill_count_10" true
+          SetCreatureFlag "abyssus_hive_mawreaver_kill_count_9" false
+        }
+        Filter CreatureFlag "abyssus_hive_mawreaver_kill_count_8" {
+          SetCreatureFlag "abyssus_hive_mawreaver_kill_count_9" true
+          SetCreatureFlag "abyssus_hive_mawreaver_kill_count_8" false
+        }
+        Filter CreatureFlag "abyssus_hive_mawreaver_kill_count_7" {
+          SetCreatureFlag "abyssus_hive_mawreaver_kill_count_8" true
+          SetCreatureFlag "abyssus_hive_mawreaver_kill_count_7" false
+        }
+        Filter CreatureFlag "abyssus_hive_mawreaver_kill_count_6" {
+          SetCreatureFlag "abyssus_hive_mawreaver_kill_count_7" true
+          SetCreatureFlag "abyssus_hive_mawreaver_kill_count_6" false
+        }
+        Filter CreatureFlag "abyssus_hive_mawreaver_kill_count_5" {
+          SetCreatureFlag "abyssus_hive_mawreaver_kill_count_6" true
+          SetCreatureFlag "abyssus_hive_mawreaver_kill_count_5" false
+        }
+        Filter CreatureFlag "abyssus_hive_mawreaver_kill_count_4" {
+          SetCreatureFlag "abyssus_hive_mawreaver_kill_count_5" true
+          SetCreatureFlag "abyssus_hive_mawreaver_kill_count_4" false
+        }
+        Filter CreatureFlag "abyssus_hive_mawreaver_kill_count_3" {
+          SetCreatureFlag "abyssus_hive_mawreaver_kill_count_4" true
+          SetCreatureFlag "abyssus_hive_mawreaver_kill_count_3" false
+        }
+        Filter CreatureFlag "abyssus_hive_mawreaver_kill_count_2" {
+          SetCreatureFlag "abyssus_hive_mawreaver_kill_count_3" true
+          SetCreatureFlag "abyssus_hive_mawreaver_kill_count_2" false
+        }
+        Filter Not CreatureFlag "abyssus_hive_mawreaver_kill_count_1" {
+          SetCreatureFlag "abyssus_hive_mawreaver_kill_count_2" true
+          SetCreatureFlag "abyssus_hive_mawreaver_kill_count_1" false
+        }
+      }
+    }
+  }
+
+"ABYSSUS_HIVE_MAWSPAWN_PERM"
+  {
+    viewId = { "abyssus_hive_mawspawn" }
+    attr = {
+      FURNACE 5
+      LABORATORY 5
+      DAMAGE 12
+      DEFENSE 12
+      DIGGING 40
+    }
+    body = {
+      type = NonHumanoid SMALL
+      addBodyPart = {
+        HEAD 1
+        LEG 2
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 75
+      intrinsicAttacks = {
+        TORSO {{{ Intrinsic { "bite_attack" } "fangs" 2 { attackType = BITE attackMsg = BITE victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } } }}}
+      }
+    }
+    aiType = MELEE
+    noChase = true
+    cantEquip = true
+    permanentEffects = {
+      SPEED 1
+      NIGHT_VISION 1
+      ABYSSUS_HIVE_MAWSPAWN 1
+      ABYSSUS_HIVE_LESSER_RESTORATION 1
+    }
+    name = {
+      name = "mawspawn"
+    }
+    deathEffect = {
+      Filter CreatureFlag "abyssus_hive_mawspawn_1" { SetFlag "abyssus_hive_mawspawn_1" false }
+      Filter CreatureFlag "abyssus_hive_mawspawn_2" { SetFlag "abyssus_hive_mawspawn_2" false }
+      Filter CreatureFlag "abyssus_hive_mawspawn_3" { SetFlag "abyssus_hive_mawspawn_3" false }
+      Filter CreatureFlag "abyssus_hive_mawspawn_4" { SetFlag "abyssus_hive_mawspawn_4" false }
+      Filter CreatureFlag "abyssus_hive_mawspawn_5" { SetFlag "abyssus_hive_mawspawn_5" false }
+      Filter CreatureFlag "abyssus_hive_mawspawn_6" { SetFlag "abyssus_hive_mawspawn_6" false }
+      Filter CreatureFlag "abyssus_hive_mawspawn_7" { SetFlag "abyssus_hive_mawspawn_7" false }
+      Filter CreatureFlag "abyssus_hive_mawspawn_8" { SetFlag "abyssus_hive_mawspawn_8" false }
+      Filter CreatureFlag "abyssus_hive_mawspawn_9" { SetFlag "abyssus_hive_mawspawn_9" false }
+      Filter CreatureFlag "abyssus_hive_mawspawn_10" { SetFlag "abyssus_hive_mawspawn_10" false }
+    }
+#    spells = { "abyssus hive mawspawn worker" }
+    spellSchools = { "abyssus hive mawspawn" }
+    maxLevelIncrease = {
+      DAMAGE 8
+    }
+  }
+
+"ABYSSUS_HIVE_MAWSPAWN_TEMP"
+  {
+    viewId = { "abyssus_hive_mawspawn" }
+    attr = {
+      DAMAGE 45
+      DEFENSE 40
+    }
+    body = {
+      type = NonHumanoid SMALL
+      addBodyPart = {
+        HEAD 1
+        LEG 2
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 75
+      intrinsicAttacks = {
+        TORSO {{{ Intrinsic { "bite_attack" } "fangs" 2 { attackType = BITE attackMsg = BITE victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } } }}}
+      }
+    }
+    aiType = MELEE
+    noChase = true
+    cantEquip = true
+    spells = { "abyssus hive necrosis melee" "abyssus hive rapid regeneration" }
+    permanentEffects = {
+      SPEED 1
+      NIGHT_VISION 1
+      ABYSSUS_HIVE_REINFORCED_BODY 1
+      ABYSSUS_HIVE_ENHANCED_REGENERATION 1
+    }
+    name = {
+      name = "mawspawn"
+    }
+  }
+
+"ABYSSUS_HIVE_MAWSPAWN_UNIQUE"
+  {
+    viewId = { "abyssus_hive_mawspawn_unique" }
+    attr = {
+      FURNACE 10
+      LABORATORY 10
+      DAMAGE 25
+      DEFENSE 25
+      DIGGING 60
+    }
+    body = {
+      type = NonHumanoid SMALL
+      addBodyPart = {
+        HEAD 1
+        LEG 2
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 75
+      intrinsicAttacks = {
+        TORSO {{{ Intrinsic { "bite_attack" } "fangs" 2 { attackType = BITE attackMsg = BITE victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } } }}}
+      }
+    }
+    aiType = MELEE
+    noChase = true
+    cantEquip = true
+    permanentEffects = {
+      ABYSSUS_HIVE_LESSER_RESTORATION 1
+      SPEED 1
+      NIGHT_VISION 1
+    }
+    name = {
+      name = "mawspawn"
+      firstNameGen = "ABYSSUS_HIVE"
+    }
+    deathEffect = {
+      SetFlag "abyssus_hive_mawspawn_unique" false
+    }
+#    spells = { "abyssus hive mawspawn worker" }
+    spellSchools = { "abyssus hive mawspawn unique" }
+    maxLevelIncrease = {
+      DAMAGE 10
+    }
+  }
+
+"ABYSSUS_HIVE_VENOMSTRIKER"
+  {
+    viewId = { "abyssus_hive_venomstriker" }
+    body = {
+      type = NonHumanoid MEDIUM
+      addBodyPart = {
+        HEAD 1
+        TORSO 1
+        LEG 4
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 200
+      intrinsicAttacks = {
+        TORSO {{{ Intrinsic { "bite_attack" } "fangs" 4 { attackType = BITE attackMsg = BITE victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } } }}}
+      }
+    }
+    attr = {
+      FURNACE 5
+      LABORATORY 5
+      DAMAGE 18
+      DEFENSE 15
+    }
+    permanentEffects = {
+      ABYSSUS_HIVE_LESSER_RESTORATION 1
+    }
+    name = {
+      name = "venomstriker"
+    }
+    spellSchools = { "abyssus hive venomstriker" }
+    maxLevelIncrease = {
+      DAMAGE 4
+    }
+  }
+
+"ABYSSUS_HIVE_VENOMSTRIKER_UNIQUE"
+  {
+    viewId = { "abyssus_hive_venomstriker_unique" }
+    body = {
+      type = NonHumanoid MEDIUM
+      addBodyPart = {
+        HEAD 1
+        TORSO 1
+        LEG 4
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 200
+      intrinsicAttacks = {
+        TORSO {{{ Intrinsic { "bite_attack" } "fangs" 4 { attackType = BITE attackMsg = BITE victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } } }}}
+      }
+    }
+    attr = {
+      FURNACE 10
+      LABORATORY 10
+      DAMAGE 28
+      DEFENSE 25
+    }
+    permanentEffects = {
+      ABYSSUS_HIVE_LESSER_RESTORATION 1
+    }
+    deathEffect = {
+      SetFlag "abyssus_hive_venomstriker_unique" false
+    }
+    name = {
+      name = "venomstriker"
+      firstNameGen = "ABYSSUS_HIVE"
+    }
+    spellSchools = { "abyssus hive venomstriker unique" }
+    maxLevelIncrease = {
+      DAMAGE 8
+    }
+  }
+
+"ABYSSUS_HIVE_VILEWHIP"
+  {
+    viewId = { "abyssus_hive_vilewhip" }
+    body = {
+      type = NonHumanoid MEDIUM
+      addBodyPart = {
+        HEAD 1
+        TORSO 1
+        ARM 1
+        LEG 2
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 200
+      intrinsicAttacks = {
+        ARM  {{ itemType = { Intrinsic { "claws_attack" } "claw" 8 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      FURNACE 5
+      LABORATORY 5
+      DAMAGE 22
+      DEFENSE 12
+    }
+    permanentEffects = {
+      ABYSSUS_HIVE_LESSER_RESTORATION 1
+    }
+    name = {
+      name = "vilewhip"
+    }
+    spellSchools = { "abyssus hive vilewhip" }
+    maxLevelIncrease = {
+      DAMAGE 5
+    }
+  }
+
+"ABYSSUS_HIVE_VILEWHIP_UNIQUE"
+  {
+    viewId = { "abyssus_hive_vilewhip_unique" }
+    body = {
+      type = NonHumanoid MEDIUM
+      addBodyPart = {
+        HEAD 1
+        TORSO 1
+        ARM 1
+        LEG 2
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 200
+      intrinsicAttacks = {
+        ARM  {{ itemType = { Intrinsic { "claws_attack" } "claw" 8 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      FURNACE 10
+      LABORATORY 10
+      DAMAGE 30
+      DEFENSE 20
+    }
+    permanentEffects = {
+      ABYSSUS_HIVE_LESSER_RESTORATION 1
+    }
+    deathEffect = {
+      SetFlag "abyssus_hive_vilewhip_unique" false
+    }
+    name = {
+      name = "vilewhip"
+      firstNameGen = "ABYSSUS_HIVE"
+    }
+    spellSchools = { "abyssus hive vilewhip unique" }
+    maxLevelIncrease = {
+      DAMAGE 9
+    }
+  }
+
+"ABYSSUS_HIVE_SOULPIERCER"
+  {
+    viewId = { "abyssus_hive_soulpiercer" }
+    body = {
+      type = NonHumanoid MEDIUM
+      addBodyPart = {
+        HEAD 1
+        ARM 4
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 300
+      intrinsicAttacks = {
+        ARM  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        HEAD  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      FURNACE 4
+      LABORATORY 6
+      DAMAGE 12
+      SPELL_DAMAGE 16
+      DEFENSE 12
+    }
+    aiType = RANGED
+    permanentEffects = {
+      ABYSSUS_HIVE_RESTORATION 1
+      FLYING 1
+      NIGHT_VISION 1
+    }
+    name = {
+      name = "soulpiercer"
+    }
+    spellSchools = { "abyssus hive soulpiercer" }
+    maxLevelIncrease = {
+      SPELL_DAMAGE 6
+    }
+  }
+
+"ABYSSUS_HIVE_SOULPIERCER_UNIQUE"
+  {
+    viewId = { "abyssus_hive_soulpiercer_unique" }
+    body = {
+      type = NonHumanoid MEDIUM
+      addBodyPart = {
+        HEAD 1
+        TORSO 1
+        ARM 4
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 300
+      intrinsicAttacks = {
+        ARM  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        HEAD  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        TORSO  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      FURNACE 14
+      LABORATORY 16
+      DAMAGE 22
+      SPELL_DAMAGE 30
+      DEFENSE 22
+    }
+    aiType = RANGED
+    permanentEffects = {
+      ABYSSUS_HIVE_RESTORATION 1
+      FLYING 1
+      NIGHT_VISION 1
+    }
+    deathEffect = {
+      SetFlag "abyssus_hive_soulpiercer_unique" false
+    }
+    name = {
+      name = "soulpiercer"
+      firstNameGen = "ABYSSUS_HIVE"
+    }
+    spellSchools = { "abyssus hive soulpiercer unique" }
+    maxLevelIncrease = {
+      SPELL_DAMAGE 10
+    }
+  }
+
+"ABYSSUS_HIVE_BLOODTORN"
+  {
+    viewId = { "abyssus_hive_bloodtorn" }
+    body = {
+      type = NonHumanoid LARGE
+      addBodyPart = {
+        HEAD 1
+        TORSO 1
+        BACK 1
+        ARM 2
+        LEG 2
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 400
+      intrinsicAttacks = {
+        ARM  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      FURNACE 4
+      LABORATORY 6
+      DAMAGE 14
+      DEFENSE 14
+    }
+    permanentEffects = {
+      ABYSSUS_HIVE_BLOODTORN_CORPOREAL_FORM 1
+      ABYSSUS_HIVE_LESSER_RESTORATION 1
+      FLYING 1
+    }
+    name = {
+      name = "bloodtorn"
+    }
+    maxLevelIncrease = {
+      DAMAGE 5
+    }
+  }
+
+"ABYSSUS_HIVE_BLOODTORN_UNIQUE"
+  {
+    viewId = { "abyssus_hive_bloodtorn_unique" }
+    body = {
+      type = NonHumanoid LARGE
+      addBodyPart = {
+        HEAD 1
+        TORSO 1
+        BACK 1
+        ARM 2
+        LEG 2
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 400
+      intrinsicAttacks = {
+        ARM  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      FURNACE 14
+      LABORATORY 16
+      DAMAGE 24
+      DEFENSE 30
+    }
+    permanentEffects = {
+      ABYSSUS_HIVE_BLOODTORN_CORPOREAL_FORM 1
+      ABYSSUS_HIVE_LESSER_RESTORATION 1
+      FLYING 1
+    }
+    deathEffect = {
+      SetFlag "abyssus_hive_bloodtorn_unique" false
+    }
+    name = {
+      name = "bloodtorn"
+      firstNameGen = "ABYSSUS_HIVE"
+    }
+    spellSchools = { "abyssus hive bloodtorn unique" }
+    maxLevelIncrease = {
+      DAMAGE 10
+    }
+  }
+
+"ABYSSUS_HIVE_EMBERCALLER"
+  {
+    viewId = { "abyssus_hive_embercaller" }
+    body = {
+      type = NonHumanoid LARGE
+      addBodyPart = {
+        HEAD 1
+        TORSO 1
+        BACK 1
+        ARM 4
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 400
+      intrinsicAttacks = {
+        ARM  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        HEAD  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        TORSO  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        BACK  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      FURNACE 2
+      LABORATORY 8
+      DAMAGE 12
+      SPELL_DAMAGE 19
+      DEFENSE 12
+    }
+    aiType = RANGED
+    permanentEffects = {
+      ABYSSUS_HIVE_RESTORATION 1
+    }
+    name = {
+      name = "embercaller"
+    }
+    spellSchools = { "abyssus hive embercaller" }
+    maxLevelIncrease = {
+      SPELL_DAMAGE 7
+    }
+  }
+
+"ABYSSUS_HIVE_EMBERCALLER_UNIQUE"
+  {
+    viewId = { "abyssus_hive_embercaller_unique" }
+    body = {
+      type = NonHumanoid LARGE
+      addBodyPart = {
+        HEAD 1
+        TORSO 1
+        BACK 1
+        ARM 4
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 400
+      intrinsicAttacks = {
+        ARM  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        HEAD  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        TORSO  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        BACK  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      FURNACE 12
+      LABORATORY 18
+      DAMAGE 25
+      SPELL_DAMAGE 32
+      DEFENSE 25
+    }
+    aiType = RANGED
+    permanentEffects = {
+      ABYSSUS_HIVE_RESTORATION 1
+    }
+    deathEffect = {
+      SetFlag "abyssus_hive_embercaller_unique" false
+    }
+    name = {
+      name = "embercaller"
+      firstNameGen = "ABYSSUS_HIVE"
+    }
+    spellSchools = { "abyssus hive embercaller unique" }
+    maxLevelIncrease = {
+      SPELL_DAMAGE 10
+    }
+  }
+
+"ABYSSUS_HIVE_SILKFIEND"
+  {
+    viewId = { "abyssus_hive_silkfiend" }
+    body = {
+      type = NonHumanoid LARGE
+      addBodyPart = {
+        HEAD 1
+        LEG 2
+        TORSO 1
+        BACK 1
+        ARM 4
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 500
+      intrinsicAttacks = {
+        ARM  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        HEAD  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        TORSO  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        BACK  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      FURNACE 2
+      LABORATORY 8
+      DAMAGE 12
+      SPELL_DAMAGE 25
+      DEFENSE 14
+    }
+    permanentEffects = {
+      NIGHT_VISION 1
+      ABYSSUS_HIVE_RESTORATION 1
+    }
+    name = {
+      name = "silkfiend"
+    }
+    spellSchools = { "abyssus hive silkfiend" }
+    maxLevelIncrease = {
+      SPELL_DAMAGE 9
+    }
+  }
+
+"ABYSSUS_HIVE_SILKFIEND_UNIQUE"
+  {
+    viewId = { "abyssus_hive_silkfiend_unique" }
+    body = {
+      type = NonHumanoid LARGE
+      addBodyPart = {
+        HEAD 1
+        LEG 2
+        TORSO 1
+        BACK 1
+        ARM 4
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 500
+      intrinsicAttacks = {
+        ARM  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        HEAD  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        TORSO  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        BACK  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      FURNACE 12
+      LABORATORY 18
+      DAMAGE 22
+      SPELL_DAMAGE 35
+      DEFENSE 24
+    }
+    permanentEffects = {
+      NIGHT_VISION 1
+      ABYSSUS_HIVE_RESTORATION 1
+    }
+    name = {
+      name = "silkfiend"
+      firstNameGen = "ABYSSUS_HIVE"
+    }
+    spellSchools = { "abyssus hive silkfiend unique" }
+    maxLevelIncrease = {
+      SPELL_DAMAGE 12
+    }
+  }
+
+"ABYSSUS_HIVE_TWINSCOURGE"
+  {
+    viewId = { "abyssus_hive_twinscourge" }
+    body = {
+      type = NonHumanoid LARGE
+      addBodyPart = {
+        HEAD 2
+        LEG 2
+        TORSO 1
+        BACK 1
+        ARM 2
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 600
+      intrinsicAttacks = {
+        TORSO {{ itemType = { Intrinsic { "bite_attack" } "bite" 4 { attackType = BITE attackMsg = BITE victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        BACK  {{ itemType = { Intrinsic { "bite_attack" } "bite" 4 { attackType = BITE attackMsg = BITE victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        ARM  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        HEAD  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      FURNACE 1
+      LABORATORY 10
+      DAMAGE 40
+      DEFENSE 30
+    }
+    permanentEffects = {
+      ABYSSUS_HIVE_RESTORATION 1
+    }
+    name = {
+      name = "twinscourge"
+    }
+    maxLevelIncrease = {
+      DAMAGE 9
+    }
+  }
+
+"ABYSSUS_HIVE_TWINSCOURGE_UNIQUE"
+  {
+    viewId = { "abyssus_hive_twinscourge_unique" }
+    body = {
+      type = NonHumanoid LARGE
+      addBodyPart = {
+        HEAD 2
+        LEG 2
+        TORSO 1
+        BACK 1
+        ARM 2
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 600
+      intrinsicAttacks = {
+        TORSO {{ itemType = { Intrinsic { "bite_attack" } "bite" 4 { attackType = BITE attackMsg = BITE victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        BACK  {{ itemType = { Intrinsic { "bite_attack" } "bite" 4 { attackType = BITE attackMsg = BITE victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        ARM  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        HEAD  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      FURNACE 11
+      LABORATORY 20
+      DAMAGE 50
+      DEFENSE 40
+    }
+    permanentEffects = {
+      ABYSSUS_HIVE_RESTORATION 1
+    }
+    deathEffect = {
+      SetFlag "abyssus_hive_twinscourge_unique" false
+    }
+    name = {
+      name = "twinscourge"
+      firstNameGen = "ABYSSUS_HIVE"
+    }
+    spellSchools = { "abyssus hive twinscourge unique" }
+    maxLevelIncrease = {
+      DAMAGE 12
+    }
+  }
+
+"ABYSSUS_HIVE_EMBERHOG"
+  {
+    viewId = { "abyssus_hive_emberhog" }
+    body = {
+      type = NonHumanoid LARGE
+      addBodyPart = {
+        HEAD 1
+        LEG 2
+        TORSO 1
+        BACK 1
+        ARM 2
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 800
+      intrinsicAttacks = {
+        ARM  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        HEAD  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      FURNACE 1
+      LABORATORY 10
+      DAMAGE 32
+      DEFENSE 45
+    }
+    permanentEffects = {
+      ABYSSUS_HIVE_RESTORATION 1
+    }
+    name = {
+      name = "emberhog"
+    }
+    spellSchools = { "abyssus hive emberhog" }
+    maxLevelIncrease = {
+      DAMAGE 9
+    }
+  }
+
+"ABYSSUS_HIVE_EMBERHOG_UNIQUE"
+  {
+    viewId = { "abyssus_hive_emberhog_unique" }
+    body = {
+      type = NonHumanoid LARGE
+      addBodyPart = {
+        HEAD 1
+        LEG 2
+        TORSO 1
+        BACK 1
+        ARM 2
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 800
+      intrinsicAttacks = {
+        ARM  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        HEAD  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      FURNACE 11
+      LABORATORY 20
+      DAMAGE 42
+      DEFENSE 55
+    }
+    permanentEffects = {
+      ABYSSUS_HIVE_RESTORATION 1
+    }
+    deathEffect = {
+      SetFlag "abyssus_hive_emberhog_unique" false
+    }
+    name = {
+      name = "emberhog"
+      firstNameGen = "ABYSSUS_HIVE"
+    }
+    spellSchools = { "abyssus hive emberhog unique" }
+    maxLevelIncrease = {
+      DAMAGE 12
+    }
+  }
+
+"ABYSSUS_HIVE_LURKER"
+  {
+    viewId = { "abyssus_hive_lurker" }
+    body = {
+      type = NonHumanoid LARGE
+      addBodyPart = {
+        TORSO 1
+        BACK 1
+        ARM 5
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 800
+      intrinsicAttacks = {
+        ARM  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        BACK  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+        TORSO  {{ itemType = { Intrinsic { "claws_attack" } "claw" 4 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      FURNACE 5
+      LABORATORY 15
+      DAMAGE 32
+      DEFENSE 30
+    }
+    permanentEffects = {
+      ABYSSUS_HIVE_RESTORATION 1
+    }
+    name = {
+      name = "lurker"
+    }
+    spellSchools = { "abyssus hive lurker" }
+    maxLevelIncrease = {
+      DAMAGE 9
+    }
+  }
+
+"ABYSSUS_HIVE_LURKER_TENTACLE_1"
+  {
+    viewId = { "abyssus_hive_lurker_tentacle_1" }
+    body = {
+      type = NonHumanoid MEDIUM
+      addBodyPart = {
+        TORSO 1
+        ARM 1
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 200
+      intrinsicAttacks = {
+        ARM  {{ itemType = { Intrinsic { "claws_attack" } "claw" 8 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      DAMAGE 20
+      DEFENSE 100
+    }
+    permanentEffects = {
+      ABYSSUS_HIVE_LESSER_RESTORATION 1
+      IMMOBILE 1
+      INVULNERABLE 1
+    }
+    name = {
+      name = "lurker tentacle"
+    }
+    spells = { "abyssus hive tendril attack" }
+  }
+
+"ABYSSUS_HIVE_LURKER_TENTACLE_2"
+  {
+    viewId = { "abyssus_hive_lurker_tentacle_2" }
+    body = {
+      type = NonHumanoid MEDIUM
+      addBodyPart = {
+        TORSO 1
+        ARM 1
+      }
+      material = ABYSSUS_NECROHIDE
+      weight = 200
+      intrinsicAttacks = {
+        ARM  {{ itemType = { Intrinsic { "claws_attack" } "claw" 8 { attackType = HIT attackMsg = CLAW victimEffect = {0.5 Lasting 15 ABYSSUS_HIVE_BLIGHT } }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      DAMAGE 20
+      DEFENSE 100
+    }
+    permanentEffects = {
+      ABYSSUS_HIVE_LESSER_RESTORATION 1
+      IMMOBILE 1
+      INVULNERABLE 1
+    }
+    name = {
+      name = "lurker tentacle"
+    }
+    spells = { "abyssus hive tendril attack" }
+  }
