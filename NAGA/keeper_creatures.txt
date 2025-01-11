@@ -1,0 +1,33 @@
+"ABYSSUS_NAGA"
+{
+  baseName = "Labyrinth odyssey"
+  creatureId = { "ABYSSUS_NAGA_KEEPER_MALE" "ABYSSUS_NAGA_KEEPER_FEMALE" }
+  tribeAlignment = EVIL
+  villainGroups = { EVIL_KEEPER EVIL_COTTAGES }
+  immigrantGroups = { "abyssus_naga_initial_workers" "abyssus_naga_keeper" }
+  technology = {
+    "alchemy" "advanced alchemy" "alchemical conversion"
+    "iron working" "jewellery"
+    "archery" "sorcery" "advanced sorcery" "magical weapons" "master sorcery" "core strengthening"
+  }
+  initialTech = { }
+  zLevelGroups = { "basic" "evil" "abyssus_naga_abandoned_labyrinth" }
+  buildingGroups = {
+    "abyssus_naga_dev_tools"
+    "abyssus_naga_structure" "abyssus_naga_stairs" "abyssus_naga_floors"
+    "abyssus_naga_doors"
+    "abyssus_naga_living"
+    "abyssus_naga_training"
+    "abyssus_naga_library"
+    "abyssus_naga_crafting"
+    "abyssus_naga_installations"
+    "abyssus_naga_storage"
+    "zones" "orders"
+  }
+  prisoners = false
+  startingBase = {5 5} "abyssus_naga_keeper_entry"
+  requireQuartersForExp = false
+  credit = { "WOOD" 100 "STONE" 200 "IRON" 100 }
+  workshopGroups = { "abyssus_naga" "abyssus_naga_gemstone_creation" }
+  description = "Recover the abandoned labyrinth - play as a Naga Labyrinth from labyrinth odyssey."
+}

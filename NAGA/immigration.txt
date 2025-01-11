@@ -1,0 +1,110 @@
+"abyssus_naga_initial_workers"
+{
+    {
+      ids = { "ABYSSUS_NAGA_WORKER" }
+      traits = { WORKER NO_LIMIT NO_EQUIPMENT FIGHTER }
+      invisible = true
+      noAuto = true
+      initialRecruitment = 3
+      spawnLocation = NearLeader
+    }
+}
+
+"abyssus_naga_keeper"
+{
+    {
+      ids = { "ABYSSUS_NAGA_WORKER" }
+      traits = { WORKER NO_LIMIT NO_EQUIPMENT FIGHTER }
+      noAuto = true
+      spawnLocation = FurnitureType "ABYSSUS_NAGA_CORE_PEDESTAL_EMPTY"
+      requirements = {
+        { 0.0 AttractionInfo 1 {FurnitureType "ABYSSUS_NAGA_NEST"}}
+      }
+    }
+    {
+      ids = { "ABYSSUS_NAGA_SOLDIER" }
+      traits = { FIGHTER }
+      noAuto = true
+      spawnLocation = FurnitureType "ABYSSUS_NAGA_CORE_PEDESTAL_EMPTY"
+      frequency = 1
+      requirements = {
+        { 0.0 AttractionInfo 1 {FurnitureType "ABYSSUS_NAGA_NEST"}}
+      }
+    }
+    {
+      ids = { "ABYSSUS_NAGA_WARRIOR" }
+      traits = { FIGHTER }
+      noAuto = true
+      spawnLocation = FurnitureType "ABYSSUS_NAGA_CORE_PEDESTAL_EMPTY"
+      frequency = 1
+      requirements = {
+        { 0.0 AttractionInfo 1 {FurnitureType "ABYSSUS_NAGA_NEST"}}
+        { 0.0 ImmigrantFlag "abyssus_naga_gems_consumed_10" }
+      }
+    }
+    {
+      ids = { "ABYSSUS_NAGA_CHAMPION" }
+      traits = { FIGHTER }
+      noAuto = true
+      spawnLocation = FurnitureType "ABYSSUS_NAGA_CORE_PEDESTAL_EMPTY"
+      frequency = 1
+      requirements = {
+        { 0.0 AttractionInfo 1 {FurnitureType "ABYSSUS_NAGA_NEST"}}
+        { 0.0 ImmigrantFlag "abyssus_naga_gems_consumed_20" }
+      }
+    }
+    {
+      ids = { "ABYSSUS_NAGA_GATE_KEEPER" }
+      traits = { FIGHTER }
+      noAuto = true
+      spawnLocation = FurnitureType "ABYSSUS_NAGA_CORE_PEDESTAL_EMPTY"
+      frequency = 1
+      requirements = {
+        { 0.0 AttractionInfo 1 {FurnitureType "ABYSSUS_NAGA_NEST"}}
+        { 0.0 ImmigrantFlag "abyssus_naga_gems_consumed_30" }
+      }
+    }
+    {
+      ids = { "ABYSSUS_NAGA_MAGE" }
+      traits = { FIGHTER }
+      noAuto = true
+      spawnLocation = FurnitureType "ABYSSUS_NAGA_CORE_PEDESTAL_EMPTY"
+      frequency = 1
+      requirements = {
+        { 0.0 AttractionInfo 1 {FurnitureType "ABYSSUS_NAGA_NEST"}}
+        { 0.0 ImmigrantFlag "abyssus_naga_gems_consumed_30" }
+      }
+    }
+    {
+      ids = { "ABYSSUS_NAGA_HEALER" }
+      traits = { FIGHTER }
+      noAuto = true
+      spawnLocation = FurnitureType "ABYSSUS_NAGA_CORE_PEDESTAL_EMPTY"
+      frequency = 1
+      requirements = {
+        { 0.0 AttractionInfo 1 {FurnitureType "ABYSSUS_NAGA_NEST"}}
+        { 0.0 ImmigrantFlag "abyssus_naga_gems_consumed_10" }
+      }
+    }
+    {
+      ids = { "ABYSSUS_NAGA_SCOUT" }
+      traits = { FIGHTER }
+      noAuto = true
+      spawnLocation = FurnitureType "ABYSSUS_NAGA_CORE_PEDESTAL_EMPTY"
+      frequency = 1
+      requirements = {
+        { 0.0 AttractionInfo 1 {FurnitureType "ABYSSUS_NAGA_NEST"}}
+      }
+    }
+    {
+      ids = { "ABYSSUS_NAGA_ARCHER" }
+      traits = { FIGHTER }
+      noAuto = true
+      spawnLocation = FurnitureType "ABYSSUS_NAGA_CORE_PEDESTAL_EMPTY"
+      frequency = 1
+      requirements = {
+        { 0.0 AttractionInfo 1 {FurnitureType "ABYSSUS_NAGA_NEST"}}
+        { 0.0 ImmigrantFlag "abyssus_naga_gems_consumed_20" }
+      }
+    }
+}

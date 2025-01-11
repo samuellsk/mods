@@ -1,0 +1,1357 @@
+"ABYSSUS_NAGA_TEST" {
+  name = "test"
+  adjective = "test"
+  description = "This minion gains greatly enhanced defense while within the Naga Labyrinth."
+  addedMessage = "" "" ""
+  removedMessage = "" "" ""  
+  tickEffect = {
+    Area 1 Filter Attacker Enemy {
+      Bleed 0.15 "is burnt"
+      Fx {FIREBALL}
+    }
+  }
+  color = ColorId RED
+  canWishFor = false
+}
+
+"ABYSSUS_NAGA_COMMANDER" {
+  name = "commander"
+  adjective = "commander"
+  description = "This minion periodically strengthens allies within 2 tiles, reducing the damage they take."
+  addedMessage = "" "" ""
+  removedMessage = "" "" ""  
+  tickEffect = {
+    Area 2 Filter Not Enemy {
+      Filter Not LastingEffect "ABYSSUS_NAGA_COMMANDER_BUFF" {
+        Filter Not CreatureId "ABYSSUS_NAGA_KEEPER_MALE" {
+          Filter Not CreatureId "ABYSSUS_NAGA_KEEPER_MALE_FAKE" {
+            Lasting 50 "ABYSSUS_NAGA_COMMANDER_BUFF"
+          }
+        }
+      }
+    }
+  }
+  color = ColorId RED
+  canWishFor = false
+}
+
+"ABYSSUS_NAGA_COMMANDER_BUFF" {
+  name = "commander's presence"
+  adjective = "commander's presence"
+  description = "Creature's defense is increased. Any attack against it is decreased by 20%."
+  addedMessage = "its defense is increased" "" ""
+  removedMessage = "its defense is no longer increased" "" ""
+  color = ColorId SKY_BLUE
+  fx = BUFF_SKY_BLUE
+  defenseMultiplier = 1.20
+  combatConsumable = true
+}
+
+"ABYSSUS_NAGA_CALL_TO_ARMS" {
+  name = "call to arms"
+  adjective = "call to arms"
+  description = "Gives a +5 to damage for every 20 damage."
+  addedMessage = "is getting to be called to arms" "seems getting to be called to arms" ""
+  removedMessage = "no longer being called to arms" "no longer seems to be called to arms" ""  
+  startEffect = {
+    Filter AttributeAtLeast "DAMAGE" 20 {IncreaseAttr DAMAGE 5}
+    Filter AttributeAtLeast "DAMAGE" 40 {IncreaseAttr DAMAGE 5}
+    Filter AttributeAtLeast "DAMAGE" 60 {IncreaseAttr DAMAGE 5}
+    Filter AttributeAtLeast "DAMAGE" 80 {IncreaseAttr DAMAGE 5}
+    Filter AttributeAtLeast "DAMAGE" 100 {IncreaseAttr DAMAGE 5}
+    Filter AttributeAtLeast "SPELL_DAMAGE" 20 {IncreaseAttr SPELL_DAMAGE 5}
+    Filter AttributeAtLeast "SPELL_DAMAGE" 40 {IncreaseAttr SPELL_DAMAGE 5}
+    Filter AttributeAtLeast "SPELL_DAMAGE" 60 {IncreaseAttr SPELL_DAMAGE 5}
+    Filter AttributeAtLeast "SPELL_DAMAGE" 80 {IncreaseAttr SPELL_DAMAGE 5}
+    Filter AttributeAtLeast "SPELL_DAMAGE" 100 {IncreaseAttr SPELL_DAMAGE 5}
+    Filter AttributeAtLeast "RANGED_DAMAGE" 20 {IncreaseAttr RANGED_DAMAGE 5}
+    Filter AttributeAtLeast "RANGED_DAMAGE" 40 {IncreaseAttr RANGED_DAMAGE 5}
+    Filter AttributeAtLeast "RANGED_DAMAGE" 60 {IncreaseAttr RANGED_DAMAGE 5}
+    Filter AttributeAtLeast "RANGED_DAMAGE" 80 {IncreaseAttr RANGED_DAMAGE 5}
+    Filter AttributeAtLeast "RANGED_DAMAGE" 100 {IncreaseAttr RANGED_DAMAGE 5}
+  }
+  endEffect = {
+    Filter AttributeAtLeast "DAMAGE" 20 {IncreaseAttr DAMAGE -5}
+    Filter AttributeAtLeast "DAMAGE" 40 {IncreaseAttr DAMAGE -5}
+    Filter AttributeAtLeast "DAMAGE" 60 {IncreaseAttr DAMAGE -5}
+    Filter AttributeAtLeast "DAMAGE" 80 {IncreaseAttr DAMAGE -5}
+    Filter AttributeAtLeast "DAMAGE" 100 {IncreaseAttr DAMAGE -5}
+    Filter AttributeAtLeast "SPELL_DAMAGE" 20 {IncreaseAttr SPELL_DAMAGE -5}
+    Filter AttributeAtLeast "SPELL_DAMAGE" 40 {IncreaseAttr SPELL_DAMAGE -5}
+    Filter AttributeAtLeast "SPELL_DAMAGE" 60 {IncreaseAttr SPELL_DAMAGE -5}
+    Filter AttributeAtLeast "SPELL_DAMAGE" 80 {IncreaseAttr SPELL_DAMAGE -5}
+    Filter AttributeAtLeast "SPELL_DAMAGE" 100 {IncreaseAttr SPELL_DAMAGE -5}
+    Filter AttributeAtLeast "RANGED_DAMAGE" 20 {IncreaseAttr RANGED_DAMAGE -5}
+    Filter AttributeAtLeast "RANGED_DAMAGE" 40 {IncreaseAttr RANGED_DAMAGE -5}
+    Filter AttributeAtLeast "RANGED_DAMAGE" 60 {IncreaseAttr RANGED_DAMAGE -5}
+    Filter AttributeAtLeast "RANGED_DAMAGE" 80 {IncreaseAttr RANGED_DAMAGE -5}
+    Filter AttributeAtLeast "RANGED_DAMAGE" 100 {IncreaseAttr RANGED_DAMAGE -5}
+  }
+  combatConsumable = true
+  fx = BUFF_GREEN1
+  color = ColorId GREEN
+  canWishFor = false
+}
+
+"ABYSSUS_NAGA_LAST_STAND" {
+  name = "last stand"
+  adjective = "last stand"
+  description = "Creature's defense is increased. Decreases damge taken by 10 times."
+  addedMessage = "its defense is increased" "" ""
+  removedMessage = "its defense is no longer increased" "" ""
+  color = ColorId SKY_BLUE
+  fx = BUFF_SKY_BLUE
+  defenseMultiplier = 10.00
+  combatConsumable = true
+}
+
+"ABYSSUS_NAGA_JUST_HATCHED" {
+  name = "Just Hatched"
+  adjective = "Just Hatched"
+  description = "Might evolve into different worker."
+  addedMessage = "" "" ""
+  removedMessage = "" "" ""  
+  startEffect = {  }
+  endEffect = {
+    ChooseRandom {
+      SetViewId {"abyssus_naga_worker_1"}
+      SetViewId {"abyssus_naga_worker_2"}
+      SetViewId {"abyssus_naga_worker_3"}
+    }
+  }
+  color = ColorId RED
+  canWishFor = false
+  consideredBad = true
+}
+
+"ABYSSUS_NAGA_REJUVENATION" {
+  name = "rejuvenation"
+  adjective = "rejuvenating"
+  description = "Healing over time"
+  addedMessage = "is being rejuvenated" "seems to be being rejuvenated" ""
+  removedMessage = "is no longer being rejuvenated" "seems to be no longer being rejuvenated" ""  
+  tickEffect = {
+    Heal { FLESH 0.15 }
+  }
+  combatConsumable = true
+  color = ColorId RED
+  canWishFor = true
+}
+
+"ABYSSUS_NAGA_RESILIENCE" {
+  name = "resilience"
+  adjective = "resilience"
+  description = "Slowly recovering health"
+  addedMessage = "is recovering slowly" "seems to be recoverying slowly" ""
+  removedMessage = "is no longer slowly recovering" "seems to be no longer slowly recovering" ""  
+  tickEffect = {
+    Heal { FLESH 0.03 }
+  }
+  combatConsumable = true
+  color = ColorId RED
+  canWishFor = true
+}
+
+"ABYSSUS_NAGA_TOUGHNESS" {
+  name = "toughness"
+  adjective = "toughness"
+  description = "Creature's defense is increased. Any attack against it is decreased by 15%."
+  addedMessage = "its defense is increased" "" ""
+  removedMessage = "its defense is no longer increased" "" ""
+  color = ColorId SKY_BLUE
+  fx = BUFF_SKY_BLUE
+  defenseMultiplier = 1.15
+  combatConsumable = true
+}
+
+"ABYSSUS_NAGA_GATE_KEEPING" {
+  name = "gate keeper"
+  adjective = "gate keeper"
+  description = "This minion gains greatly enhanced defense while within the Naga Labyrinth."
+  addedMessage = "" "" ""
+  removedMessage = "" "" ""  
+  tickEffect = {
+    Filter Not InTerritory {
+      Filter LastingEffect "ABYSSUS_NAGA_GATE_KEEPER_DEFENSE" {
+        RemovePermanent "ABYSSUS_NAGA_GATE_KEEPER_DEFENSE"
+      }
+    }
+    Filter InTerritory {
+      Filter Not LastingEffect "ABYSSUS_NAGA_GATE_KEEPER_DEFENSE" {
+        Permanent "ABYSSUS_NAGA_GATE_KEEPER_DEFENSE"
+      }
+    }
+  }
+  color = ColorId RED
+  canWishFor = false
+}
+
+"ABYSSUS_NAGA_GATE_KEEPER_DEFENSE" {
+  name = "enhanced defense"
+  adjective = "enhanced defense"
+  description = "Creature's defense is increased while in territory. Any attack against it is decreased by 75%."
+  addedMessage = "its defense is increased" "" ""
+  removedMessage = "its defense is no longer increased" "" ""
+  color = ColorId SKY_BLUE
+  fx = BUFF_SKY_BLUE
+  defenseMultiplier = 1.75
+  combatConsumable = true
+}
+
+"ABYSSUS_NAGA_MINION" {
+  name = "naga"
+  adjective = "naga"
+  description = "This minion belongs to the naga labyrinth and will obtain its buffs."
+  addedMessage = "" "" ""
+  removedMessage = "" "" ""  
+  tickEffect = {
+    Filter Flag "abyssus_naga_dungeon_core_not_present" {
+      Filter Not LastingEffect "ABYSSUS_NAGA_DEBUFF" {
+        Lasting 200 "ABYSSUS_NAGA_DEBUFF"
+      }
+    }
+    Filter Flag "abyssus_naga_dungeon_core_present" {
+      Filter LastingEffect "ABYSSUS_NAGA_DEBUFF" {
+        RemoveLasting "ABYSSUS_NAGA_DEBUFF"
+      }
+    }
+    Filter Frequency 50 {
+      Chance 0.25 {
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_1" {
+          Filter Flag "abyssus_naga_gems_consumed_1" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_1" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_2" {
+          Filter Flag "abyssus_naga_gems_consumed_2" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_2" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_3" {
+          Filter Flag "abyssus_naga_gems_consumed_3" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_3" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_4" {
+          Filter Flag "abyssus_naga_gems_consumed_4" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_4" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_5" {
+          Filter Flag "abyssus_naga_gems_consumed_5" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_5" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_6" {
+          Filter Flag "abyssus_naga_gems_consumed_6" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_6" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_7" {
+          Filter Flag "abyssus_naga_gems_consumed_7" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_7" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_8" {
+          Filter Flag "abyssus_naga_gems_consumed_8" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_8" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_9" {
+          Filter Flag "abyssus_naga_gems_consumed_9" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_9" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_10" {
+          Filter Flag "abyssus_naga_gems_consumed_10" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_10" true
+            Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 5}
+            Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 5}
+            Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 5}
+            Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 5}
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_11" {
+          Filter Flag "abyssus_naga_gems_consumed_11" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_11" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_12" {
+          Filter Flag "abyssus_naga_gems_consumed_12" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_12" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_13" {
+          Filter Flag "abyssus_naga_gems_consumed_13" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_13" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_14" {
+          Filter Flag "abyssus_naga_gems_consumed_14" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_14" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_15" {
+          Filter Flag "abyssus_naga_gems_consumed_15" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_15" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_16" {
+          Filter Flag "abyssus_naga_gems_consumed_16" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_16" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_17" {
+          Filter Flag "abyssus_naga_gems_consumed_17" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_17" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_18" {
+          Filter Flag "abyssus_naga_gems_consumed_18" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_18" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_19" {
+          Filter Flag "abyssus_naga_gems_consumed_19" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_19" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_20" {
+          Filter Flag "abyssus_naga_gems_consumed_20" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_20" true
+            Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 5}
+            Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 5}
+            Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 5}
+            Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 5}
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_21" {
+          Filter Flag "abyssus_naga_gems_consumed_21" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_21" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_22" {
+          Filter Flag "abyssus_naga_gems_consumed_22" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_22" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_23" {
+          Filter Flag "abyssus_naga_gems_consumed_23" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_23" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_24" {
+          Filter Flag "abyssus_naga_gems_consumed_24" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_24" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_25" {
+          Filter Flag "abyssus_naga_gems_consumed_25" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_25" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_26" {
+          Filter Flag "abyssus_naga_gems_consumed_26" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_26" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_27" {
+          Filter Flag "abyssus_naga_gems_consumed_27" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_27" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_28" {
+          Filter Flag "abyssus_naga_gems_consumed_28" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_28" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_29" {
+          Filter Flag "abyssus_naga_gems_consumed_29" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_29" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_30" {
+          Filter Flag "abyssus_naga_gems_consumed_30" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_30" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_31" {
+          Filter Flag "abyssus_naga_gems_consumed_31" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_31" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_32" {
+          Filter Flag "abyssus_naga_gems_consumed_32" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_32" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_33" {
+          Filter Flag "abyssus_naga_gems_consumed_33" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_33" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_34" {
+          Filter Flag "abyssus_naga_gems_consumed_34" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_34" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_35" {
+          Filter Flag "abyssus_naga_gems_consumed_35" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_35" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_36" {
+          Filter Flag "abyssus_naga_gems_consumed_36" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_36" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_37" {
+          Filter Flag "abyssus_naga_gems_consumed_37" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_37" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_38" {
+          Filter Flag "abyssus_naga_gems_consumed_38" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_38" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_39" {
+          Filter Flag "abyssus_naga_gems_consumed_39" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_39" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_40" {
+          Filter Flag "abyssus_naga_gems_consumed_40" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_40" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_41" {
+          Filter Flag "abyssus_naga_gems_consumed_41" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_41" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_42" {
+          Filter Flag "abyssus_naga_gems_consumed_42" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_42" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_43" {
+          Filter Flag "abyssus_naga_gems_consumed_43" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_43" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_44" {
+          Filter Flag "abyssus_naga_gems_consumed_44" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_44" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_45" {
+          Filter Flag "abyssus_naga_gems_consumed_45" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_45" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_46" {
+          Filter Flag "abyssus_naga_gems_consumed_46" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_46" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_47" {
+          Filter Flag "abyssus_naga_gems_consumed_47" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_47" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_48" {
+          Filter Flag "abyssus_naga_gems_consumed_48" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_48" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_49" {
+          Filter Flag "abyssus_naga_gems_consumed_49" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_49" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_50" {
+          Filter Flag "abyssus_naga_gems_consumed_50" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_50" true
+            Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 5}
+            Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 5}
+            Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 5}
+            Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 5}
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_51" {
+          Filter Flag "abyssus_naga_gems_consumed_51" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_51" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_52" {
+          Filter Flag "abyssus_naga_gems_consumed_52" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_52" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_53" {
+          Filter Flag "abyssus_naga_gems_consumed_53" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_53" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_54" {
+          Filter Flag "abyssus_naga_gems_consumed_54" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_54" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_55" {
+          Filter Flag "abyssus_naga_gems_consumed_55" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_55" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_56" {
+          Filter Flag "abyssus_naga_gems_consumed_56" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_56" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_57" {
+          Filter Flag "abyssus_naga_gems_consumed_57" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_57" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_58" {
+          Filter Flag "abyssus_naga_gems_consumed_58" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_58" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_59" {
+          Filter Flag "abyssus_naga_gems_consumed_59" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_59" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_60" {
+          Filter Flag "abyssus_naga_gems_consumed_60" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_60" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_61" {
+          Filter Flag "abyssus_naga_gems_consumed_61" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_61" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_62" {
+          Filter Flag "abyssus_naga_gems_consumed_62" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_62" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_63" {
+          Filter Flag "abyssus_naga_gems_consumed_63" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_63" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_64" {
+          Filter Flag "abyssus_naga_gems_consumed_64" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_64" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_65" {
+          Filter Flag "abyssus_naga_gems_consumed_65" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_65" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_66" {
+          Filter Flag "abyssus_naga_gems_consumed_66" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_66" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_67" {
+          Filter Flag "abyssus_naga_gems_consumed_67" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_67" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_68" {
+          Filter Flag "abyssus_naga_gems_consumed_68" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_68" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_69" {
+          Filter Flag "abyssus_naga_gems_consumed_69" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_69" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_70" {
+          Filter Flag "abyssus_naga_gems_consumed_70" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_70" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_71" {
+          Filter Flag "abyssus_naga_gems_consumed_71" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_71" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_72" {
+          Filter Flag "abyssus_naga_gems_consumed_72" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_72" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_73" {
+          Filter Flag "abyssus_naga_gems_consumed_73" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_73" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_74" {
+          Filter Flag "abyssus_naga_gems_consumed_74" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_74" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_75" {
+          Filter Flag "abyssus_naga_gems_consumed_75" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_75" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_76" {
+          Filter Flag "abyssus_naga_gems_consumed_76" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_76" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_77" {
+          Filter Flag "abyssus_naga_gems_consumed_77" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_77" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_78" {
+          Filter Flag "abyssus_naga_gems_consumed_78" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_78" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_79" {
+          Filter Flag "abyssus_naga_gems_consumed_79" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_79" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_80" {
+          Filter Flag "abyssus_naga_gems_consumed_80" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_80" true
+            Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 5}
+            Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 5}
+            Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 5}
+            Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 5}
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_81" {
+          Filter Flag "abyssus_naga_gems_consumed_81" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_81" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_82" {
+          Filter Flag "abyssus_naga_gems_consumed_82" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_82" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_83" {
+          Filter Flag "abyssus_naga_gems_consumed_83" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_83" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_84" {
+          Filter Flag "abyssus_naga_gems_consumed_84" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_84" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_85" {
+          Filter Flag "abyssus_naga_gems_consumed_85" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_85" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_86" {
+          Filter Flag "abyssus_naga_gems_consumed_86" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_86" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_87" {
+          Filter Flag "abyssus_naga_gems_consumed_87" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_87" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_88" {
+          Filter Flag "abyssus_naga_gems_consumed_88" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_88" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_89" {
+          Filter Flag "abyssus_naga_gems_consumed_89" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_89" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_90" {
+          Filter Flag "abyssus_naga_gems_consumed_90" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_90" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_91" {
+          Filter Flag "abyssus_naga_gems_consumed_91" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_91" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_92" {
+          Filter Flag "abyssus_naga_gems_consumed_92" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_92" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_93" {
+          Filter Flag "abyssus_naga_gems_consumed_93" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_93" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_94" {
+          Filter Flag "abyssus_naga_gems_consumed_94" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_94" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_95" {
+          Filter Flag "abyssus_naga_gems_consumed_95" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_95" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_96" {
+          Filter Flag "abyssus_naga_gems_consumed_96" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_96" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_97" {
+          Filter Flag "abyssus_naga_gems_consumed_97" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_97" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_98" {
+          Filter Flag "abyssus_naga_gems_consumed_98" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_98" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_99" {
+          Filter Flag "abyssus_naga_gems_consumed_99" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_99" true
+            ChooseRandomUntilSuccessful {
+              Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 1}
+              Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 1}
+              Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 1}
+              Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 1}
+            }
+          }
+        }
+        Filter Not CreatureFlag "abyssus_naga_gems_consumed_100" {
+          Filter Flag "abyssus_naga_gems_consumed_100" {
+            SetCreatureFlag "abyssus_naga_gems_consumed_100" true
+            Filter AttributeAtLeast "DAMAGE" 15 {IncreaseAttr DAMAGE 26}
+            Filter AttributeAtLeast "SPELL_DAMAGE" 15 {IncreaseAttr SPELL_DAMAGE 26}
+            Filter AttributeAtLeast "RANGED_DAMAGE" 15 {IncreaseAttr RANGED_DAMAGE 26}
+            Filter AttributeAtLeast "DEFENSE" 10 {IncreaseAttr DEFENSE 26}
+          }
+        }
+      }
+    }
+  }
+  color = ColorId RED
+  canWishFor = false
+}
+
+
+"ABYSSUS_NAGA_DEBUFF" {
+  name = "cannot sense dungeon"
+  adjective = "cannot sense dungeon"
+  description = "Separated from the core, the naga grows weaker with every passing moment."
+  addedMessage = "" "" ""
+  removedMessage = "" "" ""  
+  startEffect = {}
+  endEffect = {
+    Filter Flag "abyssus_naga_dungeon_core_not_present" {
+      Bleed 1.1 "died of grief"
+    }
+  }
+  color = ColorId RED
+  canWishFor = false
+  consideredBad = true
+}

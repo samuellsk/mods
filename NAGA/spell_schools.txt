@@ -1,0 +1,61 @@
+"abyssus naga healer" "healer" SPELL_DAMAGE
+{
+  "abyssus naga healing" 1
+  "abyssus naga area heal" 3
+  "abyssus naga rejuvenation" 4
+  "abyssus naga healing rain" 5
+}
+
+"abyssus naga mage" "mage" SPELL_DAMAGE
+{
+  "abyssus naga frostburn" 1
+  "abyssus naga slow" 4
+  "abyssus naga frost nova" 8
+}
+
+"abyssus naga soldier" "soldier" DAMAGE
+{
+  "abyssus naga resilience" 1
+  "abyssus naga toughness" 3
+}
+
+"abyssus naga warrior" "warrior" DAMAGE
+{
+  "abyssus naga resilience" 1
+  "abyssus naga toughness" 3
+  "abyssus naga last stand" 5
+}
+
+"abyssus naga champion" "champion" DAMAGE
+{
+  "abyssus naga resilience" 1
+  "abyssus naga toughness" 3
+  "abyssus naga last stand" 5
+  "abyssus naga speed" 8
+}
+
+"abyssus naga keeper female" "maid" SPELL_DAMAGE
+{
+  "abyssus naga hearts attack" 1
+  "abyssus naga healing" 3
+  "abyssus naga area heal" 5
+  "abyssus naga charm" 8
+}
+
+"abyssus naga keeper male" "commander" DAMAGE
+{
+  "abyssus naga resilience" 1
+  "abyssus naga toughness" 3
+  "abyssus naga call to arms" 5
+  "abyssus naga commander" 8
+}
+
+"abyssus naga archer" "archer" RANGED_DAMAGE
+{
+  "abyssus naga invisibility" 4
+}
+
+"abyssus naga scout" "scout" DAMAGE
+{
+  "abyssus naga throw spear" 4
+}

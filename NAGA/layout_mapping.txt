@@ -1,0 +1,56 @@
+"abyssus_naga_keeper_lm" {
+  "down_stairs0" Stairs DOWN "DOWN_STAIRS" 0
+  "up_stairs0" Stairs UP "UP_STAIRS" 0
+  "down_stairs1" Stairs DOWN "DOWN_STAIRS" 1
+  "up_stairs1" Stairs UP "UP_STAIRS" 1
+  "rock" Place "MOUNTAIN"
+  "hard_rock" Place "MOUNTAIN2"
+  "floor" { Place "FLOOR" Flag EMPTY_ROOM }
+  "set_territory" Flag EMPTY_ROOM
+  "resources" RemoveFlag NO_RESOURCES
+  "no_territory" RemoveFlag EMPTY_ROOM
+  "clear_middle" ClearLayer MIDDLE
+  "connect" { RemoveFlag NO_DIG Flag CONNECT_CORRIDOR }
+  "clear_furniture" ClearFurniture
+  "water" { ClearFurniture Place "WATER"}
+  "floor2" { Place "FLOOR" }
+  "outside_furniture" OutsideFurniture
+  "inside_furniture" InsideFurniture
+
+  "abyssus_naga_keeper_floor" Place "ABYSSUS_NAGA_FLOOR_PREBUILT"
+  "abyssus_naga_keeper_wall" Place "ABYSSUS_NAGA_WALL"
+  "abyssus_naga_keeper_water" { ClearFurniture Place "WATER"}
+  "abyssus_naga_keeper_bed" Place "ABYSSUS_NAGA_NEST"
+  "abyssus_naga_keeper_fine_bed" Place "ABYSSUS_NAGA_NEST"
+  "abyssus_naga_keeper_workshop" Place "WORKSHOP"
+  "abyssus_naga_keeper_forge" Place "FORGE"
+  "abyssus_naga_keeper_training_wood" Place "TRAINING_WOOD"
+  "abyssus_naga_keeper_bridge" Place "STONE_BRIDGE"
+  "abyssus_naga_keeper_treasure_chest" Place "TREASURE_CHEST"
+  "abyssus_naga_keeper_armor_rack" Place "ARMOR_RACK"
+  "abyssus_naga_keeper_weapon_rack" Place "WEAPON_RACK"
+  "abyssus_naga_keeper_bow_rack" Place "BOW_RACK"
+  "abyssus_naga_keeper_scroll_storage" Place "SCROLL_STORAGE"
+  "abyssus_naga_keeper_potion_storage" Place "POTION_STORAGE"
+  "abyssus_naga_keeper_jewellery_storage" Place "JEWELLERY_STORAGE"
+  "abyssus_naga_keeper_grave" Place "GRAVE"
+  "abyssus_naga_keeper_torch_on_wall" Place "ABYSSUS_NAGA_TORCH_ON_THE_WALL_CONTROLLER"
+  "abyssus_naga_keeper_stairs_down" Stairs DOWN "DOWN_STAIRS" 0
+  "abyssus_naga_keeper_stairs_up" Stairs UP "UP_STAIRS" 0
+  "abyssus_naga_keeper_core_pedestal_empty" Place "ABYSSUS_NAGA_CORE_PEDESTAL_EMPTY"
+  "abyssus_naga_keeper_core_pedestal_full" Place "ABYSSUS_NAGA_CORE_PEDESTAL_FULL_SMALL"
+  "abyssus_naga_keeper_core_pedestal_controller" Place "ABYSSUS_NAGA_CORE_PEDESTAL_CONTROLLER"
+  "abyssus_naga_keeper_portal_surface" Place "ABYSSUS_NAGA_SURFACE_CONTROLLER"
+  "abyssus_naga_keeper_portal_dungeon" Place "ABYSSUS_NAGA_DUNGEON_CONTROLLER"
+  "abyssus_naga_keeper_claimer" Place "ABYSSUS_NAGA_CLAIMER"
+}
+
+"default" modify append {
+  "abyssus_naga_keeper_floor" Place "ABYSSUS_NAGA_FLOOR"
+  "abyssus_naga_keeper_wall" Place "ABYSSUS_NAGA_WALL"
+  "abyssus_naga_keeper_portal_surface" Place "ABYSSUS_NAGA_SURFACE_CONTROLLER"
+  "abyssus_naga_keeper_portal_dungeon" Place "ABYSSUS_NAGA_DUNGEON_CONTROLLER"
+  "abyssus_naga_keeper_portal_inside" Place "ABYSSUS_NAGA_FLOOR_PREBUILT"
+  "abyssus_naga_keeper_core_pedestal_empty" Place "ABYSSUS_NAGA_CORE_PEDESTAL_EMPTY"
+  "abyssus_naga_keeper_core_pedestal_full" Place "ABYSSUS_NAGA_CORE_PEDESTAL_FULL_SMALL"
+}

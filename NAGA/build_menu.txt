@@ -1,0 +1,107 @@
+"abyssus_naga_dev_tools"
+  {
+    { PlaceMinion "Place minion" "Dev Tools" "Places a minion"}
+    { PlaceItem "Place item" "Dev Tools" "Places an item" }
+    { ImmediateDig "Destroy walls" "Dev Tools" "Destroy walls" }
+  }
+
+"abyssus_naga_structure"
+  {
+    { { Dig CutTree } "Dig or cut tree" "Structure" "" "DIG" {} true DIG_OR_CUT_TREES}
+    { Furniture {{ "MOUNTAIN" } "STONE" 5 } "Soft rock" "Structure" }
+    { Furniture {{ "MOUNTAIN2" } "STONE" 10 } "Hard rock" "Structure" }
+    { Furniture {{ "PIT" } "STONE" 0 } "Dig a pit" "Structure" "Dig a pit in the ground. Building next to water or lava will cause it to fill up." }
+    { Furniture {{ "FILL_UP_WATER_FLOOR" } "STONE" 20 } "Fill lava or water""Structure" "" }
+    { Furniture {{ "FLOOR" }} "Building interior" "Structure" "" none {} false none true}
+    { Furniture {{ "BRIDGE" } "WOOD" 5 } "Wooden bridge" "Structure" "Build to pass over water. Will burn on lava." }
+    { Furniture {{ "STONE_BRIDGE" } "STONE" 5 } "Stone bridge" "Structure" "Build to pass over water or lava." }
+    { Furniture {{ "DUNGEON_WALL" "DUNGEON_WALL2" } "STONE" 3} "Reinforce wall" "Structure" "Reinforced walls are better at stopping enemies from digging into your dungeon."}
+    { Furniture {{ "ABYSSUS_NAGA_WALL" } "STONE" 3} "Dungeon Wall" "Structure" "Dungeon walls are better at stopping enemies from digging into your dungeon."}
+  }
+
+"abyssus_naga_stairs"
+  {
+    { Furniture {{ "UP_STAIRS" }} "Up stairs" "Structure" "Build to reach higher z-levels." }
+    { Furniture {{ "DOWN_STAIRS" }} "Down stairs" "Structure" "Build to reach deeper z-levels." }
+  }
+
+"abyssus_naga_floors"
+  {
+    { Furniture {{ "ABYSSUS_NAGA_FLOOR" } "STONE" 2 } "Temple Floor" "Floors" "" "FLOORS" {} true BUILD_FLOOR}
+    { DestroyLayers {FLOOR} "Remove floor" "Floors" }
+  }
+
+"abyssus_naga_living"
+  {
+    { Furniture {{ "ABYSSUS_NAGA_NEST" } "WOOD" 12 } "Nest" "Living quaters" "Humanoid minions sleep here." "BEDS" {} true  BUILD_BED }
+    { Furniture {{ "DINING_TABLE" } "WOOD" 5 } "Dining table" "Living quaters" "Humanoid minions eat here" }
+  }
+
+"abyssus_naga_library"
+  {
+    { Furniture {{ "BOOKCASE_WOOD" } "WOOD" 15 } "Wooden bookcase" "Library" "Train your minions' magical powers here." "BOOKCASES" {TechId "sorcery"} true BUILD_LIBRARY }
+    { Furniture {{ "BOOKCASE_IRON" } "IRON" 15 } "Iron bookcase" "Library" "Train your minions' magical powers here." none {TechId "advanced sorcery"} }
+    { Furniture {{ "BOOKCASE_GOLD" } "GOLD" 15 } "Gold bookcase" "Library" "Train your minions' magical powers here." none {TechId "master sorcery"} }
+  }
+
+"abyssus_naga_training"
+  {
+    { Furniture {{ "TRAINING_WOOD" } "WOOD" 12 } "Wooden dummy" "Training room" "Train your minions' melee skills here." "TRAINING_DUMMIES" {} true TRAINING_ROOM}
+    { Furniture {{ "TRAINING_IRON" } "IRON" 12 } "Iron dummy" "Training room" "Train your minions' melee skills here." none { TechId "iron working" } }
+    { Furniture {{ "TRAINING_ADA" } "ADA" 12 } "Adamantium dummy" "Training room" "Train your minions' melee skills here." none { TechId "iron working" } }
+    { Furniture {{ "ARCHERY_RANGE" } "WOOD" 12 } "Archery target" "Training room" "Train your minions' archery skills here." none { TechId "archery" }}
+  }
+
+"abyssus_naga_crafting"
+  {
+    { Furniture {{ "LABORATORY" } "STONE" 10 } "Laboratory" "Crafting" "Produces magical potions." none { TechId "alchemy" }}
+    { Furniture {{ "POETRY_TABLE" } "WOOD" 12 } "Poetry table" "Crafting" "Allows writing poems."}
+    { Furniture {{ "WORKSHOP" } "WOOD" 15 } "Workshop" "Crafting" "Produces leather equipment, traps, first-aid kits and other." "WORKSHOPS" {} true BUILD_WORKSHOP}
+    { Furniture {{ "FORGE" } "IRON" 20 } "Forge" "Crafting" "Produces metal weapons and armor." none { TechId "iron working" }}
+    { Furniture {{ "FURNACE" } "STONE" 50 } "Furnace" "Crafting" "Smelt and recycle unneeded items." none { TechId "iron working" }}
+    { Furniture {{ "JEWELLER" } "GOLD" 100 } "Jeweller table" "Crafting" "Produces magical rings and amulets." none { TechId "jewellery" }}
+  }
+
+"abyssus_naga_doors"
+  {
+    { Furniture {{ "WOOD_DOOR" } "WOOD" 5 } "Wooden door" "Doors" "Stops enemies. Your minions can pass freely unless you lock it."  "DOORS" {} true BUILD_DOOR}
+    { Furniture {{ "IRON_DOOR" } "IRON" 5 } "Iron door" "Doors" "Stops enemies. Your minions can pass freely unless you lock it." }
+    { Furniture {{ "WOOD_GATE" } "WOOD" 8 } "Wooden gate" "Doors" "Stops enemies. Your minions can pass freely unless you lock it."}
+    { Furniture {{ "IRON_GATE" } "IRON" 8 } "Iron gate" "Doors" "Stops enemies. Your minions can pass freely unless you lock it."}
+  }
+
+"abyssus_naga_storage"
+  {
+    { Zone STORAGE_RESOURCES "Resources" "Storage" "Only wood, iron, granite, and adamantium can be stored here." "STORAGE" {} true RESOURCE_STORAGE}
+    { Zone STORAGE_EQUIPMENT "Equipment" "Storage" "All equipment for your minions can be stored here." none {} false EQUIPMENT_STORAGE }
+    { Furniture {{ "TREASURE_CHEST" } "WOOD" 5 } "Treasure chest" "Storage" "All your gold is stored here." }
+    { Furniture {{ "ARMOR_RACK" } "WOOD" 15 } "Armor rack" "Storage" "All your armor can be stored here." }
+    { Furniture {{ "WEAPON_RACK" } "WOOD" 15 } "Weapon rack" "Storage" "All your weapons can be stored here." }
+    { Furniture {{ "BOW_RACK" } "WOOD" 15 } "Bow rack" "Storage" "All your ranged weapons can be stored here." }
+    { Furniture {{ "SCROLL_STORAGE"} "WOOD" 15 } "Scroll shelf" "Storage" "All your scrolls can be stored here." }
+    { Furniture {{ "POTION_STORAGE"} "WOOD" 15 } "Potion shelf" "Storage" "All your potions can be stored here." }
+    { Furniture {{ "JEWELLERY_STORAGE"} "WOOD" 15 } "Jewellery chest" "Storage" "All your jewellery can be stored here." }
+    { Furniture {{ "GRAVE" } "STONE" 5 } "Grave" "Storage" "All corpses are stored here."}
+  }
+
+"abyssus_naga_zones"
+  {
+    { Zone QUARTERS "Quarters" "Zones" "Designate separate quarters for chosen minions." "QUARTERS" {} true}
+    { Zone LEISURE "Leisure" "Zones" "Designate leisure zone where minions will hang out when they have nothing to do."}
+    { Zone GUARD1 "Guard area 1" "Zones" "Designate an area that minions will actively guard."}
+    { Zone GUARD2 "Guard area 2" "Zones" "Designate an area that minions will actively guard."}
+    { Zone GUARD3 "Guard area 3" "Zones" "Designate an area that minions will actively guard."}
+  }
+
+  "abyssus_naga_installations"
+  {
+    { Furniture {{ "BARRICADE" } "WOOD" 5 } "Barricade" "Installations" "Blocks enemy movement, but projectiles and spells can pass over it." }
+    { Furniture {{ "TORCH_N" "TORCH_E" "TORCH_S" "TORCH_W" }} "Torch"  "Installations" "Place it on tiles next to a wall." "TORCH" {} false BUILD_TORCH}
+    { Furniture {{ "CANDELABRUM_N" "CANDELABRUM_E" "CANDELABRUM_S" "CANDELABRUM_W" } "GOLD" 5 } "Candelabrum" "Installations" "Place it on tiles next to a wall." }
+    { Furniture {{ "GROUND_TORCH" } "WOOD" 10  } "Standing torch" "Installations" "" none {} false BUILD_TORCH }
+    { Furniture {{ "PAINTING_N" "PAINTING_E" "PAINTING_S" "PAINTING_W" }} "Painting canvas" "Installations" "Place it on tiles next to a wall."}
+    { Furniture {{ "KEEPER_BOARD" } "WOOD" 15 } "Message board" "Installations" "A board where you can leave a message for other players." }
+    { Furniture {{ "FOUNTAIN" } "STONE" 30 }  "Fountain" "Installations" }
+    { Furniture {{ "ABYSSUS_NAGA_STATUE" } "GOLD" 50 } "Golden statue" "Installations" ""}
+    { Furniture {{ "PORTAL" } "STONE" 60 }  "Portal" "Installations" "Opens a connection if another portal is present."}
+  }

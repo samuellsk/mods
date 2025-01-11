@@ -1,0 +1,1 @@
+"core strengthening"               { "Allows you to strengthen dungeon core" }

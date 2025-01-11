@@ -1,0 +1,467 @@
+"Abyssus_Naga_Staff_Of_Frost"
+  {
+    viewId = { "abyssus_items_naga_mage_staff" }
+    equipedViewId = { "abyssus_items_naga_mage_staff_v" }
+    name = "staff of frost"
+    itemClass = WEAPON
+    equipmentSlot = WEAPON
+    weight = 10
+    modifiers = {
+      SPELL_DAMAGE 6
+      SPELL_SPEED 12
+    }
+    craftingCost = "WOOD" 30
+    price = 30
+    weaponInfo = {
+      attackType = HIT
+      meleeAttackAttr = SPELL_DAMAGE
+      victimEffect = {
+        0.40 {Name "slowed" Lasting 5 SLOWED}
+      }
+    }
+    equipedAbility = { "abyssus naga frostbolt" }
+    maxUpgrades = 3
+    storageIds = {"weapons" "equipment"}
+    equipmentGroup = "artifact equipment"
+  }
+
+"Abyssus_Naga_Staff_Of_Healing"
+  {
+    viewId = { "abyssus_items_naga_healer_staff" }
+    equipedViewId = { "abyssus_items_naga_healer_staff_v" }
+    name = "staff of healing"
+    itemClass = WEAPON
+    equipmentSlot = WEAPON
+    weight = 10
+    modifiers = {
+      SPELL_DAMAGE 6
+      SPELL_SPEED 12
+    }
+    craftingCost = "WOOD" 30
+    price = 30
+    weaponInfo = {
+      attackType = HIT
+      meleeAttackAttr = SPELL_DAMAGE
+      victimEffect = {
+        0.40 {Name "slowed" Lasting 5 SLOWED}
+      }
+    }
+    equipedAbility = { "abyssus naga lesser heal" }
+    maxUpgrades = 3
+    storageIds = {"weapons" "equipment"}
+    equipmentGroup = "artifact equipment"
+  }
+
+"Abyssus_Items_Wooden_Spear"
+  {
+    viewId = { "abyssus_items_wooden_spear" }
+    equipedViewId = { "abyssus_items_wooden_spear_v" }
+    name = "wooden spear"
+    itemClass = WEAPON
+    equipmentSlot = WEAPON
+    weight = 1.5
+    modifiers = {
+      DAMAGE 6
+    }
+    craftingCost = "WOOD" 20
+    price = 20
+    weaponInfo = {
+      attackType = STAB
+      attackMsg = THRUST
+      victimEffect = {
+        0.30 {Name "bleeding" Lasting 5 BLEEDING}
+      }
+    }
+    specialAttr = {
+      DAMAGE 15 Rider
+    }
+    maxUpgrades = 1
+    storageIds = {"weapons" "equipment"}
+    equipmentGroup = "basic equipment"
+  }
+
+"Abyssus_Items_Iron_Spear"
+  {
+    viewId = { "abyssus_items_iron_spear" }
+    equipedViewId = { "abyssus_items_iron_spear_v" }
+    name = "iron spear"
+    itemClass = WEAPON
+    equipmentSlot = WEAPON
+    weight = 1.5
+    modifiers = {
+      DAMAGE 11
+    }
+    craftingCost = "IRON" 20
+    price = 20
+    weaponInfo = {
+      attackType = STAB
+      attackMsg = THRUST
+      victimEffect = {
+        0.30 {Name "bleeding" Lasting 5 BLEEDING}
+      }
+    }
+    specialAttr = {
+      DAMAGE 15 Rider
+    }
+    maxUpgrades = 2
+    storageIds = {"weapons" "equipment"}
+    equipmentGroup = "basic equipment"
+  }
+
+"Abyssus_Naga_Deep_Gems"
+  {
+    viewId = { "abyssus_naga_deep_gems" }
+    name = "deep gems"
+    itemClass = OTHER
+    price = 0
+    weight = 0.1
+    uses = 1
+    effect = Name "Unknown" Description "" FirstSuccessful {
+      Area 1 Filter FurnitureType "ABYSSUS_NAGA_CORE_PEDESTAL_EMPTY" {
+        Fx { TELEPORT_OUT }
+        Filter Not Flag "abyssus_naga_dungeon_core_gems_consumed" {
+          SetFlag "abyssus_naga_dungeon_core_gems_consumed" true
+          UI "unlock_message" { "message" Label "Gems were consumed and used to reinforce the labyrinth core." "view_id" ViewIdList {{"abyssus_naga_deep_gems"}}}
+          UI "unlock_message" { "message" Label "The stronger the labyrinth core, the stronger your minions will be." "view_id" ViewIdList {{"abyssus_naga_minions"}}}
+          UI "unlock_message" { "message" Label "When deep gems are consumed, core will after some time increase random attribute of the minions." "view_id" ViewIdList {{"abyssus_naga_deep_gems"}}}
+          UI "unlock_message" { "message" Label "Only one random attribute that has more than 15 will be reinforced at the time." "view_id" ViewIdList {{"abyssus_naga_minions"}}}
+          UI "unlock_message" { "message" Label "Exception to this is only defense, it will be increased regardless of its value." "view_id" ViewIdList {{"abyssus_naga_minions"}}}
+          UI "unlock_message" { "message" Label "Only Nagas will be reinforced - current and future ones." "view_id" ViewIdList {{"abyssus_naga_minions"}}}
+          UI "unlock_message" { "message" Label "It is going to take some time for them to be stronger." "view_id" ViewIdList {{"abyssus_naga_minions"}}}
+        }
+        FirstSuccessful {
+          Filter Flag "abyssus_naga_gems_consumed_100" {
+            UI "unlock_message" { "message" Label "Deep gems crumbled as you tried to reinforce the labyrinth core...." "view_id" ViewIdList {{"abyssus_naga_deep_gems"}}}
+            UI "unlock_message" { "message" Label "Labyrinth core is currently at its maximum strength and cannot be strengthened further." "view_id" ViewIdList {{"abyssus_naga_core_pedestal_full_large"}}}
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_1" {
+            SetFlag "abyssus_naga_gems_consumed_1" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_2" {
+            SetFlag "abyssus_naga_gems_consumed_2" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_3" {
+            SetFlag "abyssus_naga_gems_consumed_3" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_4" {
+            SetFlag "abyssus_naga_gems_consumed_4" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_5" {
+            SetFlag "abyssus_naga_gems_consumed_5" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_6" {
+            SetFlag "abyssus_naga_gems_consumed_6" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_7" {
+            SetFlag "abyssus_naga_gems_consumed_7" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_8" {
+            SetFlag "abyssus_naga_gems_consumed_8" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_9" {
+            SetFlag "abyssus_naga_gems_consumed_9" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_10" {
+            SetFlag "abyssus_naga_gems_consumed_10" true
+            UI "unlock_message" { "message" Label "You have reached level 10 reinforcment of the labyrinth core." "view_id" ViewIdList {{"abyssus_naga_core_pedestal_full_small"}}}
+            UI "unlock_message" { "message" Label "Labyrinth core has advanced to the next level." "view_id" ViewIdList {{"abyssus_naga_core_pedestal_full_medium"}}}
+            UI "unlock_message" { "message" Label "Your minions will gain extra 5 attributes as a bonus if they are eligible." "view_id" ViewIdList {{"abyssus_naga_minions"}}}
+            UI "unlock_message" { "message" Label "You have unlocked a new minion to summon - a naga warrior." "view_id" ViewIdList {{"abyssus_naga_warrior"}}}
+            UI "unlock_message" { "message" Label "You have unlocked a new minion to summon - a naga healer." "view_id" ViewIdList {{"abyssus_naga_healer"}}}
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_11" {
+            SetFlag "abyssus_naga_gems_consumed_11" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_12" {
+            SetFlag "abyssus_naga_gems_consumed_12" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_13" {
+            SetFlag "abyssus_naga_gems_consumed_13" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_14" {
+            SetFlag "abyssus_naga_gems_consumed_14" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_15" {
+            SetFlag "abyssus_naga_gems_consumed_15" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_16" {
+            SetFlag "abyssus_naga_gems_consumed_16" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_17" {
+            SetFlag "abyssus_naga_gems_consumed_17" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_18" {
+            SetFlag "abyssus_naga_gems_consumed_18" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_19" {
+            SetFlag "abyssus_naga_gems_consumed_19" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_20" {
+            SetFlag "abyssus_naga_gems_consumed_20" true
+            UI "unlock_message" { "message" Label "You have reached level 20 reinforcment of the labyrinth core." "view_id" ViewIdList {{"abyssus_naga_core_pedestal_full_medium"}}}
+            UI "unlock_message" { "message" Label "Your minions will gain extra 5 attributes if they are eligible." "view_id" ViewIdList {{"abyssus_naga_minions"}}}
+            UI "unlock_message" { "message" Label "Labyrinth core has advanced to the next level." "view_id" ViewIdList {{"abyssus_naga_core_pedestal_full_large"}}}
+            UI "unlock_message" { "message" Label "You have unlocked a new minion to summon - a naga champion." "view_id" ViewIdList {{"abyssus_naga_champion"}}}
+            UI "unlock_message" { "message" Label "You have unlocked a new minion to summon - a naga archer." "view_id" ViewIdList {{"abyssus_naga_archer"}}}
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_21" {
+            SetFlag "abyssus_naga_gems_consumed_21" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_22" {
+            SetFlag "abyssus_naga_gems_consumed_22" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_23" {
+            SetFlag "abyssus_naga_gems_consumed_23" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_24" {
+            SetFlag "abyssus_naga_gems_consumed_24" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_25" {
+            SetFlag "abyssus_naga_gems_consumed_25" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_26" {
+            SetFlag "abyssus_naga_gems_consumed_26" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_27" {
+            SetFlag "abyssus_naga_gems_consumed_27" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_28" {
+            SetFlag "abyssus_naga_gems_consumed_28" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_29" {
+            SetFlag "abyssus_naga_gems_consumed_29" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_30" {
+            SetFlag "abyssus_naga_gems_consumed_30" true
+            UI "unlock_message" { "message" Label "You have reached level 30 reinforcment of the labyrinth core." "view_id" ViewIdList {{"abyssus_naga_core_pedestal_full_large"}}}
+            UI "unlock_message" { "message" Label "Labyrinth core has advanced to the next level." "view_id" ViewIdList {{"abyssus_naga_core_pedestal_full_large"}}}
+            UI "unlock_message" { "message" Label "You have unlocked a new minion to summon - a naga gate keeper." "view_id" ViewIdList {{"abyssus_naga_gate_keeper"}}}
+            UI "unlock_message" { "message" Label "You have unlocked a new minion to summon - a naga mage." "view_id" ViewIdList {{"abyssus_naga_mage"}}}
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_31" {
+            SetFlag "abyssus_naga_gems_consumed_31" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_32" {
+            SetFlag "abyssus_naga_gems_consumed_32" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_33" {
+            SetFlag "abyssus_naga_gems_consumed_33" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_34" {
+            SetFlag "abyssus_naga_gems_consumed_34" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_35" {
+            SetFlag "abyssus_naga_gems_consumed_35" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_36" {
+            SetFlag "abyssus_naga_gems_consumed_36" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_37" {
+            SetFlag "abyssus_naga_gems_consumed_37" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_38" {
+            SetFlag "abyssus_naga_gems_consumed_38" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_39" {
+            SetFlag "abyssus_naga_gems_consumed_39" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_40" {
+            SetFlag "abyssus_naga_gems_consumed_40" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_41" {
+            SetFlag "abyssus_naga_gems_consumed_41" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_42" {
+            SetFlag "abyssus_naga_gems_consumed_42" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_43" {
+            SetFlag "abyssus_naga_gems_consumed_43" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_44" {
+            SetFlag "abyssus_naga_gems_consumed_44" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_45" {
+            SetFlag "abyssus_naga_gems_consumed_45" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_46" {
+            SetFlag "abyssus_naga_gems_consumed_46" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_47" {
+            SetFlag "abyssus_naga_gems_consumed_47" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_48" {
+            SetFlag "abyssus_naga_gems_consumed_48" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_49" {
+            SetFlag "abyssus_naga_gems_consumed_49" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_50" {
+            SetFlag "abyssus_naga_gems_consumed_50" true
+            UI "unlock_message" { "message" Label "You have reached level 50 reinforcment of the labyrinth core." "view_id" ViewIdList {{"abyssus_naga_core_pedestal_full_large"}}}
+            UI "unlock_message" { "message" Label "Your minions will gain extra 5 attributes if they are eligible." "view_id" ViewIdList {{"abyssus_naga_minions"}}}
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_51" {
+            SetFlag "abyssus_naga_gems_consumed_51" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_52" {
+            SetFlag "abyssus_naga_gems_consumed_52" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_53" {
+            SetFlag "abyssus_naga_gems_consumed_53" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_54" {
+            SetFlag "abyssus_naga_gems_consumed_54" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_55" {
+            SetFlag "abyssus_naga_gems_consumed_55" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_56" {
+            SetFlag "abyssus_naga_gems_consumed_56" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_57" {
+            SetFlag "abyssus_naga_gems_consumed_57" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_58" {
+            SetFlag "abyssus_naga_gems_consumed_58" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_59" {
+            SetFlag "abyssus_naga_gems_consumed_59" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_60" {
+            SetFlag "abyssus_naga_gems_consumed_60" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_61" {
+            SetFlag "abyssus_naga_gems_consumed_61" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_62" {
+            SetFlag "abyssus_naga_gems_consumed_62" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_63" {
+            SetFlag "abyssus_naga_gems_consumed_63" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_64" {
+            SetFlag "abyssus_naga_gems_consumed_64" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_65" {
+            SetFlag "abyssus_naga_gems_consumed_65" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_66" {
+            SetFlag "abyssus_naga_gems_consumed_66" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_67" {
+            SetFlag "abyssus_naga_gems_consumed_67" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_68" {
+            SetFlag "abyssus_naga_gems_consumed_68" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_69" {
+            SetFlag "abyssus_naga_gems_consumed_69" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_70" {
+            SetFlag "abyssus_naga_gems_consumed_70" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_71" {
+            SetFlag "abyssus_naga_gems_consumed_71" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_72" {
+            SetFlag "abyssus_naga_gems_consumed_72" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_73" {
+            SetFlag "abyssus_naga_gems_consumed_73" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_74" {
+            SetFlag "abyssus_naga_gems_consumed_74" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_75" {
+            SetFlag "abyssus_naga_gems_consumed_75" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_76" {
+            SetFlag "abyssus_naga_gems_consumed_76" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_77" {
+            SetFlag "abyssus_naga_gems_consumed_77" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_78" {
+            SetFlag "abyssus_naga_gems_consumed_78" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_79" {
+            SetFlag "abyssus_naga_gems_consumed_79" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_80" {
+            SetFlag "abyssus_naga_gems_consumed_80" true
+            UI "unlock_message" { "message" Label "You have reached level 80 reinforcment of the labyrinth core." "view_id" ViewIdList {{"abyssus_naga_core_pedestal_full_large"}}}
+            UI "unlock_message" { "message" Label "Your minions will gain extra 5 attributes if they are eligible." "view_id" ViewIdList {{"abyssus_naga_minions"}}}
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_81" {
+            SetFlag "abyssus_naga_gems_consumed_81" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_82" {
+            SetFlag "abyssus_naga_gems_consumed_82" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_83" {
+            SetFlag "abyssus_naga_gems_consumed_83" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_84" {
+            SetFlag "abyssus_naga_gems_consumed_84" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_85" {
+            SetFlag "abyssus_naga_gems_consumed_85" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_86" {
+            SetFlag "abyssus_naga_gems_consumed_86" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_87" {
+            SetFlag "abyssus_naga_gems_consumed_87" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_88" {
+            SetFlag "abyssus_naga_gems_consumed_88" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_89" {
+            SetFlag "abyssus_naga_gems_consumed_89" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_90" {
+            SetFlag "abyssus_naga_gems_consumed_90" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_91" {
+            SetFlag "abyssus_naga_gems_consumed_91" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_92" {
+            SetFlag "abyssus_naga_gems_consumed_92" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_93" {
+            SetFlag "abyssus_naga_gems_consumed_93" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_94" {
+            SetFlag "abyssus_naga_gems_consumed_94" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_95" {
+            SetFlag "abyssus_naga_gems_consumed_95" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_96" {
+            SetFlag "abyssus_naga_gems_consumed_96" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_97" {
+            SetFlag "abyssus_naga_gems_consumed_97" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_98" {
+            SetFlag "abyssus_naga_gems_consumed_98" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_99" {
+            SetFlag "abyssus_naga_gems_consumed_99" true
+          }
+          Filter Not Flag "abyssus_naga_gems_consumed_100" {
+            SetFlag "abyssus_naga_gems_consumed_100" true
+            UI "unlock_message" { "message" Label "You have reached level 100 reinforcment of the labyrinth core." "view_id" ViewIdList {{"abyssus_naga_core_pedestal_full_large"}}}
+            UI "unlock_message" { "message" Label "Your minions will gain extra 25 attributes if they are eligible." "view_id" ViewIdList {{"abyssus_naga_minions"}}}
+            UI "unlock_message" { "message" Label "Labyrinth core is at its full strength. It cannot be reinforced more." "view_id" ViewIdList {{"abyssus_naga_core_pedestal_full_large"}}}
+          }
+        }
+      }
+      Chain {
+        UI "unlock_message" { "message" Label "As you tried to forcebly apply the deep gems, they suddenly vibrate and fall to the ground." "view_id" ViewIdList {{"abyssus_naga_deep_gems"}}}
+        UI "unlock_message" { "message" Label "It looks like that you need to bring gems to the labyrinth core." "view_id" ViewIdList {{"abyssus_naga_deep_gems"}}}
+        DropItems {"Abyssus_Naga_Deep_Gems"} {1}
+      }
+    }
+    storageIds = {"jewellery" "equipment"}
+  }

@@ -1,0 +1,14 @@
+# Here come levels for all keeper types. This should be entered in the 'zLevelGroups' in your keeper's definition.
+# At every depth the game chooses a random level that's available
+
+"abyssus_naga_abandoned_labyrinth"
+{
+  {
+    type = EnemyZLevel {
+      enemy = "ABYSSUS_NAGA_ABANDONED_LABYRINTH"
+    }
+    minDepth = 1
+    maxDepth = 1
+    guarantee = true
+  }
+}

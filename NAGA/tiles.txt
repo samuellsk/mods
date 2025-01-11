@@ -1,0 +1,40 @@
+{ "abyssus_items_naga_mage_staff" "]" ColorId LIGHT_GRAY }
+{ viewId = "abyssus_items_naga_mage_staff_v" symbol = ")" color = ColorId LIGHT_GRAY weaponOrigin = {16 15} }
+{ "abyssus_items_naga_healer_staff" "]" ColorId LIGHT_GRAY }
+{ viewId = "abyssus_items_naga_healer_staff_v" symbol = ")" color = ColorId LIGHT_GRAY weaponOrigin = {12 15} }
+{ "abyssus_items_wooden_spear" "]" ColorId LIGHT_GRAY }
+{ viewId = "abyssus_items_wooden_spear_v" symbol = ")" color = ColorId LIGHT_GRAY weaponOrigin = {14 15} }
+{ "abyssus_items_iron_spear" "]" ColorId LIGHT_GRAY }
+{ viewId = "abyssus_items_iron_spear_v" symbol = ")" color = ColorId LIGHT_GRAY weaponOrigin = {14 14} }
+
+{ "abyssus_spells_spear_projectile" "-" ColorId GRAY }
+{ viewId = "abyssus_spells_hearts_attack_projectile" symbol = "💕" color = ColorId RED animated = true }
+
+{ "abyssus_naga_worker_1" "w" ColorId LIGHT_BROWN }
+{ "abyssus_naga_worker_2" "w" ColorId LIGHT_BLUE }
+{ "abyssus_naga_worker_3" "w" ColorId YELLOW }
+{ "abyssus_naga_gate_keeper" "G" ColorId GRAY }
+{ "abyssus_naga_archer" "A" ColorId LIGHT_GREEN }
+{ viewId = "abyssus_naga_champion" symbol = "C" color = ColorId YELLOW weaponOrigin = {4 16}}
+{ viewId = "abyssus_naga_warrior" symbol = "W" color = ColorId BROWN weaponOrigin = {3 12}}
+{ viewId = "abyssus_naga_soldier" symbol = "S" color = ColorId BROWN weaponOrigin = {4 16}}
+{ viewId = "abyssus_naga_scout" symbol = "S" color = ColorId PINK weaponOrigin = {3 13}}
+{ viewId = "abyssus_naga_healer" symbol = "H" color = ColorId LIGHT_RED weaponOrigin = {3 13}}
+{ viewId = "abyssus_naga_mage" symbol = "M" color = ColorId PURPLE weaponOrigin = {6 19}}
+{ viewId = "abyssus_naga_keeper_f" symbol = "@" color = ColorId PURPLE weaponOrigin = {6 19}}
+{ viewId = "abyssus_naga_keeper_m" symbol = "@" color = ColorId PURPLE weaponOrigin = {5 17}}
+{ "abyssus_naga_minions" "M" ColorId LIGHT_BROWN }
+{ "abyssus_naga_nest" "O" ColorId LIGHT_BROWN }
+{ "abyssus_naga_core_pedestal_empty" "T" ColorId PURPLE }
+{ "abyssus_naga_core_pedestal_full_small" "T" ColorId BLUE }
+{ "abyssus_naga_core_pedestal_full_medium" "T" ColorId BLUE }
+{ "abyssus_naga_core_pedestal_full_large" "T" ColorId RED }
+{ viewId = "abyssus_naga_floor" symbol = "." color = ColorId PURPLE }
+{ viewId = "abyssus_naga_floor_1" symbol = "." color = ColorId PURPLE }
+{ viewId = "abyssus_naga_floor_2" symbol = "." color = ColorId PINK }
+{ viewId = "abyssus_naga_floor_3" symbol = "," color = ColorId PURPLE }
+{ viewId = "abyssus_naga_floor_4" symbol = "," color = ColorId PINK }
+{ viewId = "abyssus_naga_wall" symbol = "#" color = ColorId BROWN wallShadow = true wallConnections = true }
+{ viewId = "abyssus_naga_q" symbol = "?" color = ColorId RED roundShadow = true animated = true }
+{ "abyssus_naga_deep_gems" "*" ColorId PURPLE }
+{ "abyssus_naga_statue" "S" ColorId YELLOW }

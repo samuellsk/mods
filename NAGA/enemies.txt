@@ -1,0 +1,11 @@
+"ABYSSUS_NAGA_ABANDONED_LABYRINTH"
+{
+  settlement = {
+    type = RandomLayout { "abyssus_naga_keeper_dungeon" { 65 65 } "abyssus_naga_keeper_lm" }
+    tribe = DARK_KEEPER
+    locationName = "Naga Labyrinth"
+  }
+  config = {
+    conquerCondition = NEVER
+  }
+}

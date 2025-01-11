@@ -1,0 +1,483 @@
+"ABYSSUS_NAGA_TESTER"
+  {
+    viewId = { "abyssus_naga_keeper_f" }
+    name = {
+      name = "TESTER"
+      firstNameGen = "ABYSSUS_NAGA"
+      fullTitle = true
+    }
+    gender = FEMALE
+    body = {
+      type = Humanoid LARGE
+      material = ABYSSUS_NAGA
+      intrinsicAttacks = {
+        TORSO  {{ itemType = { Intrinsic { "claws_attack" } "tail" 8 { attackType = HIT attackMsg = CLAW }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      SPELL_DAMAGE 25
+      DEFENSE 20
+      LABORATORY 25
+    }
+    permanentEffects = {
+      ABYSSUS_NAGA_COMMANDER 1
+      SWIMMING_SKILL 1
+      ABYSSUS_NAGA_MINION 1
+    }
+    maxLevelIncrease = {
+      SPELL_DAMAGE 12
+    }
+    spellSchools = { "abyssus naga keeper female" }
+    spells = { "abyssus naga frostburn" "abyssus naga frost nova" "abyssus naga slow" "abyssus naga charm" "abyssus naga hearts attack" "abyssus naga call to arms" "abyssus naga last stand" "abyssus naga lesser heal" "abyssus naga frostbolt" }
+    aiType = MELEE
+    chatReactionFriendly = "Welcome to the depths. Speak, and tread carefully."
+    chatReactionHostile = "You dare disturb the coils of the abyss? Prepare to drown in regret!"
+    inventory = {
+      { "Abyssus_Naga_Staff_Of_Frost" }
+    }
+  }
+
+"ABYSSUS_NAGA_KEEPER_MALE"
+  {
+    viewId = { "abyssus_naga_keeper_m" }
+    name = {
+      name = "Keeper"
+      firstNameGen = "ABYSSUS_NAGA"
+      fullTitle = true
+    }
+    body = {
+      type = Humanoid HUGE
+      material = ABYSSUS_NAGA
+      intrinsicAttacks = {
+        TORSO  {{ itemType = { Intrinsic { "claws_attack" } "tail" 8 { attackType = HIT attackMsg = CLAW }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      DAMAGE 25
+      DEFENSE 20
+      LABORATORY 25
+    }
+    permanentEffects = {
+      SWIMMING_SKILL 1
+      ABYSSUS_NAGA_MINION 1
+    }
+    maxLevelIncrease = {
+      DAMAGE 12
+    }
+    spellSchools = { "abyssus naga keeper male" }
+    spells = { "abyssus naga onetime summon keeper female" "abyssus naga introduction" }
+    aiType = MELEE
+    chatReactionFriendly = "A rare visitor to our watersss..state your purpose."
+    chatReactionHostile = "Intruder! You'll find no mercy in these tides!"
+  }
+
+"ABYSSUS_NAGA_KEEPER_MALE_FAKE"
+  {
+    viewId = { "abyssus_naga_keeper_m" }
+    name = {
+      name = "Keeper"
+      firstNameGen = "ABYSSUS_NAGA"
+      fullTitle = true
+    }
+    body = {
+      type = Humanoid HUGE
+      material = ABYSSUS_NAGA
+      intrinsicAttacks = {
+        TORSO  {{ itemType = { Intrinsic { "claws_attack" } "tail" 8 { attackType = HIT attackMsg = CLAW }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      DAMAGE 25
+      DEFENSE 20
+      LABORATORY 25
+    }
+    permanentEffects = {
+      SWIMMING_SKILL 1
+      ABYSSUS_NAGA_MINION 1
+    }
+    maxLevelIncrease = {
+      DAMAGE 12
+    }
+    spellSchools = { "abyssus naga keeper male" }
+    spells = { "abyssus naga keeper" }
+    aiType = MELEE
+    chatReactionFriendly = "A rare visitor to our watersss..state your purpose."
+    chatReactionHostile = "Intruder! You'll find no mercy in these tides!"
+  }
+
+"ABYSSUS_NAGA_KEEPER_FEMALE"
+  {
+    viewId = { "abyssus_naga_keeper_f" }
+    name = {
+      name = "Keeper"
+      firstNameGen = "ABYSSUS_NAGA"
+      fullTitle = true
+    }
+    gender = FEMALE
+    body = {
+      type = Humanoid LARGE
+      material = ABYSSUS_NAGA
+      intrinsicAttacks = {
+        TORSO  {{ itemType = { Intrinsic { "claws_attack" } "tail" 8 { attackType = HIT attackMsg = CLAW }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      SPELL_DAMAGE 25
+      DEFENSE 20
+      LABORATORY 25
+    }
+    permanentEffects = {
+      SWIMMING_SKILL 1
+      ABYSSUS_NAGA_MINION 1
+    }
+    maxLevelIncrease = {
+      SPELL_DAMAGE 12
+    }
+    spellSchools = { "abyssus naga keeper female" }
+    spells = { "abyssus naga onetime summon keeper male" "abyssus naga introduction" }
+    aiType = MELEE
+    chatReactionFriendly = "Welcome to the depths. Speak, and tread carefully."
+    chatReactionHostile = "You dare disturb the coils of the abyss? Prepare to drown in regret!"
+    inventory = {
+      { "Abyssus_Naga_Staff_Of_Frost" }
+    }
+  }
+
+"ABYSSUS_NAGA_KEEPER_FEMALE_FAKE"
+  {
+    viewId = { "abyssus_naga_keeper_f" }
+    name = {
+      name = "Keeper"
+      firstNameGen = "ABYSSUS_NAGA"
+      fullTitle = true
+    }
+    gender = FEMALE
+    body = {
+      type = Humanoid LARGE
+      material = ABYSSUS_NAGA
+      intrinsicAttacks = {
+        TORSO  {{ itemType = { Intrinsic { "claws_attack" } "tail" 8 { attackType = HIT attackMsg = CLAW }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      SPELL_DAMAGE 25
+      DEFENSE 20
+      LABORATORY 25
+    }
+    permanentEffects = {
+      SWIMMING_SKILL 1
+      ABYSSUS_NAGA_MINION 1
+    }
+    maxLevelIncrease = {
+      SPELL_DAMAGE 12
+    }
+    spellSchools = { "abyssus naga keeper female" }
+    spells = { "abyssus naga keeper" }
+    aiType = MELEE
+    chatReactionFriendly = "Welcome to the depths. Speak, and tread carefully."
+    chatReactionHostile = "You dare disturb the coils of the abyss? Prepare to drown in regret!"
+    inventory = {
+      { "Abyssus_Naga_Staff_Of_Frost" }
+    }
+  }
+
+"ABYSSUS_NAGA_WORKER"
+  {
+    viewId = { "abyssus_naga_worker_1" }
+    name = {
+      name = "naga worker"
+    }
+    body = {
+      type = Humanoid MEDIUM
+      material = ABYSSUS_NAGA
+      intrinsicAttacks = {
+        TORSO  {{ itemType = { Intrinsic { "claws_attack" } "tail" 8 { attackType = HIT attackMsg = CLAW }} isExtraAttack = true }}
+      }
+    }
+    cantEquip = true
+    attr = {
+      DAMAGE 15
+      DIGGING 15
+      DEFENSE 15
+    }
+    permanentEffects = {
+      SWIMMING_SKILL 1
+      ABYSSUS_NAGA_MINION 1
+    }
+    maxLevelIncrease = {
+      DAMAGE 1
+    }
+    spells = { "abyssus naga worker hatched" }
+    aiType = MELEE
+    chatReactionFriendly = "Hsssss."
+    chatReactionHostile = "Shhh!"
+  }
+
+"ABYSSUS_NAGA_SOLDIER"
+  {
+    viewId = { "abyssus_naga_soldier" }
+    name = {
+      name = "naga soldier"
+      firstNameGen = "ABYSSUS_NAGA"
+    }
+    body = {
+      type = Humanoid LARGE
+      material = ABYSSUS_NAGA
+      intrinsicAttacks = {
+        TORSO  {{ itemType = { Intrinsic { "claws_attack" } "tail" 8 { attackType = HIT attackMsg = CLAW }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      DAMAGE 18
+      DEFENSE 21
+      WORKSHOP 15
+    }
+    permanentEffects = {
+      SWIMMING_SKILL 1
+      ABYSSUS_NAGA_MINION 1
+    }
+    maxLevelIncrease = {
+      DAMAGE 4
+    }
+    spellSchools = { "abyssus naga soldier" }
+    aiType = MELEE
+    chatReactionFriendly = "Welcome, traveler. What brings you to the depths?"
+    chatReactionHostile = "You've trespassed into forbidden depths!"
+    inventory = {
+      { "Abyssus_Items_Wooden_Spear" }
+    }
+  }
+
+"ABYSSUS_NAGA_WARRIOR"
+  {
+    viewId = { "abyssus_naga_warrior" }
+    name = {
+      name = "naga warrior"
+      firstNameGen = "ABYSSUS_NAGA"
+    }
+    body = {
+      type = Humanoid HUGE
+      material = ABYSSUS_NAGA
+      intrinsicAttacks = {
+        TORSO  {{ itemType = { Intrinsic { "claws_attack" } "tail" 8 { attackType = HIT attackMsg = CLAW }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      DAMAGE 24
+      DEFENSE 25
+      FORGE 15
+      FURNACE 15
+    }
+    permanentEffects = {
+      SWIMMING_SKILL 1
+      ABYSSUS_NAGA_MINION 1
+    }
+    maxLevelIncrease = {
+      DAMAGE 8
+    }
+    spellSchools = { "abyssus naga warrior" }
+    aiType = MELEE
+    chatReactionFriendly = "A guest? How intriguing-speak your purpose."
+    chatReactionHostile = "Your presence offends the sanctity of our realm!"
+    inventory = {
+      { "Abyssus_Items_Iron_Spear" }
+    }
+  }
+
+"ABYSSUS_NAGA_CHAMPION"
+  {
+    viewId = { "abyssus_naga_champion" }
+    name = {
+      name = "naga champion"
+      firstNameGen = "ABYSSUS_NAGA"
+    }
+    body = {
+      type = Humanoid LARGE
+      material = ABYSSUS_NAGA
+      intrinsicAttacks = {
+        TORSO  {{ itemType = { Intrinsic { "claws_attack" } "tail" 8 { attackType = HIT attackMsg = CLAW }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      DAMAGE 28
+      DEFENSE 28
+    }
+    permanentEffects = {
+      SWIMMING_SKILL 1
+      ABYSSUS_NAGA_MINION 1
+    }
+    maxLevelIncrease = {
+      DAMAGE 12
+    }
+    spellSchools = { "abyssus naga champion" }
+    aiType = MELEE
+    chatReactionFriendly = "Our waters rarely see outsiders. Tread carefully."
+    chatReactionHostile = "I will drag you down to the abyss!"
+  }
+
+"ABYSSUS_NAGA_GATE_KEEPER"
+  {
+    viewId = { "abyssus_naga_gate_keeper" }
+    name = {
+      name = "naga gate keeper"
+      firstNameGen = "ABYSSUS_NAGA"
+    }
+    body = {
+      type = Humanoid HUGE
+      material = ABYSSUS_NAGA
+      intrinsicAttacks = {
+        TORSO  {{ itemType = { Intrinsic { "claws_attack" } "tail" 8 { attackType = HIT attackMsg = CLAW }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      DAMAGE 28
+      DEFENSE 28
+    }
+    permanentEffects = {
+      ABYSSUS_NAGA_GATE_KEEPING 1
+      SWIMMING_SKILL 1
+      ABYSSUS_NAGA_MINION 1
+    }
+    maxLevelIncrease = {
+      DAMAGE 12
+    }
+    aiType = MELEE
+    chatReactionFriendly = "You approach with courage, let's hope it's not misplaced."
+    chatReactionHostile = "Surface dweller, prepare to meet your end!"
+  }
+
+"ABYSSUS_NAGA_HEALER"
+  {
+    viewId = { "abyssus_naga_healer" }
+    name = {
+      name = "naga healer"
+      firstNameGen = "ABYSSUS_NAGA"
+    }
+    body = {
+      type = Humanoid LARGE
+      material = ABYSSUS_NAGA
+      intrinsicAttacks = {
+        TORSO  {{ itemType = { Intrinsic { "claws_attack" } "tail" 8 { attackType = HIT attackMsg = CLAW }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      SPELL_DAMAGE 15
+      DEFENSE 15
+    }
+    permanentEffects = {
+      SWIMMING_SKILL 1
+      ABYSSUS_NAGA_MINION 1
+    }
+    maxLevelIncrease = {
+      SPELL_DAMAGE 5
+    }
+    spellSchools = { "abyssus naga healer" }
+    aiType = RANGED
+    chatReactionFriendly = "You seem far from home. How may we assist you?"
+    chatReactionHostile = "You dare challenge the might of the naga?"
+    inventory = {
+      { "Abyssus_Naga_Staff_Of_Healing" }
+    }
+  }
+
+"ABYSSUS_NAGA_MAGE"
+  {
+    viewId = { "abyssus_naga_mage" }
+    name = {
+      name = "naga mage"
+      firstNameGen = "ABYSSUS_NAGA"
+    }
+    body = {
+      type = Humanoid LARGE
+      material = ABYSSUS_NAGA
+      intrinsicAttacks = {
+        TORSO  {{ itemType = { Intrinsic { "claws_attack" } "tail" 8 { attackType = HIT attackMsg = CLAW }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      SPELL_DAMAGE 19
+      DEFENSE 17
+      JEWELER 15
+    }
+    permanentEffects = {
+      SWIMMING_SKILL 1
+      ABYSSUS_NAGA_MINION 1
+    }
+    maxLevelIncrease = {
+      SPELL_DAMAGE 8
+    }
+    spellSchools = { "abyssus naga mage" }
+    aiType = RANGED
+    chatReactionFriendly = "Visitors are rare, do you bring tidings or trouble?"
+    chatReactionHostile = "Intruders will be crushed under the tides!"
+    inventory = {
+      { "Abyssus_Naga_Staff_Of_Frost" }
+    }
+  }
+
+"ABYSSUS_NAGA_SCOUT"
+  {
+    viewId = { "abyssus_naga_scout" }
+    name = {
+      name = "naga scout"
+      firstNameGen = "ABYSSUS_NAGA"
+    }
+    body = {
+      type = Humanoid LARGE
+      material = ABYSSUS_NAGA
+      intrinsicAttacks = {
+        TORSO  {{ itemType = { Intrinsic { "claws_attack" } "tail" 8 { attackType = HIT attackMsg = CLAW }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      DAMAGE 13
+      RANGED_DAMAGE 15
+      DEFENSE 15
+    }
+    permanentEffects = {
+      ELF_VISION 1
+      NIGHT_VISION 1
+      SWIMMING_SKILL 1
+      ABYSSUS_NAGA_MINION 1
+    }
+    maxLevelIncrease = {
+      DAMAGE 5
+      RANGED_DAMAGE 4
+    }
+    spellSchools = { "abyssus naga scout" }
+    aiType = RANGED
+    chatReactionFriendly = "A surface dweller, in our midst? Fascinating."
+    chatReactionHostile = "I'll turn your bones to coral!"
+  }
+
+"ABYSSUS_NAGA_ARCHER"
+  {
+    viewId = { "abyssus_naga_archer" }
+    name = {
+      name = "naga archer"
+      firstNameGen = "ABYSSUS_NAGA"
+    }
+    body = {
+      type = Humanoid LARGE
+      material = ABYSSUS_NAGA
+      intrinsicAttacks = {
+        TORSO  {{ itemType = { Intrinsic { "claws_attack" } "tail" 8 { attackType = HIT attackMsg = CLAW }} isExtraAttack = true }}
+      }
+    }
+    attr = {
+      DAMAGE 8
+      RANGED_DAMAGE 18
+      DEFENSE 17
+    }
+    permanentEffects = {
+      SWIMMING_SKILL 1
+      ABYSSUS_NAGA_MINION 1
+    }
+    maxLevelIncrease = {
+      RANGED_DAMAGE 7
+    }
+    spellSchools = { "abyssus naga archer" }
+    aiType = RANGED
+    chatReactionFriendly = "Speak your truth, and you may leave unharmed."
+    chatReactionHostile = "The sea will claim you, fool!"
+  }

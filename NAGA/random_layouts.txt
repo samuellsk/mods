@@ -1,0 +1,339 @@
+"abyssus_naga_keeper_entry"
+{
+  Position (MIDDLE, {5 5}, {Set("clear_middle") Set("abyssus_naga_keeper_floor")})
+  Position (MIDDLE, {5 5}, Corners(Reset("abyssus_naga_keeper_wall"), 1))
+  Position (MIDDLE, {1 1}, {Set("abyssus_naga_keeper_portal_surface")})
+  Filter (On("abyssus_naga_keeper_floor") {Set("set_territory")})
+}
+
+"abyssus_naga_keeper_dungeon"
+{
+  Reset("hard_rock")
+  Margins(
+    10, {Set("resources")},{
+
+  ### entry room
+      Margins(
+        6, None,{
+          Place(
+            size = {11 11}
+            generator = {
+              Filter (
+                And(
+                  Not Area(8,On("abyssus_naga_keeper_wall"),1),
+                  Not Area(71,On("make_a_room"),1),
+                  Area(4,On("hard_rock"),72),
+                ),
+                {
+                Set ("make_a_room")
+                }
+              )
+            }
+          )
+          Filter (On("make_a_room")
+            {
+              Position (MIDDLE, {11 11}, {Set("no_dig")})
+              Position (MIDDLE, {9 9}, {Reset("abyssus_naga_keeper_wall")})
+              Position (MIDDLE, {7 7}, {Reset("floor") Set("abyssus_naga_keeper_floor")})
+              Position (MIDDLE, {5 5}, {Reset("abyssus_naga_keeper_water") })
+              Position (MIDDLE, {3 3}, {Reset("floor") Set("abyssus_naga_keeper_floor")})
+              Position(LEFT_CENTER, {1 1}, Border(LEFT, 3, {Reset("floor") Set("abyssus_naga_keeper_floor")}))
+              Position(RIGHT_CENTER, {1 1}, Border(RIGHT, 3, {Reset("floor") Set("abyssus_naga_keeper_floor")}))
+              Position (MIDDLE, {1 1}, {Set("abyssus_naga_keeper_portal_only") Set("abyssus_naga_keeper_portal_dungeon")})
+
+              Choose(
+                0.25 {Position(RIGHT_CENTER, {1 1}, Border(RIGHT, -1, Remove("no_dig")))
+                      Position(RIGHT_CENTER, {1 1}, Border(RIGHT, 7, Remove("no_dig")))},
+                0.25 {Position(LEFT_CENTER, {1 1}, Border(LEFT, -1, Remove("no_dig")))
+                      Position(LEFT_CENTER, {1 1}, Border(LEFT, 7, Remove("no_dig")))},
+                0.25 {Position(TOP_CENTER, {1 1}, Border(TOP, -1, Remove("no_dig")))
+                      Position(TOP_CENTER, {1 1}, Border(TOP, 7, Remove("no_dig")))},
+                0.25 {Position(BOTTOM_CENTER, {1 1}, Border(BOTTOM, -1, Remove("no_dig")))
+                      Position(BOTTOM_CENTER, {1 1}, Border(BOTTOM, 7, Remove("no_dig")))}
+              )
+            }
+          )
+        }
+      )
+
+  ### down stairs room
+      Margins(
+        5, None,{
+          Filter (
+            And(
+              Area(7,On("abyssus_naga_keeper_wall"),8),
+              Not Area(6,On("abyssus_naga_keeper_wall"),1),
+              Not Area(71,On("make_a_room"),1),
+              Area(4,On("hard_rock"),70),
+            ),
+            {
+            Set ("make_a_room")
+            }
+          )
+        }
+      )
+      Filter (On("make_a_room")
+        {
+          Position (MIDDLE, {9 9}, {Set("no_dig")})
+          Position (MIDDLE, {7 7}, {Reset("abyssus_naga_keeper_wall")})
+          Position (MIDDLE, {5 5}, {Reset("floor") Set("abyssus_naga_keeper_floor")})
+          Position (MIDDLE, {1 1}, {Set("past_stairs") Set("abyssus_naga_keeper_core_pedestal_empty")})
+          Position(MIDDLE, {1 1}, Position(LEFT_CENTER, {2 1} ,Position(TOP_CENTER, {1 1},Position (MIDDLE, {1 1} {Set("abyssus_naga_keeper_core_pedestal_controller")}))))
+          Position (MIDDLE, {5 5}, Corners(Reset("abyssus_naga_keeper_wall"), 1))
+          Choose(
+            0.50 {Position(RIGHT_CENTER, {5 1}, Position (LEFT_CENTER, {1 1} {Remove("no_dig")}))
+                  Position(RIGHT_CENTER, {4 1}, Position (LEFT_CENTER, {1 1} {Reset("red")}))},
+            0.50 {Position(LEFT_CENTER, {5 1}, Position (RIGHT_CENTER, {1 1} {Remove("no_dig")}))
+                  Position(LEFT_CENTER, {4 1}, Position (RIGHT_CENTER, {1 1} {Reset("red")}))}
+          )
+        }
+      )
+
+  ### workshop and forge room
+      Margins(
+        6, None,{
+          Filter (
+            And(
+              Area(9,On("abyssus_naga_keeper_wall"),8),
+              Not Area(8,On("abyssus_naga_keeper_wall"),1),
+              Not Area(71,On("make_a_room"),1),
+              Area(4,On("hard_rock"),72),
+            ),
+            {
+            Set ("make_a_room")
+            }
+          )
+        }
+      )
+      Filter (On("make_a_room")
+        {
+          Position (MIDDLE, {11 11}, {Set("no_dig")})
+          Position (MIDDLE, {9 9}, {Reset("abyssus_naga_keeper_wall")})
+          Position (MIDDLE, {7 7}, {Reset("floor") Set("abyssus_naga_keeper_floor")})
+          Position (MIDDLE, {5 5}, {Reset("floor") Set("abyssus_naga_keeper_water")})
+          Position (MIDDLE, {3 3}, {Reset("floor") Set("abyssus_naga_keeper_floor")})
+          Position(LEFT_CENTER, {1 1}, Border(LEFT, 3, {Reset("floor") Set("abyssus_naga_keeper_floor")}))
+          Position(RIGHT_CENTER, {1 1}, Border(RIGHT, 3, {Reset("floor") Set("abyssus_naga_keeper_floor")}))
+          Position(BOTTOM_CENTER, {1 1}, Border(BOTTOM, 3, {Reset("floor") Set("abyssus_naga_keeper_floor")}))
+          Position(TOP_CENTER, {1 1}, Border(TOP, 3, {Reset("floor") Set("abyssus_naga_keeper_floor")}))
+          Position (MIDDLE, {3 3}, Corners(Set("abyssus_naga_keeper_workshop"), 1))
+          Choose(
+            0.25 {Position(RIGHT_CENTER, {1 1}, Border(RIGHT, -1, Remove("no_dig")))
+                  Position(RIGHT_CENTER, {1 1}, Border(RIGHT, 7, Remove("no_dig")))},
+            0.25 {Position(LEFT_CENTER, {1 1}, Border(LEFT, -1, Remove("no_dig")))
+                  Position(LEFT_CENTER, {1 1}, Border(LEFT, 7, Remove("no_dig")))},
+            0.25 {Position(TOP_CENTER, {1 1}, Border(TOP, -1, Remove("no_dig")))
+                  Position(TOP_CENTER, {1 1}, Border(TOP, 7, Remove("no_dig")))},
+            0.25 {Position(BOTTOM_CENTER, {1 1}, Border(BOTTOM, -1, Remove("no_dig")))
+                  Position(BOTTOM_CENTER, {1 1}, Border(BOTTOM, 7, Remove("no_dig")))}
+          )
+        }
+      Filter (And(Area(3,On("abyssus_naga_keeper_workshop"),3), On("abyssus_naga_keeper_workshop")) ,{ Remove("abyssus_naga_keeper_workshop") Set("abyssus_naga_keeper_forge")})
+      )
+
+  ### quaters room 1
+      Margins(
+        4, None,{
+          Filter (
+            And(
+              Area(7,On("abyssus_naga_keeper_wall"),8),
+              Not Area(6,On("abyssus_naga_keeper_wall"),1),
+              Not Area(71,On("make_a_room"),1),
+              Area(3,On("hard_rock"),40),
+            ),
+            {
+            Set ("make_a_room")
+            }
+          )
+        }
+      )
+      Filter (On("make_a_room")
+        {
+          Position (MIDDLE, {7 7}, {Set("no_dig")})
+          Position (MIDDLE, {5 5}, {Reset("abyssus_naga_keeper_wall")})
+          Position (MIDDLE, {3 3}, {Reset("floor") Set("abyssus_naga_keeper_floor")})
+          Position (MIDDLE, {3 1}, {Reset("floor") Set("abyssus_naga_keeper_wall")})
+          Choose(
+            0.50 {Position(RIGHT_CENTER, {4 1}, Position (LEFT_CENTER, {1 1} {Remove("no_dig")}))
+                  Position(RIGHT_CENTER, {0 1}, Position(TOP_CENTER, {1 3} ,Position (LEFT_CENTER, {1 1} Set("abyssus_naga_keeper_bed"))))
+                  Position(RIGHT_CENTER, {0 1}, Position(BOTTOM_CENTER, {1 2} ,Position (LEFT_CENTER, {1 1} Set("abyssus_naga_keeper_fine_bed"))))
+                  Position(RIGHT_CENTER, {3 1}, Position (LEFT_CENTER, {1 1} {Reset("red")}))},
+            0.50 {Position(LEFT_CENTER, {4 1}, Position (RIGHT_CENTER, {1 1} {Remove("no_dig")}))
+                  Position(RIGHT_CENTER, {3 1}, Position(TOP_CENTER, {1 2} ,Position (RIGHT_CENTER, {1 1} Set("abyssus_naga_keeper_bed"))))
+                  Position(RIGHT_CENTER, {3 1}, Position(BOTTOM_CENTER, {1 3} ,Position (RIGHT_CENTER, {1 1} Set("abyssus_naga_keeper_fine_bed"))))
+                  Position(LEFT_CENTER, {3 1}, Position (RIGHT_CENTER, {1 1} {Reset("red")}))}
+          )
+        }
+      )
+
+  ### quaters room 2
+      Margins(
+        4, None,{
+          Filter (
+            And(
+              Area(7,On("abyssus_naga_keeper_wall"),8),
+              Not Area(6,On("abyssus_naga_keeper_wall"),1),
+              Not Area(71,On("make_a_room"),1),
+              Area(3,On("hard_rock"),40),
+            ),
+            {
+            Set ("make_a_room")
+            }
+          )
+        }
+      )
+      Filter (On("make_a_room")
+        {
+          Position (MIDDLE, {7 7}, {Set("no_dig")})
+          Position (MIDDLE, {5 5}, {Reset("abyssus_naga_keeper_wall")})
+          Position (MIDDLE, {3 3}, {Reset("floor") Set("abyssus_naga_keeper_floor")})
+          Position (MIDDLE, {1 3}, {Reset("floor") Set("abyssus_naga_keeper_wall")})
+          Choose(
+            0.50 {Position(TOP_CENTER, {1 3}, Position (BOTTOM_CENTER, {1 1} Reset("red")))
+                  Position(BOTTOM_CENTER, {1 3},Position(RIGHT_CENTER, {3 1}, Position (MIDDLE, {1 1} Set("abyssus_naga_keeper_fine_bed"))))
+                  Position(BOTTOM_CENTER, {1 3},Position(RIGHT_CENTER, {0 1}, Position (MIDDLE, {1 1} Set("abyssus_naga_keeper_bed"))))
+                  Position(TOP_CENTER, {1 4}, Position (BOTTOM_CENTER, {1 1} Remove("no_dig")))},
+            0.50 {Position(BOTTOM_CENTER, {1 3}, Position (TOP_CENTER, {1 1} Reset("red")))
+                  Position(TOP_CENTER, {1 2},Position(RIGHT_CENTER, {3 1}, Position (MIDDLE, {1 1} Set("abyssus_naga_keeper_bed"))))
+                  Position(TOP_CENTER, {1 2},Position(RIGHT_CENTER, {0 1}, Position (MIDDLE, {1 1} Set("abyssus_naga_keeper_fine_bed"))))
+                  Position(BOTTOM_CENTER, {1 4}, Position (TOP_CENTER, {1 1} Remove("no_dig")))}
+          )
+        }
+      )
+
+  ### quaters room 3
+      Margins(
+        4, None,{
+          Filter (
+            And(
+              Area(7,On("abyssus_naga_keeper_wall"),8),
+              Not Area(6,On("abyssus_naga_keeper_wall"),1),
+              Not Area(71,On("make_a_room"),1),
+              Area(3,On("hard_rock"),40),
+            ),
+            {
+            Set ("make_a_room")
+            }
+          )
+        }
+      )
+      Filter (On("make_a_room")
+        {
+          Position (MIDDLE, {7 7}, {Set("no_dig")})
+          Position (MIDDLE, {5 5}, {Reset("abyssus_naga_keeper_wall")})
+          Position (MIDDLE, {3 3}, {Reset("floor") Set("abyssus_naga_keeper_floor")})
+          Position (MIDDLE, {1 3}, {Reset("floor") Set("abyssus_naga_keeper_wall")})
+          Choose(
+            0.50 {Position(TOP_CENTER, {1 3}, Position (BOTTOM_CENTER, {1 1} Reset("red")))
+                  Position(BOTTOM_CENTER, {1 3},Position(RIGHT_CENTER, {3 1}, Position (MIDDLE, {1 1} Set("abyssus_naga_keeper_fine_bed"))))
+                  Position(BOTTOM_CENTER, {1 3},Position(RIGHT_CENTER, {0 1}, Position (MIDDLE, {1 1} Set("abyssus_naga_keeper_bed"))))
+                  Position(TOP_CENTER, {1 4}, Position (BOTTOM_CENTER, {1 1} Remove("no_dig")))},
+            0.50 {Position(BOTTOM_CENTER, {1 3}, Position (TOP_CENTER, {1 1} Reset("red")))
+                  Position(TOP_CENTER, {1 2},Position(RIGHT_CENTER, {3 1}, Position (MIDDLE, {1 1} Set("abyssus_naga_keeper_fine_bed"))))
+                  Position(TOP_CENTER, {1 2},Position(RIGHT_CENTER, {0 1}, Position (MIDDLE, {1 1} Set("abyssus_naga_keeper_bed"))))
+                  Position(BOTTOM_CENTER, {1 4}, Position (TOP_CENTER, {1 1} Remove("no_dig")))}
+          )
+        }
+      )
+
+  ### quaters room 4
+      Margins(
+        4, None,{
+          Filter (
+            And(
+              Area(7,On("abyssus_naga_keeper_wall"),8),
+              Not Area(6,On("abyssus_naga_keeper_wall"),1),
+              Not Area(71,On("make_a_room"),1),
+              Area(3,On("hard_rock"),40),
+            ),
+            {
+            Set ("make_a_room")
+            }
+          )
+        }
+      )
+      Filter (On("make_a_room")
+        {
+          Position (MIDDLE, {7 7}, {Set("no_dig")})
+          Position (MIDDLE, {5 5}, {Reset("abyssus_naga_keeper_wall")})
+          Position (MIDDLE, {3 3}, {Reset("floor") Set("abyssus_naga_keeper_floor")})
+          Position (MIDDLE, {3 1}, {Reset("floor") Set("abyssus_naga_keeper_wall")})
+          Choose(
+            0.50 {Position(RIGHT_CENTER, {4 1}, Position (LEFT_CENTER, {1 1} {Remove("no_dig")}))
+                  Position(RIGHT_CENTER, {0 1}, Position(TOP_CENTER, {1 3} ,Position (LEFT_CENTER, {1 1} Set("abyssus_naga_keeper_bed"))))
+                  Position(RIGHT_CENTER, {0 1}, Position(BOTTOM_CENTER, {1 2} ,Position (LEFT_CENTER, {1 1} Set("abyssus_naga_keeper_fine_bed"))))
+                  Position(RIGHT_CENTER, {3 1}, Position (LEFT_CENTER, {1 1} {Reset("red")}))},
+            0.50 {Position(LEFT_CENTER, {4 1}, Position (RIGHT_CENTER, {1 1} {Remove("no_dig")}))
+                  Position(RIGHT_CENTER, {3 1}, Position(TOP_CENTER, {1 2} ,Position (RIGHT_CENTER, {1 1} Set("abyssus_naga_keeper_fine_bed"))))
+                  Position(RIGHT_CENTER, {3 1}, Position(BOTTOM_CENTER, {1 3} ,Position (RIGHT_CENTER, {1 1} Set("abyssus_naga_keeper_bed"))))
+                  Position(LEFT_CENTER, {3 1}, Position (RIGHT_CENTER, {1 1} {Reset("red")}))}
+          )
+        }
+      )
+
+  ## storage room
+      Margins(
+        6, None,{
+          Filter (
+            And(
+              Area(7,On("abyssus_naga_keeper_wall"),8),
+              Not Area(6,On("abyssus_naga_keeper_wall"),1),
+              Not Area(71,On("make_a_room"),1),
+              Area(4,On("hard_rock"),72),
+            ),
+            {
+            Set ("make_a_room")
+            }
+          )
+          Filter (On("make_a_room") {
+            Position (MIDDLE, {9 9}, {Set("no_dig")})
+            Position (MIDDLE, {7 7}, {Reset("abyssus_naga_keeper_wall")})
+            Position (MIDDLE, {5 5}, {Reset("floor") Set("abyssus_naga_keeper_floor")})
+            Position (MIDDLE, {1 1}, {Set("do_not_water")})
+            Position(RIGHT_CENTER, {5 1}, Position(TOP_CENTER, {1 4} ,Position (LEFT_CENTER, {1 1} Set("abyssus_naga_keeper_treasure_chest"))))
+            Position(RIGHT_CENTER, {4 1}, Position(TOP_CENTER, {1 4} ,Position (LEFT_CENTER, {1 1} Set("abyssus_naga_keeper_armor_rack"))))
+            Position(RIGHT_CENTER, {1 1}, Position(TOP_CENTER, {1 4} ,Position (LEFT_CENTER, {1 1} Set("abyssus_naga_keeper_weapon_rack"))))
+            Position(LEFT_CENTER, {2 1}, Position(TOP_CENTER, {1 4} ,Position (MIDDLE, {1 1} Set("abyssus_naga_keeper_bow_rack"))))
+
+
+            Position(RIGHT_CENTER, {4 1}, Position(BOTTOM_CENTER, {1 5} ,Position (LEFT_CENTER, {1 1} Set("abyssus_naga_keeper_scroll_storage"))))
+            Position(RIGHT_CENTER, {1 1}, Position(BOTTOM_CENTER, {1 5} ,Position (LEFT_CENTER, {1 1} Set("abyssus_naga_keeper_potion_storage"))))
+            Position(LEFT_CENTER, {2 1}, Position(BOTTOM_CENTER, {1 5} ,Position (MIDDLE, {1 1} Set("abyssus_naga_keeper_jewellery_storage"))))
+            Position(LEFT_CENTER, {4 1}, Position(BOTTOM_CENTER, {1 5} ,Position (MIDDLE, {1 1} Set("abyssus_naga_keeper_grave"))))
+
+
+
+
+              Position(RIGHT_CENTER, {4 1}, Position (LEFT_CENTER, {1 1} Reset("red")))
+              Position(LEFT_CENTER, {4 1}, Position (RIGHT_CENTER, {1 1} Reset("red")))
+              Position(LEFT_CENTER, {5 1}, Position (RIGHT_CENTER, {1 1} Remove("no_dig")))
+              Position(RIGHT_CENTER, {5 1}, Position (LEFT_CENTER, {1 1} Remove("no_dig")))
+          })
+        }
+      )
+    }
+  )
+
+#  ### connector to create a hallways 3 wide
+  Connect(AnyFloor(),
+    (3000, On("no_dig"), None),
+    (4, And(Not AnyWall(), Not AnyFloor(), Or(On("rock"), On("hard_rock")),
+      Not On("no_dig"), Not On("room_wall")), {Reset("red") Set("red")})
+  )
+  Filter (And(Area(1,On("red"),1), On("hard_rock")) ,{ Reset("floor") Set("abyssus_naga_keeper_floor") Set("green")})
+  Filter (And(Area(1,On("red"),1), On("abyssus_naga_keeper_wall")) ,{ Reset("floor") Set("abyssus_naga_keeper_floor")})
+  Filter (And(On("red")), {Remove("red") Reset("floor") Set("abyssus_naga_keeper_floor")})
+  Filter (And(Area(1,On("green"),1), On("hard_rock")) , Reset("abyssus_naga_keeper_wall"))
+  Filter (And(Area(1,On("green"),1)), Remove("green"))
+
+  Filter (And(Area(3,On("abyssus_naga_keeper_bed"),1), Area(3,On("abyssus_naga_keeper_fine_bed"),1), Not Area(1, On("abyssus_naga_keeper_bed"),1) ,Not Area(1, On("abyssus_naga_keeper_fine_bed"),1) ,Not Area(1, On("abyssus_naga_keeper_wall"),2), Area(1, On("abyssus_naga_keeper_wall"),1), On("abyssus_naga_keeper_floor") , Not On("abyssus_naga_keeper_bed") , Not On("abyssus_naga_keeper_fine_bed")) ,{ Set("middle_section_wall_quaters_room")})
+  Filter (And(Area(3,On("abyssus_naga_keeper_bed"),1), Area(3,On("abyssus_naga_keeper_fine_bed"),1), Not Area(2, On("abyssus_naga_keeper_bed"),1) ,Not Area(2, On("abyssus_naga_keeper_fine_bed"),1) ,Area(1, On("middle_section_wall_quaters_room"),1), Not Area(1, On("middle_section_wall_quaters_room_2"),1),  On("abyssus_naga_keeper_floor") , Not On("abyssus_naga_keeper_bed") , Not On("abyssus_naga_keeper_fine_bed")) ,{ Set("middle_section_wall_quaters_room_2")})
+  Filter (On("middle_section_wall_quaters_room"), Remove("middle_section_wall_quaters_room"))
+  Filter (On("middle_section_wall_quaters_room_2"), Reset("abyssus_naga_keeper_wall"))
+
+  Filter (And(On("abyssus_naga_keeper_floor"), Not Area(2,On("no_dig"),1),Not Area(3,On("abyssus_naga_keeper_portal_only"),1),Not Area(2,On("past_stairs"),1) ,Not Area(3,On("do_not_water"),1) ,Not Area(4,On("abyssus_naga_keeper_workshop"),1) ,Not Area(1,On("abyssus_naga_keeper_wall"),1)) Reset("abyssus_naga_keeper_water"))
+  Filter (And(Area(1,On("abyssus_naga_keeper_wall"),3), Not Area(4,On("abyssus_naga_keeper_torch_on_wall"),1) ,On("abyssus_naga_keeper_floor")) ,{Set("abyssus_naga_keeper_torch_on_wall")})
+  Filter (And(Not Area(6,On("abyssus_naga_keeper_bridge"),1),Area(1,On("abyssus_naga_keeper_floor"),6),Not Area(1,On("abyssus_naga_keeper_floor"),7),Not Area(1,On("abyssus_naga_keeper_workshop"),1),Not Area(1,On("abyssus_naga_keeper_forge"),1),Not Area(2,On("stairs"),1) ,On("abyssus_naga_keeper_water")) , Set("abyssus_naga_keeper_bridge"))
+  Filter (On("abyssus_naga_keeper_floor"), Set("set_territory"))
+#  Filter (And(On("abyssus_naga_keeper_floor"),Not On("abyssus_naga_keeper_torch_on_wall"), Not Area(2,On("abyssus_naga_keeper_portal_only"),1),Not Area(2,On("past_stairs"),1)) Set("abyssus_naga_keeper_claimer"))
+}

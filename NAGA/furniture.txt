@@ -1,0 +1,436 @@
+"ABYSSUS_NAGA_ONETIME_SPAWN_KEEPER_MALE"
+{
+  name = "keeper male spawn"
+  canHideHere = true
+  layer = CEILING
+  tickType = Effect {
+    Summon "ABYSSUS_NAGA_KEEPER_MALE_FAKE" {1} none
+    RemoveFurniture "ABYSSUS_NAGA_ONETIME_SPAWN_KEEPER_MALE"
+  }
+}
+
+"ABYSSUS_NAGA_ONETIME_SPAWN_KEEPER_FEMALE"
+{
+  name = "keeper female spawn"
+  canHideHere = true
+  layer = CEILING
+  tickType = Effect {
+    Summon "ABYSSUS_NAGA_KEEPER_FEMALE_FAKE" {1} none
+    RemoveFurniture "ABYSSUS_NAGA_ONETIME_SPAWN_KEEPER_FEMALE"
+  }
+}
+
+"ABYSSUS_NAGA_WALL"
+{
+  name = "wall"
+  viewId = { "abyssus_naga_wall" }
+  blockMovement = true
+  blockAllVision = true
+  constructMessage = FILL_UP
+  clearFogOfWar = true
+  viewLayer = FLOOR_BACKGROUND
+  wall = true
+  xForgetAfterBuilding = true
+  strength2 = {
+    900 BOULDER
+    800 DIG
+    6000 HOSTILE_DIG
+  }
+  canBuildOutsideOfTerritory = true
+}
+
+"ABYSSUS_NAGA_FLOOR_PREBUILT"
+{
+  name = "floor"
+  viewId = { "abyssus_naga_floor" }
+  clearFogOfWar = true
+  layer = FLOOR
+  canBuildOutsideOfTerritory = true
+  tickType = Effect {
+    Area 2 Filter Health 0.1 1.0 {
+      Area 4 ClaimTile
+      Area 2 Filter FurnitureType "ABYSSUS_NAGA_FLOOR_PREBUILT" {
+        ModifyFurniture "ABYSSUS_NAGA_FLOOR"
+      }
+    }
+  }
+}
+
+"ABYSSUS_NAGA_FLOOR"
+{
+  name = "floor"
+  viewId = { "abyssus_naga_floor" }
+  clearFogOfWar = true
+  layer = FLOOR
+  canBuildOutsideOfTerritory = true
+  tickType = Effect {
+    ChooseRandom {
+      ModifyFurniture "ABYSSUS_NAGA_FLOOR_1"
+      ModifyFurniture "ABYSSUS_NAGA_FLOOR_2"
+      ModifyFurniture "ABYSSUS_NAGA_FLOOR_3"
+      ModifyFurniture "ABYSSUS_NAGA_FLOOR_4"
+    }
+  }
+}
+
+"ABYSSUS_NAGA_FLOOR_1"
+{
+  name = "floor"
+  viewId = { "abyssus_naga_floor_1" }
+  clearFogOfWar = true
+  layer = FLOOR
+  canBuildOutsideOfTerritory = true
+}
+
+"ABYSSUS_NAGA_FLOOR_2"
+{
+  name = "floor"
+  viewId = { "abyssus_naga_floor_2" }
+  clearFogOfWar = true
+  layer = FLOOR
+  canBuildOutsideOfTerritory = true
+}
+
+"ABYSSUS_NAGA_FLOOR_3"
+{
+  name = "floor"
+  viewId = { "abyssus_naga_floor_3" }
+  clearFogOfWar = true
+  layer = FLOOR
+  canBuildOutsideOfTerritory = true
+}
+
+"ABYSSUS_NAGA_FLOOR_4"
+{
+  name = "floor"
+  viewId = { "abyssus_naga_floor_4" }
+  clearFogOfWar = true
+  layer = FLOOR
+  canBuildOutsideOfTerritory = true
+}
+
+"ABYSSUS_NAGA_CLAIMER"
+{
+  name = "claimer"
+  layer = CEILING
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+  tickType = Effect {
+    Area 2 Filter Health 0.1 1.0 {
+      Area 4 ClaimTile
+      Area 2 RemoveFurniture "ABYSSUS_NAGA_CLAIMER"
+    }
+  }
+}
+
+"ABYSSUS_NAGA_FOG_OF_WAR_REMOVER"
+{
+  name = "fog of war remover"
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+  tickType = Effect {
+    Area 2 Filter Health 0.1 1.0 {
+      Area 3 ClaimTile
+      RemoveFurniture "ABYSSUS_NAGA_FOG_OF_WAR_REMOVER"
+    }
+  }
+}
+
+"ABYSSUS_NAGA_TORCH_ON_THE_WALL_CONTROLLER"
+{
+  name = "torch generator"
+  viewId = { "torch" }
+  lightEmission = 8.2
+  layer = CEILING
+  xForgetAfterBuilding = true
+  canBuildOutsideOfTerritory = true
+  tickType = Effect {
+    FirstSuccessful {
+  ### one square to the right ###
+      Filter Translate {1 0} FurnitureType "ABYSSUS_NAGA_WALL" {PlaceFurniture "TORCH_E" RemoveFurniture "ABYSSUS_NAGA_TORCH_ON_THE_WALL_CONTROLLER"}
+  ### one square to the left ###
+      Filter Translate {-1 0} FurnitureType "ABYSSUS_NAGA_WALL" {PlaceFurniture "TORCH_W" RemoveFurniture "ABYSSUS_NAGA_TORCH_ON_THE_WALL_CONTROLLER"}
+  ### one square to the down ###
+      Filter Translate {0 1} FurnitureType "ABYSSUS_NAGA_WALL" {PlaceFurniture "TORCH_S" RemoveFurniture "ABYSSUS_NAGA_TORCH_ON_THE_WALL_CONTROLLER"}
+  ### one square to the up ###
+      Filter Translate {0 -1} FurnitureType "ABYSSUS_NAGA_WALL" {PlaceFurniture "TORCH_N" RemoveFurniture "ABYSSUS_NAGA_TORCH_ON_THE_WALL_CONTROLLER"}
+    }
+  }
+}
+
+
+"ABYSSUS_NAGA_CORE_PEDESTAL_FULL_SMALL"
+{
+  name = "labyrinth core"
+  viewId = { "abyssus_naga_core_pedestal_full_small" }
+  canHideHere = true
+  blockMovement = true
+  usageTime = 5
+  strength = 2000
+  luxury = 1
+  destroyFX = { DESTROY_FURNITURE Rgb 120 120 120 255 }
+  tickType = Effect {
+    Filter Flag "abyssus_naga_registered" {
+      FirstSuccessful {
+        Filter Flag "abyssus_naga_gems_consumed_10" {
+          ModifyFurniture "ABYSSUS_NAGA_CORE_PEDESTAL_FULL_MEDIUM"
+        }
+        Filter Flag "abyssus_naga_pedestal_turn_now" {
+          Area 5 ClaimTile
+          SetFlag "abyssus_naga_pedestal_turn_now" false
+        }
+        Filter Not Flag "abyssus_naga_pedestal_turn_not_now" {
+          SetFlag "abyssus_naga_pedestal_turn_now" true
+          SetFlag "abyssus_naga_pedestal_turn_not_now" true
+        }
+      }
+    }
+  }
+}
+
+"ABYSSUS_NAGA_CORE_PEDESTAL_FULL_MEDIUM"
+{
+  name = "labyrinth core"
+  viewId = { "abyssus_naga_core_pedestal_full_medium" }
+  canHideHere = true
+  blockMovement = true
+  usageTime = 5
+  strength = 2000
+  luxury = 1
+  destroyFX = { DESTROY_FURNITURE Rgb 120 120 120 255 }
+  tickType = Effect {
+    Filter Flag "abyssus_naga_gems_consumed_20" {
+      Filter Not Flag "abyssus_naga_core_large" {
+        ModifyFurniture "ABYSSUS_NAGA_CORE_PEDESTAL_FULL_LARGE"
+        SetFlag "abyssus_naga_core_large" true
+      }
+    }
+  }
+}
+
+"ABYSSUS_NAGA_CORE_PEDESTAL_FULL_LARGE"
+{
+  name = "labyrinth core"
+  viewId = { "abyssus_naga_core_pedestal_full_large" }
+  canHideHere = true
+  blockMovement = true
+  usageTime = 5
+  strength = 2000
+  luxury = 1
+  destroyFX = { DESTROY_FURNITURE Rgb 120 120 120 255 }
+}
+
+"ABYSSUS_NAGA_CORE_PEDESTAL_EMPTY"
+{
+  name = "empty dungeon core pedestal"
+  viewId = { "abyssus_naga_core_pedestal_empty" }
+  canHideHere = true
+  blockMovement = true
+#  xForgetAfterBuilding = true
+  strength = 2000
+  luxury = 1
+  usageTime = 5
+  destroyFX = { DESTROY_FURNITURE Rgb 120 120 120 255 }
+  tickType = Effect {
+    Filter Flag "abyssus_naga_registered" {
+      Filter Not Flag "abyssus_naga_pedestal_placed" {
+        ModifyFurniture "ABYSSUS_NAGA_CORE_PEDESTAL_FULL_SMALL"
+        Fx { TELEPORT_OUT }
+        SetFlag "abyssus_naga_pedestal_placed" true
+        SetFlag "abyssus_naga_dungeon_core_present" true
+        SetFlag "abyssus_naga_dungeon_core_not_present" false
+      }
+    }
+  }
+}
+
+"ABYSSUS_NAGA_CORE_PEDESTAL_CONTROLLER"
+{
+  name = "a point of interest"
+  viewId = { "abyssus_naga_q" }
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+  canHideHere = true
+  usageType = UsageEffect "examine a place" {
+    Filter Not Flag "abyssus_naga_registered" {
+      UI "unlock_message" { "message" Label "It looks like core of the labyrinth is missing..." "view_id" ViewIdList {{"abyssus_naga_core_pedestal_empty"}}}
+      UI "unlock_message" { "message" Label "We should try to insert some deep gems if its going to reinitialize..." "view_id" ViewIdList {{"abyssus_naga_deep_gems"}}}
+      UI "unlock_message" { "message" Label "Checking qualification..." "view_id" ViewIdList {{"abyssus_naga_q"}}}
+      UI "unlock_message" { "message" Label "Begining synchronization..." "view_id" ViewIdList {{"abyssus_naga_q"}}}
+      UI "unlock_message" { "message" Label "Registering new owner of the naga labyrinth..." "view_id" ViewIdList {{"abyssus_naga_q"}}}
+      UI "unlock_message" { "message" Label "In order to reinforce your minions. The labyrinth core needs to consume deep gems." "view_id" ViewIdList {{"abyssus_naga_core_pedestal_full_small"}}}
+      UI "unlock_message" { "message" Label "Deep gems can be converted from resources at the labyrinth core." "view_id" ViewIdList {{"abyssus_naga_deep_gems"}}}
+      UI "unlock_message" { "message" Label "The more gems core consumes ,the stronger it will become." "view_id" ViewIdList {{"abyssus_naga_core_pedestal_full_small"}}}
+      UI "unlock_message" { "message" Label "Stronger labyrinth core will provide buffs to the minions and allow you to hire more advanced minions." "view_id" ViewIdList {{"abyssus_naga_minions"}}}
+      UI "unlock_message" { "message" Label "Reinforce labyrinth core with the deep gems at least 10 times to unlock next tier of the minions." "view_id" ViewIdList {{"abyssus_naga_minions"}}}
+      SetFlag "abyssus_naga_registered" true
+      Area 2 ChainUntilFail {
+        RemoveFurniture "ABYSSUS_NAGA_CORE_PEDESTAL_CONTROLLER"
+        Fx { TELEPORT_OUT }
+      }
+    }
+  }
+}
+
+"ABYSSUS_NAGA_SURFACE_CONTROLLER"
+{
+  name = "naga portal surface controller"
+  canBuildOutsideOfTerritory = true
+  canHideHere = true
+  xForgetAfterBuilding = true
+  layer = CEILING
+  eyeball = true
+  tickType = Effect {
+    Filter Not Flag "abyssus_naga_portal_surface" {
+      Filter Frequency 2 {
+        Filter Area 1 Not FurnitureType "DOWN_STAIRS" {
+          PlaceFurniture "ABYSSUS_NAGA_FLOOR_BREACHER_DOWN"
+          SetFlag "abyssus_naga_portal_surface" true
+          RemoveFurniture "ABYSSUS_NAGA_FLOOR_BREACHER_DOWN"
+          PlaceFurniture "PORTAL"
+        }
+      }
+    }
+  }
+}
+
+"ABYSSUS_NAGA_DUNGEON_CONTROLLER"
+{
+  name = "naga portal dungeon controller"
+  canBuildOutsideOfTerritory = true
+  canHideHere = true
+  xForgetAfterBuilding = true
+  layer = CEILING
+  eyeball = true
+  tickType = Effect {
+    Filter Not Flag "abyssus_naga_portal_dungeon" {
+      Filter Frequency 5 {
+        Filter Flag "abyssus_naga_portal_surface" {
+          PlaceFurniture "PORTAL"
+          SetFlag "abyssus_naga_portal_dungeon" true
+        }
+      }
+    }
+  }
+}
+
+"ABYSSUS_NAGA_FLOOR_BREACHER_DOWN"
+{
+  name = "hole"
+  viewId = { "down_staircase" }
+  canHideHere = true
+  xForgetAfterBuilding = true
+  canBuildOutsideOfTerritory = true
+  usageType = UsageEffect "use stairs" Stairs
+  onBuilt = DOWN_STAIRS
+  otherStairs = "ABYSSUS_NAGA_FLOOR_BREACHER_UP"
+}
+
+"ABYSSUS_NAGA_FLOOR_BREACHER_UP"
+{
+  name = "ceiling breach"
+  canHideHere = true
+  xForgetAfterBuilding = true
+  onBuilt = UP_STAIRS
+  otherStairs = "ABYSSUS_NAGA_FLOOR_BREACHER_DOWN"
+  tickType = Effect {
+    RemoveFurniture "ABYSSUS_NAGA_FLOOR_BREACHER_UP"
+  }
+}
+
+"ABYSSUS_NAGA_NEST"
+{
+  name = "nest"
+  viewId = { "abyssus_naga_nest" }
+  usageType = UsageEffect "sleep in nest" Lasting SLEEP
+  tickType = Effect BedHeal()
+  canHideHere = true
+  luxury = 0.4
+  bedType = BED
+  destroyFX = { DESTROY_FURNITURE Rgb 120 87 46 255 }
+}
+
+"ABYSSUS_NAGA_STATUE"
+{
+  name = "naga statue"
+  viewId = { "abyssus_naga_statue" }
+  blockMovement = true
+  canHideHere = true
+  luxury = 0.7
+  strength = 50
+  populationIncrease = { 1 none }
+  destroyFX = { DESTROY_FURNITURE Rgb 190 190 40 255 }
+}
+
+"ABYSSUS_NAGA_HEALING_RAIN_LOCATION_TEMP"
+{
+  name = "healing rain"
+  canHideHere = true
+  layer = CEILING
+  tickType = Effect {
+    Area 1 {
+      PlaceFurniture "ABYSSUS_NAGA_HEALING_RAIN_LOCATION"
+    }
+    PlaceFurniture "ABYSSUS_NAGA_HEALING_RAIN_LOCATION_CORE"
+    Area 1 Filter Not Enemy Heal { FLESH }
+    Fx {CIRCULAR_SPELL ,ColorId GREEN}
+    RemoveFurniture "ABYSSUS_NAGA_HEALING_RAIN_LOCATION_TEMP"
+  }
+}
+
+"ABYSSUS_NAGA_HEALING_RAIN_LOCATION"
+{
+  name = "healing rain"
+  canHideHere = true
+  layer = CEILING
+  tickType = Effect {
+    Filter Not Area 1 Not FurnitureType "ABYSSUS_NAGA_HEALING_RAIN_LOCATION_CORE" {
+      Chance 0.15 {
+        Area 1 Filter Not Enemy Heal { FLESH }
+        Fx {CIRCULAR_SPELL ,ColorId GREEN}
+        RemoveFurniture "ABYSSUS_NAGA_HEALING_RAIN_LOCATION"
+      }
+    }
+    Filter Area 1 Not FurnitureType "ABYSSUS_NAGA_HEALING_RAIN_LOCATION_CORE" {
+      RemoveFurniture "ABYSSUS_NAGA_HEALING_RAIN_LOCATION"
+    }
+  }
+}
+
+"ABYSSUS_NAGA_HEALING_RAIN_LOCATION_CORE"
+{
+  name = "healing rain"
+  canHideHere = true
+  layer = CEILING
+  tickType = Effect {
+    Filter Translate {1 0} Not FurnitureType "ABYSSUS_NAGA_HEALING_RAIN_LOCATION" {
+      Filter Translate {-1 0} Not FurnitureType "ABYSSUS_NAGA_HEALING_RAIN_LOCATION" {
+        Filter Translate {0 -1} Not FurnitureType "ABYSSUS_NAGA_HEALING_RAIN_LOCATION" {
+          RemoveFurniture "ABYSSUS_NAGA_HEALING_RAIN_LOCATION_CORE"
+        }
+      }
+    }
+    Filter Translate {1 1} Not FurnitureType "ABYSSUS_NAGA_HEALING_RAIN_LOCATION" {
+      Filter Translate {-1 1} Not FurnitureType "ABYSSUS_NAGA_HEALING_RAIN_LOCATION" {
+        Filter Translate {0 -1} Not FurnitureType "ABYSSUS_NAGA_HEALING_RAIN_LOCATION" {
+          RemoveFurniture "ABYSSUS_NAGA_HEALING_RAIN_LOCATION_CORE"
+        }
+      }
+    }
+    Filter Translate {-1 1} Not FurnitureType "ABYSSUS_NAGA_HEALING_RAIN_LOCATION" {
+      Filter Translate {0 -1} Not FurnitureType "ABYSSUS_NAGA_HEALING_RAIN_LOCATION" {
+        Filter Translate {1 -1} Not FurnitureType "ABYSSUS_NAGA_HEALING_RAIN_LOCATION" {
+         RemoveFurniture "ABYSSUS_NAGA_HEALING_RAIN_LOCATION_CORE"
+        }
+      }
+    }
+
+    Filter Translate {1 0} Not FurnitureType "ABYSSUS_NAGA_HEALING_RAIN_LOCATION" {
+      Filter Translate {0 1} Not FurnitureType "ABYSSUS_NAGA_HEALING_RAIN_LOCATION" {
+        Filter Translate {-1 1} Not FurnitureType "ABYSSUS_NAGA_HEALING_RAIN_LOCATION" {
+          RemoveFurniture "ABYSSUS_NAGA_HEALING_RAIN_LOCATION_CORE"
+        }
+      }
+    }
+  }
+}

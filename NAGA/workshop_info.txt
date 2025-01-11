@@ -1,0 +1,6 @@
+"ABYSSUS_NAGA_PEDESTAL" {
+  furniture = "ABYSSUS_NAGA_CORE_PEDESTAL_EMPTY"
+  name = "creating"
+  verb = "creates"
+  attr = "LABORATORY"
+}

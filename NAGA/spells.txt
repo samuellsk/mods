@@ -1,0 +1,359 @@
+"abyssus naga introduction"
+{
+  symbol = "I"
+  effect = Name "introduction" Description "Intorduces the naga" {
+    AI Health 0 1 0 1 {
+      Filter Not Flag "abyssus_naga_introduced" {
+        UI "unlock_message" { "message" Label "You have found the abandoned labyrinth." "view_id" ViewIdList {{"abyssus_naga_q"}}}
+        UI "unlock_message" { "message" Label "Explore the labyrinth that lies beyond the portal." "view_id" ViewIdList {{"abyssus_naga_q"}}}
+        SetFlag "abyssus_naga_introduced" true
+        SetFlag "abyssus_naga_dungeon_core_not_present" true
+      }
+      RemoveAbility "abyssus naga introduction"
+    }
+  }
+  message = "" ""
+  cooldown = 10
+}
+
+"abyssus naga onetime summon keeper male"
+{
+  symbol = "K"
+  effect = Name "missing part" Description "Calls your missing part." {
+    AI Health 0 1 0 1 {
+      Filter Not Flag "abyssus_naga_keeper_called" {
+        PlaceFurniture "ABYSSUS_NAGA_ONETIME_SPAWN_KEEPER_MALE"
+        SetFlag "abyssus_naga_keeper_called" true
+        RemoveAbility "abyssus naga onetime summon keeper male"
+      }
+    }
+  }
+  message = "" ""
+  cooldown = 5
+}
+
+"abyssus naga onetime summon keeper female"
+{
+  symbol = "K"
+  effect = Name "missing part" Description "Calls your missing part." {
+    AI Health 0 1 0 1 {
+      Filter Not Flag "abyssus_naga_keeper_called" {
+        PlaceFurniture "ABYSSUS_NAGA_ONETIME_SPAWN_KEEPER_FEMALE"
+        SetFlag "abyssus_naga_keeper_called" true
+        RemoveAbility "abyssus naga onetime summon keeper female"
+      }
+    }
+  }
+  message = "" ""
+  cooldown = 5
+}
+
+"abyssus naga keeper"
+{
+  symbol = "K"
+  effect = Name "i am the keeper" Description "minion will become a keeper" {
+    AI Health 0 1 0 1 {
+      AddMinionTrait LEADER
+      RemoveAbility "abyssus naga keeper"
+    }
+  }
+  message = "" ""
+  cooldown = 3
+}
+
+"abyssus naga commander"
+{
+  symbol = "C"
+  effect = Name "become a commander" Description "minion will become a commander gaining passive buff" {
+    AI Health 0 1 0 1 {
+      Permanent "ABYSSUS_NAGA_COMMANDER"
+      RemoveAbility "abyssus naga commander"
+    }
+  }
+  message = "" ""
+  cooldown = 3
+}
+
+"abyssus naga call to arms"
+{
+  symbol = "📯"
+  effect = Name "call to arms" Description "Increases damage by 5 for every 20 damage capping at 25 increase total in area of 4 around the caster" {
+    Area 4 Filter Not Enemy Lasting 30 "ABYSSUS_NAGA_CALL_TO_ARMS"
+  }
+  cooldown = {50 100}
+  sound = "SPELL_HEALING"
+  type = ABILITY
+}
+
+"abyssus naga worker hatched"
+{
+  symbol = "H"
+  effect = Name "rescently hatched" Description "minion was rescently hatched and might turn into different worker" {
+    AI Health 0 1 0 1 {
+      ChooseRandom {
+        SetViewId {"abyssus_naga_worker_1"}
+        SetViewId {"abyssus_naga_worker_2"}
+        SetViewId {"abyssus_naga_worker_3"}
+      }
+      RemoveAbility "abyssus naga worker hatched"
+    }
+  }
+  message = "" ""
+  cooldown = 3
+}
+
+"abyssus naga lesser heal"
+{
+  symbol = "✚"
+  effect = Name "lesser heal" Description "Restores 50 percent of health to single target" {
+    AI Health 0 0.8 0 1 {
+      Heal { FLESH }
+    }
+  }
+  range = 6
+  targetSelf = true
+  endOnly = true
+  cooldown = {7 18}
+  sound = "SPELL_HEALING"
+}
+
+"abyssus naga healing"
+{
+  symbol = "❤️"
+  effect = Name "healing" Description "Fully restores health to single target" {
+    AI Health 0 0.8 0 1 {
+      Heal { FLESH }
+    }
+  }
+  range = 8
+  targetSelf = true
+  endOnly = true
+  cooldown = {10 30}
+  sound = "SPELL_HEALING"
+}
+
+"abyssus naga healing rain"
+{
+  symbol = "💧💧"
+  effect = Name "healing rain" Description "Summon a healing rain at given location." {
+    AI And{Not Enemy Health 0 0.8} 0 1 {
+      PlaceFurniture "ABYSSUS_NAGA_HEALING_RAIN_LOCATION_TEMP"
+    }
+  }
+  cooldown = {10 20}
+  range = 8
+  targetSelf = true
+  endOnly = true
+  sound = "SPELL_HEALING"
+}
+
+"abyssus naga area heal"
+{
+  symbol = "💕"
+  effect = Name "area heal" Description "Heals friendly minion and other friendly minions 1 square around it for 50 percent." {
+    AI And{Not Enemy Health 0 0.8} 0 1 {
+      Fx {CIRCULAR_SPELL ,ColorId GREEN}
+      Fx {CIRCULAR_BLAST ,ColorId GREEN}
+      Area 1 Filter Not Enemy Heal {FLESH 0.50}
+    }
+  }
+  range = 8
+  targetSelf = true
+  endOnly = true
+  cooldown = {5 35}
+  sound = "SPELL_STR_BONUS"
+}
+
+"abyssus naga rejuvenation"
+{
+  symbol = "☘️"
+  effect = Name "rejuvenation" Description "Recovers 15 percent of health every turn for 8 turns." {
+    Filter And {Not LastingEffect "ABYSSUS_NAGA_REJUVENATION" Health 0.0 0.99} {
+      Lasting 8 "ABYSSUS_NAGA_REJUVENATION"
+    }
+  }
+  range = 8
+  endOnly = true
+  cooldown = {15 40}
+  targetSelf = true
+  sound = "SPELL_HEALING"
+}
+
+"abyssus naga resilience"
+{
+  symbol = "R"
+  effect = Name "resilience" Description "Permanently adds resilience buff that recovers 3 percent of health per turn" {
+    AI Health 0 1 0 1 {
+      Permanent "ABYSSUS_NAGA_RESILIENCE"
+      RemoveAbility "abyssus naga resilience"
+    }
+  }
+  message = "" ""
+  cooldown = 10
+}
+
+"abyssus naga toughness"
+{
+  symbol = "T"
+  effect = Name "toughness" Description "Permanently adds toughness buff that decreases damage taken by 15 percent" {
+    AI Health 0 1 0 1 {
+      Permanent "ABYSSUS_NAGA_TOUGHNESS"
+      RemoveAbility "abyssus naga toughness"
+    }
+  }
+  message = "" ""
+  cooldown = 10
+}
+
+"abyssus naga last stand"
+{
+  symbol = "⛨"
+  effect = Name "last stand" Description "Decreases damge taken by 10 times for 4 turns when below 35 percent of health." {
+    Filter Health 0 0.35 {
+      Lasting 4 "ABYSSUS_NAGA_LAST_STAND"
+    }
+  }
+  message = "" ""
+  cooldown = {10 30}
+  type = ABILITY
+}
+
+"abyssus naga invisibility"
+{
+  symbol = "🕵️"
+  effect = Name "invisibility" Description "Blends with the shadows causing temporal invisbility for 6 turns." {
+    Lasting 6 INVISIBLE
+  }
+  message = "" ""
+  cooldown = {15 50}
+  type = ABILITY
+}
+
+"abyssus naga throw spear"
+{
+  symbol = "↣"
+  effect = Name "throw spear" Description "Throws a spear to damage your enemies" {
+    Filter Enemy {
+      Damage RANGED_DAMAGE SHOOT
+    }
+  }
+  range = 7
+  cooldown = {1 3}
+  maxHits = 1
+  projectileViewId = {"abyssus_spells_spear_projectile"}
+  message = "throw a spear" "throws a spear"
+  type = ABILITY
+}
+
+"abyssus naga speed"
+{
+  symbol = "🏃"
+  effect = Name "last stand" Description "For a short time gain double the movement speed." {
+    Lasting 4 SPEED
+  }
+  message = "" ""
+  cooldown = {10 30}
+}
+
+"abyssus naga frostbolt"
+{
+  symbol = "✴️"
+  effect = Name "frostbolt" Description "Shoot a simple bolt of frost to damage your enemy." {
+    Filter Enemy {
+      Damage SPELL_DAMAGE HIT
+      Chance 0.10 {
+        Lasting 3 FROZEN
+      }
+    }
+  }
+  range = 5
+  endOnly = true
+  fx = {FIREBALL ,ColorId BLUE}
+  cooldown = {4 12}
+  sound = "SPELL_STR_BONUS"
+}
+
+"abyssus naga frostburn"
+{
+  symbol = "❄️"
+  effect = Name "frostburn" Description "Using power of frost to burn enemy and inflict damage with a slight chance to freeze it." {
+    Filter Enemy {
+      Damage SPELL_DAMAGE HIT
+      Chance 0.10 {
+        Lasting 3 FROZEN
+      }
+    }
+    Fx {FIREBALL ,ColorId BLUE}
+  }
+  range = 8
+  endOnly = true
+  cooldown = {3 10}
+  sound = "SPELL_STR_BONUS"
+}
+
+"abyssus naga frost nova"
+{
+  symbol = "(❄️)"
+  effect = Name "frost nova" Description "Unleashes frost nova at location , damaging enemies in the area with a chance to freeze them." {
+    Area 1 {
+      Filter Enemy {
+        Damage SPELL_DAMAGE HIT
+        Chance 0.10 {
+          Lasting 3 FROZEN
+        }
+      }
+    }
+    Fx {FIREBALL ,ColorId BLUE}
+    Fx {CIRCULAR_BLAST ,ColorId BLUE}
+  }
+  range = 8
+  endOnly = true
+  cooldown = {3 10}
+  sound = "SPELL_STR_BONUS"
+}
+
+"abyssus naga slow"
+{
+  symbol = "🐢"
+  effect = Name "slow" Description "Slight freezing enemies to slow them down." {
+    Filter Enemy {
+      Filter Not LastingEffect SLOWED {
+        Lasting 6 SLOWED
+      }
+    }
+    Fx {CIRCULAR_SPELL ,ColorId BLUE}
+  }
+  range = 8
+  endOnly = true
+  cooldown = {3 10}
+  sound = "SPELL_STR_BONUS"
+}
+
+"abyssus naga charm"
+{
+  symbol = "♥"
+  effect = Name "charm" Description "Charm the minion with your beauty. Charmed minion cannot do any hostile action against your tribe." {
+    Filter Enemy {
+      Lasting 10 PEACEFULNESS
+    }
+  }
+  range = 7
+  cooldown = {10 25}
+  endOnly = true
+  sound = "SPELL_STR_BONUS"
+}
+
+"abyssus naga hearts attack"
+{
+  symbol = "💕♥"
+  effect = Name "hearts bolt" Description "Sends some charm towards the enemy. If he resists your charm he will take damage." {
+    Filter Enemy {
+      Damage SPELL_DAMAGE HIT
+    }
+  }
+  range = 8
+  cooldown = {2 10}
+  endOnly = true
+  projectileViewId = {"abyssus_spells_hearts_attack_projectile"}
+  sound = "SPELL_STR_BONUS"
+}
